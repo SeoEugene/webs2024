@@ -109,24 +109,61 @@
 
             <div class="bs-docs-section">
                 <h3 id="intro3" class="page-header">MySQL 실행</h3>
+                <div class="bs-callout bs-callout-info">
+                    윈도우 : cd C:\MAMP\bin\mysql\bin<br>
+                    로그인 : mysql -uroot -proot
+                </div>
+                <div class="bs-callout bs-callout-info">
+                    맥 : cd /Applications/MAMP/Library/bin<br>
+                    로그인 : ./mysql -uroot -proot
+                </div>
+                
             </div>
             <!-- //intro3 -->
 
             <div class="bs-docs-section">
                 <h3 id="intro4" class="page-header">데이터베이스</h3>
                 <h4 id="intro4-1" class="page-header">데이터베이스 보기</h4>
+                <div class="bs-callout bs-callout-info">
+                    show databases;
+                </div>
                 <h4 id="intro4-2" class="page-header">데이터베이스 만들기</h4>
+                <div class="bs-callout bs-callout-info">
+                    create database 데이터베이스이름;
+                </div>
                 <h4 id="intro4-3" class="page-header">데이터베이스 사용</h4>
+                <div class="bs-callout bs-callout-info">
+                    use 데이터베이스이름;
+                </div>
                 <h4 id="intro4-4" class="page-header">데이터베이스 삭제</h4>
+                <div class="bs-callout bs-callout-info">
+                    drop database 데이터베이스이름;
+                </div>
+
             </div>
             <!-- //intro4 -->
 
             <div class="bs-docs-section">
                 <h3 id="intro5" class="page-header">테이블</h3>
                 <h4 id="intro5-1" class="page-header">테이블 만들기</h4>
+                <div class="bs-callout bs-callout-info">
+                    create table 테이블 이름;
+                </div>
+<pre><code class="language-js">
+
+</code></pre>
                 <h4 id="intro5-2" class="page-header">테이블 전체보기</h4>
+                <div class="bs-callout bs-callout-info">
+                    show tables;
+                </div>
                 <h4 id="intro5-3" class="page-header">테이블 보기</h4>
+                <div class="bs-callout bs-callout-info">
+                    desc 테이블 이름;
+                </div>
                 <h4 id="intro5-4" class="page-header">테이블 삭제</h4>
+                <div class="bs-callout bs-callout-info">
+                   drop table 테이블 이름;
+                </div>
             </div>
             <!-- //intro5 -->
 
@@ -172,6 +209,7 @@
                         <li><a href="#intro5">테이블</a>
                             <ul class="nav bs-sidenav">
                                 <li><a href="#intro5-1">테이블 만들기</a></li>
+
                                 <li><a href="#intro5-2">테이블 전체보기</a></li>
                                 <li><a href="#intro5-3">테이블 보기</a></li>
                                 <li><a href="#intro5-4">테이블 삭제</a></li>
