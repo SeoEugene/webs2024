@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>데이터 제어하기</title>
+
+    <link rel="stylesheet" href="https://webfontworld.github.io/gmarket/GmarketSans.css">
+    <link rel="stylesheet" href="https://websfont.github.io/nanumSquareNeo/nanumSquareNeo.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="../assets/css/prism.css">
+</head>
+
+<body>
+    <div id="wrap">
+        <header id="header">
+            <h1><a href="index.html">javascript</a></h1>
+            <nav>
+                <ul>
+                    <li><a href="javascript01.html">데이터 저장하기</a></li>
+                    <li><a href="javascript02.html">데이터 불러오기</a></li>
+                    <li><a href="javascript03.html">데이터 실행하기</a></li>
+                    <li class="active"><a href="javascript04.html">데이터 제어하기</a></li>
+                </ul>
+                <ul>
+                    <li><a href="javascript05.html">문자열 객체</a></li>
+                    <li><a href="javascript06.html">배열 객체</a></li>
+                    <li><a href="javascript07.html">수학 객체</a></li>
+                    <li><a href="javascript08.html">브라우저 객체</a></li>
+                    <li><a href="javascript09.html">요소 객체</a></li>
+                    <li><a href="javascript10.html">이벤트 객체</a></li>
+                </ul>
+                <ul>
+                    <li><a href="javascript11.html">데이터 효과</a></li>
+                    <li><a href="javascript12.html">퀴즈 효과</a></li>
+                    <li><a href="javascript13.html">마우스 효과</a></li>
+                    <li><a href="javascript14.html">슬라이드 효과</a></li>
+                </ul>
+            </nav>
+        </header>
+        <!-- //header -->
+
+        <main id="main">
+            <div class="main__menu">
+                <ul>
+                    <li><a href="#">01. if문</a></li>
+                    <li><a href="#">02. 다중 if문</a></li>
+                    <li><a href="#">03. 중첩 if문</a></li>
+                    <li><a href="#">04. if문 생략</a></li>
+                    <li><a href="#">05. switch문</a></li>
+                    <li><a href="#">06. while문</a></li>
+                    <li><a href="#">07. do while문</a></li>
+                    <li><a href="#">08. for문</a></li>
+                    <li><a href="#">09. break문</a></li>
+                    <li><a href="#">10. countinue문</a></li>
+                </ul>
+            </div>
+            <!-- //main__munu -->
+
+            <div class="main__sample">
+                <div id="sample01" class="sample">
+                    <h3>01. if문</h3>
+                    <p>
+                        if()문을 이용하여 조건문에 맞는 출력값을 뽑는 예제입니다.
+                    </p>
+<pre class="line-numbers"><code class="language-js">{
+    //조건문에 자료형이 들어갈경우
+    // true : true, "문자열", 1, 2, "1", "2", [], {}
+    // false : false, 0, null, undefined, ""(빈문자열)
+
+    //if문 형식
+    //if (조건문) {
+    //    document.write("true문");
+    //} else {
+    //    document.write("false문");
+    //}
+
+    if (0) {
+        document.write("실행되었습니다.(true)");
+    } else {
+        document.write("실행되었습니다.(false)");
+    }
+}</code></pre>
+                    <p class="desc">
+                        13줄 : if문에 조건으로 0자료형을 넣습니다.<br>
+                        14줄 : document.write()를 이용해 조건이 참이면 "실행되었습니다.(true)"를 화면에 출력합니다.<br>
+                        15줄 : 거짓이라면,<br>
+                        16줄 : document.write()를 이용해 조건이 참이면 "실행되었습니다.(true)"를 화면에 출력합니다.<br>
+                    </p>
+                    <div class="result">
+                        <details>
+                            <summary>결과 확인하기</summary>
+                            <div>
+                                <script>
+                                    {
+                                        if (0) {
+                                            document.write("실행되었습니다.(true)");
+                                        } else {
+                                            document.write("실행되었습니다.(false)");
+                                        }
+                                    }
+                                </script>
+                            </div>
+                        </details>
+                    </div>
+                </div>
+                <!-- //sample01 -->
+
+                <div id="sample02" class="sample">
+                    <h3>02. 다중 if문</h3>
+                    <p>
+                        if()문을 여러개 이용하여 조건문에 맞는 출력값을 뽑는 예제입니다.
+                    </p>
+<pre class="line-numbers"><code class="language-js">{
+    const num = 100;
+
+    if (num == 90) {
+        document.write("실행되었습니다.(num = 90)");
+    } else if (num == 95) {
+        document.write("실행되었습니다.(num = 95)");
+    } else if (num == 100) {
+        document.write("실행되었습니다.(num = 100)");
+    } else if (num == 105) {
+        document.write("실행되었습니다.(num = 105)");
+    } else {
+        document.write("실행되었습니다.");
+    }
+}</code></pre>
+                    <p class="desc">
+                        2줄 : 상수 변수 num에 100을 넣습니다.<br>
+                        4줄 : if문의 조건에 num이 90이라면, 이라는 조건을 넣습니다.<br>
+                        5줄 : document.write()를 이용해 조건이 참이면 "실행되었습니다.(num=90)"를 화면에 출력합니다.<br>
+                        6줄 : 만약 num이 95라면,<br>
+                        7줄 : document.write()를 이용해 조건이 참이면 "실행되었습니다.(num=95)"를 화면에 출력합니다.<br>
+                        8줄 : 만약 num이 100라면,<br>
+                        9줄 : document.write()를 이용해 조건이 참이면 "실행되었습니다.(num=100)"를 화면에 출력합니다.<br>
+                        10줄 : 만약 num이 105라면,<br>
+                        11줄 : document.write()를 이용해 조건이 참이면 "실행되었습니다.(num=105)"를 화면에 출력합니다.<br>
+                        12줄 : 그조차도 아니라면,<br>
+                        13줄 : document.write()를 이용해 조건이 참이면 "실행되었습니다."를 화면에 출력합니다.<br>
+                    </p>
+                    <div class="result">
+                        <details>
+                            <summary>결과 확인하기</summary>
+                            <div>
+                                <script>
+                                    {
+                                        const num = 100;
+
+                                        if (num == 90) {
+                                            document.write("실행되었습니다.(num = 90)");
+                                        } else if (num == 95) {
+                                            document.write("실행되었습니다.(num = 95)");
+                                        } else if (num == 100) {
+                                            document.write("실행되었습니다.(num = 100)");
+                                        } else if (num == 105) {
+                                            document.write("실행되었습니다.(num = 105)");
+                                        } else {
+                                            document.write("실행되었습니다.");
+                                        }
+                                    }
+                                </script>
+                            </div>
+                        </details>
+                    </div>
+                </div>
+                <!-- //sample02 -->
+
+                <div id="sample03" class="sample">
+                    <h3>03. 중첩 if문</h3>
+                    <p>
+                        if()문을 여러개 중첩으로 이용하여 조건문에 맞는 출력값을 뽑는 예제입니다.
+                    </p>
+<pre class="line-numbers"><code class="language-js">{
+    const num = 100;
+
+    if (num == 100) {
+        document.write("실행되었습니다.1");
+        if (num == 100) {
+            document.write("실행되었습니다.2");
+            if (num == 100) {
+                document.write("실행되었습니다.3");
+            }
+        }
+    } else {
+        document.write("실행되었습니다.4");
+    }
+}</code></pre>
+                    <p class="desc">
+                        2줄 : 상수 변수 num에 100을 넣습니다.<br>
+                        4줄 : if문의 조건에 num이 100이라면, 이라는 조건을 넣습니다.<br>
+                        5줄 : document.write()를 이용해 조건이 참이면 "실행되었습니다.1"를 화면에 출력합니다.<br>
+                        6줄 : 중첩으로 if문 조건에 num이 100이라면, 이라는 조건을 넣습니다.<br>
+                        7줄 : document.write()를 이용해 조건이 참이면 "실행되었습니다.2"를 화면에 출력합니다.<br>
+                        8줄 : 중첩으로 if문 조건에 num이 100이라면, 이라는 조건을 넣습니다.<br>
+                        9줄 : document.write()를 이용해 조건이 참이면 "실행되었습니다.3"를 화면에 출력합니다.<br>
+                        12줄 : 그게 아니라면,<br>
+                        13줄 : document.write()를 이용해 조건이 참이면 "실행되었습니다.4"를 화면에 출력합니다.<br>
+                    </p>
+                    <div class="result">
+                        <details>
+                            <summary>결과 확인하기</summary>
+                            <div>
+                                <script>
+                                    {
+                                        const num = 100;
+
+                                        if (num == 100) {
+                                            document.write("실행되었습니다.1<br>");
+                                            if (num == 100) {
+                                                document.write("실행되었습니다.2<br>");
+                                                if (num == 100) {
+                                                    document.write("실행되었습니다.3<br>");
+                                                }
+                                            }
+                                        } else {
+                                            document.write("실행되었습니다.4");
+                                        }
+                                    }
+                                </script>
+                            </div>
+                        </details>
+                    </div>
+                </div>
+                <!-- //sample03 -->
+                
+                <div id="sample04" class="sample">
+                    <h3>04. if문 생략 & 삼항 연산자</h3>
+                    <p>
+                        if()문을 생략하는 여러 유형과 삼항연산자로 if문처럼 결과를 출력하는 예제입니다.
+                    </p>
+<pre class="line-numbers"><code class="language-js">{
+    const num = 100;
+
+    // 모든 결과 출력을 다 읽음, 속도가 느림
+    if(num){
+        document.write("실행되었습니다.(true)");
+    }
+    //생략
+    if(num) document.write("실행되었습니다.(true)");
+
+    if(num)  document.write("실행되었습니다.(true)");
+    else document.write("실행되었습니다.(false)");
+
+    // 삼항 연산자(조건식 연산자) 속도가 빠름, 조건에 맞는 출력만 읽음
+    (num == 100) ? document.write("true") : document.write("false");
+}</code></pre>
+                    <p class="desc">
+                        2줄 : 상수 변수 num에 100을 넣습니다.<br>
+                        5줄 : if문에 조건으로 num을 넣습니다.<br>
+                        6줄 : document.write()를 이용해 조건이 참이면 "실행되었습니다.(true)"를 화면에 출력합니다.<br>
+                        9줄 : if문의 괄호를 생략해 한줄로 작성했으며, num이 참 값이라면 "실행되었습니다.(true)"를 화면에 출력합니다.<br>
+                        11줄 : if문의 괄호를 생략해 한줄로 작성했으며, num이 참 값이라면 "실행되었습니다.(true)"를 화면에 출력합니다.<br>
+                        12줄 : num이 참이 아니라면 "실행되었습니다.(false)"을 화면에 출력합니다.<br>
+                        15줄 : 삼항 연산자로, num이 100이라는게 참이라면 "true"를 화면에 출력, 거짓이라면 "false"를 화면에 출력 
+                    </p>
+                    <div class="result">
+                        <details>
+                            <summary>결과 확인하기</summary>
+                            <div>
+                                <script>
+                                    {
+                                        const num = 100;
+
+                                        // 모든 결과 출력을 다 읽음, 속도가 느림
+                                        if(num){
+                                            document.write("실행되었습니다.(true)<br>");
+                                        }
+
+                                        if(num) document.write("실행되었습니다.(true)<br>");
+
+                                        if(num)  document.write("실행되었습니다.(true)<br>");
+                                        else document.write("실행되었습니다.(false)<br>");
+
+                                        // 삼항 연산자(조건식 연산자) 속도가 빠름, 조건에 맞는 출력만 읽음
+                                        (num == 100) ? document.write("true") : document.write("false");
+                                    }
+                                </script>
+                            </div>
+                        </details>
+                    </div>
+                </div>
+                <!-- //sample04 -->
+
+                <div id="sample05" class="sample">
+                    <h3>05. switch문</h3>
+                    <p>
+                        switch문을 이용해 조건에 맞는 출력값을 뽑아내는 예제입니다.
+                    </p>
+<pre class="line-numbers"><code class="language-js">{
+    const num = 100;
+
+    switch (num) {
+        case 90:
+            document.write("실행되었습니다.(90)");
+            break;
+
+        case 95:
+            document.write("실행되었습니다.(95)");
+            break;
+
+        case 100:
+            document.write("실행되었습니다.(100)");
+            break;
+
+        case 105:
+            document.write("실행되었습니다.(105)");
+            break;
+
+        default:
+            document.write("실행되었습니다.");
+    }
+}</code></pre>
+                    <p class="desc">
+                        2줄 : 상수 변수 num에 100을 넣습니다.<br>
+                        4줄 : switch문에 조건값으로 변수 num을 넣습니다.<br>
+                        5줄 : 조건값이 90이라면,<br>
+                        6줄 : document.write()를 이용해 조건이 참이면 "실행되었습니다.(90)"를 화면에 출력합니다.<br>
+                        7줄 : break문으로 위조건이 맞아 실행되었으면 switch문을 멈춥니다.
+                        9줄 : 조건값이 95이라면,<br>
+                        10줄 : document.write()를 이용해 조건이 참이면 "실행되었습니다.(95)"를 화면에 출력합니다.<br>
+                        11줄 : break문으로 위조건이 맞아 실행되었으면 switch문을 멈춥니다.
+                        13줄 : 조건값이 100이라면,<br>
+                        14줄 : document.write()를 이용해 조건이 참이면 "실행되었습니다.(100)"를 화면에 출력합니다.<br>
+                        15줄 : break문으로 위조건이 맞아 실행되었으면 switch문을 멈춥니다.
+                        17줄 : 조건값이 105이라면,<br>
+                        18줄 : document.write()를 이용해 조건이 참이면 "실행되었습니다.(105)"를 화면에 출력합니다.<br>
+                        19줄 : break문으로 위조건이 맞아 실행되었으면 switch문을 멈춥니다.<br>
+                        21줄 : default문을 선언해 위의 조건이 다 아니라면,<br>
+                        22줄 : document.write()를 이용해 조건이 참이면 "실행되었습니다."를 화면에 출력합니다.<br>                   
+                    </p>
+                    <div class="result">
+                        <details>
+                            <summary>결과 확인하기</summary>
+                            <div>
+                                <script>
+                                    {
+                                        const num = 100;
+
+                                        switch (num) {
+                                            case 90:
+                                                document.write("실행되었습니다.(90)");
+                                                break;
+
+                                            case 95:
+                                                document.write("실행되었습니다.(95)");
+                                                break;
+
+                                            case 100:
+                                                document.write("실행되었습니다.(100)");
+                                                break;
+
+                                            case 105:
+                                                document.write("실행되었습니다.(105)");
+                                                break;
+
+                                            default:
+                                                document.write("실행되었습니다.");
+                                        }
+                                    }
+                                </script>
+                            </div>
+                        </details>
+                    </div>
+                </div>
+                <!-- //sample05 -->
+
+                <div id="sample06" class="sample">
+                    <h3>06. while문</h3>
+                    <p>
+                        while문을 이용해 정해진 조건이 될때까지 반복하는 예제를 만듭니다.
+                    </p>
+<pre class="line-numbers"><code class="language-js">{
+    let num = 1;
+    while (num &lt;= 10) {
+        document.write(num, "<br>");
+        num++;
+    }
+}</code></pre>
+                    <p class="desc">
+                        2줄 : 변수 num에 값 1을 넣습니다.<br>
+                        3줄 : while문을 이용해 num값이 10보다 작거나 클때까지 반복하는 조건을 넣습니다.<br>
+                        4줄 : document.write()를 이용해 조건이 참이면 num값을 화면에 출력합니다.<br>
+                        5줄 : 출력 후 num값을 1 올려줍니다.
+                    </p>
+                    <div class="result">
+                        <details>
+                            <summary>결과 확인하기</summary>
+                            <div>
+                                <script>
+                                    {
+                                        let num = 1;
+                                        while (num <= 10) {
+                                            document.write(num, "<br>");
+                                            num++;
+                                        }
+                                    }
+                                </script>
+                            </div>
+                        </details>
+                    </div>
+                </div>
+                <!-- //sample06 -->
+
+                <div id="sample07" class="sample">
+                    <h3>07. do while문</h3>
+                    <p>
+                        do while문을 이용해 무조건 한번은 출력해야하는 반복문을 만드는 예제입니다.
+                    </p>
+<pre class="line-numbers"><code class="language-js">{
+    let num = 1;
+    do {
+        document.write(num);
+        num++
+    } while (num &lt;= 10);
+}</code></pre>
+                    <p class="desc">
+                        2줄 : 변수 num에 숫자 1을 넣습니다.<br>
+                        3줄 : do while문의 시작인 do를 넣어 출력문을 입력할 준비를 합니다.<br>
+                        4줄 : document.write()를 이용해 num의 값을 화면에 출력합니다.<br>
+                        5줄 : num값을 1증가시킵니다.<br>
+                        6줄 : while문으로 num의 값이 10보다 작거나 같을 때까지 반복시키는 조건을 넣습니다.
+                    </p>
+                    <div class="result">
+                        <details>
+                            <summary>결과 확인하기</summary>
+                            <div>
+                                <script>
+                                    {
+                                        let num = 1;
+                                        do {
+                                            document.write(num);
+                                            num++
+                                        } while (num <= 10);
+                                    }
+                                </script>
+                            </div>
+                        </details>
+                    </div>
+                </div>
+                <!-- //sample07 -->
+
+                <div id="sample08" class="sample">
+                    <h3>08. for문</h3>
+                    <p>
+                        for문을 이용해 배열의 값을 출력하고, forEach(), for of(), for in()을 이용해봅니다.
+                    </p>
+<pre class="line-numbers"><code class="language-js">{
+    const num = [10, 20, 30, 40, 50, 60, 70, 80, 90];
+    for(let i=0; i&lt;num.length; i++){
+        document.write(num[i], &quot;&lt;br>");
+    }
+
+    //for each
+    num.forEach((x) => {
+        document.write(x, "&lt;br&gt;");      
+    })
+
+    num.forEach((x, y) => {
+        document.write(num[y], "&lt;br&gt;")
+    })
+
+    //for of
+    for(const x of num){
+        document.write(x, "&lt;br&gt;");
+    }
+
+    //for in
+    for(const x in num){
+        document.write(num[x], "&lt;br&gt;")
+    }
+
+}</code></pre>
+                    <p class="desc">
+                        2줄 : 상수 num에 차례대로 10, 20, 30, 40, 50, 60, 70, 80, 90을 배열로 넣습니다.<br>
+                        3줄 : for문에 변수i의 초기값을 0, num배열의 길이보다 작을 때, 실행 후 i에 1증가하는 for문입니다.<br>
+                        4줄 : docuemnt.write()를 이용해 조건이 맞다면 num[i]를 출력하고 "<br>"태그로 한줄 엔터하세요<br>
+                        8줄 : num배열의 값을 forEach()로 값을 각각 불러와 매개변수 x에 값을 넣습니다.<br>
+                        9줄 : document.write()를 이용해 가져온 x값을 출력하고 "&lt;br&gt;"태그로 줄을 바꿔줍니다.<br>
+                        12줄 : num배열의 값을 forEach()로 값을 각각 불러와 매개변수 x에 값을 넣고, 그 값의 인덱스를 매개변수 y에 넣습니다.<br>
+                        13줄 : document.write()를 이용해 인덱스값이 y값을 출력하고, num[y]를 넣어 num배열의 해당 인덱스 값이 나오도록 출력합니다. 그리고 "&lt;br&gt;"태그로 줄을 바꿔줍니다.<br>
+                        17줄 : for of()를 이용해 상수 x에 num의 값을 넣습니다.<br>
+                        18줄 : document.write()를 이용해 num값을 가져온 x를 출력하고, "&lt;br&gt;"태그로 줄을 바꿔줍니다.<br>
+                        22줄 : for in()을 이용해 상수 x에 num의 인덱스 값을 가져옵니다.<br>
+                        23줄 : document.write()를 이용해 num값을 가져온 인덱스값 y를 이용해 num[y]를 출력하고, "&lt;br&gt;"태그로 줄을 바꿔줍니다.<br>
+                    </p>
+                    <div class="result">
+                        <details>
+                            <summary>결과 확인하기</summary>
+                            <div>
+                                <script>
+                                    {
+                                        const num = [10, 20, 30, 40, 50, 60, 70, 80, 90];
+                                        for(let i=0; i<num.length; i++){
+                                            document.write(num[i], "<br>");
+                                        }
+
+                                        //for each
+                                        num.forEach((x) => {
+                                            document.write(x, "<br>");      
+                                        })
+
+                                        num.forEach((x, y) => {
+                                            document.write(num[y], "<br>")
+                                        })
+
+                                        //for of
+                                        for(const x of num){
+                                            document.write(x, "<br>");
+                                        }
+
+                                        //for in
+                                        for(const x in num){
+                                            document.write(num[x], "<br>")
+                                        }
+
+                                    }
+                                </script>
+                            </div>
+                        </details>
+                    </div>
+                </div>
+                <!-- //sample08 -->
+
+                <div id="sample09" class="sample">
+                    <h3>09. break문</h3>
+                    <p>
+                        break문을 이용해 반복문 루프를 멈추는 예제입니다.
+                    </p>
+<pre class="line-numbers"><code class="language-js">{
+    for(let i=1; i&lt;=10; i++){          
+        if( i==5 ){
+            break;
+        }
+        document.write(i);
+    }
+}</code></pre>
+                    <p class="desc">
+                        2줄 : for문을 이용해 변수 i의 초기값 1, i의 크기가 10보다 작거나 같을때 까지, 실행 후 i를 1 증가시키는 반복문을 만듭니다.<br>
+                        3줄 : if문을 이용해 i의 값이 5라면,<br>
+                        4줄 : break문을 이용해 루프를 중단합니다.<br>
+                        6줄 : document.write()를 이용해 i의 값을 화면에 출력합니다.
+                    </p>
+                    <div class="result">
+                        <details>
+                            <summary>결과 확인하기</summary>
+                            <div>
+                                <script>
+                                    {
+                                        for(let i=1; i<=10; i++){          
+                                            if( i==5 ){
+                                                break;
+                                            }
+                                            document.write(i, "<br>");
+                                        }
+                                    }
+                                </script>
+                            </div>
+                        </details>
+                    </div>
+                </div>
+                <!-- //sample09 -->
+
+                <div id="sample10" class="sample">
+                    <h3>10. countinue문</h3>
+                    <p>
+                        countinue문을 이용하면 나오는 결과를 알아봅니다.
+                    </p>
+<pre class="line-numbers"><code class="language-js">{
+    for(let i=1; i&lt;=10; i++){       
+        if( i==5 ){ // 건너뛰고 6부터 다시나옴
+            continue;
+        }
+        document.write(i);
+    }
+}</code></pre>
+                    <p class="desc">
+                        2줄 : for문을 이용해 변수 i의 초기값 1, i의 크기가 10보다 작거나 같을때 까지, 실행 후 i를 1 증가시키는 반복문을 만듭니다.<br>
+                        3줄 : if문을 이용해 i의 값이 5라면,<br>
+                        4줄 : continue문을 이용해 i값이 5라면 값을 출력하지 않고 바로 다음 반복문으로 넘어갑니다.<br>
+                        6줄 : document.write()를 이용해 i의 값을 화면에 출력합니다.
+                    </p>
+                    <div class="result">
+                        <details>
+                            <summary>결과 확인하기</summary>
+                            <div>
+                                <script>
+                                    {
+                                        for(let i=1; i<=10; i++){
+                                            
+                                            if( i==5 ){ // 건너뛰고 6부터 다시나옴
+                                                continue;
+                                            }
+                                            document.write(i, "<br>");
+                                        }
+                                    }
+                                </script>
+                            </div>
+                        </details>
+                    </div>
+                </div>
+                <!-- //sample10 -->
+            </div>
+            <!-- //main__smaple -->
+        </main>
+        <!-- //main -->
+
+        <footer id="footer">
+            <a href="mailto:97.eugene.s@gmail.com">97.eugene.s@gmail.com</a>
+        </footer>
+        <!-- //footer -->
+    </div>
+
+    <!-- //script -->
+    <script src="../assets/js/prism.js"></script>
+
+    <script>
+    </script>
+</body>
+
+</html>

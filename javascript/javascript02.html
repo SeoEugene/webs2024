@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>데이터 불러오기</title>
+
+    <link rel="stylesheet" href="https://webfontworld.github.io/gmarket/GmarketSans.css">
+    <link rel="stylesheet" href="https://websfont.github.io/nanumSquareNeo/nanumSquareNeo.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="../assets/css/prism.css">
+</head>
+
+<body>
+    <div id="wrap">
+        <header id="header">
+            <h1><a href="index.html">javascript</a></h1>
+            <nav>
+                <ul>
+                    <li><a href="javascript01.html">데이터 저장하기</a></li>
+                    <li class="active"><a href="javascript02.html">데이터 불러오기</a></li>
+                    <li><a href="javascript03.html">데이터 실행하기</a></li>
+                    <li><a href="javascript04.html">데이터 제어하기</a></li>
+                </ul>
+                <ul>
+                    <li><a href="javascript05.html">문자열 객체</a></li>
+                    <li><a href="javascript06.html">배열 객체</a></li>
+                    <li><a href="javascript07.html">수학 객체</a></li>
+                    <li><a href="javascript08.html">브라우저 객체</a></li>
+                    <li><a href="javascript09.html">요소 객체</a></li>
+                    <li><a href="javascript10.html">이벤트 객체</a></li>
+                </ul>
+                <ul>
+                    <li><a href="javascript11.html">데이터 효과</a></li>
+                    <li><a href="javascript12.html">퀴즈 효과</a></li>
+                    <li><a href="javascript13.html">마우스 효과</a></li>
+                    <li><a href="javascript14.html">슬라이드 효과</a></li>
+                </ul>
+            </nav>
+        </header>
+        <!-- //header -->
+    
+
+        <main id="main">
+            <div class="main__menu">
+                <ul>
+                    <li><a href="#sample1">01. 변수 : 데이터 불러오기</a></li>
+                    <li><a href="#sample2">02. 상수 : 데이터 불러오기</a></li>
+                    <li><a href="#sample3">03. 배열 : 데이터 불러오기</a></li>
+                    <li><a href="#sample4">04. 배열 : 데이터 불러오기 + 갯수</a></li>
+                    <li><a href="#sample5">05. 배열 : 데이터 불러오기 : for()문</a></li>
+                    <li><a href="#sample7">06. 배열 : 데이터 불러오기 : forEach()</a></li>
+                    <li><a href="#sample8">07. 배열 : 데이터 불러오기 : for of</a></li>
+                    <li><a href="#sample9">08. 배열 : 데이터 불러오기 : for in</a></li>
+                    <li><a href="#sample10">9. 배열 : 데이터 불러오기 : map()</a></li>
+                    <li><a href="#sample10">10. 배열 : 데이터 불러오기 : filter()</a></li>
+                    <li><a href="#sample11">11. 배열 : 데이터 불러오기 : 배열 펼침 연산자</a></li>
+                    <li><a href="#sample12">12. 배열 : 데이터 불러오기 : 배열 구조 분해 할당</a></li>
+                    <li><a href="#sample13">13. 배열 : 데이터 불러오기</a></li>
+                    <li><a href="#sample14">14. 배열 : 데이터 불러오기 : Object.key()</a></li>
+                    <li><a href="#sample15">15. 배열 : 데이터 불러오기 : Object.values()</a></li>
+                    <li><a href="#sample16">16. 배열 : 데이터 불러오기 : Object.entries()</a></li>
+                    <li><a href="#sample17">17. 배열 : 데이터 불러오기 : hasOwnProperty()</a></li>
+                    <li><a href="#sample18">18. 배열 : 데이터 불러오기 : for in</a></li>
+                    <li><a href="#sample19">19. 배열 : 데이터 불러오기 : 배열 펼침 연산자</a></li>
+                    <li><a href="#sample20">20. 배열 : 데이터 불러오기 : 배열 구조 분해 할당</a></li>
+                </ul>
+            </div>
+            <!-- //main_menu -->
+
+            <div class="main__sample">
+                <div id="sample01" class="sample">
+                    <h3>01. 변수 : 데이터 불러오기</h3>
+                    <p>
+                        let을 이용해 변수에 값를 저장하고 불러옵니다.
+                    </p>
+<pre class="line-numbers"><code class="language-js">{
+    let x = 100, y = 200, z = "javascript";
+    console.log(x, y, z);
+}</code></pre>
+                    <p class="desc">
+                        2줄 : 변수 x, y, z에 각각 100, 200, "javascript"을 넣어줍니다.<br>
+                        3줄 : console.log()를 이용해 변수 x, y, z를 한꺼번에 출력합니다.
+                    </p>
+                    <div class="result">
+                        <details>
+                            <summary>결과 확인하기</summary>
+                            <div>
+                                <script>
+                                    {
+                                        let x = 100, y = 200, z = "javascript";
+                                        document.write(x,"<br>", y,"<br>", z);
+                                    }
+                                </script>
+                            </div>
+                        </details>
+                    </div>
+                </div>
+                <!-- //sample01 -->
+
+                <div id="sample02" class="sample">
+                    <h3>02. 상수 : 데이터 불러오기</h3>
+                    <p>
+                        const를 이용해 상수에 값을 저장하고 불러옵니다.
+                    </p>
+<pre class="line-numbers"><code class="language-js">{
+    const x = 100, y = 200, z = "javascript";
+    console.log(x, y, z);
+}
+</code></pre>
+                    <p class="desc">
+                        2줄 : 상수 x, y, z에 각각 100, 200, "javascript"을 넣어줍니다.<br>
+                        3줄 : console.log()를 이용해 상수 x, y, z를 한꺼번에 출력합니다.
+                    </p>
+                    <div class="result">
+                        <details>
+                            <summary>결과 확인하기</summary>
+                            <div>
+                                <script>
+                                    {
+                                        const x = 100, y = 200, z = "javascript";
+                                        document.write(x, "<br>", y, "<br>", z);
+                                    }
+                                </script>
+                            </div>
+                        </details>
+                    </div>
+                </div>
+                <!-- //sample02 -->
+
+                <div id="sample03" class="sample">
+                    <h3>03. 배열 : 데이터 불러오기</h3>
+                    <p>
+                        상수 배열을 초기값넣어 선언한 후 배열 값을 불러옵니다.
+                    </p>
+<pre class="line-numbers"><code class="language-js">{
+    const arr = [100, 200, "javascript"];
+    console.log(arr[0], arr[1], arr[2]);
+}</code></pre>
+                    <p class="desc">
+                        2줄 : 상수 배열에 차례대로 100, 200, "javascript"을 넣어줍니다.<br>
+                        3줄 : console.log()를 이용해 arr[0], arr[1], arr[2]를 한꺼번에 출력합니다.
+                    </p>
+                    <div class="result">
+                        <details>
+                            <summary>결과 확인하기</summary>
+                            <div>
+                                <script>
+                                    {
+                                        const arr = [100, 200, "javascript"];
+                                        document.write(arr[0], "<br>", arr[1], "<br>", arr[2]);
+                                    }
+                                </script>
+                            </div>
+                        </details>
+                    </div>
+                </div>
+                <!-- //sample03 -->
+
+                <div id="sample04" class="sample">
+                    <h3>04. 배열 : 데이터 갯수 불러오기</h3>
+                    <p>
+                        배열에 저장되어있는 값의 갯수(길이)를 출력합니다.
+                    </p>
+<pre class="line-numbers"><code class="language-js">{
+    const arr = [100, 200, "javascript"];
+    console.log(arr.length);
+}</code></pre>
+                    <p class="desc">
+                        2줄 : 상수 배열에 차례대로 100, 200, "javascript"을 넣어줍니다.<br>
+                        3줄 : console.log()를 이용해 arr[0], arr[1], arr[2]를 한꺼번에 출력합니다.
+                    </p>
+                    <div class="result">
+                        <details>
+                            <summary>결과 확인하기</summary>
+                            <div>
+                                <script>
+                                    {
+                                        const arr = [100, 200, "javascript"];
+                                        document.write(arr.length);
+                                    }
+                                </script>
+                            </div>
+                        </details>
+                    </div>
+                </div>
+                <!-- //sample04 -->
+
+                <div id="sample05" class="sample">
+                    <h3>05. 배열 : 데이터 불러오기 : for()</h3>
+                    <p>
+                        배열의 값을 설정하고 for()문을 이용해 데이터를 모두 출력합니다.
+                    </p>
+<pre class="line-numbers"><code class="language-js">{
+    const arr = [100, 200, 300, 400, 500, 600, 700, 800, 900];
+
+    console.log(...arr);
+    console.log(arr[0]);
+    console.log(arr[1]);
+    console.log(arr[2]);
+    console.log(arr[3]);
+    console.log(arr[4]);
+    console.log(arr[5]);
+    console.log(arr[6]);
+    console.log(arr[7]);
+    console.log(arr[8]);
+
+    for (let i = 0; i &lt;= 8; i++) {
+        console.log(arr[i]);
+    };
+}</code></pre>
+                    <p class="desc">
+                        2줄 : 상수 배열 arr에 100, 200, 300, 400, 500, 600, 700, 800, 900의 값을 차례대로 넣어줍니다.<br>
+                        4줄 : console.log()를 이용해 펼침연산자로 arr배열의 값들을 출력합니다.<br>
+                        5줄 : console.log()를 이용해 arr[0]의 값을 출력합니다.<br>
+                        6줄 : console.log()를 이용해 arr[1]의 값을 출력합니다.<br>
+                        7줄 : console.log()를 이용해 arr[2]의 값을 출력합니다.<br>
+                        8줄 : console.log()를 이용해 arr[3]의 값을 출력합니다.<br>
+                        9줄 : console.log()를 이용해 arr[4]의 값을 출력합니다.<br>
+                        10줄 : console.log()를 이용해 arr[5]의 값을 출력합니다.<br>
+                        11줄 : console.log()를 이용해 arr[6]의 값을 출력합니다.<br>
+                        12줄 : console.log()를 이용해 arr[7]의 값을 출력합니다.<br>
+                        13줄 : console.log()를 이용해 arr[8]의 값을 출력합니다.<br>
+                        15줄 : for()문을 이용해 변수 i의 초기값 0, 8보다 작거나 같을 때까지의 조건, 실행 후 i에 1추가하는 명령을 입력합니다.<br>
+                        16줄 : console.log()을 이용해 배열 arr의 모든 값을 출력합니다.
+                    </p>
+                    <div class="result">
+                        <details>
+                            <summary>결과 확인하기</summary>
+                            <div>
+                                <script>
+                                    {
+                                        const arr = [100, 200, 300, 400, 500, 600, 700, 800, 900];
+
+                                        document.write(...arr);
+                                        document.write(arr[0]);
+                                        document.write(arr[1]);
+                                        document.write(arr[2]);
+                                        document.write(arr[3]);
+                                        document.write(arr[4]);
+                                        document.write(arr[5]);
+                                        document.write(arr[6]);
+                                        document.write(arr[7]);
+                                        document.write(arr[8]);
+
+                                        for (let i = 0; i <= 8; i++) {
+                                            document.write(arr[i],"<br>");
+                                        };
+                                    }
+                                </script>
+                            </div>
+                        </details>
+                    </div>
+                </div>
+                <!-- //sample05 -->
+
+                <div id="sample06" class="sample">
+                    <h3>06. 배열 : 데이터 불러오기 : forEach()</h3>
+                    <p>
+                        JavaScript에서 배열(Array) 객체에서 사용할 수 있는 배열 메서드 중 하나입니다.<br>
+                        이 메서드는 배열의 각 요소에 대해 지정된 함수를 실행하며, 각 요소를 순서대로 처리합니다. 
+                    </p>
+<pre class="line-numbers"><code class="language-js">{
+    const arr = [100, 200, 300, 400, 500, 600, 700, 800, 900];
+
+    arr.forEach(function (el) { //callback함수 : 함수안에 함수
+        console.log(el);
+    });
+
+    arr.forEach(function (el, index) {
+        console.log(index);
+    });
+
+    arr.forEach(function (el, index, array) {
+        console.log(array);
+    });
+
+    //약식 표현
+    arr.forEach((el) => {
+        console.log(el);
+    });
+
+    arr.forEach(el => {
+        console.log(el);
+    });
+
+    arr.forEach(el => console.log(el));
+}</code></pre>
+                    <p class="desc">
+                        2줄 : 상수 배열 arr에 100, 200 ,300 ,400 ,500, 600, 700, 800, 900값을 차례대로 넣어줍니다.<br>
+                        4줄 : forEach()문을 이용해 함수안에 함수가 들어가는 콜백함수를 실현합니다. 매개변수로 el이 들어갑니다.<br>
+                        5줄 : console.log()를 이용해 arr에서 받은 매개변수 el의 값을 차례대로 출력합니다.<br>
+                        8줄 : forEach()문을 이용해 함수안에 함수가 들어가는 콜백함수를 실현합니다. 매개변수로 el과 index가 들어갑니다.<br>
+                        9줄 : console.lof()를 이용해 arr에서 받은 매개변수 index의 값을 차례대로 출력합니다.<br>
+                        12줄 : forEach()문을 이용해 함수안에 함수가 들어가는 콜백함수를 실현합니다. 매개변수로 el, index, array가 들어갑니다.<br>
+                        13줄 : console.lof()를 이용해 arr에서 받은 매개변수 array의 값을 차례대로 출력합니다.<br>
+                        주의) array의 모든 값이 array의 길이만큼 반복됩니다.<br>
+                        17줄 : forEach문의 콜백함수를 화살표함수로 약식표현합니다.<br>
+                        18줄 : console.log()를 이용해 arr에서 받은 매개변수 el의 값을 차례대로 출력합니다.<br>
+                        21줄 : forEach문의 콜백함수를 화살표함수로 약식표현했으며 매개변수의 괄호를 없앴습니다.<br>
+                        22줄 : console.log()를 이용해 arr에서 받은 매개변수 el의 값을 차례대로 출력합니다.<br>
+                        25줄 : forEach문의 콜백함수를 화살표함수로 약식표현했으며 매개변수의 괄호, 함수시작 중괄호를 모두 없애 한줄로 간단히 표현하였습니다.<br>
+                    </p>
+                    <div class="result">
+                        <details>
+                            <summary>결과 확인하기</summary>
+                            <div>
+                                <script>
+                                    {
+                                        const arr = [100, 200, 300, 400, 500, 600, 700, 800, 900];
+
+                                        arr.forEach(function (el) { //callback함수 : 함수안에 함수
+                                            document.write(el, "<br>");
+                                        });
+
+                                        arr.forEach(function (el, index) {
+                                            document.write(index, "<br>");
+                                        });
+
+                                        arr.forEach(function (el, index, array) {
+                                            document.write(array, "<br>");
+                                        });
+
+                                        //약식 표현
+                                        arr.forEach((el) => {
+                                            document.write(el, "<br>");
+                                        });
+
+                                        arr.forEach(el => {
+                                            document.write(el, "<br>");
+                                        });
+
+                                        arr.forEach(el => document.write(el, "<br>"));
+                                    }
+                                </script>
+                            </div>
+                        </details>
+                    </div>
+                </div>
+                <!-- //sample06 -->
+
+                <div id="sample07" class="sample">
+                    <h3>07. 배열 : 데이터 불러오기 : for of</h3>
+                    <p>
+                        반복문 중 하나로, 주로 반복 가능한(iterable) 객체를 순회(iterate)할 때 사용됩니다. 
+                    </p>
+<pre class="line-numbers"><code class="language-js">{
+    const arr = [100, 200, 300, 400, 500, 600, 700, 800, 900];
+
+    for (const element of arr) {
+        console.log(element);  //배열이 나온다
+    };
+}</code></pre>
+                    <p class="desc">
+                        2줄 : 상수 배열 arr에 100, 200 ,300 ,400 ,500, 600, 700, 800, 900 값을 차례대로 넣어줍니다.<br>
+                        4줄 : 상수 element을 하나 만들고 of 명령으로 상수 arr에 해당하는 값을 element에 차례대로 넣어줍니다.<br>
+                        5줄 : console.log()문으로 매개변수 element에 해당하는 값을 출력한다.
+                    </p>
+                    <div class="result">
+                        <details>
+                            <summary>결과 확인하기</summary>
+                            <div>
+                                <script>
+                                    {
+                                        const arr = [100, 200, 300, 400, 500, 600, 700, 800, 900];
+
+                                        for (const element of arr) {
+                                            document.write(element, "<br>");  //배열이 나온다
+                                        };
+                                    }
+                                </script>
+                            </div>
+                        </details>
+                    </div>
+                </div>
+                <!-- //sample07 -->
+
+                <div id="sample08" class="sample">
+                    <h3>08. 배열 : 데이터 불러오기 : for in</h3>
+                    <p>
+                        객체의 속성을 열거할 때 주로 사용됩니다. 
+                    </p>
+<pre class="line-numbers"><code class="language-js">{
+    const arr = [100, 200, 300, 400, 500, 600, 700, 800, 900];
+
+    for (let element in arr) {
+        console.log(element);  //index가 나온다
+    };
+
+    for (let element in arr) {
+        console.log(arr[element]);  //배열이 나온다
+    };
+}</code></pre>
+                    <p class="desc">
+                        2줄 : 상수 배열 arr에 100, 200 ,300 ,400 ,500, 600, 700, 800, 900 값을 차례대로 넣어줍니다.<br>
+                        4줄 : 상수 element을 하나 만들고 in 명령으로 상수 arr에 해당하는 값을 element에 차례대로 넣어줍니다.<br>
+                        5줄 : console.log()문으로 element에 해당하는 값을 출력한다.<br>
+                        for in으로 가져온 데이터는 index 값이 반환되어 나온다.<br>
+                        8줄 : 상수 element을 하나 만들고 in 명령으로 상수 arr에 해당하는 값을 element에 차례대로 넣어줍니다.<br>
+                        9줄 : console.log()문으로 arr[element]에 해당하는 값을 출력한다.<br>
+                        arr에서 가져온 값 element은 인덱스이므로 arr의 배열값을 보고싶다면 arr[element]로 볼 수 있다<br>
+                    </p>
+                    <div class="result">
+                        <details>
+                            <summary>결과 확인하기</summary>
+                            <div>
+                                <script>
+                                    {
+                                        const arr = [100, 200, 300, 400, 500, 600, 700, 800, 900];
+
+                                        for (let element in arr) {
+                                            document.write(element, "<br>");  //index가 나온다
+                                        };
+
+                                        for (let element in arr) {
+                                            document.write(arr[element], "<br>");  //배열이 나온다
+                                        };
+                                    }
+                                </script>
+                            </div>
+                        </details>
+                    </div>
+                </div>
+                <!-- //sample08 -->
+            </div>
+            <!-- //main__sample -->
+
+
+        </main>
+        <!-- //main -->
+
+        <footer id="footer">
+            <a href="mailto:97.eugene.s@gmail.com">97.eugene.s@gmail.com</a>
+        </footer>
+        <!-- //footer -->
+    </div>
+
+    <!-- script -->
+    <script src="../assets/js/prism.js"></script>
+
+    <script>
+        // 01. 변수 : 데이터 불러오기
+        {
+            let x = 100, y = 200, z = "javascript";
+            console.log("01 : " + x, y, z);
+        }
+        
+        // 02. 상수 : 데이터 불러오기
+        {
+            const x = 100, y = 200, z = "javascript";
+
+            console.log("02 : " + x, y, z);
+        }
+        
+        // 03. 배열 : 데이터 불러오기
+        {
+            const arr = [100, 200, "javascript"];
+
+            console.log("03 : " + arr[0], arr[1], arr[2]);
+        }
+
+        // 04. 배열 : 데이터 갯수 불러오기
+        {
+            const arr = [100, 200, ["javascript", "jquery"]];
+
+            console.log("04 : " + arr.length);
+        }
+
+        // 05. 배열 : 데이터 불러오기 : for()
+        {
+            const arr = [100, 200, "javascript"];
+
+            for(let i=0; i<arr.length; i++){
+                console.log("05 : " + arr[i]);
+            };
+        }
+        
+        // 06. 배열 : 데이터 불러오기 : forEach()
+        {
+            const arr = [100, 200, "javascript"];
+
+            arr.forEach((el, index, array) => {
+                console.log("06 : " + el + " : " + index + " : " + array);
+            });
+        }
+
+        // 07. 배열 : 데이터 불러오기 : for of
+        {
+            const arr = [100, 200, "javascript"];
+
+            for(let el of arr){
+                console.log("07 : " + el);
+            }
+        }
+
+        // 08. 배열 : 데이터 불러오기 : for in
+        {
+            const arr = [100, 200, "javascript"];
+
+            for(let el in arr){
+                console.log("08 : " + el + " : " + arr[el]);
+            }
+        }
+
+        // 09. 배열 : 데이터 불러오기 : map()
+        {   
+            const arr = [100, 200, "javascript"];
+
+            arr.map(function(el, index, array){
+                console.log("09 : " + el + " : " + index + " : " + array);
+            });
+
+            const arrNum = arr.map((el) => {
+                return el;
+            });
+            console.log("09 : " + arrNum);
+        }
+
+        // 10. 배열 : 데이터 불러오기 : filter()
+        {
+            const arr = [100, 200, "javascript"];
+
+            arr.filter(function(el, index, array){
+                console.log("10 : " + el + " : " + index + " : " + array);
+            });
+            
+            const arrNum = arr.filter((el) => {
+                return el > 150;
+            });
+            console.log(arrNum);
+
+            const arrNum1 = arr.filter(el => {
+                return el > 150;
+            });
+            console.log(arrNum1);
+
+            const arrNum2 = arr.filter (el => el > 150);
+            console.log(arrNum2);
+
+            const arrNum3 = arr.filter (el => el > 150);
+            console.log(arrNum3);
+        }
+
+        // 11. 배열 : 데이터 불러오기 : 배열 펼침 연산자
+        {
+            //배열 펼침 연산
+            const arr1 = [100, 200, 300];
+            const arr2 = [400, 500, 600];
+            console.log(arr1);            //100, 200, 300
+            console.log(...arr1);         //100 200 300
+            console.log(arr1 + arr2);     //100, 200, 300400, 500, 600 
+            console.log(...arr1, ...arr2); //100 200 300 400 500 600 --> concat()
+            console.log(...arr1, 400);     // 100 200 300 400 --> push()
+            console.log(...arr1.slice(0, 2));  //100 200 300 400 --> slice()
+
+            // 함수 호출시 인수 전달
+            function addNum(a, b, c){
+                return a + b + c;
+            }
+            const num = [100, 200, 300];
+
+            addNum(num[0], num[1], num[2]);
+            const sum = addNum(...num);
+            console.log(sum);
+        }
+
+        // 12. 배열 : 데이터 불러오기 : 배열 구조 분해 할당
+        {
+            // 단일 배열에서 구조 분해 할당
+            const [a, b, c] = [100, 200, 300];
+
+            console.log(a);
+            console.log(b);
+            console.log(c);
+
+            // 기존 배열에서 구조 분해 할당
+            const arr = [100, 200, 300];
+            const [x, y, z] = arr;
+
+            console.log(x);
+            console.log(y);
+            console.log(z);
+
+            // 나머지 요소 추출 분해 할당
+            const num = [100, 200, 300, 400, 500];
+            const [num1, num2, ...rest] = num;
+
+            console.log(num1);
+            console.log(num2);
+            console.log(rest);
+            console.log(...rest);
+        }
+    </script>
+</body>
+
+</html>
