@@ -465,7 +465,7 @@
                 <div id="sample10" class="sample">
                     <h3>10. 배열 : 데이터 불러오기 : filter()</h3>
                     <p>
-                        
+                        filter() 함수는 배열의 요소를 조건에 따라 필터링하여 새로운 배열을 생성하는 메서드입니다.               
                     </p>
 <pre class="line-numbers"><code class="language-js">{
     const arr = [100, 200, 300, 400, 500, 600, 700, 800, 900];
@@ -475,6 +475,9 @@
     });
 }</code></pre>
                     <p class="desc">
+                        2줄 : 상수 배열 arr에 100, 200, 300, 400, 500, 600, 700, 800, 900 의 값을 차례대로 넣는다.<br>
+                        4줄 : arr배열값을 filter()메서드를 이용해 첫번째 매개변수로 el을 줍니다.<br>
+                        5줄 : console.log()를 이용해 arr의 값을 받아온 매개변수 el의 값을 출력합니다.
                     </p>
                     <div class="result">
                         <details>
@@ -498,16 +501,27 @@
                 <div id="sample11" class="sample">
                     <h3>11. 배열 : 데이터 불러오기 : 배열 펼침 연산자</h3>
                     <p>
-                        
+                        배열 펼침 연산자 (spread operator)는 배열 요소나 객체 속성을 쉽게 확장하거나 병합할 수 있는 유용한 기능입니다. 
                     </p>
 <pre class="line-numbers"><code class="language-js">{
-    const arr = [100, 200, 300, 400, 500, 600, 700, 800, 900];
-                                        
-    arr.filter((el) =>{
-        console.log(el);
-    });
+    const arr1 = [1, 2, 3];
+    const arr2 = [4, 5, 6];
+    const arr3 = [...arr1, ...arr2];
+
+    console.log(...arr1);
+    console.log(...arr2);
+    console.log(arr3);
+    console.log(...arr3);
 }</code></pre>
                     <p class="desc">
+                        2줄 : 상수배열 arr1에 값 1,2,3을 배열로 저장한다.<br>
+                        4줄 : 상수배열 arr2에 값 4,5,6을 배열로 저장한다.<br>
+                        5줄 : 상수배열 arr2에 값 4,5,6을 배열로 저장한다.<br>
+                        6줄 : console.log()를 이용해 arr1의 배열 펼침 연산자로 ...arr1의 값을 출력합니다.<br>
+                        7줄 : console.log()를 이용해 arr2의 배열 펼침 연산자로 ...arr2의 값을 출력합니다.<br>
+                        7줄 : console.log()를 이용해 arr3의 값을 출력합니다. 안의 내용은 arr1, arr2의 각 배열 펼침연산자가 들어갔지만 arr3은 펼침연산자의 결과가 아닌 배열결과가 나옵니다.<br>
+                        8줄 : console.log()를 이용해 arr3의 배열 펼침 연산자로 ...arr3의 값을 출력합니다.<br>
+
                     </p>
                     <div class="result">
                         <details>
@@ -515,11 +529,15 @@
                             <div>
                                 <script>
                                     {
-                                        const arr = [100, 200, 300, 400, 500, 600, 700, 800, 900];
+                                        const arr1 = [1, 2, 3];
+                                        const arr2 = [4, 5, 6];
+                                        const arr3 = [...arr1, ...arr2];
+                                    
+                                        document.write(...arr1, "<br>");
+                                        document.write(...arr2, "<br>");
+                                        document.write(arr3, "<br>");
+                                        document.write(...arr3);
 
-                                        arr.filter((el) =>{
-                                            document.write(el, "<br>");
-                                        });
                                     }
                                 </script>
                             </div>
@@ -531,16 +549,25 @@
                 <div id="sample12" class="sample">
                     <h3>12. 배열 : 데이터 불러오기 : 배열 구조 분해 할당</h3>
                     <p>
-                        
+                        배열 구조 분해 할당을 통해 배열을 배열 방식이 아닌 값만 표시하는 예제입니다.
                     </p>
 <pre class="line-numbers"><code class="language-js">{
-    const arr = [100, 200, 300, 400, 500, 600, 700, 800, 900];
-                                        
-    arr.filter((el) =>{
-        console.log(el);
-    });
+    const arr = [1, [2, 3], 4];
+
+    const[a, [b, c], d] = arr;
+
+    console.log(a);
+    console.log(b);
+    console.log(c);
+    console.log(d);
 }</code></pre>
                     <p class="desc">
+                        2줄 : 상수 배열 arr에 1, [2,3], 4 구조를 가진 배열값을 입력한다.<br>
+                        4줄 : arr배열을 다시 구조 분해 할당하는데 이름을 각각 a, b, c, d로 할당한다.<br>
+                        6줄 : console.log()로 a값을 출력합니다.<br>
+                        7줄 : console.log()로 b값을 출력합니다.<br>
+                        8줄 : console.log()로 c값을 출력합니다.<br>
+                        9줄 : console.log()로 d값을 출력합니다.<br>
                     </p>
                     <div class="result">
                         <details>
@@ -548,11 +575,14 @@
                             <div>
                                 <script>
                                     {
-                                        const arr = [100, 200, 300, 400, 500, 600, 700, 800, 900];
+                                        const arr = [1, [2, 3], 4];
 
-                                        arr.filter((el) =>{
-                                            document.write(el, "<br>");
-                                        });
+                                        const[a, [b, c], d] = arr;
+
+                                        document.write(a);
+                                        document.write(b);
+                                        document.write(c);
+                                        document.write(d);
                                     }
                                 </script>
                             </div>
@@ -564,7 +594,7 @@
                 <div id="sample13" class="sample">
                     <h3>13. 객체 : 데이터 불러오기</h3>
                     <p>
-                        
+                        객체의 데이터를 불러오는 예제입니다.
                     </p>
 <pre class="line-numbers"><code class="language-js">{
     const Obj = {
@@ -583,6 +613,7 @@
     console.log(Obj["c"]);
 }</code></pre>
                     <p class="desc">
+                        2줄 상수 
                     </p>
                     <div class="result">
                         <details>
