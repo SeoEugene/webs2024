@@ -76,7 +76,14 @@
         display: block;
     }
 }
-
+@media (max-width: 600px){
+    .header__inner {
+        height: 60px;
+    }
+    .header__logo {
+        
+    }
+}
 /* slider */
 .slider_inner {
     background-color: #A994FF;
