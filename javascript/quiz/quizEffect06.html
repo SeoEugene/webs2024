@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>퀴즈이펙트06</title>
+    <link rel="stylesheet" href="assets/css/quiz.css">
+</head>
+<body>
+    <header id="header">
+        <h1>
+            <a href="../index.html">Quiz</a>
+        </h1>
+        <nav>
+            <ul>
+                <li><a href="quizEffect01.html">1</a></li>
+                <li><a href="quizEffect02.html">2</a></li>
+                <li><a href="quizEffect03.html">3</a></li>
+                <li><a href="quizEffect04.html">4</a></li>
+                <li class="active"><a href="quizEffect05.html">5</a></li>
+                <li><a href="quizEffect06.html">6</a></li>
+                <li><a href="quizEffect07.html">7</a></li>
+                <li><a href="quizEffect98.html">98</a></li>
+                <li><a href="quizEffect99.html">99</a></li>
+                <li><a href="quizEffect100.html">100</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- //header -->
+
+    <main id="main">
+        <div class="quiz__wrap">
+            <div class="quiz">
+                <div class="quiz__header">2023년 10월 정보처리기능사 필기</div>
+                <!-- //quiz__header -->
+
+                <div class="quiz__main">
+                    <div class="quiz__question">01. 요구사항 분석 시에 필요한 기술로 가장 거리가 먼 것은?</div>
+                    <!-- //quiz__question -->
+                    <div class="quiz__choice">
+                        <div id="choice1" class="choice correct">청취과 인터뷰 질문 기술</div>
+                        <div id="choice2" class="choice incorrect">분석과 중재기술</div>
+                        <div id="choice3" class="choice">설계 및 코딩 기술</div>
+                        <div id="choice4" class="choice">관찰 및 모델 작성 기술</div>
+                        <!-- <label for="choice1">
+                            <input type="radio" id="choice1" name="choice" value="1">
+                            <span>청취과 인터뷰 질문 기술</span>
+                        </label>
+                        <label for="choice2">
+                            <input type="radio" id="choice2" name="choice" value="2">
+                            <span>분석과 중재기술</span>
+                        </label>
+                        <label for="choice3">
+                            <input type="radio" id="choice3" name="choice" value="3">
+                            <span>설계 및 코딩 기술</span>
+                        </label>
+                        <label for="choice4">
+                            <input type="radio" id="choice4" name="choice" value="4">
+                            <span>관찰 및 모델 작성 기술</span>
+                        </label> -->
+                    </div>
+                    <div class="quiz__answer">3</div>
+                    <div class="quiz__desc">관찰 및 모델 작성 기술</div>
+                </div>
+                <!-- //quiz__main -->
+
+                <div class="quiz__footer">
+                    <div class="quiz__indicator">
+                        <span class="correct"></span>
+                        <span class="incorrect"></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                    <button class="quiz__confirm">정답 확인하기</button>
+                </div>
+                <!-- //quiz__footer -->
+            </div>
+        </div>
+    </main>
+    <!-- //main -->
+
+    <footer id="footer">
+        <a href="mailto:97.eugene.s@gmail.com">97.eugene.s@gmail.com</a>
+    </footer>
+    <!-- //footer -->
+
+    <script>
+        // 선택자
+        const quizWrap = document.querySelector(".quiz__wrap");
+
+        
+        // 문제 정보
+         const quizInfo = [
+            {
+                infoDate: "2006년 5회",
+                infoType: "정보처리 기능사",
+                infoQuestion: "이항(binary) 연산에 해당하는 것은?",
+                infoChoice: ["COMPLEMENT", "AND", "ROTATE", "SHIFT"],
+                infoAnswer: "2",
+                infoDesc: "단항연산 : ROTATE, SHIFT, MOVE, NOT(COMPLEMENT)"
+            }, {
+                infoDate: "2006년 5회",
+                infoType: "정보처리 기능사",
+                infoQuestion: "프로그램이 컴퓨터의 기종에 관계없이 수행될 수 있는 성질을 의미하는 것은?",
+                infoChoice: ["가용성", "신뢰성", "호환성", "안전성"], 
+                infoAnswer: "3",
+                infoDesc: "컴퓨터의 기종에 관계없이 동작하므로 호환성입니다. 호환성이란 까스활명수, 까스명수, 베아제등 이름은 틀리지만 소화제의 기능을 하는것처럼 기종에 관계없이 동작할수 있는 것들을 말합니다."
+            }, {
+                infoDate: "2006년 5회",
+                infoType: "정보처리 기능사",
+                infoQuestion: "제어장치가 앞의 명령 실행을 완료한 후, 다음에 실행 할 명령을 기억장치로부터 가져오는 동작을 완료할 때까지의 주기를 무엇이라고 하는가?",
+                infoChoice: ["fetch cycle", "transfer cycle", "search time", "run time"],
+                infoAnswer: "1",
+                infoDesc: "명령어를 가지고 오는것을 fetch cycle 이라고 합니다."
+            }
+        ];
+
+
+    </script>
+</body>
+</html>
