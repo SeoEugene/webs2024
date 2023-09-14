@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>퀴즈이펙트06</title>
+    <link rel="stylesheet" href="assets/css/quiz.css">
+</head>
+<body>
+    <header id="header">
+        <h1>
+            <a href="../index.html">Quiz</a>
+        </h1>
+        <nav>
+            <ul>
+                <li><a href="quizEffect01.html">1</a></li>
+                <li><a href="quizEffect02.html">2</a></li>
+                <li><a href="quizEffect03.html">3</a></li>
+                <li><a href="quizEffect04.html">4</a></li>
+                <li><a href="quizEffect05.html">5</a></li>
+                <li class="active"><a href="quizEffect06.html">6</a></li>
+                <li><a href="quizEffect07.html">7</a></li>
+                <!-- <li><a href="quizEffect98.html">98</a></li>
+                <li><a href="quizEffect99.html">99</a></li>
+                <li><a href="quizEffect100.html">100</a></li> -->
+            </ul>
+        </nav>
+    </header>
+    <!-- //header -->
+
+    <main id="main">
+        <div class="quiz__wrap">
+            <div class="quiz">
+                <div class="quiz__header"></div>
+                <!-- //quiz__header -->
+
+                <div class="quiz__main">
+                    <div class="quiz__question"></div>
+                    <div class="quiz__img">
+                        <img>
+                    </div>
+                    <div class="quiz__choice">
+                        <div id="choice1" class="choice"></div>
+                        <div id="choice2" class="choice"></div>
+                        <div id="choice3" class="choice"></div>
+                        <div id="choice4" class="choice"></div>
+                    </div>
+                    <div class="quiz__answer"></div>
+                    <div class="quiz__desc"></div>
+                </div>
+                <!-- //quiz__main -->
+
+                <div class="quiz__footer">
+                    <div class="quiz__indicator"></div>
+                    <button class="quiz__confirm">정답 확인하기</button>
+                </div>
+                <!-- //quiz__footer -->
+            </div>
+        </div>
+    </main>
+    <!-- //main -->
+
+    <footer id="footer">s
+        <a href="mailto:97.eugene.s@gmail.com">97.eugene.s@gmail.com</a>
+    </footer>
+    <!-- //footer -->
+
+    <script>
+        // 선택자
+        const quizWrap = document.querySelector(".quiz__wrap");
+
+        //문제 데이터
+        const quizInfo = [{}];
+
+        // 2. 문제 가져오기
+        const fetchQuiz = () => {
+            fetch("https://seoeugene.github.io/webs2024/json/gineungsaWD2016_04.json")
+                .then(res => res.json())
+                .then(items => {
+                    // json에서 값 가져오기
+                    console.log(items[0].question);
+                    console.log(items[0].desc);
+                    // quizInfo 가져온 값 저장
+                    quizInfo[0].question = items[0].question;
+                    quizInfo[0].desc = items[0].desc;
+                    console.log(quizInfo);
+                    console.log(quizInfo[0].question);
+                    console.log(quizInfo[0].desc);
+
+                    updateQuiz();
+                })
+                .catch((error) => console.log(error));    
+        }
+
+        // 3. 문제 출력하기
+        const updateQuiz = () => {
+            let quizWrapTag = `
+                <div class="quiz">
+                    <div class="quiz__header">정보처리 기능사</div>
+                    <div class="quiz__main">
+                        <div class="quiz__question">${quizInfo[0].question}</div>
+                        <div class="quiz__desc">${quizInfo[0].desc}</div>
+                    </div>
+                </div>
+            `;
+
+            quizWrap.innerHTML = quizWrapTag;
+        }
+
+        // 1. 페이지가 로드된 후 실행
+        document.addEventListener("DOMContentLoaded", () => {
+            fetchQuiz();
+        });
+
+
+    </script>
+</body>
+</html>

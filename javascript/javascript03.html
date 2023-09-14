@@ -75,22 +75,21 @@
                 <div id="sample01" class="sample">
                     <h3>01. 함수 : 선언적함수</h3>
                     <p>
-                        함수를 사용하면 특정 작업을 수행하는 코드를 논리적으로 묶어서 호출하고 실행할 수 있습니다.</br>
-                        함수는 자체 스코프 내에서 변수를 선언하고, 매개변수를 통해 입력을 받아 작업을 수행하며, 결과를 반환할 수 있습니다.
+                        선언적 함수는 함수를 선언하는 가장 일반적인 방식입니다.
                     </p>
 <pre class="line-numbers"><code class="language-js">{
     function func() {
-        document.write("실행되었습니다.");
+        document.write("실행되었습니다.1");
     };
     func();           
 }</code></pre>
                     <p class="desc">
-                        함수의 장점 <br>
+                        함수의 장점<br>
                         1. 코드의 재사용성<br>
-                        2. 유지보수 용이<br>
+                        2. 유지보수 용이 <br>
+                        함수를 사용하면 특정 작업을 수행하는 코드를 논리적으로 묶어서 호출하고 실행할 수 있습니다.★<br>
                         <br>
-                        선언적 함수는 함수를 선언하는 가장 일반적인 방식입니다.</br>
-                        함수를 선언할 때 function 키워드를 사용하여 함수의 이름과 매개변수를 지정하고, 중괄호 {} 내부에 함수의 동작을 정의합니다.
+                        중요한 점은 함수를 선언한 후에 실행하려면 실행문을 입력해주어야 합니다.★★★
                     </p>
                     <p class="desc">
                         2줄 : func의 이름을 가진 함수를 선언합니다.<br>
@@ -104,7 +103,7 @@
                                 <script>
                                     {
                                         function func() {
-                                            document.write("실행되었습니다.");
+                                            document.write("실행되었습니다.1");
                                         };
                                         func();
                                     }
@@ -118,19 +117,21 @@
                 <div id="sample02" class="sample">
                     <h3>02. 익명 함수</h3>
                     <p>
-                        익명 함수는 함수의 이름이 없는 함수입니다.</br>
-                        즉, 함수를 정의할 때 이름을 붙이지 않고 함수의 동작을 정의하는 방식입니다.</br>
-                        익명 함수는 주로 다른 함수의 매개변수로 전달하거나, 변수에 할당하여 사용됩니다.
+                        익명 함수는 함수의 이름이 없는 함수입니다.
                     </p>
 <pre class="line-numbers"><code class="language-js">{
+    //익명 함수의 구조
+    //let variableName = function(parameters) {};
+
     const func = function () {
-        console.log("실행되었습니다.");
+        console.log("실행되었습니다.2");
     };
     func();
 }</code></pre>
                     <p class="desc">
                         익명 함수는 이름이 없기 때문에 코드의 가독성을 해치지 않고도 유연한 사용이 가능합니다.</br>
-                        익명 함수 구조 : let variableName = function(parameters) {};
+                        익명 함수는 주로 다른 함수의 매개변수로 전달하거나, 변수에 할당하여 사용됩니다.</br>
+                        매개변수는 함수의 괄호안에 넣어지는 변수입니다.★ 참조) <a href="#sample3">3. 매개변수 함수</a>  <a href="#sample05">5. 매개변수 + 리턴값 함수</a>
                     </p>
                     <p class="desc">
                         2줄 : 상수 func에 함수를 선언합니다.<br>
@@ -144,7 +145,7 @@
                                 <script>
                                     {
                                         const func = function () {
-                                            document.write("실행되었습니다.");
+                                            document.write("실행되었습니다.2");
                                         };
                                         func();
                                     }
@@ -159,18 +160,18 @@
                     <h3>03. 매개변수 함수</h3>
                     <p>
                         매개변수 함수(Parameter Function)란 다른 함수의 매개변수로 전달되어 특정 작업을 수행하는 함수를 말합니다.</br>
-                        주로 콜백 함수로 사용되며, 다른 함수 내에서 호출되거나 실행될 때 필요한 작업을 정의하는 역할을 합니다.<br>
-
-                        <a href="#sample11">함수와 매개변수를 이용한 형태</a>와 같은 예제입니다.
+                        <a href="#sample11">11. 함수와 매개변수를 이용한 형태</a>와 같은 예제입니다.
                     </p>
 <pre class="line-numbers"><code class="language-js">{
-    function func(str) {
+    function func(str) {  // str이 매개변수로 넣어져있다.
         console.log(str);
     };
-    func("실행되었습니다.");
+    func("실행되었습니다.3");  // "실행되었습니다."문자열이 str변수로 들어감★★★
 }</code></pre>
                     <p class="desc">
-                        콜백 함수: 다른 함수의 인자로 전달되어 특정 상황이나 이벤트 발생 시 호출되는 함수입니다.
+                        주로 콜백 함수로 사용되며, 다른 함수 내에서 호출되거나 실행될 때 필요한 작업을 정의하는 역할을 합니다.<br>
+                        <br>
+                        콜백 함수: 다른 함수의 인자로 전달되어 특정 상황이나 이벤트 발생 시 호출되는 함수입니다.★
                     </p>
                     <p class="desc">
                        2줄 : func이름에 매개변수 str을 받는 함수를 선언합니다. <br>
@@ -186,7 +187,7 @@
                                         function func(str) {
                                             document.write(str);
                                         };
-                                        func("실행되었습니다.");
+                                        func("실행되었습니다.3");
                                     }
                                 </script>
                             </div>
@@ -202,14 +203,16 @@
                     </p>
 <pre class="line-numbers"><code class="language-js">{
     function func() {
-        return "실행되었습니다.";
+        return "실행되었습니다.4";   //결과 종료
     };
     console.log(func());
 }</code></pre>
                     <p class="desc">
                         함수의 리턴값을 설정하기 위해 return 키워드를 사용합니다.</br>
-                        return 키워드를 만나면 함수는 즉시 종료되며, 지정된 값이나 표현식을 리턴합니다.</br>
+                        return 키워드를 만나면 함수는 즉시 종료되며, 지정된 값이나 표현식을 리턴합니다.★</br>
                         만약 return문이 없거나 값을 지정하지 않으면 함수는 암묵적으로 undefined 값을 리턴합니다.
+                        <br>
+                        리턴값의 중요한 점은 return값을 반환하는 함수를 출력하려면 console.log()문이나 document.write()와 같은 출력 명령어를 사용하여 출력해주어야 합니다.★★★
                     </p>
                     <p class="desc">
                         2줄 : func()함수를 선언합니다.<br>
@@ -223,7 +226,7 @@
                                 <script>
                                     {
                                         function func() {
-                                            return "실행되었습니다.";
+                                            return "실행되었습니다.4";
                                         };
                                         document.write(func());
                                     }
@@ -243,10 +246,10 @@
     function func(str) {
         return str;
     }
-    console.log(func("실행되었습니다."));
+    console.log(func("실행되었습니다.5"));
 }</code></pre>
                     <p class="desc">
-                        실행문에 매개변수를 넣어 함수가 실행되도록 하는 방법
+                        리턴값과 매개변수가 둘다 있는 함수는 두개 모두의 특성을 가진다.
                     </p>
                     <p class="desc">
                         2줄 : func에 매개변수str을 받는 함수를 선언합니다. <br>
@@ -262,7 +265,7 @@
                                         function func(str) {
                                             return str;
                                         }
-                                        document.write(func("실행되었습니다."));
+                                        document.write(func("실행되었습니다.5"));
                                     }
                                 </script>
                             </div>
@@ -274,23 +277,25 @@
                 <div id="sample06" class="sample">
                     <h3>06. 화살표 함수 : 선언적 함수</h3>
                     <p>
-                        새로운 함수 표현 방식입니다.<br>
-                        함수를 보다 간결하게 작성할 수 있도록 설계되었으며, 주로 함수 표현식을 더 간결하게 표현하거나, 콜백 함수를 다루는 데 많이 사용됩니다.<br>
-                        아래는 선언적 함수를 화살표 함수로 입력한 것이다.
+                        선언적 함수를 새로운 함수 표현 방식인 화살표 함수로 나타냅니다.<br>
+                        
                     </p>
 <pre class="line-numbers"><code class="language-js">{
+    // 원래 함수 구조 : function 함수이름(매개변수){};    
+    // 화살표 함수 구조 : 함수이름 = () => {};
+
     func = () => {
-        console.log("실행되었습니다.");
+        console.log("실행되었습니다.6");
     };
     func();
 }</code></pre>
                     <p class="desc">
-                        function 함수이름(매개변수){} 식의 구조를 function구문을 없애고 = () => 을 넣어 사용합니다.
+                        함수를 보다 간결하게 작성할 수 있도록 설계되었으며, 주로 함수 표현식을 더 간결하게 표현하거나, 콜백 함수를 다루는 데 많이 사용됩니다.<br>
                     </p>
                     <p class="desc">
-                        2줄 : func함수를 화살표함수로 선언합니다.<br>
-                        3줄 : console.log()를 이용해 "실행되었습니다."문자열을 출력하는 문장을 넣습니다.<br>
-                        5줄 : func()을 이용해 함수를 실행합니다.<br>
+                        5줄 : func함수를 화살표함수로 선언합니다.<br>
+                        6줄 : console.log()를 이용해 "실행되었습니다."문자열을 출력하는 문장을 넣습니다.<br>
+                        8줄 : func()을 이용해 함수를 실행합니다.<br>
                     </p>
                     <div class="result">
                         <details>
@@ -299,7 +304,7 @@
                                 <script>
                                     {
                                         func = () => {
-                                            document.write("실행되었습니다.");
+                                            document.write("실행되었습니다.6");
                                         };
                                         func();
                                     }
@@ -432,7 +437,8 @@
                 <div id="sample11" class="sample">
                     <h3>11. 함수 유형 : 함수와 매개변수를 이용한 형태</h3>
                     <p>
-                        <a href="#sample03">매개변수 함수</a>입니다. 동일한 예제이지만 매개변수가 2개 사용되며, 백틱을 이용해 출력합니다. 
+                        <a href="#sample03">03. 매개변수 함수</a>입니다.<br>
+                        동일한 예제이지만 매개변수가 2개 사용되며, 백틱을 이용해 출력합니다. 
                     </p>
 <pre class="line-numbers"><code class="language-js">{
     function func(num, str){
@@ -440,6 +446,10 @@
     }
     func(11, "함수가 실행되었습니다.");
 }</code></pre>
+                    <p class="desc">
+                        백틱(backtick)은 프로그래밍에서 문자열을 정의하는 데 사용되는 특수한 문자입니다.<br>
+                        백틱은 일반적으로 따옴표(작은 따옴표 또는 큰 따옴표) 대신 문자열을 감싸는 데 사용됩니다. 
+                    </p>
                     <p class="desc">
                         2줄 : 함수 func에 매개변수 num, str을 받습니다.<br>
                         3줄 : console.log()를 이용하여 벡틱을 사용해 매개변수로 받은 num과 str을 출력합니다.<br>
@@ -478,6 +488,9 @@
     func(num, str);
 }</code></pre>
                     <p class="desc">
+                        지역변수와 전역변수의 차이는 <a href="javascript01.html">++ 지역변수/전역변수</a>를 참조하세요.
+                    </p>
+                    <p class="desc">
                         2줄 : 상수 변수 num에 값 12를 넣습니다.<br>
                         3줄 : 상수 변수 str에 "함수가 실행되었습니다." 문자열을 넣습니다.<br>
                         5줄 : 함수 func()에 매개변수로 num과 str을 받습니다.<br>
@@ -506,6 +519,103 @@
                 <!-- //sample12 -->
 
                 <div id="sample13" class="sample">
+                    <h3>13. 함수 유형 : 함수와 배열 이용한 형태</h3>
+                    <p>
+                       전역 변수에 배열을 선언하고 배열을 이용하는 함수의 형태입니다.
+                    </p>
+<pre class="line-numbers"><code class="language-js">{
+    const num = [13, 14];
+    const str = ["함수가 실행되었습니다.", "함수가 실행되었습니다."];
+
+    function func(num, str){
+        console.log(`${num}. ${str}`);
+    }
+    func(num[0], str[0]);
+    func(num[1], str[1]);
+}</code></pre>
+                    <p class="desc">
+                        어려워 보이지만 배열을 선언해 그 배열을 출력하는 함수를 만든 것이다.<br>
+                        <a href="#sample03">03. 매개변수 함수</a>의 업그레이드 버전
+                    </p>
+                    <p class="desc">
+                        2줄 : 상수 num에 배열을 선언해 13, 14 값을 저장합니다.<br>
+                        3줄 : 상수 str에 배열얼 선언해 "함수가 실행되었습니다.", "함수가 실행되었습니다." 문자열 값을 저장합니다.<br>
+                        5줄 : num과 str을 매개변수로 갖는 함수 func을 선언합니다.<br>
+                        6줄 : console.log()를 이용하여 백틱기호를 이용해 매개변수로 받은 num값과 str값을 출력합니다.<br>
+                        8줄 : num[0], str[0]값을 매개변수로 갖는 func 함수를 실행합니다.<br>
+                        9줄 : num[1], str[1]값을 매개변수로 갖는 func 함수를 실행합니다.<br>
+                    </p>
+                    <div class="result">
+                        <details>
+                            <summary>결과 확인하기</summary>
+                            <div>
+                                <script>
+                                    {
+                                        const num = [13, 14];
+                                        const str = ["함수가 실행되었습니다.", "함수가 실행되었습니다."];
+
+                                        function func(num, str){
+                                            document.write(`${num}. ${str}` , "<br>");
+                                        }
+                                        func(num[0], str[0]);
+                                        func(num[1], str[1]);
+                                    }
+                                </script>
+                            </div>
+                        </details>
+                    </div>
+                </div>
+                <!-- //sample13 -->
+
+                <div id="sample14" class="sample">
+                    <h3>14. 함수 유형 : 함수와 객체 이용한 형태</h3>
+                    <p>
+                       객체를 이용한 함수의 형태입니다.
+                    </p>
+<pre class="line-numbers"><code class="language-js">{
+    const info = {
+        num: 15,
+        str : "함수가 실행되었습니다."
+    };
+    function func(num, str){
+        console.log(`${num}. ${str}`);
+    }
+    func(info.num, info.str);
+}</code></pre>
+                    <p class="desc">
+                        앞에 본 배열을 이용한 함수에서 배열이 아닌 객체를 이용했다는 점이 다른 점입니다.
+                    </p>
+                    <p class="desc">
+                        2줄 : 상수 객체 info를 선언합니다.<br>
+                        3줄 : num키에 15값을 넣습니다.<br>
+                        4줄 : str키에 "함수가 실행되었습니다." 문자열 값을 넣습니다.<br>
+                        6줄 : num, str 값을 매개변수로 갖는 func함수를 선언합니다<br>
+                        7줄 : console.log()를 이용해 백틱기호를 이용하여 매개변수로 받은 num값과 str값을 출력합니다.<br>
+                        9줄 : info객체의 num값과 info객체의 str값을 func함수의 매개변수로 넣어 실행합니다.
+                    </p>
+                    <div class="result">
+                        <details>
+                            <summary>결과 확인하기</summary>
+                            <div>
+                                <script>
+                                    {
+                                        const info = {
+                                            num: 15,
+                                            str : "함수가 실행되었습니다."
+                                        };
+                                        function func(num, str){
+                                            document.write(`${num}. ${str}`);
+                                        }
+                                        func(info.num, info.str);
+                                    }
+                                </script>
+                            </div>
+                        </details>
+                    </div>
+                </div>
+                <!-- //sample14 -->
+
+                <div id="sample11" class="sample">
                     <h3></h3>
                     <p>
                        
@@ -521,14 +631,61 @@
                             <div>
                                 <script>
                                     {
-
                                     }
                                 </script>
                             </div>
                         </details>
                     </div>
                 </div>
-                <!-- //sample13 -->
+                <!-- //sample11 -->
+
+                <div id="sample11" class="sample">
+                    <h3></h3>
+                    <p>
+                       
+                    </p>
+<pre class="line-numbers"><code class="language-js">{
+
+}</code></pre>
+                    <p class="desc">
+                    </p>
+                    <div class="result">
+                        <details>
+                            <summary>결과 확인하기</summary>
+                            <div>
+                                <script>
+                                    {
+                                    }
+                                </script>
+                            </div>
+                        </details>
+                    </div>
+                </div>
+                <!-- //sample11 -->
+
+                <div id="sample11" class="sample">
+                    <h3></h3>
+                    <p>
+                       
+                    </p>
+<pre class="line-numbers"><code class="language-js">{
+
+}</code></pre>
+                    <p class="desc">
+                    </p>
+                    <div class="result">
+                        <details>
+                            <summary>결과 확인하기</summary>
+                            <div>
+                                <script>
+                                    {
+                                    }
+                                </script>
+                            </div>
+                        </details>
+                    </div>
+                </div>
+                <!-- //sample11 -->
 
                 <div id="sample11" class="sample">
                     <h3></h3>

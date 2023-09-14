@@ -149,10 +149,9 @@
 
         const checkAnswer = () => {
             const selectedChoice = quizWrap.querySelectorAll("input[name='choice']:checked");
-            if(!selectedChoice){
-                alert("답을 선택하세요.");
-                return;
-            }
+            // if(!selectedChoice){
+            //     alert("답을 선택하세요.");
+            // }
             const userAnswer = selectedChoice.value;  // 사용자가 클릭한 정답
             const correctAnswer = quizInfo[currentIndex].infoAnswer;
             const quizElement = quizWrap.querySelector(".quiz");
