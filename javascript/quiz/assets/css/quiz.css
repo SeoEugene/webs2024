@@ -403,7 +403,7 @@ body::after {
     cursor: pointer;
 }
 .quiz__next {
-    width: 100px;
+    width: 100%;
     border: 1px dashed #412E91;
     padding: 15px 20px;
     background-color: #fff;
