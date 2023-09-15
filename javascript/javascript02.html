@@ -468,12 +468,26 @@
                         filter() 함수는 배열의 요소를 조건에 따라 필터링하여 새로운 배열을 생성하는 메서드입니다.               
                     </p>
 <pre class="line-numbers"><code class="language-js">{
+    // filter() 메서드의 기본 구문
+    // const newArray = array.filter(callback(element[, index[, array]])[, thisArg])
+
     const arr = [100, 200, 300, 400, 500, 600, 700, 800, 900];
                                         
     arr.filter((el) =>{
         console.log(el);
     });
 }</code></pre>
+                    <p class="desc">
+                        filter() 메서드는 배열에서 조건에 맞는 요소를 선택할 때 유용하며, 필터링된 결과로 새로운 배열을 생성합니다.<br>
+                        <br>
+                        filter() 구문의 해석<br>
+                        1) array: 필터링할 배열입니다.<br>
+                        2) callback: 각 배열 요소를 평가할 콜백 함수로, 다음과 같은 매개변수를 가집니다:<br>
+                            element: 배열의 현재 요소.<br>
+                            index (선택 사항): 배열 내 현재 요소의 인덱스.<br>
+                            array (선택 사항): filter()를 호출한 배열.<br>
+                            thisArg (선택 사항): 콜백 함수 내에서 this로 사용될 값.<br>
+                    </p>
                     <p class="desc">
                         2줄 : 상수 배열 arr에 100, 200, 300, 400, 500, 600, 700, 800, 900 의 값을 차례대로 넣는다.<br>
                         4줄 : arr배열값을 filter()메서드를 이용해 첫번째 매개변수로 el을 줍니다.<br>
@@ -579,10 +593,10 @@
 
                                         const[a, [b, c], d] = arr;
 
-                                        document.write(a);
-                                        document.write(b);
-                                        document.write(c);
-                                        document.write(d);
+                                        document.write(a, "<br>");
+                                        document.write(b, "<br>");
+                                        document.write(c, "<br>");
+                                        document.write(d, "<br>");
                                     }
                                 </script>
                             </div>
@@ -613,7 +627,18 @@
     console.log(Obj["c"]);
 }</code></pre>
                     <p class="desc">
-                        2줄 상수 
+                        2줄 : 상수객체 Obj를 선언합니다.<br>
+                        3줄 : a키에 값 100을 넣습니다.<br>
+                        4줄 : b키에 값 200을 넣습니다.<br>
+                        5줄 : c키에 값 javascript를 넣습니다.<br>
+                        객체 리터럴 사용해 출력<br>
+                        8줄 : console.log()를 통해 Obj객체의 a키의 값을 출력합니다. <br>
+                        9줄 : console.log()를 통해 Obj객체의 b키의 값을 출력합니다. <br>
+                        10줄 : console.log()를 통해 Obj객체의 c키의 값을 출력합니다. <br>
+                        배열 리터럴 사용해 출력<br>
+                        13줄 : console.log()를 통해 Obj객에츼 a키의 값을 출력합니다. <br>
+                        14줄 : console.log()를 통해 Obj객체의 b키의 값을 출력합니다. <br>
+                        15줄 : console.log()를 통해 Obj객체의 c키의 값을 출력합니다. <br>
                     </p>
                     <div class="result">
                         <details>
@@ -646,18 +671,29 @@
                 <div id="sample14" class="sample">
                     <h3>14. 객체 : 데이터 불러오기 : Object.keys()</h3>
                     <p>
-                        
+                        Object.keys()는 객체의 열거 가능한 프로퍼티(속성)들을 배열로 반환합니다. 
                     </p>
 <pre class="line-numbers"><code class="language-js">{
+    // Object.keys() 함수의 기본 구문
+    // Object.keys(obj)
+
     const Obj = {
         a: 100,
         b: 200,
         c: "javascript",
     }
-    // 키인 a, b, c가 나옴
+    // 키 a, b, c가 나옴
     console.log(Object.keys(Obj));
 }</code></pre>
                     <p class="desc">
+                        Object.keys()는 객체의 키(key)들을 배열 형태로 가져와야 할 때 유용하게 사용됩니다.
+                    </p>
+                    <p class="desc">
+                        2줄 : 상수 객체 Obj를 선언합니다.<br>
+                        6줄 : a키에 값 100를 저장합니다.<br>
+                        7줄 : b키에 값 200를 저장합니다.<br>
+                        8줄 : c키에 값 javascript를 저장합니다.<br>
+                        11줄 : console.log()로 Object.keys()메소드를 이용해 Obj의 키들을 출력합니다.
                     </p>
                     <div class="result">
                         <details>
@@ -670,7 +706,6 @@
                                             b: 200,
                                             c: "javascript",
                                         }
-                                        // 키인 a, b, c가 나옴
                                         document.write(Object.keys(Obj));
                                     }
                                 </script>
@@ -683,9 +718,12 @@
                 <div id="sample15" class="sample">
                     <h3>15. 객체 : 데이터 불러오기 : Object.values()</h3>
                     <p>
-                        
+                        Object.values()는 객체의 열거 가능한 값들을 배열로 반환합니다. 
                     </p>
 <pre class="line-numbers"><code class="language-js">{
+    // Object.values() 함수의 기본 구문
+    // Object.values(obj)
+
     const Obj = {
         a: 100,
         b: 200,
@@ -695,6 +733,14 @@
     console.log(Object.values(Obj));
 }</code></pre>
                     <p class="desc">
+                        객체의 값(value)들을 배열 형태로 가져와야 할 때 유용하게 사용됩니다.
+                    </p>
+                    <p class="desc">
+                        5줄 : 상수 객체 Obj를 선언합니다.<br>
+                        6줄 : a키에 값 100을 넣습니다.<br>
+                        7줄 : b키에 값 200을 넣습니다.<br>
+                        8줄 : c키에 값 javascript을 넣습니다.<br>
+                        11줄 : console.log()로 Object.values()메소드를 이용해 Obj객체의 값들을 배열로 가져옵니다.
                     </p>
                     <div class="result">
                         <details>
@@ -707,7 +753,6 @@
                                             b: 200,
                                             c: "javascript",
                                         }
-                                        // 갑인 100, 200, javascript가 나옴
                                         document.write(Object.values(Obj));
                                     }
                                 </script>
@@ -720,9 +765,12 @@
                 <div id="sample16" class="sample">
                     <h3>16. 객체 : 데이터 불러오기 : Object.entries()</h3>
                     <p>
-                        
+                        Object.entries()는 JavaScript 객체의 열거 가능한 프로퍼티(key-value 쌍)를 배열의 배열로 반환하는 메서드입니다.
                     </p>
 <pre class="line-numbers"><code class="language-js">{
+    // Object.entries() 메서드의 기본 구문
+    // Object.entries(obj)
+
     const Obj = {
         a: 100,
         b: 200,
@@ -732,6 +780,7 @@
     console.log(Object.entries(Obj));
 }</code></pre>
                     <p class="desc">
+                        Object.entries()는 [key, value] 형태의 배열로 반환되며, 이러한 배열들이 모여 새로운 배열을 형성합니다.
                     </p>
                     <div class="result">
                         <details>
@@ -757,16 +806,37 @@
                 <div id="sample17" class="sample">
                     <h3>17. 객체 : 데이터 불러오기 : Object.assign()</h3>
                     <p>
-                        
+                        Object.assign()은 객체 병합(merge) 및 복사(copy) 메서드 중 하나입니다.
                     </p>
 <pre class="line-numbers"><code class="language-js">{
+    // Object.assign() 메서드의 기본 구문
+    // Object.assign(target, ...sources)
+
     const Obj1 = { a: 100, b: 200, c: "javascript"}
     const Obj2 = { d: 300, e: 400, f: "jQuery"}
     const Obj3 = Object.assign(Obj1, Obj2);
-    // 두 객체의 데이터를 합침, 주의 같은 키값이 없어야함
+
     console.log(Obj3);
 }</code></pre>
                     <p class="desc">
+                        주의할 점으로 두 객체의 데이터를 합칠 때 같은 키값이 있어서는 안됩니다.★<br>
+                        <br>
+                        결과 확인시 [object Object]의 안의 값을 보자면<br>
+                        Obj3 = {<br>
+                            a:100,<br>
+                            b:200,<br>
+                            c:"javascript",<br>
+                            d:300,<br>
+                            e:400,<br>
+                            f:"jQuery"<br>
+                        }<br>
+                        로 데이터가 합쳐져있다.
+                    </p>
+                    <p class="desc">
+                        5줄 : 상수 객체 Obj1에 키 a의 값 100, 키 b의 값 200, 키 c의 값 "javascript"를 저장합니다.<br>
+                        6줄 : 상수 객체 Obj2에 키 d의 값 300, 키 e의 값 400, 키 f의 값 "jQuery"를 저장합니다.<br> 
+                        7줄 : 상수 객체 Obj3에 Object.assign()메서드를 이용해 Obj1객체 데이터와 Obj2객체 데이터를 합칩니다.<br>
+                        9줄 : console.log()로 Obj3객체의 데이터의 키와 값을 출력합니다. 
                     </p>
                     <div class="result">
                         <details>
@@ -777,8 +847,8 @@
                                         const Obj1 = { a: 100, b: 200, c: "javascript"}
                                         const Obj2 = { d: 300, e: 400, f: "jQuery"}
                                         const Obj3 = Object.assign(Obj1, Obj2);
-                                        // 두 객체의 데이터를 합침, 주의 같은 키값이 없어야함
                                         document.write(Obj3);
+                                        console.log(Obj3);
                                     }
                                 </script>
                             </div>
@@ -790,14 +860,18 @@
                 <div id="sample18" class="sample">
                     <h3>18. 객체 : 데이터 불러오기 : hasOwnProperty()</h3>
                     <p>
-                        
+                        hasOwnProperty()는 해당 객체가 특정 속성(key)을 직접 소유하고 있는지 여부를 확인하는 데 사용됩니다. 
                     </p>
 <pre class="line-numbers"><code class="language-js">{
+    // hasOwnProperty() 메서드의 기본 구문
+    // object.hasOwnProperty(property)
+
     const obj = {
         a: 100,
         b: 200,
         c: "javascript",
     }
+
     // 키의 값이 있는지 확인, 밑에 있는 자식만 찾아냄
     console.log(obj.hasOwnProperty("a"));   // true
     console.log(obj.hasOwnProperty("b"));   // true
@@ -806,12 +880,29 @@
     console.log(obj.hasOwnProperty("100")); // false
 
     // in 연산자, 밑에 있는 객체까지도 찾아냄
-    console.log("a" in obj);
-    console.log("b" in obj);
-    console.log("c" in obj);
-    console.log("d" in obj);
+    console.log("a" in obj);    // true
+    console.log("b" in obj);    // true
+    console.log("c" in obj);    // true
+    console.log("d" in obj);    // false
 }</code></pre>
                     <p class="desc">
+                        hasOwnProperty() 메서드는 객체의 속성을 확인하고, 해당 속성이 객체 자체에 직접 소유되었으면 true를 반환하고, 상위 프로토타입 체인에서 상속된 속성이면 false를 반환합니다.<br>
+                        쉽게 말하자면 찾고자하는 키값이 객체안에 바로 밑 자식으로 들어가있으면 true, 키값이 없거나 자식이 아닌 자식의 자식의 키값으로 있더라도 false이다.
+                    </p>
+                    <p class="desc">
+                        5줄 : 상수 객체 obj를 선언합니다.<br>
+                        6줄 : a키의 값으로 100을 저장합니다.<br>
+                        7줄 : b키의 값으로 100을 저장합니다.<br>
+                        8줄 : c키의 값으로 javascript를 저장합니다.<br>
+                        12줄 : console.log()로 hasOwnProperty()메소드를 이용해 obj객체에 a키를 가진 값이 있는지 출력합니다.<br>
+                        13줄 : console.log()로 hasOwnProperty()메소드를 이용해 obj객체에 b키를 가진 값이 있는지 출력합니다.<br>
+                        14줄 : console.log()로 hasOwnProperty()메소드를 이용해 obj객체에 c키를 가진 값이 있는지 출력합니다.<br>
+                        15줄 : console.log()로 hasOwnProperty()메소드를 이용해 obj객체에 d키를 가진 값이 있는지 출력합니다.<br>
+                        16줄 : console.log()로 hasOwnProperty()메소드를 이용해 obj객체에 100키를 가진 값이 있는지 출력합니다.<br>
+                        19줄 : console.log()로 in메소드를 이용해 obj객체에 a의 키값이 있는지 출력합니다.<br>
+                        19줄 : console.log()로 in메소드를 이용해 obj객체에 b의 키값이 있는지 출력합니다.<br>
+                        19줄 : console.log()로 in메소드를 이용해 obj객체에 c의 키값이 있는지 출력합니다.<br>
+                        19줄 : console.log()로 in메소드를 이용해 obj객체에 d의 키값이 있는지 출력합니다.<br>
                     </p>
                     <div class="result">
                         <details>
@@ -825,17 +916,17 @@
                                             c: "javascript",
                                         }
                                         // 키의 값이 있는지 확인, 밑에 있는 자식만 찾아냄
-                                        document.write(obj.hasOwnProperty("a"));   // true
-                                        document.write(obj.hasOwnProperty("b"));   // true
-                                        document.write(obj.hasOwnProperty("c"));   // true
-                                        document.write(obj.hasOwnProperty("d"));   // false
-                                        document.write(obj.hasOwnProperty("100")); // false
+                                        document.write(obj.hasOwnProperty("a"), "<br>");   // true
+                                        document.write(obj.hasOwnProperty("b"), "<br>");   // true
+                                        document.write(obj.hasOwnProperty("c"), "<br>");   // true
+                                        document.write(obj.hasOwnProperty("d"), "<br>");   // false
+                                        document.write(obj.hasOwnProperty("100"), "<br>"); // false
 
                                         // in 연산자, 밑에 있는 객체까지도 찾아냄
-                                        document.write("a" in obj);
-                                        document.write("b" in obj);
-                                        document.write("c" in obj);
-                                        document.write("d" in obj);
+                                        document.write("a" in obj, "<br>");  // true
+                                        document.write("b" in obj, "<br>");  // true
+                                        document.write("c" in obj, "<br>");  // true
+                                        document.write("d" in obj, "<br>");  // false
                                     }
                                 </script>
                             </div>
@@ -847,7 +938,7 @@
                 <div id="sample19" class="sample">
                     <h3>19. 객체 : 데이터 불러오기 : for in</h3>
                     <p>
-                        
+                        객체의 열거 가능한 속성(enumerable properties)을 순회하기 위해 사용되는 반복문입니다. 
                     </p>
 <pre class="line-numbers"><code class="language-js">{
     const obj = {
@@ -861,6 +952,16 @@
     };
 }</code></pre>
                     <p class="desc">
+                        for (const key in object) {}<br>
+                        for을 이용해 객체의 각각의 키를 가져오고 키를 이용해 값을 출력하며 불러옵니다.
+                    </p>
+                    <p class="desc">
+                        2줄 : 상수 객체 obj를 선언합니다.<br>
+                        3줄 : 키 a의 값 100를 저장합니다.<br>
+                        4줄 : 키 b의 값 200를 저장합니다.<br>
+                        5줄 : 키 c의 값 "javascript"를 저장합니다.<br>
+                        8줄 : for in문으로 obj의 키값을 매개변수 el로 불러옵니다.<br>
+                        9줄 : console.log()를 이용해 매개변수el인 키값과 키값 el을 index값을 이용해 데이터를 출력합니다.
                     </p>
                     <div class="result">
                         <details>
@@ -875,7 +976,7 @@
                                         }
 
                                         for(let el in obj){
-                                            document.write(el + " : " + obj[el]);
+                                            document.write(el + " : " + obj[el], "<br>");
                                         };
                                     }
                                 </script>
@@ -909,6 +1010,21 @@
     console.log(obj5);
 }</code></pre>
                     <p class="desc">
+                        참고) <a href="#sample11">11. 배열 : 데이터 불러오기 : 배열 펼침 연산자</a>와 같은 기능입니다.
+                    </p>
+                    <p class="desc">
+                        2줄 : 상수 객체 obj1을 선언합니다.<br>
+                        3줄 : a키의 값으로 100을 저장합니다.<br>
+                        4줄 : b키의 값으로 100을 저장합니다.<br>
+                        5줄 : c키의 값으로 "javascript" 저장합니다.<br>
+                        7줄 : 상수 객체 obj2을 선언합니다.<br>
+                        8줄 : d키의 값으로 300을 저장합니다.<br>
+                        9줄 : e키의 값으로 400을 저장합니다.<br>
+                        10줄 : f키의 값으로 "jQuery" 저장합니다.<br>
+                        12줄 : 상수 객체 obj3에 obj1과 obj2값을 펼침 연산자로 저장합니다.<br>
+                        13줄 : 상수 객체 obj4에 obj1에 d키 값과 "jQuery<br>
+                        14줄 : 상수 객체 obj5에 obj1과 obj2값을 펼침 연산자로 저장합니다.<br>
+                        15줄 : 
                     </p>
                     <div class="result">
                         <details>
@@ -928,11 +1044,16 @@
                                         }
                                         const obj3 = {...obj1, ...obj2};
                                         const obj4 = {...obj1, d: "jQuery"};
-                                        const obj5 = {...obj1, b: 300}; // 원래 값이 바뀔 수도 있음
+                                        const obj5 = {...obj1, b: 300}; 
                                         document.write(obj3,"<br>");
                                         document.write(obj4,"<br>");
                                         document.write(obj5, "<br>");
                                         console.log(obj3);
+
+
+                                        console.log(obj3);
+                                        console.log(obj4);
+                                        console.log(obj5);
                                     }
                                 </script>
                             </div>
