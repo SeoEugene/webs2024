@@ -782,6 +782,9 @@
                     <p class="desc">
                         Object.entries()는 [key, value] 형태의 배열로 반환되며, 이러한 배열들이 모여 새로운 배열을 형성합니다.
                     </p>
+                    <p class="desc">
+                        
+                    </p>
                     <div class="result">
                         <details>
                             <summary>결과 확인하기</summary>
@@ -887,7 +890,7 @@
 }</code></pre>
                     <p class="desc">
                         hasOwnProperty() 메서드는 객체의 속성을 확인하고, 해당 속성이 객체 자체에 직접 소유되었으면 true를 반환하고, 상위 프로토타입 체인에서 상속된 속성이면 false를 반환합니다.<br>
-                        쉽게 말하자면 찾고자하는 키값이 객체안에 바로 밑 자식으로 들어가있으면 true, 키값이 없거나 자식이 아닌 자식의 자식의 키값으로 있더라도 false이다.
+                        쉽게 말하자면 찾고자하는 키값이 객체안에 바로 밑 자식으로 들어가있으면 true, 키값이 없거나 자식이 아닌 자식의 자식의 키값으로 있더라도 false입니다.
                     </p>
                     <p class="desc">
                         5줄 : 상수 객체 obj를 선언합니다.<br>
@@ -989,9 +992,12 @@
                 <div id="sample20" class="sample">
                     <h3>20. 객체 : 데이터 불러오기 : 객체 펼침 연산자</h3>
                     <p>
-                        
+                        객체 펼침 연산자(Object Spread Operator)는 새로운 객체를 생성하고 기존 객체의 속성들을 복사하거나 병합할 때 사용되는 문법입니다. 
                     </p>
 <pre class="line-numbers"><code class="language-js">{
+    // 객체 펼침 연산자의 기본 구문
+    // const newObject = { ...oldObject };
+
     const obj1 = {
         a: 100,
         b: 200,
@@ -1024,7 +1030,11 @@
                         12줄 : 상수 객체 obj3에 obj1과 obj2값을 펼침 연산자로 저장합니다.<br>
                         13줄 : 상수 객체 obj4에 obj1에 d키 값과 "jQuery<br>
                         14줄 : 상수 객체 obj5에 obj1과 obj2값을 펼침 연산자로 저장합니다.<br>
-                        15줄 : 
+                        <br>
+                        주의) 펼침 연산자로 데이터를 넣었지만 출력할 때는 배열로 인식됩니다.★<br>
+                        15줄 : console.log()로 obj3객체의 데이터를 출력합니다.<br> 
+                        16줄 : console.log()로 obj4객체의 데이터를 출력합니다.<br>
+                        17줄 : console.log()로 obj5객체의 데이터를 출력합니다.<br>
                     </p>
                     <div class="result">
                         <details>

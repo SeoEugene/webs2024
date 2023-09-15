@@ -342,6 +342,7 @@
 }
 .use__title h3 {
     font-size: 45px;
+    line-height: 1;
     font-weight: 800;
 }
 .use__title h3 em {
@@ -415,7 +416,6 @@
     .use__title h3 {
         font-size:34px;
         text-align: center;
-        line-height: 1;
     }
     .use__title h3 span {
         display: block;
@@ -434,6 +434,7 @@
     }
     .use__img > div figure::after{
         opacity: 0;
+
     }
     .use__img > div figcaption {
         position: relative;
@@ -445,6 +446,7 @@
     }
     .use__img > div p {
         padding: 0;
+        margin-top: -10px;
     }
 }
 @media (max-width: 600px){
