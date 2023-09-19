@@ -29,90 +29,122 @@
     <!-- //header -->
 
     <main id="main">
-        <div class="quiz__wrap">
-            <div class="quiz">
-                <div class="quiz__header"></div>
-                <!-- //quiz__header -->
-
-                <div class="quiz__main">
-                    <div class="quiz__question"></div>
-                    <div class="quiz__img">
-                        <img>
-                    </div>
-                    <div class="quiz__choice">
-                        <div id="choice1" class="choice"></div>
-                        <div id="choice2" class="choice"></div>
-                        <div id="choice3" class="choice"></div>
-                        <div id="choice4" class="choice"></div>
-                    </div>
-                    <div class="quiz__answer"></div>
-                    <div class="quiz__desc"></div>
-                </div>
-                <!-- //quiz__main -->
-
-                <div class="quiz__footer">
-                    <div class="quiz__indicator"></div>
-                    <button class="quiz__confirm">정답 확인하기</button>
-                </div>
-                <!-- //quiz__footer -->
-            </div>
-        </div>
+        <div class="quiz__wrap"></div>
+        <div class="quiz__check">정답 확인</div>
     </main>
     <!-- //main -->
 
-    <footer id="footer">s
+    <footer id="footer">
         <a href="mailto:97.eugene.s@gmail.com">97.eugene.s@gmail.com</a>
     </footer>
     <!-- //footer -->
 
     <script>
-        // 선택자
+       // 선택자
         const quizWrap = document.querySelector(".quiz__wrap");
+        const quizCheck = document.querySelector(".quiz__check");
 
-        //문제 데이터
-        const quizInfo = [{}];
+       // 변수 설정
+       let currentIndex = 0;    // 현재 문제
+       let quizInfo = [];       //모든 퀴즈 정보
 
-        // 2. 문제 가져오기
-        const fetchQuiz = () => {
-            fetch("https://seoeugene.github.io/webs2024/json/gineungsaJC2011_05.json")
-                .then(res => res.json())
-                .then(items => {
-                    // json에서 값 가져오기
-                    console.log(items[0].question);
-                    console.log(items[0].desc);
-                    // quizInfo 가져온 값 저장
-                    quizInfo[0].question = items[0].question;
-                    quizInfo[0].desc = items[0].desc;
-                    console.log(quizInfo);
-                    console.log(quizInfo[0].question);
-                    console.log(quizInfo[0].desc);
+       // 1. 문제 가져오기
+       const fetchQuiz = () => {
+            // fetch()는 JavaScript에서 네트워크 요청을 생성하고 처리하기 위한 기능을 제공하는 웹 API 중 하나입니다.
+            fetch("https://webstoryboy.github.io/webs2024/json/gineungsaJC2011_05.json")
+            .then(res => res.json())
+            // 정보 가져오기
+            .then(items => {
+                // quizInfo에 가져온 정보 저장
+                quizInfo = items.map((item, index) => {
+                    const formattedQuiz = {
+                        infoDate: "2011년 5회",
+                        infoType: item.subject,
+                        infoquestion: item.question,
+                        infoDesc: item.desc,
+                        infoAnswer: item.correct_answer,        
+                    }
+                    // 보기 가져오기
+                    const choices = [item.correct_answer, ...item.incorrect_answers];
 
-                    updateQuiz();
-                })
-                .catch((error) => console.log(error));    
+                    // 보기 랜덤 섞기
+                    for (let i = choices.length - 1; i > 0; i--) {
+                        const j = Math.floor(Math.random() * (i + 1));
+                        [choices[i], choices[j]] = [choices[j], choices[i]];
+
+                    }
+
+
+                    // 랜덤 데이터 넣어주기
+                    formattedQuiz.infoChoice = choices;
+
+                    // 가져온 정보 리턴
+                    return formattedQuiz;
+                });
+                updataQuiz();
+            })       
         }
 
-        // 3. 문제 출력하기
-        const updateQuiz = () => {
-            let quizWrapTag = `
+        // 2. 문제 출력
+        const updataQuiz = () => {
+            const quizArray = [];
+
+            quizInfo.forEach((quiz, number) => {
+                quizArray.push(`
                 <div class="quiz">
-                    <div class="quiz__header">정보처리 기능사</div>
-                    <div class="quiz__main">
-                        <div class="quiz__question">${quizInfo[0].question}</div>
-                        <div class="quiz__desc">${quizInfo[0].desc}</div>
-                    </div>
-                </div>
-            `;
+                        <div class="quiz__header">${quiz.infoDate}${quiz.infoType}</div>
+                        <!-- //quiz__header -->
 
-            quizWrap.innerHTML = quizWrapTag;
+                        <div class="quiz__main">
+                            <div class="quiz__question">
+                                ${number+1}. ${quiz.infoquestion}
+                            </div>
+                            <!-- //quiz__question -->
+                            <div class="quiz__choice">
+                                <label for="choice1-${number}">
+                                    <input type="radio" id="choice1-${number}" name="choice" value="1">
+                                    <span>${quiz.infoChoice[0]}</span>
+                                </label>
+                                <label for="choice2-${number}">
+                                    <input type="radio" id="choice2-${number}" name="choice" value="2">
+                                    <span>${quiz.infoChoice[1]}</span>
+                                </label>
+                                <label for="choice3-${number}">
+                                    <input type="radio" id="choice3-${number}" name="choice" value="3">
+                                    <span>${quiz.infoChoice[2]}</span>
+                                </label>
+                                <label for="choice4-${number}">
+                                    <input type="radio" id="choice4-${number}" name="choice" value="4">
+                                    <span>${quiz.infoChoice[3]}</span>
+                                </label>
+                            </div>
+                            <div class="quiz__answer none">
+                                ${quiz.infoAnswer}
+                            </div>
+                            <div class="quiz__desc none">
+                                ${quiz.infoDesc}
+                            </div>
+                        </div>
+                        <!-- //quiz__main -->
+                    </div>
+                `);
+            });
+
+            quizWrap.innerHTML = quizArray.join("");
         }
 
-        // 1. 페이지가 로드된 후 실행
+        // 정답 확인
+        quizCheck.addEventListener("click", () => {
+            const selectedChoice = quizWrap.querySelectorAll("input[name='choice']:checked");
+            const correctAnswer = quizInfo[currentIndex].infoAnswer;
+            console.log(selectedChoice);
+            
+        });
+
+        // 페이지가 로드된 후 실행
         document.addEventListener("DOMContentLoaded", () => {
             fetchQuiz();
         });
-
-
     </script>
 </body>
 </html>

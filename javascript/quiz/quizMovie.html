@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>영화 초성 퀴즈</title>
+    <link rel="stylesheet" href="assets/css/movie.css">
+</head>
+<body>
+    <main id="main">
+        <div class="quiz__wrap">
+        </div>
+    </main>
+
+    <script>
+
+
+
+        // 선택자
+        const quizWrap = document.querySelector(".quiz__wrap");
+
+
+
+        // 문제 정보
+        const quiz = [
+            {
+                infoTitle : "영화 초성퀴즈",
+                infoQuestion : "ㅇㅈㅆ",
+                infoHint : "충치가 몇개냐? 나 전당포한다. 금이빨 빼고 모조리 씹어먹어줄게",
+                infoAnswer : "아저씨",
+            },
+            {
+                infoTitle : "영화 초성퀴즈",
+                infoQuestion : "ㅇㅅㅌ",
+                infoHint : "구조신호 따따따 따 따 따 따따따",
+                infoAnswer : "엑시트",
+            },
+            {
+                infoTitle : "영화 초성퀴즈",
+                infoQuestion : "ㅇㅌㅅㅌㄹ",
+                infoHint : "크리스토퍼 놀란 감독, 우주여행, ",
+                infoAnswer : "인터스텔라",
+            },
+        ];
+
+        let currentIndex = 0;  //현재 문제 값
+
+        // 문제 출력
+        const updataQuiz = (index) => {
+            // const quizArray = [];
+
+           let quizWrapTag = `
+                <div class="quiz">
+                    <div class="quiz__header">
+                        <div class="header__title"> <p>${quiz[index].infoTitle}</p></div>
+                    </div>
+                    <!-- //quiz__header -->
+
+                    <div class="quiz__main">
+                        <div class="quiz__question">${quiz[index].infoQuestion}</div>
+                        <div class="hint">
+                            <button class="hint__btn">누르면 힌트</button>
+                            <div class="hint__text none"><span>${quiz[index].infoHint}</span></div>
+                        </div>
+                        <div class="quiz__input">
+                            <input type="text" placeholder="정답을 입력해주세요!">
+                        </div>
+                        <div class="quiz__answer">
+                            <button class="answer__btn">정답 확인</button>
+                            <div class="answer__text none"><span>${quiz[index].infoAnswer}</span></div>
+                        </div>
+                        <div class="next">
+                            <div class="next__button">
+                                <button class="next__btn none">다음 문제</button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- //quiz__main -->
+                </div>
+                `;
+                quizWrap.innerHTML = quizWrapTag;
+
+
+        // 선택자
+        const quizQuestion = quizWrap.querySelector(".quiz__question");  
+        const quizhintBtn = quizWrap.querySelector(".hint__btn");
+        const quizAnswerBtn = quizWrap.querySelector(".answer__btn");
+        const nextBtn = quizWrap.querySelector(".next__btn");
+        const quizHint = quizWrap.querySelector(".hint__text");
+
+
+        // 힌트 확인하기
+        quizhintBtn.addEventListener("click", () => {    
+            quizhintBtn.classList.add("none");
+            quizHint.classList.remove("none");
+        });
+
+
+        // 정답 확인하기
+        quizAnswerBtn.addEventListener("click", () => {
+            const quizAnswer = quizWrap.querySelector(".answer__text");
+            const quizInput = quizWrap.querySelector(".quiz__input input");
+            const quizElement = quizWrap.querySelector(".quiz");
+            const useAnswer = quizInput.value;
+            console.log(useAnswer);
+            if(useAnswer.length < 0 || useAnswer == ""){
+                alert("답을 적어주세요");
+            }else{
+                if(useAnswer == quiz[index].infoAnswer){
+                    quizElement.classList.add("good");
+                }else{
+                    quizElement.classList.add("bad");
+                }
+                quizhintBtn.classList.add("none");
+                quizHint.classList.remove("none");
+                quizAnswer.classList.remove("none");
+                quizAnswerBtn.classList.add("none");
+                nextBtn.classList.remove("none");
+            }
+        });
+
+        nextBtn.addEventListener("click", () => {
+            if(currentIndex < quiz.length-1){
+                nextBtn.classList.add("none");
+                quizAnswerBtn.class.remove("none");
+                currentIndex++;
+                updataQuiz(currentIndex);
+            }else{
+                alert("퀴즈가 종료되었습니다.");
+                nextBtn.classList.remove("none");
+                quizAnswerBtn.class.add("none");
+            }
+        });
+    }
+
+        //페이지가 로드된 후 실행
+        document.addEventListener("DOMContentLoaded", () => {
+            updataQuiz(currentIndex);
+
+        });
+
+
+    </script>
+</body>
+</html>

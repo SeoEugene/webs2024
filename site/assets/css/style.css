@@ -432,7 +432,7 @@
     .use__img > div:last-child {
         margin-bottom: 0;
     }
-    .use__img > div figure::after{
+    .use__img > div figure:hover::after{
         opacity: 0;
 
     }

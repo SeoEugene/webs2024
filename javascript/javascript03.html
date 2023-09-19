@@ -615,7 +615,288 @@
                 </div>
                 <!-- //sample14 -->
 
-                <div id="sample11" class="sample">
+                <div id="sample15" class="sample">
+                    <h3>15. 함수 유형 : 함수와 객체 및 배열을 이용한 형태</h3>
+                    <p>
+                       배열안에 객체가 들어있는 데이터 형태를 가지고 함수로 표현하는 방법입니다.
+                    </p>
+<pre class="line-numbers"><code class="language-js">{
+        const info = [
+        {
+            num: 16,
+            str: "함수가 실행되었습니다."
+        },
+        {
+            num: 17,
+            str: "함수가 실행되었습니다."
+        }
+    ];
+    function func(num, str){
+        console.log(`${num}. ${str}`);
+    }
+    func(info[0].num, info[0].str);
+    func(info[1].num, info[1].str);
+}</code></pre>
+                    <p class="desc">
+                        배열안에 객체가 들어가는 데이터의 예시로는<br>
+                        1. 제품 목록 배열<br>
+                        2. 학생 목록 배열<br>
+                        3. 게시물 배열<br>
+                        정도가 있으며 이 데이터의 특징은 각각 같은 데이터 속성을 가지고 있다는 점이다.<br>
+                        예를 들어 학생 목록은<br>
+                        학생당 이름, 반, 번호, 성적과 같은 동일한 데이터 속성이 들어가는 형태이다.
+                    </p>
+                    <p class="desc">
+                        2줄 : 상수 배열 info를 선언합니다.<br>
+                        3줄 : 배열안에 객체를 선언합니다.<br>
+                        4줄 : num키의 값으로 16을 저장합니다.<br>
+                        5줄 : str키의 값으로 "함수가 실행되었습니다."를 저장합니다.<br>
+                        6줄 : 첫번째 객체를 닫습니다. <br>
+                        7줄 : 두번째 객체를 입력합니다.<br>
+                        8줄 : num키의 값으로 17을 저장합니다.<br>
+                        9줄 : str키의 값으로 "함수가 실행되었습니다."를 저장합니다.<br>
+                        10줄 : 두번째 객체를 닫습니다. <br>
+                        11줄 : 배열을 닫습니다.<br>
+                        12줄 : num과 str 매개변수를 받는 함수 func을 선언합니다.<br>
+                        13줄 : console.log()를 이용해 백틱문자열로 매개변수로 받은 num값과 str값을 형식에 맞게 출력합니다.<br>
+                        15줄 : func함수에 매개변수로 info의 배열 0번째의 객체에서 num키값과 str키값을 전달하고 실행합니다.<br>
+                        16줄 : func함수에 매개변수로 info의 배열 1번째의 객체에서 num키값과 str키값을 전달하고 실행합니다.
+                    </p>
+                    <div class="result">
+                        <details>
+                            <summary>결과 확인하기</summary>
+                            <div>
+                                <script>
+                                    {
+                                        const info = [
+                                            {
+                                                num: 16,
+                                                str: "함수가 실행되었습니다."
+                                            },
+                                            {
+                                                num: 17,
+                                                str: "함수가 실행되었습니다."
+                                            }
+                                        ];
+                                        function func(num, str){
+                                            document.write(`${num}. ${str}`,"<br>");
+                                        }
+                                        func(info[0].num, info[0].str);
+                                        func(info[1].num, info[1].str);
+                                        }
+                                </script>
+                            </div>
+                        </details>
+                    </div>
+                </div>
+                <!-- //sample15 -->
+
+                <div id="sample16" class="sample">
+                    <h3>16. 함수 유형 : 객체 안에 함수를 이용한 형태</h3>
+                    <p>
+                       객체 안에 함수가 들어가 있는 데이터를 출력하는 방법입니다.
+                    </p>
+<pre class="line-numbers"><code class="language-js">{
+    const info = {
+        num: 18,
+        str: "함수가 실행되었습니다.",
+        result: () => console.log(`${info.num}. ${info.str}`)
+    }
+    info.result();
+}</code></pre>
+                    <p class="desc">
+                    </p>
+                    <p class="desc">
+                        2줄 : 상수 객체 info를 선언합니다.<br>
+                        3줄 : num키에 값 18을 저장합니다.<br>
+                        4줄 : str키에 값 "함수가 실행되었습니다."를 저장합니다.<br>
+                        5줄 : result키에 화살표함수를 선언해 console.log()로 백틱문자열 형태로 info객체의 num키 값과 str키 값을 출력하는 함수를 만듭니다.<br>
+                        7줄 : info객체의 result함수를 실행합니다.
+                    </p>
+                    <div class="result">
+                        <details>
+                            <summary>결과 확인하기</summary>
+                            <div>
+                                <script>
+                                    {
+                                        const info = {
+                                            num: 18,
+                                            str: "함수가 실행되었습니다.",
+                                            result: () => document.write(`${info.num}. ${info.str}`)
+                                        }
+                                        info.result();
+                                    }
+                                </script>
+                            </div>
+                        </details>
+                    </div>
+                </div>
+                <!-- //sample16 -->
+
+                <div id="sample17" class="sample">
+                    <h3>17. 함수 유형 : 객체 생성자 함수</h3>
+                    <p>
+                       함수를 만들고 생성하고 호출하는 예제입니다.
+                    </p>
+<pre class="line-numbers"><code class="language-js">{
+    function Func(num, str){
+        this.num = num;
+        this.str = str;
+        this.result = () => console.log(`${this.num}. ${this.str}`);
+    }
+    // 인스턴스 생성
+    const info1 = new Func(19, "함수가 실행되었습니다.");
+    const info2 = new Func(20, "함수가 실행되었습니다.");
+
+    // 호출
+    info1.result();
+    info2.result();
+}</code></pre>
+                    <p class="desc">
+                        실행 중인 코드의 문맥에 따른 this의 뜻<br>
+                        1. 전역 컨텍스트(전역 스코프)에서는 this가 브러우저 환경에서는 window객체를 가리킵니다.
+                    </p>
+                    <p class="desc">
+                        2줄 : 매개변수 num과 str을 받는 함수 Func을 선언합니다.<br>
+                        3줄 : 
+                    </p>
+                    <div class="result">
+                        <details>
+                            <summary>결과 확인하기</summary>
+                            <div>
+                                <script>
+                                    {
+                                        function Func(num, str){
+                                            this.num = num;
+                                            this.str = str;
+                                            this.result = () => document.write(`${this.num}. ${this.str}`, "<br>");
+                                        }
+                                        // 인스턴스 생성
+                                        const info1 = new Func(19, "함수가 실행되었습니다.");
+                                        const info2 = new Func(20, "함수가 실행되었습니다.");
+
+                                        // 호출
+                                        info1.result();
+                                        info2.result();
+                                    }
+                                </script>
+                            </div>
+                        </details>
+                    </div>
+                </div>
+                <!-- //sample17 -->
+
+                <div id="sample18" class="sample">
+                    <h3>18. 함수 유형 : 프로토타입 함수</h3>
+                    <p>
+                       
+                    </p>
+<pre class="line-numbers"><code class="language-js">{
+    function Func(num, str){
+        this.num = num;
+        this.str = str;
+    }
+    Func.prototype.result = function(){
+        console.log(`${this.num}. ${this.str}`);
+    }
+
+    const info1 = new Func(21, "함수가 실행되었습니다.");
+    const info2 = new Func(22, "함수가 실행되었습니다.");
+
+    info1.result();
+    info2.result();
+}</code></pre>
+                    <p class="desc">
+                    </p>
+                    <div class="result">
+                        <details>
+                            <summary>결과 확인하기</summary>
+                            <div>
+                                <script>
+                                    {
+                                        function Func(num, str){
+                                            this.num = num;
+                                            this.str = str;
+                                        }
+                                        Func.prototype.result = function(){
+                                            document.write(`${this.num}. ${this.str}`, "<br>");
+                                        }
+
+                                        const info1 = new Func(21, "함수가 실행되었습니다.");
+                                        const info2 = new Func(22, "함수가 실행되었습니다.");
+
+                                        info1.result();
+                                        info2.result();
+                                    }
+                                </script>
+                            </div>
+                        </details>
+                    </div>
+                </div>
+                <!-- //sample18 -->
+
+                <div id="sample19" class="sample">
+                    <h3>19. 함수 유형 : 객체 리터럴 함수</h3>
+                    <p>
+                       
+                    </p>
+<pre class="line-numbers"><code class="language-js">{
+    function Func(num, str){
+        this.num = num;
+        this.str = str;
+
+    }
+    Func.prototype = {
+        result1 : function(){
+            console.log(`${this.num}. ${this.str}`);
+        },
+        result2 : function(){
+            console.log(`${this.num}. ${this.str}`);
+        },
+    }
+
+    const info1 = new Func(23, "함수가 실행되었습니다.");
+    const info2 = new Func(24, "함수가 실행되었습니다.");
+
+    info1.result1();
+    info2.result2();
+}</code></pre>
+                    <p class="desc">
+                    </p>
+                    <div class="result">
+                        <details>
+                            <summary>결과 확인하기</summary>
+                            <div>
+                                <script>
+                                    {  
+                                        function Func(num, str){
+                                            this.num = num;
+                                            this.str = str;
+
+                                        }
+                                        Func.prototype = {
+                                            result1 : function(){
+                                                document.write(`${this.num}. ${this.str}`, "<br>");
+                                            },
+                                            result2 : function(){
+                                                document.write(`${this.num}. ${this.str}`);
+                                            },
+                                        }
+
+                                        const info1 = new Func(23, "함수가 실행되었습니다.");
+                                        const info2 = new Func(24, "함수가 실행되었습니다.");
+
+                                        info1.result1();
+                                        info2.result2();
+                                    }
+                                </script>
+                            </div>
+                        </details>
+                    </div>
+                </div>
+                <!-- //sample19 -->
+
+                <div id="sample20" class="sample">
                     <h3></h3>
                     <p>
                        
@@ -637,79 +918,7 @@
                         </details>
                     </div>
                 </div>
-                <!-- //sample11 -->
-
-                <div id="sample11" class="sample">
-                    <h3></h3>
-                    <p>
-                       
-                    </p>
-<pre class="line-numbers"><code class="language-js">{
-
-}</code></pre>
-                    <p class="desc">
-                    </p>
-                    <div class="result">
-                        <details>
-                            <summary>결과 확인하기</summary>
-                            <div>
-                                <script>
-                                    {
-                                    }
-                                </script>
-                            </div>
-                        </details>
-                    </div>
-                </div>
-                <!-- //sample11 -->
-
-                <div id="sample11" class="sample">
-                    <h3></h3>
-                    <p>
-                       
-                    </p>
-<pre class="line-numbers"><code class="language-js">{
-
-}</code></pre>
-                    <p class="desc">
-                    </p>
-                    <div class="result">
-                        <details>
-                            <summary>결과 확인하기</summary>
-                            <div>
-                                <script>
-                                    {
-                                    }
-                                </script>
-                            </div>
-                        </details>
-                    </div>
-                </div>
-                <!-- //sample11 -->
-
-                <div id="sample11" class="sample">
-                    <h3></h3>
-                    <p>
-                       
-                    </p>
-<pre class="line-numbers"><code class="language-js">{
-
-}</code></pre>
-                    <p class="desc">
-                    </p>
-                    <div class="result">
-                        <details>
-                            <summary>결과 확인하기</summary>
-                            <div>
-                                <script>
-                                    {
-                                    }
-                                </script>
-                            </div>
-                        </details>
-                    </div>
-                </div>
-                <!-- //sample11 -->
+                <!-- //sample20 -->
 
             </div>
             <!-- //main_sample -->
