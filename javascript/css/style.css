@@ -259,5 +259,8 @@ li {
     .main__desc {
         padding: 20px;
     }
-    /* 추가 */
+    pre code.hljs {
+        font-size: 14px;
+    }
 }
+

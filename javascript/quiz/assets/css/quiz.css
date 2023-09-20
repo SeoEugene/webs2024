@@ -560,3 +560,177 @@ body::after {
         padding: 13px;
     }
 }
+
+/* modal__wrap */
+/* 소스버튼 */
+.modal__btn {
+    /* 형태 */
+    display: inline-block;
+    color: #fff;
+    border: 1px solid #fff;
+    border-radius: 50px;
+    padding: 10px 20px;
+    cursor: pointer;
+
+    /* 위치 */
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+}
+
+
+/* 소스버튼을 누르면 나오는 창(검은창) */
+.modal__cont {
+    /* 규격 */
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0,0,0,0.7);
+
+    /* 형태 */
+    align-items: center;
+    justify-content: center;
+
+    /* 위치 */
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 1000;
+    overflow-x: hidden;
+
+    /* 숨기기 */
+    transform: scale(0);
+}
+
+
+/* 소스버튼을 누르면 나오는 박스 */
+.modal__box {
+    /* 규격 */
+    width: 70%;
+    background-color: #ccc;
+
+    /* 형태 */
+    border-radius: 10px;
+
+    /* 숨기기 */
+    transform: scale(0);
+}
+.modal__box .title {
+    /* 규격 */
+    display: flex;
+    height: 50px;
+    background-color: #1b1c2e;
+
+    /* 형태 */
+    color: #fff;
+    align-items: center;
+    padding: 1rem;
+    border-top-left-radius: 0.5rem;
+    border-top-right-radius: 0.5rem;
+    border: 3px solid pink;
+}
+.modal__box .title .dot {
+    /* 규격 */
+    width: 15px;
+    height: 15px;
+    background-color: #3b3d63;
+    display: inline-block;
+
+    /* 형태 */
+    border-radius: 50%;
+    margin-left: 2rem;
+
+    /* 위치 */
+    position: relative;
+}
+
+.modal__box .title .dot::before {
+    /* 규격 */
+    width: 15px;
+    height: 15px;
+    background-color: #3b3d63;
+
+    /* 형태 */
+    border-radius: 50%;
+
+    /* 위치 */
+    content: '';
+    position: absolute;
+    left: 25px;
+    top: 0;
+}
+
+.modal__box .title .dot::after {
+    /* 규격 */
+    width: 15px;
+    height: 15px;
+    background-color: #3b3d63;
+
+    /* 형태 */
+    border-radius: 50%;
+
+    /* 위치 */
+    content: '';
+    position: absolute;
+    right: 25px;
+    top: 0;
+}
+.modal__box .title .tabs {
+    display: flex;
+    margin-left: 50px;
+}
+
+.modal__box .cont {}
+
+/* 소스버튼박스위에 나오는 닫기버튼 */
+.modal__close {}
+
+
+
+
+/* 모달 애니메이션 */
+/* 소스버튼 클릭 */
+.modal__cont.show {
+    animation: foldOut 1s ease forwards;
+}
+.modal__cont.show .modal__box {
+    animation: zoomOut 0.5s 1s ease forwards;
+}
+.modal__cont.show .modal__close {
+    animation: opcityOut 0.5s 1.5s ease forwards;
+}
+/* 닫기버튼 클릭 */
+.modal__cont.show.hide {
+    animation: foldIn 0.3s 0.5s ease backwards;
+}
+.modal__cont.show.hide .modal__box {
+    animation: ZoomIn 0.5s ease forwards;
+}
+.modal__cont.show.hide .modal__close {
+    animation: opcityIn 0.5s ease forwards;
+}
+@keyframes foldOut {
+    0% {transform: scaleX(0.0001) scaleY(1);}
+    50% {transform: scaleX(0.0001) scaleY(1);}
+    100% {transform: scaleX(1) scaleY(1);}
+}
+@keyframes foldIn {
+    0% {transform: scaleX(1) scaleY(1);}
+    50% {transform: scaleX(0.0001) scaleY(1);}
+    100% {transform: scaleX(0.0001) scaleY(1);}    
+}
+@keyframes zoomOut {
+    0% {transform: scale(0);}
+    100% {transform: scale(1);}
+}
+@keyframes ZoomIn {
+    0% {transform: scale(1);}
+    100% {transform: scale(0);}
+}
+@keyframes opcityOut {
+    0% {opacity: 0;}
+    100% {Opacity: 1;}
+}
+@keyframes opcityIn {
+    0% {opacity: 1;}
+    100% {Opacity: 0;}
+}
