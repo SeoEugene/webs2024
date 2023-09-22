@@ -736,7 +736,7 @@
                 <div id="sample17" class="sample">
                     <h3>17. 함수 유형 : 객체 생성자 함수</h3>
                     <p>
-                       함수를 만들고 생성하고 호출하는 예제입니다.
+                       데이터가 객체 형태로 된 함수를 만들어 생성자를 이용해 실행하는 예제입니다.
                     </p>
 <pre class="line-numbers"><code class="language-js">{
     function Func(num, str){
@@ -754,7 +754,9 @@
 }</code></pre>
                     <p class="desc">
                         실행 중인 코드의 문맥에 따른 this의 뜻<br>
-                        1. 전역 컨텍스트(전역 스코프)에서는 this가 브러우저 환경에서는 window객체를 가리킵니다.
+                        1. 전역 컨텍스트(전역 스코프)에서는 this가 브러우저 환경에서는 window객체를 가리킵니다.<br>
+                        2. 함수 내부에서는 두가지 의미가 있는데 함수로 호출 할때 this는 함수가 속한 객체를 가리키며, 그렇지 않으면 전역 객체를 가리킵니다. <br>
+                        따라서 예제에서 this.num은 Func함수가 가지고 있는 생성자 객체 num을 가리킵니다.
                     </p>
                     <p class="desc">
                         2줄 : 매개변수 num과 str을 받는 함수 Func을 선언합니다.<br>
