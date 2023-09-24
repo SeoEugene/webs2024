@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>웹디자인기능사 메뉴 M-2</title>
+    <title>웹디자인기능사 메뉴 M-5</title>
     <style>
         * {
             margin: 0;
@@ -21,30 +21,41 @@
         }
 
         #wrap {
-            width: 1200px;
-            margin: 0 auto;
-        }
-
-        #header {
             width: 100%;
             display: flex;
+            flex-wrap: wrap;
         }
 
-        #header .logo {
-            width: 20%;
+        #aside {
+            width: 200px;
+        }
+
+        #aside h1 {
+            width: 100%;
             height: 100px;
-            background-color: #D0EDA4;
+            background-color: #B4B7FA;
         }
 
-        #header .nav {
-            width: 80%;
-            background-color: #DAEDA4;
+        #aside nav {
+            width: 100%;
+            height: 700px;
+            background-color: #B4C1FA;
+        }
+
+        #main {
+            width: calc(100% - 200px);
         }
 
         #slider {
             width: 100%;
-            height: 300px;
-            background-color: #E3EDA4;
+            height: 400px;
+            background-color: #B4CAFA;
+        }
+
+        #link {
+            width: 100%;
+            height: 150px;
+            background-color: #B4D8FA;
         }
 
         #contents {
@@ -53,21 +64,15 @@
         }
 
         #contents .content1 {
-            width: 33.3333%;
-            height: 200px;
-            background-color: #EDEDA4;
+            width: 50%;
+            height: 250px;
+            background-color: #B4DDFA;
         }
 
         #contents .content2 {
-            width: 33.3333%;
-            height: 200px;
-            background-color: #EDE3A4;
-        }
-
-        #contents .content3 {
-            width: 33.3333%;
-            height: 200px;
-            background-color: #EDDAA4;
+            width: 50%;
+            height: 250px;
+            background-color: #B4E6FA;
         }
 
         #footer {
@@ -77,72 +82,76 @@
 
         #footer .footer1 {
             width: 20%;
-            height: 100px;
-            background-color: #EDD5A4;
+            height: 120px;
+            background-color: #B4EFFA;
         }
 
         #footer .footer2 {
             width: 60%;
-            height: 100px;
-            background-color: #EDCBA4;
+        }
+
+        #footer .footer2 .footer2-1 {
+            width: 100%;
+            height: 60px;
+            background-color: #B4F9FA;
+        }
+
+        #footer .footer2 .footer2-2 {
+            width: 100%;
+            height: 60px;
+            background-color: #B4FAF2;
         }
 
         #footer .footer3 {
             width: 20%;
-            height: 100px;
-            background-color: #EDC6A4;
+            height: 120px;
+            background-color: #B4DDFA;
         }
 
         /* nav */
-        .nav > ul {
-            display: flex;
-            justify-content: right;
-            margin-top: 30px;
-        }
+        .nav {}
+        .nav > ul {}
         .nav > ul > li {
             position: relative;
         }
         .nav > ul > li > a {
-            display: inline-block;
-            padding: 10px 50px;
-            background-color: #E3EDA4;
+            display: block;
+            padding: 10px;
+            text-align: center;
+            background-color: #B4C1FA;
         }
         .nav > ul > li > a:hover {
-            background-color: #EDDAA4;
+            background-color: #B4DDFA;
         }
         .nav > ul > li > ul {
             display: none;
             position: absolute;
-            left: 0;
-            top: 38px;
-            width: 100%;
-            text-align: center;
+            right: -200px;
+            top: 0;
+            width: 200px;
         }
+        .nav > ul > li > ul > li {}
         .nav > ul > li > ul > li > a {
-            display: inline-block;
+            display: block;
             padding: 10px;
-            background-color: #D0EDA4;
-            width: 100%;
-            box-sizing: border-box;
         }
         .nav > ul > li > ul > li > a:hover {
-            background-color: #EDDAA4;
+            background-color: #B4DDFA;
         }
 
-        /* 자바스크립트 CSS */
+        /* 자바스크립트용 CSS */
         .nav > ul > li > ul {
-            display: block;
             height: 0;
             overflow: hidden;
-            transition: all 600ms;
+            transition: height 400ms;
         }
     </style>
 </head>
 
 <body>
     <div id="wrap">
-        <div id="header">
-            <div class="logo"></div>
+        <aside id="aside">
+            <h1></h1>
             <nav class="nav">
                 <ul>
                     <li>
@@ -183,55 +192,59 @@
                     </li>
                 </ul>
             </nav>
-        </div>
-        <!-- //header -->
+        </aside>
+        <!-- //aside -->
 
-        <div id="slider">
-        </div>
-        <!-- //slider -->
+        <main id="main">
+            <article id="slider"></article>
+            <article id="link"></article>
+            <section id="contents">
+                <div class="content1"></div>
+                <div class="content2"></div>
+            </section>
+        </main>
+        <!-- //main -->
 
-        <div id="contents">
-            <div class="content1"></div>
-            <div class="content2"></div>
-            <div class="content3"></div>
-        </div>
-        <!-- //contents -->
-
-        <div id="footer">
+        <footer id="footer">
             <div class="footer1"></div>
-            <div class="footer2"></div>
+            <div class="footer2">
+                <div class="footer2-1"></div>
+                <div class="footer2-2"></div>
+            </div>
             <div class="footer3"></div>
-        </div>
+        </footer>
         <!-- //footer -->
     </div>
     <!-- //wrap -->
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <!-- <script>
-        $(function(){
-            $(".nav > ul > li").mouseover(function(){
-                $(" .nav > ul > li > ul").stop().slideDown(200);
-                // $(this).find(".submenu").stop().slideDown(200);
-            });
+        $(".nav > ul > li").mouseover(function(){
+            $(this).find(".submenu").stop().slideDown();
+        });
 
-            $(".nav > ul > li").mouseout(function(){
-                $(" .nav > ul > li > ul").stop().slideUp(200);
-            });
+        $(".nav > ul > li").mouseout(function(){
+            $(this).find(".submenu").stop().slideUp();
         });
     </script> -->
     <script>
         window.onload = function(){
-            let navList = document.querySelector(" .nav > ul");
-
-            navList.addEventListener("mouseover", function(){
-                navList.querySelectorAll(".submenu").forEach(sub => {
-                    sub.style.height = "170px";
+            var navList = document.querySelectorAll(".nav > ul > li");
+            
+            navList.forEach(nav => {
+                nav.querySelector("ul").style.display = "block";
+                nav.querySelector("ul").style.height = "0";
+                nav.querySelector("ul").style.overflow = "hidden";
+                nav.querySelector("ul").style.transition = "height 400ms";
+            })
+            
+            navList.forEach(function(navItem){
+                navItem.addEventListener("mouseover", function(){
+                    this.querySelector(".submenu").style.height = "155px";
                 });
-            });
 
-            navList.addEventListener("mouseout", function(){
-                navList.querySelectorAll(".submenu").forEach(sub => {
-                    sub.style.height = "0px";
+                navItem.addEventListener("mouseout", function(){
+                    this.querySelector(".submenu").style.height = "0px";
                 });
             });
         };

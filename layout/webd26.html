@@ -4,107 +4,105 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>웹디자인기능사 메뉴 M-2</title>
+    <title>웹디자인기능사 메뉴 M-6</title>
     <style>
         * {
             margin: 0;
             padding: 0;
         }
-
         li {
             list-style: none;
         }
-
         a {
             text-decoration: none;
             color: #000;
         }
-
         #wrap {
-            width: 1200px;
-            margin: 0 auto;
-        }
-
-        #header {
             width: 100%;
             display: flex;
+            flex-wrap: wrap;
         }
-
-        #header .logo {
-            width: 20%;
+        #aside {
+            width: 200px;
+        }
+        #aside h1 {
+            width: 100%;
             height: 100px;
             background-color: #D0EDA4;
         }
-
-        #header .nav {
-            width: 80%;
+        #aside nav {
+            width: 100%;
+            height: 700px;
             background-color: #DAEDA4;
         }
-
+        #main {
+            width: calc(100% - 200px);
+        }
         #slider {
             width: 100%;
-            height: 300px;
+            height: 400px;
             background-color: #E3EDA4;
         }
-
+        #link {
+            width: 100%;
+            height: 150px;
+            background-color: #EDEDA4;
+        }
         #contents {
             width: 100%;
             display: flex;
         }
-
         #contents .content1 {
-            width: 33.3333%;
-            height: 200px;
-            background-color: #EDEDA4;
-        }
-
-        #contents .content2 {
-            width: 33.3333%;
-            height: 200px;
+            width: 50%;
+            height: 250px;
             background-color: #EDE3A4;
         }
-
-        #contents .content3 {
-            width: 33.3333%;
-            height: 200px;
+        #contents .content2 {
+            width: 50%;
+            height: 250px;
             background-color: #EDDAA4;
         }
-
         #footer {
             width: 100%;
             display: flex;
         }
-
         #footer .footer1 {
             width: 20%;
-            height: 100px;
+            height: 120px;
             background-color: #EDD5A4;
         }
 
         #footer .footer2 {
             width: 60%;
-            height: 100px;
+        }
+        #footer .footer2 .footer2-1 {
+            width: 100%;
+            height: 60px;
             background-color: #EDCBA4;
         }
-
+        #footer .footer2 .footer2-2 {
+            width: 100%;
+            height: 60px;
+            background-color: #EDC6A4;
+        }
         #footer .footer3 {
             width: 20%;
-            height: 100px;
-            background-color: #EDC6A4;
+            height: 120px;
+            background-color: #EDDAA4;
         }
 
         /* nav */
-        .nav > ul {
-            display: flex;
-            justify-content: right;
-            margin-top: 30px;
+        .nav {
+            position: relative;
+            z-index: 1000;
         }
         .nav > ul > li {
-            position: relative;
+           position: relative;
         }
         .nav > ul > li > a {
-            display: inline-block;
-            padding: 10px 50px;
+            display: block;
+            padding: 10px;
+            text-align: center;
             background-color: #E3EDA4;
         }
         .nav > ul > li > a:hover {
@@ -113,36 +111,45 @@
         .nav > ul > li > ul {
             display: none;
             position: absolute;
-            left: 0;
-            top: 38px;
-            width: 100%;
-            text-align: center;
+            right: -500px;
+            top: 0;
+            width: 500px;
+        }
+        .nav > ul > li > ul > li {
+            display: inline;
         }
         .nav > ul > li > ul > li > a {
-            display: inline-block;
             padding: 10px;
-            background-color: #D0EDA4;
-            width: 100%;
-            box-sizing: border-box;
+            width: 100px;
+            display: inline-block;
         }
         .nav > ul > li > ul > li > a:hover {
             background-color: #EDDAA4;
         }
-
-        /* 자바스크립트 CSS */
-        .nav > ul > li > ul {
-            display: block;
-            height: 0;
-            overflow: hidden;
-            transition: all 600ms;
+        #main {
+            position: relative;
+        }
+        #main::after {
+            content: '';
+            width: 0%;
+            height: 214px;
+            background-color: #D0EDA4;
+            position: absolute;
+            left: 0;
+            top: 100px;
+            z-index: 1;
+            transition: all 300ms;
+        }
+        #main.on::after {
+            width: 100%;
         }
     </style>
 </head>
 
 <body>
     <div id="wrap">
-        <div id="header">
-            <div class="logo"></div>
+        <aside id="aside">
+            <h1></h1>
             <nav class="nav">
                 <ul>
                     <li>
@@ -160,7 +167,6 @@
                             <li><a href="#">서브메뉴2-1</a></li>
                             <li><a href="#">서브메뉴2-2</a></li>
                             <li><a href="#">서브메뉴2-3</a></li>
-                            <li><a href="#">서브메뉴2-4</a></li>
                         </ul>
                     </li>
                     <li>
@@ -168,8 +174,6 @@
                         <ul class="submenu">
                             <li><a href="#">서브메뉴3-1</a></li>
                             <li><a href="#">서브메뉴3-2</a></li>
-                            <li><a href="#">서브메뉴3-3</a></li>
-                            <li><a href="#">서브메뉴3-4</a></li>
                         </ul>
                     </li>
                     <li>
@@ -178,30 +182,37 @@
                             <li><a href="#">서브메뉴4-1</a></li>
                             <li><a href="#">서브메뉴4-2</a></li>
                             <li><a href="#">서브메뉴4-3</a></li>
-                            <li><a href="#">서브메뉴4-4</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">메뉴5</a>
+                        <ul class="submenu">
+                            <li><a href="#">서브메뉴5-1</a></li>
                         </ul>
                     </li>
                 </ul>
             </nav>
-        </div>
-        <!-- //header -->
+        </aside>
+        <!-- //aside -->
 
-        <div id="slider">
-        </div>
-        <!-- //slider -->
+        <main id="main">
+            <article id="slider"></article>
+            <article id="link"></article>
+            <section id="contents">
+                <div class="content1"></div>
+                <div class="content2"></div>
+            </section>
+        </main>
+        <!-- //main -->
 
-        <div id="contents">
-            <div class="content1"></div>
-            <div class="content2"></div>
-            <div class="content3"></div>
-        </div>
-        <!-- //contents -->
-
-        <div id="footer">
+        <footer id="footer">
             <div class="footer1"></div>
-            <div class="footer2"></div>
+            <div class="footer2">
+                <div class="footer2-1"></div>
+                <div class="footer2-2"></div>
+            </div>
             <div class="footer3"></div>
-        </div>
+        </footer>
         <!-- //footer -->
     </div>
     <!-- //wrap -->
@@ -210,31 +221,34 @@
     <!-- <script>
         $(function(){
             $(".nav > ul > li").mouseover(function(){
-                $(" .nav > ul > li > ul").stop().slideDown(200);
-                // $(this).find(".submenu").stop().slideDown(200);
+                $(".nav > ul > li > ul").stop().fadeIn();
+                $("#main").addClass("on");
             });
 
             $(".nav > ul > li").mouseout(function(){
-                $(" .nav > ul > li > ul").stop().slideUp(200);
+                $(".nav > ul > li > ul").stop().fadeOut();
+                $("#main").removeClass("on");
             });
         });
     </script> -->
     <script>
         window.onload = function(){
-            let navList = document.querySelector(" .nav > ul");
+            let navList = document.querySelector(".nav > ul");
 
             navList.addEventListener("mouseover", function(){
                 navList.querySelectorAll(".submenu").forEach(sub => {
-                    sub.style.height = "170px";
+                    sub.style.display = "block";
                 });
+                document.getElementById("main").classList.add("on");
             });
 
             navList.addEventListener("mouseout", function(){
                 navList.querySelectorAll(".submenu").forEach(sub => {
-                    sub.style.height = "0px";
+                    sub.style.display = "none";
                 });
+                document.getElementById("main").classList.remove("on");
             });
-        };
+        }
     </script>
 </body>
 

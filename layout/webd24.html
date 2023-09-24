@@ -1,148 +1,129 @@
 <!DOCTYPE html>
 <html lang="ko">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>웹디자인기능사 메뉴 M-2</title>
+    <title>웹디자인기능사 메뉴 M-4</title>
     <style>
         * {
             margin: 0;
             padding: 0;
         }
-
         li {
             list-style: none;
         }
-
         a {
             text-decoration: none;
             color: #000;
         }
-
         #wrap {
-            width: 1200px;
-            margin: 0 auto;
-        }
-
-        #header {
             width: 100%;
             display: flex;
+            flex-wrap: wrap;
         }
-
-        #header .logo {
-            width: 20%;
+        #aside {
+            width: 200px;
+        }
+        #aside .logo {
+            width: 100%;
             height: 100px;
-            background-color: #D0EDA4;
+            background-color: #F3B9BB;
         }
-
-        #header .nav {
-            width: 80%;
-            background-color: #DAEDA4;
+        #aside .nav {
+            width: 100%;
+            height: 750px;
+            background-color: #ECBDC2;
         }
-
+        #main {
+            width: calc(100% - 200px);
+            height: 850px;
+            background-color: #E5C2C9;
+        }
         #slider {
             width: 100%;
-            height: 300px;
-            background-color: #E3EDA4;
+            height: 400px;
+            background-color: #DEC6D0;
+            position: relative;
         }
-
+        #slider .link {
+            position: absolute;
+            right: 0;
+            top: 0;
+            width: 100px;
+            height: 300px;
+            background-color: #D8CBD7;
+        }
+        #banner {
+            width: 100%;
+            height: 200px;
+            background-color: #D1D0DE;
+        }
         #contents {
             width: 100%;
-            display: flex;
+            height: 250px;
+            background-color: #B5CBFA;
         }
-
-        #contents .content1 {
-            width: 33.3333%;
-            height: 200px;
-            background-color: #EDEDA4;
-        }
-
-        #contents .content2 {
-            width: 33.3333%;
-            height: 200px;
-            background-color: #EDE3A4;
-        }
-
-        #contents .content3 {
-            width: 33.3333%;
-            height: 200px;
-            background-color: #EDDAA4;
-        }
-
         #footer {
             width: 100%;
             display: flex;
         }
-
         #footer .footer1 {
             width: 20%;
             height: 100px;
-            background-color: #EDD5A4;
+            background-color: #CAD4E5;
         }
-
         #footer .footer2 {
             width: 60%;
             height: 100px;
-            background-color: #EDCBA4;
+            background-color: #BCDDF3;
         }
-
         #footer .footer3 {
             width: 20%;
             height: 100px;
-            background-color: #EDC6A4;
+            background-color: #B5E2FA;
         }
 
         /* nav */
+        .nav {}
         .nav > ul {
-            display: flex;
-            justify-content: right;
-            margin-top: 30px;
         }
         .nav > ul > li {
-            position: relative;
         }
         .nav > ul > li > a {
-            display: inline-block;
-            padding: 10px 50px;
-            background-color: #E3EDA4;
+            display: block;
+            padding: 10px;
+            text-align: center;
+            background-color: #E5C2C9;
         }
         .nav > ul > li > a:hover {
-            background-color: #EDDAA4;
+            background-color: #B5E2FA;
         }
         .nav > ul > li > ul {
             display: none;
-            position: absolute;
-            left: 0;
-            top: 38px;
-            width: 100%;
+        }
+        .nav > ul > li > ul > li {}
+        .nav > ul > li > ul > li > a {
+            display: block;
+            padding: 10px;
             text-align: center;
         }
-        .nav > ul > li > ul > li > a {
-            display: inline-block;
-            padding: 10px;
-            background-color: #D0EDA4;
-            width: 100%;
-            box-sizing: border-box;
-        }
         .nav > ul > li > ul > li > a:hover {
-            background-color: #EDDAA4;
+            background-color: #B5E2FA;
         }
-
-        /* 자바스크립트 CSS */
+        
+        /* 자바스크립트용 CSS */
         .nav > ul > li > ul {
             display: block;
             height: 0;
             overflow: hidden;
-            transition: all 600ms;
+            transition: all 400ms;
         }
     </style>
 </head>
-
 <body>
     <div id="wrap">
-        <div id="header">
-            <div class="logo"></div>
+        <aside id="aside">
+            <h1 class="logo"></h1>
             <nav class="nav">
                 <ul>
                     <li>
@@ -183,59 +164,57 @@
                     </li>
                 </ul>
             </nav>
-        </div>
-        <!-- //header -->
+        </aside>
+        <!-- //aside -->
 
-        <div id="slider">
-        </div>
-        <!-- //slider -->
+        <main id="main">
+            <article id="slider">
+                <div class="sliderWrap"></div>
+                <div class="link"></div>
+            </article>
+            <!-- //slider -->
 
-        <div id="contents">
-            <div class="content1"></div>
-            <div class="content2"></div>
-            <div class="content3"></div>
-        </div>
-        <!-- //contents -->
+            <article id="banner"></article>
+            <!-- //banner -->
 
-        <div id="footer">
+            <section id="contents"></section>
+            <!-- //contents -->
+        </main>
+        <!-- //main -->
+
+        <footer id="footer">
             <div class="footer1"></div>
             <div class="footer2"></div>
             <div class="footer3"></div>
-        </div>
+        </footer>
         <!-- //footer -->
     </div>
     <!-- //wrap -->
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <!-- <script>
-        $(function(){
-            $(".nav > ul > li").mouseover(function(){
-                $(" .nav > ul > li > ul").stop().slideDown(200);
-                // $(this).find(".submenu").stop().slideDown(200);
-            });
+        $(".nav > ul >li").mouseover(function(){
+            $(this).find(".submenu").stop().slideDown();
+        });
 
-            $(".nav > ul > li").mouseout(function(){
-                $(" .nav > ul > li > ul").stop().slideUp(200);
-            });
+        $(".nav > ul >li").mouseout(function(){
+            $(this).find(".submenu").stop().slideUp();
         });
     </script> -->
     <script>
         window.onload = function(){
-            let navList = document.querySelector(" .nav > ul");
+            var navList = document.querySelectorAll(".nav > ul > li");
 
-            navList.addEventListener("mouseover", function(){
-                navList.querySelectorAll(".submenu").forEach(sub => {
-                    sub.style.height = "170px";
+            navList.forEach(function(navItem){
+                navItem.addEventListener("mouseover", function(){
+                    this.querySelector(".submenu").style.height = "155px";
+                });
+                
+                navItem.addEventListener("mouseout", function(){
+                    this.querySelector(".submenu").style.height = "0px";
                 });
             });
-
-            navList.addEventListener("mouseout", function(){
-                navList.querySelectorAll(".submenu").forEach(sub => {
-                    sub.style.height = "0px";
-                });
-            });
-        };
+        }
     </script>
 </body>
-
 </html>
