@@ -1,105 +1,114 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>웹디자인기능사 레이아웃 D-4</title>
+    <title>웹디자인기능사 레이아웃 E-4</title>
     <style>
         * {
             margin: 0;
             padding: 0;
         }
         #wrap {
-            width: 100%;
-            display: flex;
-            flex-wrap: wrap;
-        }
-        #aside {
-            width: 200px;
-        }
-        #aside .logo {
-            width: 100%;
-            height: 100px;
-            background-color: #F3B9BB;
-        }
-        #aside .nav {
-            width: 100%;
-            height: 700px;
-            background-color: #ECBDC2;
+             width: 100%;
         }
         #main {
-            width: calc(100% - 200px);
-            height: 800px;
-            background-color: #DEC6D0;
-        }
-        #slider {
             width: 100%;
-            height: 400px;
-            background-color: #D8CBD7;
-        }
-        #link {
-            width: 100%;
-            height: 150px;
-            background-color: #D1D0DE;
-        }
-        #contents {
-            width: 100%;
+            height: calc(100vh - 120px);
             display: flex;
         }
-        #contents .content1 {
-            width: 50%;
-            height: 250px;
-            background-color: #B5CBFA;
+        #header {
+            width: 200px;
+            height: 100%;
         }
-        #contents .content2 {
-            width: 50%;
-            height: 250px;
-            background-color: #CAD4E5;
+        #header .logo {
+            width: 100%;
+            height: 10%;
+            background-color: #F3B9BB;
+        }
+        #header .nav {
+            width: 100%;
+            height: 90%;
+            background-color: #ECBDC2;
+        }
+        #contents {
+            width: 400px;
+            height: 100%;
+        }
+        #contents .banner {
+            width: 100%;
+            height: 15%;
+            background-color: #E5C2C9;
+        }   
+        #contents .notice {
+            width: 100%;
+            height: 35%;
+            background-color: #DEC6D0;
+        }
+        #contents .gallery {
+            width: 100%;
+            height: 35%;
+            background-color: #D8CBD7;
+        }
+        #contents .link {
+            width: 100%;
+            height: 15%;
+            background-color: #D1D0DE;
+        }
+        #slider {
+            width: calc(100% - 600px);
+            height: 100%;
+            background-color: #B5CBFA;
         }
         #footer {
             width: 100%;
             display: flex;
+            flex-wrap: wrap;
         }
         #footer .footer1 {
-            width: 20%;
+            width: 200px;
             height: 120px;
-            background-color: #BCDDF3;
+            background-color: #CAD4E5;
         }
         #footer .footer2 {
-            width: 60%;
+            width: calc(100% - 400px);
         }
         #footer .footer2 .footer2-1 {
             width: 100%;
             height: 60px;
-            background-color: #B5E2FA;
+            background-color: #BCDDF3;
         }
         #footer .footer2 .footer2-2 {
             width: 100%;
             height: 60px;
-            background-color: #B5DDFA;
+            background-color: #B5E2FA;
         }
         #footer .footer3 {
-            width: 20%;
+            width: 200px;
             height: 120px;
-            background-color: #D1D0DE;
+            background-color: #B5DDFA;
         }
     </style>
 </head>
 <body>
     <div id="wrap">
-        <aside id="aside">
-            <h1 class="logo"></h1>
-            <nav class="nav"></nav>
-        </aside>
-        <!-- //aside -->
-
         <main id="main">
-            <article id="slider"></article>
-            <article id="link"></article>
+            <header id="header">
+                <h1 class="logo"></h1>
+                <nav class="nav"></nav>
+            </header>
+            <!-- //header -->
             <section id="contents">
-                <div class="content1"></div>
-                <div class="content2"></div>
+                <article class="banner"></article>
+                <article class="notice"></article>
+                <article class="gallery"></article>
+                <article class="link"></article>
             </section>
+            <!-- //contents -->
+
+            <article id="slider">
+            </article>
+            <!-- //slider -->
         </main>
         <!-- //main -->
 

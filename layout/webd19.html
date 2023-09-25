@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>웹디자인기능사 레이아웃 D-1</title>
+    <title>웹디자인기능사 레이아웃 E-3</title>
     <style>
         * {
             margin: 0;
@@ -11,50 +11,47 @@
         }
         #wrap {
             width: 100%;
-            display: flex;
-            flex-wrap: wrap;
-        }
-        #aside {
-            width: 200px;
-        }
-        #aside .logo {
-            width: 100%;
-            height: 100px;
-            background-color: #B4B7FA;
-        }
-        #aside .nav {
-            width: 100%;
-            height: 750px;
-            background-color: #B4C1FA;
         }
         #main {
-            width: calc(100% - 200px);
-            height: 850px;
-            background-color: #B4CAFA;
-        }
-        #slider {
             width: 100%;
-            height: 400px;
-            background-color: #B4D8FA;
-            position: relative;
+            display: flex;
         }
-        #slider .link {
-            position: absolute;
-            right: 0;
-            top: 0;
-            width: 100px;
-            height: 300px;
-            background-color: #B4DDFA;
+        #header {
+            width: 200px;
+            height: 750px;
         }
-        #banner {
+        #header .logo {
             width: 100%;
-            height: 200px;
-            background-color: #B4E6FA;
+            height: 100px;
+            background-color: #EDAAA4;
+        }
+        #header .nav {
+            width: 100%;
+            height: 650px;
+            background-color: #EDB0A4;
         }
         #contents {
+            width: 400px;
+        }
+        #contents .banner {
             width: 100%;
-            height: 250px;
-            background-color: #B4EFFA;
+            height: 300px;
+            background-color: #EDB5A4;
+        }
+        #contents .notice {
+            width: 100%;
+            height: 300px;
+            background-color: #EDBBA4;
+        }
+        #contents .gallery {
+            width: 100%;
+            height: 150px;
+            background-color: #EDC1A4;
+        }
+        #slider {
+            width: calc(100% - 600px);
+            height: 750px;
+            background-color: #DED2B3;
         }
         #footer {
             width: 100%;
@@ -63,40 +60,39 @@
         #footer .footer1 {
             width: 20%;
             height: 100px;
-            background-color: #B4F9FA;
+            background-color: #EDC7A4;
         }
         #footer .footer2 {
             width: 60%;
             height: 100px;
-            background-color: #B4FAF2;
+            background-color: #EDCDA4;
         }
         #footer .footer3 {
             width: 20%;
             height: 100px;
-            background-color: #B4FAE8;
+            background-color: #EDD2A4;
         }
     </style>
 </head>
 <body>
     <div id="wrap">
-        <aside id="aside">
-            <h1 class="logo"></h1>
-            <nav class="nav"></nav>
-        </aside>
-        <!-- //aside -->
-
         <main id="main">
+            <header id="header">
+                <h1 class="logo"></h1>
+                <nav class="nav"></nav>
+            </header>
+            <!-- //header -->
+
+            <section id="contents">
+                <article class="banner"></article>
+                <article class="notice"></article>
+                <article class="gallery"></article>
+            </section>
+            <!-- //contents -->
+
             <article id="slider">
-                <div class="sliderWrap"></div>
-                <div class="link"></div>
             </article>
             <!-- //slider -->
-
-            <article id="banner"></article>
-            <!-- //banner -->
-
-            <section id="contents"></section>
-            <!-- //contents -->
         </main>
         <!-- //main -->
 
