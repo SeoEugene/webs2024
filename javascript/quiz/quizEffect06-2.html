@@ -1,14 +1,12 @@
 <!DOCTYPE html>
 <html lang="ko">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>퀴즈이펙트06</title>
     <link rel="stylesheet" href="assets/css/quiz.css">
 </head>
-
-<body class="fixed">
+<body>
     <header id="header">
         <h1>
             <a href="../index.html">Quiz</a>
@@ -42,19 +40,22 @@
     <!-- //footer -->
 
     <script>
-        // 선택자
+       // 선택자
         const quizWrap = document.querySelector(".quiz__wrap");
         const quizCheck = document.querySelector(".quiz__check");
 
-        // 문제 정보
-        let quizInfo = [];
-        let quizScore = 0;
+       // 변수 설정
+       let currentIndex = 0;    // 현재 문제
+       let quizInfo = [];       //모든 퀴즈 정보
 
-        // 문제 가져오기
-        const fetchQuiz = () => {
+       // 1. 문제 가져오기
+       const fetchQuiz = () => {
+            // fetch()는 JavaScript에서 네트워크 요청을 생성하고 처리하기 위한 기능을 제공하는 웹 API 중 하나입니다.
             fetch("https://webstoryboy.github.io/webs2024/json/gineungsaJC2011_05.json")
             .then(res => res.json())
+            // 정보 가져오기
             .then(items => {
+                // quizInfo에 가져온 정보 저장
                 quizInfo = items.map((item, index) => {
                     const formattedQuiz = {
                         infoDate: "2011년 5회",
@@ -64,13 +65,15 @@
                         infoAnswer: item.correct_answer,        
                     }
                     // 보기 가져오기
-                    const choices = [...item.incorrect_answers, item.correct_answer];
+                    const choices = [item.correct_answer, ...item.incorrect_answers];
 
                     // 보기 랜덤 섞기
                     for (let i = choices.length - 1; i > 0; i--) {
                         const j = Math.floor(Math.random() * (i + 1));
                         [choices[i], choices[j]] = [choices[j], choices[i]];
+
                     }
+
 
                     // 랜덤 데이터 넣어주기
                     formattedQuiz.infoChoice = choices;
@@ -82,7 +85,7 @@
             })       
         }
 
-        // 문제 출력
+        // 2. 문제 출력
         const updataQuiz = () => {
             const quizArray = [];
 
@@ -94,24 +97,24 @@
 
                         <div class="quiz__main">
                             <div class="quiz__question">
-                                ${number + 1}. ${quiz.infoquestion}
+                                ${number+1}. ${quiz.infoquestion}
                             </div>
                             <!-- //quiz__question -->
                             <div class="quiz__choice">
                                 <label for="choice1-${number}">
-                                    <input type="radio" id="choice1-${number}" name="choice-${number}" value="${quiz.infoChoice[0]}">
+                                    <input type="radio" id="choice1-${number}" name="choice" value="1">
                                     <span>${quiz.infoChoice[0]}</span>
                                 </label>
                                 <label for="choice2-${number}">
-                                    <input type="radio" id="choice2-${number}" name="choice-${number}" value="${quiz.infoChoice[1]}">
+                                    <input type="radio" id="choice2-${number}" name="choice" value="2">
                                     <span>${quiz.infoChoice[1]}</span>
                                 </label>
                                 <label for="choice3-${number}">
-                                    <input type="radio" id="choice3-${number}" name="choice-${number}" value="${quiz.infoChoice[2]}">
+                                    <input type="radio" id="choice3-${number}" name="choice" value="3">
                                     <span>${quiz.infoChoice[2]}</span>
                                 </label>
                                 <label for="choice4-${number}">
-                                    <input type="radio" id="choice4-${number}" name="choice-${number}" value="${quiz.infoChoice[3]}">
+                                    <input type="radio" id="choice4-${number}" name="choice" value="4">
                                     <span>${quiz.infoChoice[3]}</span>
                                 </label>
                             </div>
@@ -131,39 +134,17 @@
         }
 
         // 정답 확인
-        quizCheck.addEventListener("click", function () {
-            const quizElements = document.querySelectorAll(".quiz");
-
-            quizElements.forEach((quizElement, index) => {
-                const selectedChoice = quizElement.querySelector(`input[name="choice-${index}"]:checked`);  // 체크한 정답
-                const quizAnswer = quizElement.querySelector(".quiz__answer");
-                const quizDesc = quizElement.querySelector(".quiz__desc");
-
-                if(selectedChoice){
-                    const userAnswer = selectedChoice.value;
-                    const correctAnswer = quizAnswer.textContent;
-
-                    if(userAnswer === correctAnswer){
-                        console.log("정답입니다.");
-                        quizElement.classList.add("good");
-                        quizScore++
-                    }else{
-                        console.log("오답입니다.");
-                        quizElement.classList.add("bad");
-                        quizAnswer.classList.remove("none");
-                        quizDesc.classList.remove("none");
-                    }
-                }
-            });
-            alert("총 맞힌 갯수는 : " + quizScore + "개 입니다.");
+        quizCheck.addEventListener("click", () => {
+            const selectedChoice = quizWrap.querySelectorAll("input[name='choice']:checked");
+            const correctAnswer = quizInfo[currentIndex].infoAnswer;
+            console.log(selectedChoice);
+            
         });
 
         // 페이지가 로드된 후 실행
         document.addEventListener("DOMContentLoaded", () => {
             fetchQuiz();
         });
-
     </script>
 </body>
-
 </html>

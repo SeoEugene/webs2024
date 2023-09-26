@@ -88,6 +88,9 @@ body::after {
     top: 0;
     z-index: -1;
 }
+body.fixed {
+    background-attachment: fixed;
+}
 
 /* common */
 .none {
@@ -733,4 +736,118 @@ body::after {
 @keyframes opcityIn {
     0% {opacity: 1;}
     100% {Opacity: 0;}
+}
+
+.cbt__box {
+    width: 600px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 2px 2px 2px rgb(0 0 0 / 10%);
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    padding: 50px;
+    text-align: center;
+    display: none;
+}
+.cbt__box h2 {
+    font-size: 30px;
+    text-align: center;
+    margin-bottom: 10px;
+}
+.cbt__box select {
+    width: 100%;
+    border: 1px solid #eee;
+    padding: 10px;
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+.cbt__box p {
+    font-size: 20px;
+    line-height: 1.6;
+    text-align: center;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+.cbt__box p > div {
+    font-size: 10px;
+    color: #b8a8ff;
+}
+.cbt__box em {
+    font-style: normal;
+    font-size: 20px;
+    font-weight: bolder;
+    color: #5a46ac;
+}
+.cbt__box input {
+    border: 1px solid #b8a8ff;
+    background-color: #ffffffc0;
+    border-radius: 40px;
+    font-size: 20px;
+}
+.cbt__box__start {
+    display: inline-block;
+    border: 1px solid #b8a8ff;
+    background-color: #c7beee;
+    padding: 20px 40px;
+    border-radius: 40px;
+    width: 100%;
+}
+
+.cbt__wrap {
+    padding: 20px;
+}
+.cbt__header{
+    position: fixed;
+    left: 20px;
+    top: 80px;
+    z-index: 1000;
+    width: calc((100% - 370px));
+    height: 80px;
+    background-color: #fff;
+    border-radius: 10px 10px 0 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+}
+.ctb__title {
+    font-size: 28px;
+}
+.cbt__info {
+    display: flex;
+}
+.cbt__info > div {
+    border: 1px solid #b8a8ff;
+    background-color: #c7beee;
+    padding: 7px 7px;
+    border-radius: 40px;
+    margin-left: 20px;
+}
+.cbt__info .time {
+
+}
+.cbt__info .submit {}
+
+.cbt__conts {
+    width: calc(100% - 330px);
+    height: 500px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+}
+.cbt__aside {
+    position: absolute;
+    top: 70px;
+    right: 20px;
+    width: 300px;
+    height: 500px;
+    background-color: #fff;
+    border-radius: 20px;
+}
+.cbt__name {
+    background-color: #000;
+    color: #fff;
+    padding: 10px 20px;
 }
