@@ -53,6 +53,29 @@
          url("https://cdn.jsdelivr.net/gh/websfont/nanumSquareNeo/nanumSquareNeo-Black.ttf") format("truetype");
     font-display: swap;
 } 
+.nanumSquareNeo {
+    font-family: "nanumSquareNeo";
+}
+.nanumSquareNeo300 {
+    font-family: "nanumSquareNeo";
+    font-weight: 300;
+}
+.nanumSquareNeo400 {
+    font-family: "nanumSquareNeo";
+    font-weight: 400;
+}
+.nanumSquareNeo700 {
+    font-family: "nanumSquareNeo";
+    font-weight: 700;
+}
+.nanumSquareNeo800 {
+    font-family: "nanumSquareNeo";
+    font-weight: 800;
+}
+.nanumSquareNeo900 {
+    font-family: "nanumSquareNeo";
+    font-weight: 900;
+}
 
 /* reset */
 * {
@@ -76,7 +99,9 @@ body {
     background-position: center center;
     background-repeat: no-repeat;
     position: relative;
-
+}
+body.fixed {
+    background-attachment: fixed;
 }
 body::after {
     content: '';
@@ -87,9 +112,6 @@ body::after {
     left: 0;
     top: 0;
     z-index: -1;
-}
-body.fixed {
-    background-attachment: fixed;
 }
 
 /* common */
@@ -105,10 +127,10 @@ body.fixed {
     justify-content: space-between;
 }
 #header h1 a {
-    display: inline-block;
     color: #fff;
     padding: 20px;
     font-size: 30px;
+    display: inline-block;
 }
 #header nav {
     padding-right: 20px;
@@ -163,8 +185,8 @@ body.fixed {
     border: 10px solid red;
     border-radius: 50%;
     position: absolute;
-    left: 20px; 
-    top: 20px;
+    left: 15px;
+    top:  30px;
     z-index: 100;
 }
 .quiz__wrap > .quiz.bad {
@@ -224,20 +246,20 @@ body.fixed {
     font-weight: 400;
 }
 .quiz__img {
-    margin-bottom: 10px;                                
+    margin-bottom: 10px;
 }
-.quiz__img img{
-    width: 100%;
+.quiz__img img {
     border: 1px solid #eee;
+    width: 100%;
 }
 .quiz__choice {
     margin-bottom: 20px;
 }
 .quiz__choice label {
-    width: 100%;
     display: block;
+    width: 100%;
+    
 }
-
 .quiz__choice label input {
     position: absolute;
     clip: rect(0 0 0 0);
@@ -259,18 +281,18 @@ body.fixed {
     font-weight: 400;
     cursor: pointer;
 }
-.quiz__choice label span:hover {
-    border-color: #b8a8ff;
-    color: #5a46ac;
-    box-shadow: 5px 5px 5px #d6d3e2;
+.quiz__choice span:hover {
+    border-color: #412E91;
+    color: #412E91;
+    box-shadow: 1px 1px 1px #422e9168;
 }
 .quiz__choice label span::before {
     content: '';
     width: 24px;
     height: 24px;
-    border-radius: 50%; 
+    border-radius: 50%;
     flex-shrink: 0;
-    box-shadow: inset 0 0 0 6px #412E91;
+    box-shadow: inset 0 0 0 4px #412E91;
     margin-right: 15px;
     transition: all 0.3s;
 }
@@ -279,38 +301,36 @@ body.fixed {
 }
 .quiz__choice label input:checked + span {
     border-color: #412E91;
-    color: #5a46ac;
-    box-shadow: 1px 1px  5px #b8a8ff;
-    background-color: #e8e7ee;
+    color: #412E91;
+    box-shadow: 1px 1px 1px #422e9168;
+    background-color: #422e9124;
 }
 .quiz__choice .choice {
     border: 1px solid #eee;
     padding: 17px;
-    margin-bottom: 5px;
+    margin-bottom: 10px;
     font-size: 16px;
     line-height: 1.5;
     transition: border-color 0.3s, background-color 0.3s;
     border-radius: 3px;
-    color: #666;
+    color: #666
 }
 .quiz__choice .choice:hover {
-    background-color: #ede9ff;
-    border-color:#412E91;
+    border-color: #412E91;
     cursor: pointer;
 }
-.quiz__choice .choice.correct{
+.quiz__choice .choice.correct {
     position: relative;
     border-color: #412E91;
-    box-shadow: 1px 1px 5px #b8a8ff;
-    box-shadow: 1px 1px 5px #2c2c2c;
-    background-color: #ede9ff;
-    color:#2c2c2c;
+    box-shadow: 1px 1px 1px #422e9168;
+    background-color: #ccc9f624;
+    color: #412E91;
     padding-right: 57px;
 }
 .quiz__choice .choice.correct::after {
     content: '';
-    width: 20px;
-    height: 20px;
+    width: 14px;
+    height: 14px;
     border: 6px solid #412E91;
     border-radius: 50%;
     position: absolute;
@@ -318,12 +338,12 @@ body.fixed {
     top: 50%;
     transform: translateY(-50%);
 }
-.quiz__choice .choice.incorrect{
+.quiz__choice .choice.incorrect {
     position: relative;
-    border-color: #ef3232;
-    box-shadow: 1px 1px 5px #ef3232;
-    background-color: #f1e2e2;
-    color:#2c2c2c;
+    border-color: #91323c;
+    box-shadow: 1px 1px 1px #98343468;
+    background-color: #f7d6d668;
+    color: #91323c;
     padding-right: 57px;
 }
 .quiz__choice .choice.incorrect::before {
@@ -334,7 +354,7 @@ body.fixed {
     transform: translateY(-50%);
     width: 28px;
     height: 6px;
-    background-color: #ef3232;
+    background-color: #91323c;
     border-radius: 4px;
     transform: rotate(45deg);
     margin-top: -3px;
@@ -347,13 +367,14 @@ body.fixed {
     transform: translateY(-50%);
     width: 28px;
     height: 6px;
-    background-color: #ef3232;
+    background-color: #91323c;
     border-radius: 4px;
     transform: rotate(-45deg);
     margin-top: -3px;
 }
+
 .quiz__animation {
-    border: 1px solid #e6e2fa;
+    border: 1px dashed #b8a8ff;
     margin-bottom: 10px;
 }
 .quiz__input {
@@ -371,11 +392,10 @@ body.fixed {
     padding: 20px;
     margin-bottom: 10px;
     line-height: 1.5;
-    text-align: center;
     color: #666;
 }
 .quiz__answer::before {
-    content: "🙌정답) ";
+    content: " 😊정답 : ";
 }
 .quiz__desc {
     border: 1px solid #eaeaea;
@@ -385,8 +405,10 @@ body.fixed {
     color: #666;
 }
 .quiz__desc::before {
-    content:"😒설명) ";
+    content: " 😊설명 : ";
 }
+.quiz__footer {}
+
 .quiz__confirm {
     background-color: #412E91;
     color: #fff;
@@ -410,15 +432,15 @@ body.fixed {
     border: 1px dashed #412E91;
     padding: 15px 20px;
     background-color: #fff;
-    cursor: pointer;
     color: #412E91;
+    cursor: pointer;
     transition: all 0.3s
 }
 .quiz__next:hover {
-    background-color: #c7beee;
+    background-color: #f5f2ff;
 }
 .quiz__indicator {
-    background-color: #c7beee;
+    background-color: #f5f2ff;
     padding: 20px;
     border-radius: 3px;
     margin-bottom: 20px;
@@ -432,13 +454,12 @@ body.fixed {
 }
 .quiz__indicator span.correct {
     background-color: #412E91;
-    position : relative;
+    position: relative;
 }
 .quiz__indicator span.correct::before {
-    content:'';
+    content: '';
     width: 8px;
     height: 8px;
-    gap: 8px;
     border: 4px solid #fff;
     border-radius: 50%;
     position: absolute;
@@ -476,14 +497,17 @@ body.fixed {
     bottom: 20px;
     width: 100px;
     height: 100px;
-    background-color: #b8a8ff;
+    line-height: 100px;
+    background-color: #412E91;
+    color: #fff;
     border-radius: 50%;
     text-align: center;
-    line-height: 100px;
     cursor: pointer;
+    transition: all 0.3s;
+    border: 1px dashed transparent;
 }
 .quiz__check:hover {
-    background-color: #c7beee;
+    background-color: #e1d9ff;
     border: 1px dashed #412E91;
     color: #412E91;
 }
@@ -502,16 +526,17 @@ body.fixed {
     text-decoration: underline;
     text-underline-position: under;
 }
+
 @media (max-width: 600px){
     #header {
         flex-direction: column;
     }
     #header h1 a {
-        padding: 15px;;
+        padding: 15px;
     }
     #header nav {
         padding-right: 0;
-        padding-bottom: 20px;
+        margin-bottom: 20px;
     }
     #header nav li a {
         width: 30px;
@@ -519,15 +544,15 @@ body.fixed {
         padding: 7px;
     }
     .quiz__wrap {
-        padding: 0 6px;
+        padding: 0 16px;
         margin-top: 0;
     }
-    .quiz__wrap > .quiz{
+    .quiz__wrap > .quiz {
         width: 100%;
         padding: 30px 20px;
     }
     .quiz__header {
-        margin-bottom: 10px;
+        margin-bottom: 20px;
         font-size: 14px;
     }
     .quiz__date {
@@ -536,7 +561,7 @@ body.fixed {
     .quiz__type {
         font-size: 14px;
     }
-    .quiz__question{
+    .quiz__question {
         margin-bottom: 20px;
         line-height: 1.5;
         font-size: 20px;
@@ -547,7 +572,7 @@ body.fixed {
     .quiz__question span {
         font-size: 20px;
     }
-    .quiz__input {
+    .quiz__input input {
         padding: 14px;
     }
     .quiz__answer {
@@ -565,133 +590,170 @@ body.fixed {
 }
 
 /* modal__wrap */
-/* 소스버튼 */
 .modal__btn {
-    /* 형태 */
-    display: inline-block;
     color: #fff;
     border: 1px solid #fff;
     border-radius: 50px;
+    display: inline-block;
     padding: 10px 20px;
-    cursor: pointer;
-
-    /* 위치 */
     position: absolute;
     right: 20px;
     bottom: 20px;
+    cursor: pointer;
 }
-
-
-/* 소스버튼을 누르면 나오는 창(검은창) */
 .modal__cont {
-    /* 규격 */
     width: 100%;
     height: 100vh;
     background-color: rgba(0,0,0,0.7);
-
-    /* 형태 */
-    align-items: center;
-    justify-content: center;
-
-    /* 위치 */
     position: fixed;
     left: 0;
     top: 0;
-    z-index: 1000;
     overflow-x: hidden;
-
-    /* 숨기기 */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
     transform: scale(0);
 }
-
-
-/* 소스버튼을 누르면 나오는 박스 */
 .modal__box {
-    /* 규격 */
     width: 70%;
-    background-color: #ccc;
-
-    /* 형태 */
+    height: 70vh;
     border-radius: 10px;
-
-    /* 숨기기 */
+    background-color: #ccc;
     transform: scale(0);
 }
 .modal__box .title {
-    /* 규격 */
-    display: flex;
-    height: 50px;
-    background-color: #1b1c2e;
-
-    /* 형태 */
-    color: #fff;
-    align-items: center;
     padding: 1rem;
+    background-color: #1b1c2e;
+    display: flex;
+    align-items: center;
+    color: #fff;
+    height: 50px;
     border-top-left-radius: 0.5rem;
     border-top-right-radius: 0.5rem;
-    border: 3px solid pink;
 }
 .modal__box .title .dot {
-    /* 규격 */
     width: 15px;
     height: 15px;
     background-color: #3b3d63;
     display: inline-block;
-
-    /* 형태 */
     border-radius: 50%;
-    margin-left: 2rem;
-
-    /* 위치 */
     position: relative;
+    margin-left: 2rem;
 }
-
 .modal__box .title .dot::before {
-    /* 규격 */
-    width: 15px;
-    height: 15px;
-    background-color: #3b3d63;
-
-    /* 형태 */
-    border-radius: 50%;
-
-    /* 위치 */
     content: '';
     position: absolute;
     left: 25px;
     top: 0;
-}
-
-.modal__box .title .dot::after {
-    /* 규격 */
     width: 15px;
     height: 15px;
     background-color: #3b3d63;
-
-    /* 형태 */
     border-radius: 50%;
-
-    /* 위치 */
+}
+.modal__box .title .dot::after {
     content: '';
     position: absolute;
     right: 25px;
     top: 0;
+    width: 15px;
+    height: 15px;
+    background-color: #3b3d63;
+    border-radius: 50%;
 }
+
+
 .modal__box .title .tabs {
     display: flex;
     margin-left: 50px;
 }
+.modal__box .title .tabs > div {
+    color: #7a7d9d;
+    background-color: #282936;
+    padding: 0.35rem 0.8rem 0.25rem 0.8rem;
+    margin-right: 0.5rem;
+    display: flex;
+    align-items: center;
+    border-radius: 0.4rem;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+.modal__box .title .tabs > div.active {
+    background-color: #1f224a;
+}
+.modal__box .title .tabs > div em {
+    font-style: normal;
+}
+.modal__box .title .tabs > div .favicon {
+    margin-right: 0.4rem;
+    margin-top: 0.2rem;
+}
+.modal__box .title .tabs > div .close {
+    margin-left: 3rem;
+    margin-top: 0.2rem;
+}
+.modal__box .cont {
+    background-color: #282936;
+    height: 100%;
+    overflow-y: auto;
+    box-sizing: border-box;
+    border-bottom-left-radius: 0.5rem;
+    border-bottom-right-radius: 0.5rem;
+}
+.modal__box .cont > div {
+    display: none;
+}
+.modal__box .cont > div.active {
+    display: block;
+    height: 100%;
+}
+.modal__close {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    background-color: #ffffff;
+    padding: 1rem 1rem 0.8rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s;
+    opacity: 0;
+}
+.modal__close:hover {
+    background-color: #b9bdff;
+}
+pre code.hljs {
+    margin-bottom: 0 !important;
+    text-align-last: left;
+}
 
-.modal__box .cont {}
-
-/* 소스버튼박스위에 나오는 닫기버튼 */
-.modal__close {}
-
-
-
+@media (max-width: 1100px){
+    .modal__box .title {
+        overflow: hidden;
+    }
+    .modal__box .title .dot {
+        display: none;
+    }
+    .modal__box .title .tabs {
+        margin-left: 0;
+    }
+    .modal__box .title .tabs > div .close {
+        display: none;
+    }
+}
+@media (max-width: 800px){
+    #header {
+        width: 100%;
+        text-align: center;
+    }
+    #header h1 {
+        line-height: 1.4;
+    }
+    .modal__box {
+        width: 96%;
+    }
+}
 
 /* 모달 애니메이션 */
-/* 소스버튼 클릭 */
 .modal__cont.show {
     animation: foldOut 1s ease forwards;
 }
@@ -699,50 +761,59 @@ body.fixed {
     animation: zoomOut 0.5s 1s ease forwards;
 }
 .modal__cont.show .modal__close {
-    animation: opcityOut 0.5s 1.5s ease forwards;
+    animation: opacityOut 0.5s 1.5s ease forwards;
 }
-/* 닫기버튼 클릭 */
+
 .modal__cont.show.hide {
     animation: foldIn 0.3s 0.5s ease backwards;
 }
 .modal__cont.show.hide .modal__box {
-    animation: ZoomIn 0.5s ease forwards;
+    animation: zoomIn 0.5s ease forwards;
 }
 .modal__cont.show.hide .modal__close {
-    animation: opcityIn 0.5s ease forwards;
+    animation: opacityIn 0.5s ease forwards;
 }
+
 @keyframes foldOut {
-    0% {transform: scaleX(0.0001) scaleY(1);}
-    50% {transform: scaleX(0.0001) scaleY(1);}
+    0%   {transform: scaleX(0.0001) scaleY(0);}
+    50%  {transform: scaleX(0.0001) scaleY(1);}
     100% {transform: scaleX(1) scaleY(1);}
 }
 @keyframes foldIn {
-    0% {transform: scaleX(1) scaleY(1);}
-    50% {transform: scaleX(0.0001) scaleY(1);}
-    100% {transform: scaleX(0.0001) scaleY(1);}    
+    0%   {transform: scaleX(1) scaleY(1);}
+    50%  {transform: scaleX(0.0001) scaleY(1);}
+    100% {transform: scaleX(0.0001) scaleY(0);}
 }
 @keyframes zoomOut {
-    0% {transform: scale(0);}
+    0%   {transform: scale(0);}
     100% {transform: scale(1);}
 }
-@keyframes ZoomIn {
-    0% {transform: scale(1);}
+@keyframes zoomIn {
+    0%   {transform: scale(1);}
     100% {transform: scale(0);}
 }
-@keyframes opcityOut {
-    0% {opacity: 0;}
-    100% {Opacity: 1;}
+@keyframes opacityOut {
+    0%   {opacity: 0;}
+    100% {opacity: 1;}
 }
-@keyframes opcityIn {
-    0% {opacity: 1;}
-    100% {Opacity: 0;}
+@keyframes opacityIn {
+    0%   {opacity: 1;}
+    100% {opacity: 0;}
 }
 
+
+/* footer */
+footer a {
+    box-sizing: content-box;
+}
+
+/* cbt */
+
 .cbt__box {
-    width: 600px;
+    width: 80%;
     background-color: #fff;
     border-radius: 10px;
-    box-shadow: 2px 2px 2px rgb(0 0 0 / 10%);
+    box-shadow: 2px 2px 2px rgb(0,0,0 / 10%);
     position: absolute;
     left: 50%;
     top: 50%;
@@ -754,7 +825,7 @@ body.fixed {
 .cbt__box h2 {
     font-size: 30px;
     text-align: center;
-    margin-bottom: 10px;
+    margin-bottom: 30px;
 }
 .cbt__box select {
     width: 100%;
@@ -765,45 +836,49 @@ body.fixed {
 }
 .cbt__box p {
     font-size: 20px;
-    line-height: 1.6;
+    line-height: 1.7;
     text-align: center;
-    margin-bottom: 20px;
-    margin-top: 20px;
 }
-.cbt__box p > div {
-    font-size: 10px;
-    color: #b8a8ff;
+.cbt__box p i {
+    font-size: 16px;
+    color: #666;
+    font-style: normal;
 }
 .cbt__box em {
     font-style: normal;
-    font-size: 20px;
-    font-weight: bolder;
-    color: #5a46ac;
+    font-size: 25px;
+    font-weight: 800;
 }
 .cbt__box input {
-    border: 1px solid #b8a8ff;
-    background-color: #ffffffc0;
+    border: 1px solid #000000;
+    padding: 7px 10px;
     border-radius: 40px;
-    font-size: 20px;
 }
-.cbt__box__start {
+.cbt__box button {
     display: inline-block;
-    border: 1px solid #b8a8ff;
-    background-color: #c7beee;
+    border: 1px solid #6876e2;
+    background-color: transparent;
     padding: 20px 40px;
     border-radius: 40px;
     width: 100%;
+    margin-top: 20px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+.cbt__box button:hover {
+    background-color: #37699b;
+    color: #fff;
 }
 
 .cbt__wrap {
     padding: 20px;
 }
-.cbt__header{
+.cbt__header {
     position: fixed;
     left: 20px;
     top: 80px;
     z-index: 1000;
-    width: calc((100% - 370px));
+    width: calc(100% - 370px);
     height: 80px;
     background-color: #fff;
     border-radius: 10px 10px 0 0;
@@ -811,43 +886,50 @@ body.fixed {
     align-items: center;
     justify-content: space-between;
     padding: 20px;
+    border-bottom: 1px solid #c4c4c4;
 }
-.ctb__title {
+.cbt__title {
     font-size: 28px;
 }
 .cbt__info {
     display: flex;
 }
-.cbt__info > div {
-    border: 1px solid #b8a8ff;
-    background-color: #c7beee;
-    padding: 7px 7px;
-    border-radius: 40px;
+.cbt__time {
+    background-color: #784be1;
+    color: #fff;
     margin-left: 20px;
+    padding: 10px 20px;
+    border-radius: 20px;
 }
-.cbt__info .time {
-
-}
-.cbt__info .submit {}
-
 .cbt__conts {
     width: calc(100% - 330px);
     height: 500px;
-    background-color: #fff;
+    background: #fff;
     padding: 20px;
     border-radius: 10px;
 }
 .cbt__aside {
     position: absolute;
-    top: 70px;
+    top: 80px;
     right: 20px;
     width: 300px;
     height: 500px;
     background-color: #fff;
     border-radius: 20px;
+    padding: 20px;
 }
 .cbt__name {
-    background-color: #000;
+    background-color: #784be1;
     color: #fff;
-    padding: 10px 20px;
+    padding: 10px;
+    border-radius: 20px;
+    text-align: center;
+}
+.cbt__submit {
+    background-color: #784be1;
+    color: #fff;
+    padding: 10px;
+    border-radius: 20px;
+    margin-top: 10px;
+    text-align: center;
 }

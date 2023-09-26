@@ -1,3 +1,18 @@
+.quiz__timer > input[type=text] {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+	width: 300px;
+	height: 100px;
+    padding: 0 20px;
+    text-align: center;
+    font-size: 40px;
+    background-color: #00000000;
+    border-radius: 30px;
+    border: none;
+    color: #fff;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -11,60 +26,104 @@ a {
     text-decoration: none;
     color: #000;
 }
-.none {
-    display: none !important;
-}
 body {
-    background-image: url(../img/quiz.jpg);
+    background-image: url(../img/quiz4.jpg);
     background-attachment: fixed;
-    background-size: cover;
+    background-size: cover;    
+    
     background-position: center center;
     background-repeat: no-repeat;
     position: relative;
 }
-/* main */
-/* .quiz__header {} */
-#main {
+.none {
+    display: none !important;
 }
-/* .quiz__wrap {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    margin-top: 40px;
-} */
+
+/* -----------------------------------header----------------------------------- */
+#header {}
+#header__inner {
+    width: 100%;
+    height: 300px;
+    text-align: center;   
+}
+#header__inner .quizTimeOut {
+    width: 100%;
+    height: 300px;
+    /* background-color: #B73232; */
+    color: white;
+    font-size: 60px;
+    /* padding: 100px 0; */
+    margin-top: 250px;
+}
+.ranking {
+    width: 100%;
+    height: 100px;
+    color: #fff;
+    /* background-color: #189050; */
+    font-size: 50px;
+    font-weight: 800;
+}
+.userScore {
+    width: 100%;
+    height: 100px;
+    /* background-color: #324DB7; */
+    color: white;
+    font-size: 32px;
+}
+.container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+.background {
+    position: absolute;
+    width: 90%;
+    height: 90%;
+    background-image: url(../img/moviebg.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: blink 0.7s infinite; /* 1초 간격으로 애니메이션을 반복함 */    
+}
+/* -----------------------------------main----------------------------------- */
+#main {}
 .quiz__wrap {
     top: 0;
     left: 0;
-    margin-top: 5%;
+    margin-top: 13%;
     width: 100%;
     height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
 }
-.quiz__wrap > .quiz {
-    width: 1000px;
-    height: 750px;
+#header__start {
+    width: 100%;
+    height: 700px;
+    margin-top: 200px;
+    color: white;
+    font-size: 60px;
+    text-align: center;
+    position: relative;
 }
-.container {
-    border-radius: 15px;
-    background-color: #ffffff2b;
-    border-radius: 30px;
-    /* background-image: url(../img/quiz3.jpg);
-    background-size: cover;
+.start__bg {
+    position: absolute;
+    width: 80%;
+    height: 80%;
+    background-image: url(../img/moviebg.png);
+    background-size: contain;
     background-repeat: no-repeat;
-    background-position: center center; */
-    width: 100%; /* 부모 요소에 맞게 가득 차도록 설정 */
-    height: 100%;
-    margin-bottom: 50px;
+    background-position: center center;
+    top: 33%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
-.quiz__header {
-}
-.header__title {
-}
-.header__title p {
-    margin-top: 20%;
-    padding: 5px;
+.start {}
+.start h2 {
+    padding: 10px;
     width: 30%;
     font-size: 38px;
     background-color: #3e3b4368;
@@ -73,14 +132,74 @@ body {
     text-align: center;
     font-weight: 500;
 }
-/* .quiz__main {} */
+.start p {
+    margin-top: 8%;
+    font-size: 45px;
+}
+.start__btn {
+    margin-top: 50px;
+    font-size: 22px;
+    border-radius: 5px;
+    padding: 10px 10px;
+    background-color: #3E3B43;
+    color: #fff;
+    font-weight: 800;
+    border: none;
+    cursor: pointer;
+    box-shadow: 3px 3px 3px #3E3B43;
+    transition: all 0.3;   
+}
+.start__btn:hover {
+    margin-top: 50px;
+    font-size: 22px;
+    border-radius: 5px;
+    padding: 10px 10px;
+    background-color: #331c59;
+    color: #ffffff;
+    font-weight: 800;
+    border: none;
+    cursor: pointer;
+    box-shadow: 3px 3px 3px #3E3B43;
+}
+.quiz__wrap > .quiz {
+    width: 1000px;
+    height: 750px;
+}
+@keyframes blink {
+    0%, 100% {
+      background-image: url(../img/moviebg.png);
+    }
+    50% {
+      background-image: none;
+    }
+  }
+  
+/* -----------------------------------quiz----------------------------------- */
+.quiz {}
+.quiz .container {}
+.quiz .background {}
+/* -----------------------------------quiz__header----------------------------------- */
+.quiz .quiz__header {}
+.quiz .header__title {}
+.quiz .header__title p {
+    padding: 10px;
+    width: 30%;
+    font-size: 38px;
+    background-color: #3e3b4368;
+    color: #fff;
+    border-radius: 15px;
+    text-align: center;
+    font-weight: 500;
+}
+
+/* -----------------------------------quiz__main----------------------------------- */
+.quiz__main {}
 .quiz__question {
     /* background-image: url(../img/quiz5.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center; */
     margin-top: 60px;
-    padding-right: 15px;
     width: 600px;
     font-size: 500%;
     line-height: 1.3;
@@ -90,7 +209,7 @@ body {
     font-style: italic;
     text-align: center;
     font-weight: 700;
-    font-family: 'EF_Macho';
+    font-family: 'EF_Macho';    
 }
 .hint {
     text-align: center;
@@ -106,15 +225,15 @@ body {
     border: none;
     cursor: pointer;
     box-shadow: 3px 3px 3px #3E3B43;
-    transition: all 0.3;
+    transition: all 0.3; 
 }
 .hint .hint__btn:hover {
     margin-top: 50px;
     font-size: 22px;
     border-radius: 5px;
     padding: 10px 10px;
-    background-color: #331C59;
-    color: #FFFFFF;
+    background-color: #331c59;
+    color: #ffffff;
     font-weight: 800;
     border: none;
     cursor: pointer;
@@ -154,7 +273,7 @@ body {
 }
 .quiz__input input:hover,
 .quiz__input input:focus {
-    border-color: #C2FC03;
+    border-color: #c2fc03;
 }
 .quiz__input input::placeholder {
     color: #ffffff8b;}
@@ -175,7 +294,7 @@ body {
     font-size: 22px;
     border-radius: 5px;
     padding: 10px 10px;
-    background-color: #331C59;
+    background-color: #331c59;
     color: #fff;
     font-weight: 800;
     border: none;
@@ -190,7 +309,7 @@ body {
     font-size:25px;
     font-weight: 800;
     line-height: 50px;
-    color: #D4FF00;
+    color: #d4ff00;
     text-align: center;
     margin-bottom: 20px;
     border-radius: 15px;
@@ -198,41 +317,13 @@ body {
     justify-content: center; /* 수평 가운데 정렬 */
     align-items: center; /* 수직 가운데 정렬 */
 }
-
-.skip__btn {
-    font-size: 22px;
-    border-radius: 5px;
-    padding: 10px 10px;
-    background-color: #3E3B43;
-    color: #fff;
-    font-weight: 800;
-    border: none;
-    cursor: pointer;
-    box-shadow: 3px 3px 3px #3E3B43;
-    display: flex;
-    position: absolute;
-    right: 27%;
-    bottom: 92px;
-}
-.skip__btn:hover {
-    font-size: 22px;
-    border-radius: 5px;
-    padding: 10px 10px;
-    background-color: #331C59;
-    color: #fff;
-    font-weight: 800;
-    border: none;
-    cursor: pointer;
-    box-shadow: 3px 3px 3px #3E3B43;
-    display: flex;
-}
 .next {
     position: relative;
 }
 .next__btn {
     position: absolute;
     bottom: 20px;
-    right:20px;
+    right:40px;
     font-size: 22px;
     border-radius: 5px;
     padding: 10px 10px;
@@ -246,20 +337,69 @@ body {
 .next__btn:hover {
     position: absolute;
     bottom: 20px;
-    right:20px;
+    right:40px;
     font-size: 22px;
     border-radius: 5px;
     padding: 10px 10px;
-    background-color: #331C59;
+    background-color: #331c59;
     color: #fff;
     font-weight: 800;
     border: none;
     cursor: pointer;
     box-shadow: 3px 3px 3px #3E3B43;
 }
-/* 점수 */
-.quiz__score {
+.next__btn {}
+.skip {}
+.skip__btn {
     position: absolute;
+    bottom: 70px; /* 원하는 위치로 조정하세요. */
+    right: 40px; /* 원하는 위치로 조정하세요. */
+    font-size: 22px;
+    border-radius: 5px;
+    padding: 10px 10px;
+    background-color: #3E3B43;
+    color: #fff;
+    font-weight: 800;
+    border: none;
+    cursor: pointer;
+    box-shadow: 3px 3px 3px #3E3B43;
+}
+.skip__btn:hover {
+    position: absolute;
+    bottom: 70px; /* 원하는 위치로 조정하세요. */
+    right: 40px; /* 원하는 위치로 조정하세요. */
+    font-size: 22px;
+    border-radius: 5px;
+    padding: 10px 10px;
+    background-color: #331c59;
+    color: #fff;
+    font-weight: 800;
+    border: none;
+    cursor: pointer;
+    box-shadow: 3px 3px 3px #3E3B43;
+}
+
+
+/* -----------------------------------점수----------------------------------- */
+/* 정답 스타일 */
+.correct {
+    color: rgb(101, 249, 15);
+}
+
+/* 오답 스타일 */
+.wrong {
+    color: rgb(242, 77, 77);
+}
+
+.timeOut {
+    width: 100%;
+    height: 100vh;
+    background-color: #000;
+    text-align: center;
+    color: #fff;
+}
+.quiz__score {
+    /* position: absolute; */
     right: 22%;
     bottom: 25.3%;
     margin-top: 30px;
@@ -272,11 +412,197 @@ body {
     text-align: center;
     font-size: 30px;
 }
-/* 정답 스타일 */
-.correct {
-    color: rgb(101, 249, 15);
+
+/* -----------------------------------최적화----------------------------------- */
+@media (max-width : 980px) {
+    .parallax__item {
+        display: none;
+        /* 모바일 화면 크기에서 Parallax 효과를 제거할 스타일 설정 */
+        /* 예: 모든 스타일을 초기화하거나 display: none; 설정 등을 사용할 수 있음 */
+    }
+    body {
+        background-position: center;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+    }
+    .start h2 {
+        font-size: 28px;
+        margin-top: 100px;
+    }
+    .start p {
+        font-size: 40px;
+        margin-top: 100px;
+    }
+    .skip__btn {
+        bottom: -40px; 
+        right: 45px;
+        font-size: 16px;
+    }
+    .skip__btn:hover {
+        bottom: -40px; 
+        right: 45px;
+        font-size: 16px;
+    }
+    .next__btn {
+        bottom: -85px; 
+        right: 45px;
+        font-size: 16px;
+    }
+    .next__btn:hover {
+        bottom: -85px; 
+        right: 45px;
+        font-size: 16px;
+    }
+    .header__title {
+        margin-top: 105px;
+    }
+    .header__title p {
+        font-size: 35px;
+    }
+    .quiz__question {
+        font-size: 400%;
+        width: 60%;
+    }
+    .hint .hint__text {
+        font-size: 16px;
+        width: 60%;
+    }
+    .quiz__input input {
+        width: 60%;
+    }
+    .answer__text {
+        width: 60%;
+    }
+    .quiz__timer > input[type=text] {
+        font-size: 30px;
+        padding: 0 10px;
+    }.start {
+        align-items: center;
+    }
 }
-/* 오답 스타일 */
-.wrong {
-    color: rgb(242, 77, 77);
+@media (max-width : 850px) {
+    body {
+        overflow: hidden; /* 위아래 스크롤바 숨김 */
+    }
+    .quiz__question {
+        font-size: 300%;
+    
+    }
+    .header__title {
+        margin-top: 105px;
+    }
+    .header__title p {
+        font-size: 30px;
+    }
+    .start {
+        align-items: center;
+    }
+}
+@media (max-width : 720px) {
+    body {
+        overflow: hidden; /* 위아래 스크롤바 숨김 */
+    }
+    .start h2 {
+        font-size: 20px;
+        margin-top: 140px;
+    }
+    .start p {
+        font-size: 25px;
+        margin-top: 110px;
+    }
+    .header__title p {
+        width: 50%;
+        font-size: 25px;
+    }
+    .quiz__question {
+        font-size: 200%;
+        width: 60%;
+    }
+    .hint .hint__text {
+        font-size: 16px;
+        width: 60%;
+    }
+    #header__inner .quizTimeOut {
+        font-size: 40px;
+    }
+    .ranking {
+        font-size: 35px;
+    }
+    .start {
+        align-items: center;
+    }
+    .container {
+        top:55px;
+    }
+
+}
+@media (max-width : 400px) {
+    body {
+        overflow: hidden; /* 위아래 스크롤바 숨김 */
+    }
+    .start h2 {
+        font-size: 20px;
+        width: 150px;
+        margin-top: 140px;
+    }
+    .start p {
+        font-size: 25px;
+        margin-top: 110px;
+    }
+    .start__bg {
+        width: 100%;
+        top:19%
+    }
+    .header__title p {
+        font-size: 25px;
+        width: 170px;
+    }
+    .quiz__question {
+        font-size: 160%;
+        width: 60%;
+    }
+    .answer__btn,
+    .answer__btn:hover {
+        font-size: 16px;
+        
+    }
+    .hint .hint__text {
+        font-size: 16px;
+        width: 60%;
+    }
+    .hint .hint__btn,
+    .hint .hint__btn:hover {
+        font-size: 100%;
+    }
+    .background {
+        width: 100%;
+        height: 85%;
+    }
+    .quiz__input input {
+        font-size: 100%;
+    }
+    #header__inner .quizTimeOut {
+        font-size: 30px;
+        height : 150px
+    }
+    .skip__btn,
+    .skip__btn:hover {
+        font-size: 14px;
+        right: 12px;
+    }
+    .next__btn,
+    .next__btn:hover {
+        font-size: 14px;
+        right: 12px;
+    }
+    .quiz__timer > input[type=text] {
+        font-size: 25px;
+        right: 15px;
+        
+    }
+    .start {
+        align-items: center;
+    }
+
 }
