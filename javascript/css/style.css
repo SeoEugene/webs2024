@@ -67,6 +67,14 @@ li {
     padding: 40px;
     border-bottom: 1px dashed #333332;    
 }
+.main__menu h3 {
+    font-weight: 700;
+    color: #333332;
+    font-size: 25px;
+    margin-top: 20px;
+    margin-bottom: 5px;
+
+}
 .main__menu ul {
     margin-bottom: 10px;
 }

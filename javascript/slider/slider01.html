@@ -136,18 +136,16 @@
                     <div class="cont">
                         <div class="active">
 <pre><code class="language-js">window.onload = function(){
-    let currentIndex = 0;                                       //현재 이미지
-    const slider = document.querySelectorAll(".slider");        //모든 이미지를 변수에 저장
-    
-    setInterval(() => {                                         // 3초에 한번씩 이미지를 변경
-        let nextIndex = (currentIndex + 1) % slider.length      // nextIndex값은 currentIndex값의 + 1
-        slider[currentIndex].style.opacity = "0";               // 첫번째 이미지가 사라짐
-        slider[nextIndex].style.opacity = "1";                  // 두번째 이미지가 나타남
-        slider.forEach(img => img.style.transition = "all 1s"); // 이미지 애니메이션 추가
-        currentIndex = nextIndex;                               //두번째 인덱스값을 현 인덱스값에 저장
-        console.log(currentIndex)
+let currentIndex = 0;                                       //현재 이미지
+const slider = document.querySelectorAll(".slider");        //모든 이미지를 변수에 저장
 
-    }, 3000);
+setInterval(() => {                                         // 3초에 한번씩 이미지를 변경
+    let nextIndex = (currentIndex + 1) % slider.length      // nextIndex값은 currentIndex값의 + 1
+    slider[currentIndex].style.opacity = "0";               // 첫번째 이미지가 사라짐
+    slider[nextIndex].style.opacity = "1";                  // 두번째 이미지가 나타남
+    slider.forEach(img => img.style.transition = "all 1s"); // 이미지 애니메이션 추가
+    currentIndex = nextIndex;                               //두번째 인덱스값을 현 인덱스값에 저장
+}, 3000);
 }</code></pre>
                         </div>
                         <div>
@@ -191,8 +189,6 @@
                 slider[nextIndex].style.opacity = "1";                  // 두번째 이미지가 나타남
                 slider.forEach(img => img.style.transition = "all 1s"); // 이미지 애니메이션 추가
                 currentIndex = nextIndex;                               //두번째 인덱스값을 현 인덱스값에 저장
-                console.log(currentIndex)
-
             }, 3000);
         }
     </script>

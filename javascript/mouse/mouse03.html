@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="css/mouse.css">
+    <link href="https://webfontworld.github.io/DdangFonts/TangsBudaeJjigae.css" rel="stylesheet">
+    <link href="https://webfontworld.github.io/goodchoice/Jalnan.css" rel="stylesheet">
+    <link href="https://webfontworld.github.io/Quicksand/Quicksand.css" rel="stylesheet">
+    <title>마우스 이펙트03</title>
+    <style>
+        body {
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .mouse__wrap {
+            cursor: none;
+        }
+
+        /* text */
+        .mouse__text {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+
+        .mouse__text p {
+            font-size: 2vw;
+            line-height: 1.9;
+            color: #fff;
+            font-weight: 300;
+        }
+
+        .mouse__text p span {
+            color: rgb(255, 172, 172);
+            border-bottom: 1px dashed rgb(255, 172, 172);
+            cursor: pointer;
+        }
+
+        /* cursor */
+        .mouse__cursor {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            border: 5ps solid #fff;
+            background-color: rgba(255, 255, 255, 0.5);
+            background-image: url(img/images03.jpg);
+            background-size: cover;
+            background-attachment: fixed;
+            background-position: center;
+        }
+    </style>
+
+</head>
+
+<body class="img03">
+    <header id="header">
+        <h1>Javascript Mouse Effect03</h1>
+        <p>마우스 이펙트 - 마우스 따라다니기</p>
+        <ul>
+            <li><a href="mouse01.html">1</a></li>
+            <li class="active"><a href="mouse02.html">2</a></li>
+            <li><a href="mouse03.html">3</a></li>
+            <li><a href="mouse04.html">4</a></li>
+            <li><a href="mouse05.html">5</a></li>
+            <li><a href="mouse06.html">6</a></li>
+        </ul>
+    </header>
+
+    <main id="main">
+        <div class="mouse__wrap">
+            <div class="mouse__cursor"></div>
+            <div class="mouse__text">
+                <p>I never dreamed about success, I worked for it. – Estee Lauder</p>
+                <p>Do not be afraid to give up the good to go for the great. – John D. Rockefeller</p>
+            </div>
+        </div>
+
+    </main>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script>
+        const mouseCursor = document.querySelector(".mouse__cursor");
+        const rect = mouseCursor.getBoundingClientRect();
+
+        window.addEventListener("mousemove", e => {
+            gsap.to(".mouse__cursor", {
+                duration: 0.5,
+                // left: e.pageX - mouseCursor.clientWidth/2,
+                // top: e.pageY - mouseCursor.clientHeight/2,
+                left: e.pageX - rect.width/2,
+                top: e.pageY - rect.height/2
+            });
+        });
+
+        
+
+        
+    </script>
+</body>
+
+</html>

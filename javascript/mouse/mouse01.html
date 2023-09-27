@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="css/mouse.css">
+    <link href="https://webfontworld.github.io/DdangFonts/TangsBudaeJjigae.css" rel="stylesheet">
+    <link href="https://webfontworld.github.io/goodchoice/Jalnan.css" rel="stylesheet">
+    <link href="https://webfontworld.github.io/Quicksand/Quicksand.css" rel="stylesheet">
+    <title>마우스 이펙트01</title>
+    <style>
+        .mouse__wrap {
+            cursor: none;
+        }
+
+        .mouse__cursor {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            border: 2px solid #fff;
+            background-color: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            user-select: none;
+            pointer-events: none;
+            transition:
+                bacground-color 0.3s,
+                border 0.3s,
+                trnasform 0.3s,
+                border-radiuse 0.3s;
+        }
+
+        .mouse__cursor.s1 {
+            background-color: rgba(255, 0, 0, 0.2);
+            border: 2px solid rgba(250, 0, 0, 1);
+        }
+
+        .mouse__cursor.s2 {
+            background-color: rgba(255, 145, 0, 0.2);
+            border: 2px solid rgb(255, 145, 0);
+            transform: scale(2) rotateY(360deg);
+        }
+
+        .mouse__cursor.s3 {
+            background-color: rgba(251, 255, 0, 0.2);
+            border: 2px solid rgb(251, 255, 0);
+            transform: scale(1.5) rotateY(720deg);
+        }
+
+        .mouse__cursor.s4 {
+            background-color: rgba(142, 250, 0, 0.2);
+            border: 2px solid rgb(142, 250, 0);
+            transform: scale(10) rotateY(720deg);
+        }
+
+        .mouse__cursor.s5 {
+            background-color: rgba(0, 250, 146, 0.2);
+            border: 2px solid rgb(0, 250, 146);
+            transform: skew(140deg) rotate(200deg);
+        }
+
+        .mouse__cursor.s6 {
+            background-color: rgba(0, 129, 250, 0.2);
+            border: 2px solid rgb(0, 129, 250);
+            border-radius: 0;
+            transform: scale(2) rotateY(360deg);
+        }
+
+        .mouse__cursor.s7 {
+            background-color: rgba(2, 0, 110, 0.2);
+            border: 2px solid rgb(2, 0, 110);
+            border-radius: 0;
+            transform: scale(2) rotateY(360deg);
+        }
+
+        .mouse__cursor.s8 {
+            background-color: rgba(250, 114, 227, 0.2);
+            border: 2px solid rgb(250, 114, 227);
+            transform: scale(2) rotateY(360deg);
+        }
+
+        .mouse__text {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+
+        .mouse__text p {
+            font-size: 2vw;
+            line-height: 1.9;
+            color: #fff;
+            font-weight: 300;
+        }
+
+        .mouse__text p span {
+            color: rgb(255, 172, 172);
+            border-bottom: 1px dashed rgb(255, 172, 172);
+            cursor: pointer;
+        }
+
+        .mouse__info {
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            padding: 20px;
+            color: #fff;
+            list-style: none;
+        }
+    </style>
+</head>
+
+<body class="img01">
+    <header id="header">
+        <h1>Javascript Mouse Effect01</h1>
+        <p>마우스 이펙트 - 마우스 따라다니기</p>
+        <ul>
+            <li class="active"><a href="mouse01.html">1</a></li>
+            <li><a href="mouse02.html">2</a></li>
+            <li><a href="mouse03.html">3</a></li>
+            <li><a href="mouse04.html">4</a></li>
+            <li><a href="mouse05.html">5</a></li>
+            <li><a href="mouse06.html">6</a></li>
+        </ul>
+    </header>
+
+    <main id="main">
+        <div class="mouse__wrap">
+            <div class="mouse__cursor"></div>
+            <div class="mouse__text">
+                <p>Despite the forecast,<span class="s1">live like</span>it’s spring. <span class="s2">– Lilly
+                        Pulitzer</span>
+                </p>
+                <p>The supreme happiness<span class="s3">in life</span> is <span class="s4">the conviction that</span>
+                    we are loved. <span class="s5"> – Victor Hugo</span></p>
+                <p>Try not to become <span class="s6">a man of success</span> but rather try <span class="s7">to
+                        become</span> a man of value. <span class="s8">-Albert Einstein</span></p>
+            </div>
+        </div>
+        <div class="mouse__info">
+            <ul>
+                <li>clientX <span class="clientX">0</span>px</li>
+                <li>clientY <span class="clientY">0</span>px</li>
+                <li>offsetX <span class="offsetX">0</span>px</li>
+                <li>offsetY <span class="offsetY">0</span>px</li>
+                <li>pageX <span class="pageX">0</span>px</li>
+                <li>pageY <span class="pageY">0</span>px</li>
+                <li>screenX <span class="screenX">0</span>px</li>
+                <li>screenY <span class="screenY">0</span>px</li>
+            </ul>
+        </div>
+    </main>
+
+    <script>
+        window.addEventListener("mousemove", (event) => {
+            document.querySelector(".clientX").innerHTML = event.clientX;
+            document.querySelector(".clientY").innerHTML = event.clientY;
+            document.querySelector(".offsetX").innerHTML = event.offsetX;
+            document.querySelector(".offsetY").innerHTML = event.offsetY;
+            document.querySelector(".clientX").innerHTML = event.clientX;
+            document.querySelector(".pageX").innerHTML = event.pageX;
+            document.querySelector(".pageY").innerHTML = event.pageY;
+            document.querySelector(".screenX").innerHTML = event.screenX;
+            document.querySelector(".screenY").innerHTML = event.screenY;
+        });
+
+        // 선택자
+        const mouseCursor = document.querySelector(".mouse__cursor");
+
+        // 마우스 좌표 값을 커서 할당
+        window.addEventListener("mousemove", (e) => {
+            mouseCursor.style.left = e.clientX - 25 + "px";
+            mouseCursor.style.top = e.clientY - 25 + "px";
+        });
+
+        // s1
+        // document.querySelector(".s1").addEventListener("mouseover", () => {
+        //     mouseCursor.classList.add("s1");
+        // });
+        // document.querySelector(".s1").addEventListener("mouseout", () => {
+        //     mouseCursor.classList.remove("s1");
+        // });
+
+        // for (let i = 1; i <= 8; i++) {
+        //     document.querySelector(".s" + i).addEventListener("mouseover", () => {
+        //         mouseCursor.classList.add("s" + i);
+        //     });
+        //     document.querySelector(".s" + i).addEventListener("mouseout", () => {
+        //         mouseCursor.classList.remove("s" + i);
+        //     });
+        // }
+
+        // let s = ["s1", "s2", "s3", "s4", "s5", "s6", "s7", "s8"];
+        // s.forEach((el) => {
+        //     document.querySelector("." + el).addEventListener("mouseover", () => {
+        //         mouseCursor.classList.add(el);
+        //     });
+        //     document.querySelector("." + el).addEventListener("mouseout", () => {
+        //         mouseCursor.classList.remove(el);
+        //     });
+        // });
+
+       
+        document.querySelectorAll(".mouse__text p span").forEach((span, num) => {
+            span.addEventListener("mouseover", () => {
+                mouseCursor.classList.add("s" + (num+1));
+            });
+            span.addEventListener("mouseout", () => {
+                mouseCursor.classList.remove("s" + (num+1));
+            });
+        });
+    </script>
+</body>
+
+</html>

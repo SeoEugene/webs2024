@@ -13,34 +13,34 @@ body {
     height: 100vh;
 }
 body.img01 {
-    background:  #000 url(../img/image01.jpg) no-repeat center / cover;
+    background:  #000 url(../img/images01.jpg) no-repeat center / cover;
 }
 body.img02 {
-    background:  #000 url(../img/image02.jpg) no-repeat center / cover;
+    background:  #000 url(../img/images02.jpg) no-repeat center / cover;
 }
 body.img03 {
-    background:  #000 url(../img/image03.jpg) no-repeat center / cover;
+    background:  #000 url(../img/images03.jpg) no-repeat center / cover;
 }
 body.img04 {
-    background:  #000 url(../img/image04.jpg) no-repeat center / cover;
+    background:  #000 url(../img/images04.jpg) no-repeat center / cover;
 }
 body.img05 {
-    background:  #000 url(../img/image05.jpg) no-repeat center / cover;
+    background:  #000 url(../img/images05.jpg) no-repeat center / cover;
 }
 body.img06 {
-    background:  #000 url(../img/image06.jpg) no-repeat center / cover;
+    background:  #000 url(../img/images06.jpg) no-repeat center / cover;
 }
 body.img07 {
-    background:  #000 url(../img/image07.jpg) no-repeat center / cover;
+    background:  #000 url(../img/images07.jpg) no-repeat center / cover;
 }
 body.img08 {
-    background:  #000 url(../img/image08.jpg) no-repeat center / cover;
+    background:  #000 url(../img/images08.jpg) no-repeat center / cover;
 }
 body.img09 {
-    background:  #000 url(../img/image09.jpg) no-repeat center / cover;
+    background:  #000 url(../img/images09.jpg) no-repeat center / cover;
 }
 body.img10 {
-    background:  #000 url(../img/image10.jpg) no-repeat center / cover;
+    background:  #000 url(../img/images10.jpg) no-repeat center / cover;
 }
 body::after {
     content: '';
