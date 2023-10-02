@@ -5,10 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>영화 초성 퀴즈</title>
-    <link rel="stylesheet" href="assets/css/movie.css">
+    <link rel="stylesheet" href="assets/css/movietest.css">
     <link href="https://webfontworld.github.io/earlyfont/EF_Macho.css" rel="stylesheet">
     <link href="https://webfontworld.github.io/woori/Wooridaum.css" rel="stylesheet">
-    <style>
+    <!-- <style>
         .parallax__item {
             width: 100%;
             height: 100%;
@@ -30,76 +30,96 @@
             height: 100%;
             object-fit: cover;
         }
-    </style>
+    </style> -->
 </head>
 
 <body>
-    <header id="header">
-        <div id="header__inner" class="none">
-            <h1 class="quizTimeOut">퀴즈가 종료되었습니다.</h1>
-            <h3 class="ranking"></h3>
-            <p class="userScore"></p>
-        </div>
-        <section id="img" class="parallax__item">
-            <div class="parallax__item__img-container">
-                <div class="box">
-                    <img src="assets/img/movie01.png" alt="" class="parallax__item__img1">
-                    <img src="assets/img/movie02.png" alt="" class="parallax__item__img2">
-                </div>
-                <div class="box">
-                    <img src="assets/img/movie03.png" alt="" class="parallax__item__img3">
-                    <img src="assets/img/movie04.png" alt="" class="parallax__item__img4">
-                </div>
-            </div>
-        </section>
-    </header>
-
     <main id="main">
-        <div class="quiz__wrap">
-            <div id="header__start">
-                <div class="container">
-                    <div class="start__bg">
+        <div class="container">
+            <div class="start__bg">
+                <header class="main__header">
+                    <h2 class="quiz__title">영화 초성퀴즈</h2>
+                            <!-- <section id="img" class="parallax__item">
+                        <div class="parallax__item__img-container">
+                            <div class="box">
+                                <img src="assets/img/movie01.png" alt="" class="parallax__item__img1">
+                                <img src="assets/img/movie02.png" alt="" class="parallax__item__img2">
+                            </div>
+                            <div class="box">
+                                <img src="assets/img/movie03.png" alt="" class="parallax__item__img3">
+                                <img src="assets/img/movie04.png" alt="" class="parallax__item__img4">
+                            </div>
+                        </div>
+                    </section> -->
+                </header>
+                <!-- //main__header -->
+
+                <div class="quiz__wrap">
+                    <div class="main__start">
+
                         <div class="start">
-                            <h2>영화 초성퀴즈</h2>
                             <p>제한 시간은 3분입니다.</p>
                             <button class="start__btn">시작하기</button>
                         </div>
                     </div>
                 </div>
+                <!-- //main__start -->
+
+                <div class="main__quiz"></div>
+                <!-- //main__quiz -->
+
+                <div class="main__end none">
+                    <h1 class="quizTimeOut">퀴즈가 종료되었습니다.</h1>
+                    <div class="rankingImage"></div>
+                    <h3 class="ranking"></h3>
+                    <p class="userScore"></p>
+                </div>
+                <!-- //main__end -->
             </div>
+            <!-- //start__bg -->
         </div>
+        <!-- //container -->
     </main>
+
+    <footer id="footer">
+        <div class="footer__inner">
+            <p class="quiz__timer none"><input id="Timer" type="text" value="" readonly /></p>
+        </div>
+    </footer>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script>
-        const ani = gsap.timeline();
-        ani.to("#img .parallax__item__img1", { xPercent: 300 })
-            .to("#img .parallax__item__img2", { xPercent: -300 })
-            .to("#img .parallax__item__img3", { xPercent: 300 })
-            .to("#img .parallax__item__img4", { xPercent: -300 });
+        // const ani = gsap.timeline();
+        // ani.to("#img .parallax__item__img1", { xPercent: 300 })
+        //     .to("#img .parallax__item__img2", { xPercent: -300 })
+        //     .to("#img .parallax__item__img3", { xPercent: 300 })
+        //     .to("#img .parallax__item__img4", { xPercent: -300 });
 
-        function autoScroll() {
-            window.scrollBy(0, 10); // 10px씩 아래로 스크롤
-            const scrollHeight = document.body.scrollHeight;
-            const windowHeight = window.innerHeight;
+        // function autoScroll() {
+        //     window.scrollBy(0, 10); // 10px씩 아래로 스크롤
+        //     const scrollHeight = document.body.scrollHeight;
+        //     const windowHeight = window.innerHeight;
 
-            if (window.scrollY + windowHeight < scrollHeight) {
-                requestAnimationFrame(autoScroll);
-            }
-        }
+        //     if (window.scrollY + windowHeight < scrollHeight) {
+        //         requestAnimationFrame(autoScroll);
+        //     }
+        // }
 
-        // 페이지 로드 후 1.5초 후에 자동 스크롤 시작
-        setTimeout(autoScroll, 1500);
+        // // 페이지 로드 후 1.5초 후에 자동 스크롤 시작
+        // setTimeout(autoScroll, 1500);
 
         // 선택자
         const quizWrap = document.querySelector(".quiz__wrap");
         let totalScore = 0;
         const Start = document.querySelector("#header__start");
         const quizStBtn = document.querySelector(".start__btn");
+        const rankingImage = document.querySelector(".rankingImage");
+        const quizTimer = document.querySelector(".quiz__timer > input[type=text]");
 
 
         // totalA
-        
-        const totalA = function(){
+
+        const totalA = function () {
             const userScore = document.querySelector(".userScore");
             const posterAnimation = document.querySelector(".parallax__item");
             const header__title = document.getElementById("header__inner");
@@ -109,16 +129,22 @@
             quizWrap.classList.add("timeOut");
             quizWrap.classList.add("none");
             header__title.classList.remove("none");
+            quizTimer.style.display = 'none';
+
             userScore.innerText = "총 점수: " + totalScore + "점";
 
             if (totalScore >= 15) {
                 userRanking.innerText = "당신의 등급 : 최고";
+                rankingImage.innerHTML = '<img src="../quiz/assets/img/rank01.jpg" alt="최고 등급 이미지">';
             } else if (totalScore > 10) {
                 userRanking.innerText = "당신의 등급 : 고수";
+                rankingImage.innerHTML = '<img src="../quiz/assets/img/rank02.jpg" alt="고수 등급 이미지">';
             } else if (totalScore >= 5) {
                 userRanking.innerText = "당신의 등급 : 중수";
+                rankingImage.innerHTML = '<img src="../quiz/assets/img/rank03.jpg" alt="중수 등급 이미지">';
             } else {
                 userRanking.innerText = "당신의 등급 : 하수";
+                rankingImage.innerHTML = '<img src="../quiz/assets/img/rank04.jpg" alt="하수 등급 이미지">';
             }
         }
 
@@ -130,126 +156,120 @@
                 infoHint: "충치가 몇개냐? 나 전당포한다. 금이빨 빼고 모조리 씹어먹어줄게",
                 infoAnswer: "아저씨",
             },
-            {
-                infoTitle: "영화 초성퀴즈",
-                infoQuestion: "ㅇㅅㅌ",
-                infoHint: "구조신호 따따따 따 따 따 따따따",
-                infoAnswer: "엑시트",
-            },
-            {
-                infoTitle: "영화 초성퀴즈",
-                infoQuestion: "ㅇㅌㅅㅌㄹ",
-                infoHint: "크리스토퍼 놀란 감독, 우주여행, ",
-                infoAnswer: "인터스텔라",
-            },
-            {
-                infoTitle: "영화 초성퀴즈",
-                infoQuestion: "ㅇㅅ",
-                infoHint: "일제강점기, 사람들한테서 잊혀지겠죠? 미안합니다...",
-                infoAnswer: "암살",
-            },
-            {
-                infoTitle: "영화 초성퀴즈",
-                infoQuestion: "ㅌㅉ",
-                infoHint: "싸늘하다. 가슴에 비수가 날라와 꽂히다...",
-                infoAnswer: "타짜",
-            },
-            {
-                infoTitle: "영화 초성퀴즈",
-                infoQuestion: "ㅎㅇㄷ",
-                infoHint: "부산, 설경구 하지원 이민기",
-                infoAnswer: "해운대",
-            },
-            {
-                infoTitle: "영화 초성퀴즈",
-                infoQuestion: "ㅇㄷㅂㅇ",
-                infoHint: "누구냐 넌?, 산낙지 군만두",
-                infoAnswer: "올드보이",
-            },
-            {
-                infoTitle: "영화 초성퀴즈",
-                infoQuestion: "ㅇㄴㅅㄹ",
-                infoHint: "달구지, 소로 농사짓는 할아버지",
-                infoAnswer: "워낭소리",
-            },
-            {
-                infoTitle: "영화 초성퀴즈",
-                infoQuestion: "ㅇㅋㅌㄷㅁㄱ",
-                infoHint: "6.25전쟁, 야아~ 눈이다야~, 근데있잖어 쟈들하고 친구나?",
-                infoAnswer: "웰컴투동막골",
-            },
-            {
-                infoTitle: "영화 초성퀴즈",
-                infoQuestion: "ㅊㅈㅎㄱㅈㅆ",
-                infoHint: "이영애 최민식 주연, 너나 잘하세요",
-                infoAnswer: "친절한금자씨",
-            },
-            {
-                infoTitle: "영화 초성퀴즈",
-                infoQuestion: "ㅇㅂㅌ",
-                infoHint: "인류의 마지막 희망, 행성 판도라!, 나비족",
-                infoAnswer: "아바타",
-            },
-            {
-                infoTitle: "영화 초성퀴즈",
-                infoQuestion: "ㅇㅇㅇㅁ",
-                infoHint: "",
-                infoAnswer: "아이언맨",
-            },
-            {
-                infoTitle: "영화 초성퀴즈",
-                infoQuestion: "ㅋㅍㅍㄷ",
-                infoHint: "",
-                infoAnswer: "쿵푸팬더",
-            },
-            {
-                infoTitle: "영화 초성퀴즈",
-                infoQuestion: "ㄱㄱㄷㅍ",
-                infoHint: "",
-                infoAnswer: "국가대표",
-            },
-            {
-                infoTitle: "영화 초성퀴즈",
-                infoQuestion: "ㅌㅇㅌㄴ",
-                infoHint: "",
-                infoAnswer: "타이나틱",
-            },
-            {
-                infoTitle: "영화 초성퀴즈",
-                infoQuestion: "ㅌㄹㅅㅍㅁ",
-                infoHint: "",
-                infoAnswer: "트랜스포머",
-            },
-            {
-                infoTitle: "영화 초성퀴즈",
-                infoQuestion: "ㅅㄱㅇㅊ",
-                infoHint: "",
-                infoAnswer: "설국열차",
-            },
-            {
-                infoTitle: "영화 초성퀴즈",
-                infoQuestion: "ㄴㅂㅈㄷ",
-                infoHint: "",
-                infoAnswer: "내부자들",
-            },
-            {
-                infoTitle: "영화 초성퀴즈",
-                infoQuestion: "ㅂㅈㄷㅅ",
-                infoHint: "",
-                infoAnswer: "범죄도시",
-            },
-            {
-                infoTitle: "영화 초성퀴즈",
-                infoQuestion: "ㄴㅇㅇㄹㅇ",
-                infoHint: "",
-                infoAnswer: "너의이름은",
-            },
-            {
-                infoTitle: "영화 초성퀴즈",
-                infoQuestion: "ㅊㅈㅂㄱㅎ",
-                infoHint: "",
-                infoAnswer: "최종병길활",
-            },
+            // {
+            //     infoTitle: "영화 초성퀴즈",
+            //     infoQuestion: "ㅇㅅㅌ",
+            //     infoHint: "구조신호 따따따 따 따 따 따따따",
+            //     infoAnswer: "엑시트",
+            // },
+            // {
+            //     infoTitle: "영화 초성퀴즈",
+            //     infoQuestion: "ㅇㅌㅅㅌㄹ",
+            //     infoHint: "크리스토퍼 놀란 감독, 우주여행, ",
+            //     infoAnswer: "인터스텔라",
+            // },
+            // {
+            //     infoTitle: "영화 초성퀴즈",
+            //     infoQuestion: "ㅇㅅ",
+            //     infoHint: "일제강점기, 사람들한테서 잊혀지겠죠? 미안합니다...",
+            //     infoAnswer: "암살",
+            // },
+            // {
+            //     infoTitle: "영화 초성퀴즈",
+            //     infoQuestion: "ㅌㅉ",
+            //     infoHint: "싸늘하다. 가슴에 비수가 날라와 꽂히다...",
+            //     infoAnswer: "타짜",
+            // },
+            // {
+            //     infoTitle: "영화 초성퀴즈",
+            //     infoQuestion: "ㅎㅇㄷ",
+            //     infoHint: "쓰나미도 휩쓸지 못한 그들의 이야기",
+            //     infoAnswer: "해운대",
+            // },
+            // {
+            //     infoTitle: "영화 초성퀴즈",
+            //     infoQuestion: "ㅇㄷㅂㅇ",
+            //     infoHint: "누구냐 넌?, 산낙지 군만두",
+            //     infoAnswer: "올드보이",
+            // },
+            // {
+            //     infoTitle: "영화 초성퀴즈",
+            //     infoQuestion: "ㅇㄴㅅㄹ",
+            //     infoHint: "달구지, 소로 농사짓는 할아버지",
+            //     infoAnswer: "워낭소리",
+            // },
+            // {
+            //     infoTitle: "영화 초성퀴즈",
+            //     infoQuestion: "ㅇㅋㅌㄷㅁㄱ",
+            //     infoHint: "6.25전쟁, 야아~ 눈이다야~, 근데있잖어 쟈들하고 친구나?",
+            //     infoAnswer: "웰컴투동막골",
+            // },
+            // {
+            //     infoTitle: "영화 초성퀴즈",
+            //     infoQuestion: "ㅊㅈㅎㄱㅈㅆ",
+            //     infoHint: "이영애 최민식 주연, 너나 잘하세요",
+            //     infoAnswer: "친절한금자씨",
+            // },
+            // {
+            //     infoTitle: "영화 초성퀴즈",
+            //     infoQuestion: "ㅇㅂㅌ",
+            //     infoHint: "인류의 마지막 희망, 행성 판도라!, 나비족",
+            //     infoAnswer: "아바타",
+            // },
+            // {
+            //     infoTitle: "영화 초성퀴즈",
+            //     infoQuestion: "ㅇㅇㅇㅁ",
+            //     infoHint: "토니스타크, 어벤저스의 멤버, 팔라듐",
+            //     infoAnswer: "아이언맨",
+            // },
+            // {
+            //     infoTitle: "영화 초성퀴즈",
+            //     infoQuestion: "ㄱㄱㄷㅍ",
+            //     infoHint: "하정우, 성동일, 스키점프영화",
+            //     infoAnswer: "국가대표",
+            // },
+            // {
+            //     infoTitle: "영화 초성퀴즈",
+            //     infoQuestion: "ㅌㅇㅌㄴ",
+            //     infoHint: "여러분, 오늘 밤 여러분과 연주할 수 있어서 영광입니다.",
+            //     infoAnswer: "타이나틱",
+            // },
+            // {
+            //     infoTitle: "영화 초성퀴즈",
+            //     infoQuestion: "ㅌㄹㅅㅍㅁ",
+            //     infoHint: "오토봇과 디셉티콘의 싸움",
+            //     infoAnswer: "트랜스포머",
+            // },
+            // {
+            //     infoTitle: "영화 초성퀴즈",
+            //     infoQuestion: "ㅅㄱㅇㅊ",
+            //     infoHint: "봉준호 감독, 프랑스 만화 원작",
+            //     infoAnswer: "설국열차",
+            // },
+            // {
+            //     infoTitle: "영화 초성퀴즈",
+            //     infoQuestion: "ㄴㅂㅈㄷ",
+            //     infoHint: "어차피 대중들은 개 돼지입니다, 모히또 가서 몰디브나 한잔",
+            //     infoAnswer: "내부자들",
+            // },
+            // {
+            //     infoTitle: "영화 초성퀴즈",
+            //     infoQuestion: "ㅂㅈㄷㅅ",
+            //     infoHint: "진실의 방으로",
+            //     infoAnswer: "범죄도시",
+            // },
+            // {
+            //     infoTitle: "영화 초성퀴즈",
+            //     infoQuestion: "ㄴㅇㅇㄹㅇ",
+            //     infoHint: "일본 애니메이션, 몸이 서로 바뀐 두 남녀",
+            //     infoAnswer: "너의이름은",
+            // },
+            // {
+            //     infoTitle: "영화 초성퀴즈",
+            //     infoQuestion: "ㅊㅈㅂㄱㅎ",
+            //     infoHint: "병자호란을 배경, 청나라 정예부대와의 산속 추격전",
+            //     infoAnswer: "최종병기활",
+            // },
         ];
         // 현재 풀고 있는 문제 번호와 남은 문제 수
         let currentIndex = 0;  //현재 문제 값
@@ -260,39 +280,38 @@
             let quizWrapTag = `
                 <div class="quiz">
                     <div class="container">
-                    <div class="background">
-                        <div class="quiz__header">
-                            <div class="header__title"><p>${quiz[index].infoTitle}</p></div>
-                        </div>
-                        <!-- //quiz__header -->
-                        <div class="quiz__main">
-                            <div class="quiz__question">${quiz[index].infoQuestion}</div>
-                            <div class="hint">
-                                <button class="hint__btn">누르면 힌트</button>
-                                <div class="hint__text none"><span>${quiz[index].infoHint}</span></div>
+                        <div class="background">
+                            <div class="quiz__header">
+                                <div class="header__title"><p>${quiz[index].infoTitle}</p></div>
                             </div>
-                            <div class="quiz__input">
-                                <input type="text" placeholder="정답을 입력해주세요!">
-                            </div>
-                            <div class="quiz__answer">
-                                <button class="answer__btn">정답 확인</button>
-                                <div class="answer__text none"><span>${quiz[index].infoAnswer}</span></div>
-                            </div>
-                            <div class="next">
-                                <div class="next__button">
-                                    <button class="next__btn none">다음 문제</button>
+                            <!-- //quiz__header -->
+
+                            <div class="quiz__main">
+                                <div class="quiz__question">${quiz[index].infoQuestion}</div>
+                                <div class="hint">
+                                    <button class="hint__btn">누르면 힌트</button>
+                                    <div class="hint__text none"><span>${quiz[index].infoHint}</span></div>
+                                </div>
+                                <div class="quiz__input">
+                                    <input type="text" placeholder="정답을 입력해주세요!">
+                                </div>
+                                <div class="quiz__answer">
+                                    <button class="answer__btn">정답 확인</button>
+                                    <div class="answer__text none"><span>${quiz[index].infoAnswer}</span></div>
+                                </div>
+                                <div class="next">
+                                    <div class="next__button">
+                                        <button class="next__btn none">다음 문제</button>
+                                    </div>
                                 </div>
                                 <div class="skip">
                                     <button class="skip__btn">모르겠다</button>
                                 </div>
+                                <div class="quiz__score">${totalScore} 점</div>
+                                <p class="abc">${index + 1} / ${quiz.length}</p>
                             </div>
-                            <div class="quiz__score">${totalScore} 점</div>
-                            <p class="abc">${index+1}/20</p>
                         </div>
                     </div>
-                    <p class="quiz__timer">
-                        <input id="Timer" type="text" value="" readonly/>
-                    </p>
                     <!-- //quiz__main -->
                 </div>
                 `;
@@ -335,9 +354,7 @@
                 const useAnswer = quizInput.value;
                 const quizQuestion = quizWrap.querySelector(".quiz__question");
 
-                // 넘어가기 버튼 삭제
-                const skipBtn = quizWrap.querySelector(".skip__btn");
-                skipBtn.style.display = "none";
+
 
                 if (useAnswer.length < 0 || useAnswer == "") {
                     alert("답을 적어주세요");
@@ -357,6 +374,10 @@
                     quizHint.classList.remove("none");
                     quizAnswer.classList.remove("none");
                     nextBtn.classList.remove("none");
+
+                    // 넘어가기 버튼 삭제
+                    const skipBtn = quizWrap.querySelector(".skip__btn");
+                    skipBtn.style.display = "none";
                 }
             });
 
@@ -368,7 +389,6 @@
                     currentIndex++;
                     updataQuiz(currentIndex);
                 } else {
-                    alert("퀴즈가 종료되었습니다.");
                     // quizScore.textContent = `총 점수: ${totalScore}`;
                     nextBtn.classList.remove("none");
                     quizAnswerBtn.classList.add("none");
@@ -385,7 +405,7 @@
                     const quizElement = quizWrap.querySelector(".quiz");
                     const useAnswer = quizInput.value;
                     const quizQuestion = quizWrap.querySelector(".quiz__question");
-                    
+
                     quizElement.classList.add("wrong");
                     quizQuestion.classList.add("wrong");
                     quizhintBtn.classList.add("none");
@@ -397,10 +417,9 @@
                     const skipBtn = quizWrap.querySelector(".skip__btn");
                     skipBtn.style.display = "none";
                 } else {
-                    alert("퀴즈가 종료되었습니다.");
                     nextBtn.classList.remove("none");
                     quizAnswerBtn.classList.add("none");
-                    
+
                     totalA();
                 }
             });
@@ -410,7 +429,7 @@
 
         quizStBtn.addEventListener("click", function () {
             updataQuiz(currentIndex);
-  
+
             // 타이머
             let time = 180000;
             let min = 3;
@@ -429,7 +448,7 @@
                         sec = 60;
                         Timer.value = '남은 시간 ' + Math.floor(min) + ':' + '00';
                     }
-                    if (Math.floor(min) === 0 && sec === 30){
+                    if (Math.floor(min) === 0 && sec <= 30) {
                         const quizTimer = document.querySelector(".quiz__timer > input[type=text]");
                         quizTimer.style.color = 'red';
                     }
@@ -438,9 +457,13 @@
             TIMER();
             setTimeout(function () {
                 totalA();
+
+                const quizTimer = document.querySelector(".quiz__timer > input[type=text]");
+                quizTimer.style.display = 'none';
+
                 clearInterval(PLAYTIME);
             }, 180000);
-            
+
             Start.classList.add("none");
         });
 

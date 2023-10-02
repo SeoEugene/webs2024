@@ -1,43 +1,326 @@
 * {
     margin: 0;
     padding: 0;
+    margin: 0 auto;
+    font-family: 'Wooridaum';
 }
+
+body {
+    width: 100vw;
+    height: 100vh;
+    background-image: url(../img/quiz4.jpg);
+    background-attachment: fixed;
+
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    position: relative;
+}
+
+#main {
+    width: 100%;
+    margin: 0 auto;
+    border: 5px solid yellow;
+}
+
 .none {
     display: none !important;
 }
-#main {
+
+/* ------------------------------배경------------------------------ */
+.container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.background {
+    position: absolute;
+    /* max-width: 1280px;
+    min-width: 400px;
+    max-height: 100vh;
+    min-height: 300px; */
+    width: 100%;
+    height: 100%;
+    background-image: url(../img/moviebg.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+    top: 38%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: blink 1s infinite;
+    /* 1초 간격으로 애니메이션을 반복함 */
+    align-items: center;
+}
+
+.start__bg {
+    width: 80%;
+    height: 80%;
+    background-image: url(../img/moviebg.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+    margin-top: 32px;
+    border: 3px solid red;
+}
+
+@keyframes blink {
+
+    0%,
+    100% {
+        background-image: url(../img/moviebg.png);
+    }
+
+    50% {
+        background-image: none;
+    }
+}
+
+/* ------------------------------헤더------------------------------ */
+.main__header {
+    width: 80%;
+    height: 55px;
     margin: 0 auto;
+    margin-top: 10%;
 }
 
-.quiz__wrap{
-    border: 8px solid blue;
-    width: 100%;
-    height: 300px;
-    margin: 300px 0;
+.quiz__title {
+    width: 55%;
+    font-size: 36px;
+    line-height: 1.5;
+    background-color: #3e3b4368;
+    color: #fff;
+    border-radius: 15px;
     text-align: center;
-    justify-content: center;
-
+    font-weight: 500;
 }
-/* .quizTimeOut {
+
+
+/* ------------------------------메인------------------------------ */
+/* ------------------------------start------------------------------ */
+.main__start {
     width: 100%;
     height: 300px;
-    background-color: #B73232;
     color: white;
     font-size: 60px;
-    padding: 100px 0;
+    text-align: center;
+
 }
-.userScore {
+
+.start {
+    padding: 10px 10px;
     width: 100%;
-    height: 100px;
-    background-color: #324DB7;
-    color: white;
-    font-size: 32px;
+    text-align: center;
+    display: inline-block;
+    margin-top: 10%;
+
+    border: 2px solid violet;
 }
-.ranking {
-    width: 100%;
-    height: 100px;
-    background-color: #189050;
-    font-size: 50px;
+
+.start>p {
+    font-size: 40px;
+    font-weight: 500;
+    color: #fff;
+}
+
+.start__btn {
+    margin-top: 50px;
+    font-size: 22px;
+    border-radius: 5px;
+    padding: 10px 10px;
+    background-color: #3E3B43;
+    color: #fff;
     font-weight: 800;
-} */
+    border: none;
+    cursor: pointer;
+    box-shadow: 3px 3px 3px #3E3B43;
+    transition: all 0.3;
+}
+
+.start__btn:hover {
+    background-color: #331c59;
+}
+
+/* ------------------------------quiz------------------------------ */
+.quiz__wrap {
+    border: 1px solid blue;
+    margin: 0 auto;
+    width: 80%;
+    height: 300px;
+    text-align: center;
+    justify-content: center;
+}
+
+/* ------------------------------푸터------------------------------ */
+
+@media (max-width: 1200px) {
+    #main {
+        border: 1px solid rosybrown;
+    }
+
+    .main__header {
+        margin-top: 11%;
+    }
+
+    .quiz__title {
+        font-size: 29px;
+    }
+
+    .start>p {
+        font-size: 29px;
+    }
+
+    
+}
+
+@media (max-width: 1100px) {
+    #main {
+        border: 1px solid rosybrown;
+    }
+
+    .main__header {
+        margin-top: 11%;
+    }
+
+    .quiz__title {
+        font-size: 28px;
+    }
+
+    .start>p {
+        font-size: 28px;
+    }
+}
+
+@media (max-width: 1000px) {
+    #main {
+        border: 1px solid red;
+    }
+
+    .main__header {
+        margin-top: 11%;
+    }
+
+    .quiz__title {
+        font-size: 27px;
+    }
+
+    .start>p {
+        font-size: 27px;
+    }
+}
+
+@media (max-width: 900px) {
+    #main {
+        border: 1px solid salmon;
+        height: 80%;
+    }
+    .start__bg {
+        margin-top: 70px;
+
+    }
+    .quiz__title {
+        font-size: 26px;
+    }
+
+    .start>p {
+        font-size: 26px;
+    }
+    .quiz__wrap {
+        height: 250px;
+    }
+}
+
+@media (max-width: 800px) {
+    #main {
+        border: 1px solid seagreen;
+    }
+
+    .start__bg {
+        
+    }
+
+    .quiz__title {
+        font-size: 25px;
+    }
+
+    .start>p {
+        font-size: 25px;
+    }
+}
+
+@media (max-width: 700px) {
+    #main {
+        border: 1px solid aqua;
+        height: 70%;
+    }
+
+    .start__bg {
+        margin-top: 90px;
+    }
+
+    .main__header {
+        margin-top: 11%;
+    }
+
+    .quiz__title {
+        font-size: 24px;
+    }
+
+    .start>p {
+        font-size: 24px;
+    }
+    .start__btn {
+        font-size: 20px;
+    }
+    .quiz__wrap {
+        height: 220px;
+    }
+}
+
+@media (max-width: 600px) {
+    #main {
+        border: 1px solid whitesmoke;
+    }
+    .start__bg {
+        margin-top: 90px;
+    }
+
+    .main__header {
+        height: 25px;
+    }
+
+    .quiz__title {
+        font-size: 23px;
+    }
+
+    .start>p {
+        font-size: 23px;
+    }
+    .start__btn {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 500px) {
+    #main {
+        border: 1px solid aqua;
+    }
+    .start__bg {
+        width: 90%;
+        height: 80%;
+        margin-top: 105px;
+    }
+    .main__header {
+        margin-top: 10%;
+    }
+
+    .quiz__title {
+        font-size: 20px;
+    }
+
+    .start>p {
+        font-size: 20px;
+    }
+}
 
