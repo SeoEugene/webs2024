@@ -22,18 +22,19 @@ body {
     background-position: center center;
     background-repeat: no-repeat;
     position: relative;
+    height: 100vh;
+    width: 100vw;
 }
 #main{
-    height: 100vh;
+    height: 100%;
     overflow: hidden;
 }
 .quiz {
     border: 5px solid pink;
-    margin-top: 5%;
-    height: 100%;
+    margin-top: 7%;
+    height: 90%;
     position: absolute;
     width: 80vw;
-    height: 80vh;
     background-image: url(../img/moviebg.png);
     background-size: contain;
     background-repeat: no-repeat;
@@ -41,12 +42,13 @@ body {
     top: 33%;
     left: 50%;
     transform: translate(-50%, -50%);
-    margin-top: 10%;
+    overflow: hidden;
 }
 .container {
     width: 100%;
     height: 100%;
     position: relative;
+    overflow: hidden;
   }
   
 .background {
@@ -150,6 +152,7 @@ body {
     top: 33%;
     left: 50%;
     transform: translate(-50%, -50%);
+    overflow: hidden;
 }
 .start p {
     margin-top: 15%;
@@ -202,7 +205,6 @@ body {
 
 .quiz__wrap > .quiz {
     width: 1000px;
-    height: 750px;
 }
 .quiz__question {
     margin-top: 155px;
@@ -310,8 +312,8 @@ body {
 /* ----------------------------- 정답 -------------------------------------------- */
 .answer__btn {
     position: absolute;
-    bottom: 31%;
-    left: 40%;
+    bottom: 100px;
+    right: 7%;
     margin-top: 10px;
     font-size: 22px;
     border-radius: 5px;
@@ -336,7 +338,7 @@ body {
 }
 .next__btn {
     position: absolute;
-    margin-left: 70px;
+    margin-left: 85px;
     margin-top: 10px;
     font-size: 22px;
     border-radius: 5px;
@@ -356,8 +358,8 @@ body {
 /* ----------------------------- 넘어가기 -------------------------------------------- */
 .skip__btn {
     position: absolute;
-    bottom: 31%;
-    right: 37%;
+    bottom: 48px;
+    right: 7%;
     margin-top: 10px;
     font-size: 22px;
     border-radius: 5px;
@@ -392,8 +394,8 @@ body {
 /* -----------------------------점수----------------------------- */
 .quiz__score {
     position: absolute;
-    bottom: 145px;
-    left: 75px;
+    bottom: 30px;
+    left: 137px;
     font-size: 22px;
     border-radius: 15px;
     padding: 10px 10px;
@@ -750,6 +752,22 @@ body {
     .quiz {
         background-image: none;
     }
+    .quiz__input input{
+        width: 480px;
+        margin-left: 200px;
+    }
+    .answer__btn {
+        right: 18%;
+        bottom: 90px;
+    }
+    .skip__btn {
+        right: 18%;
+        bottom: 38px;
+
+    }
+    .quiz__score {
+        bottom: 22px;
+    }
 }
 @media (max-width: 900px){
     #main {
@@ -797,21 +815,34 @@ body {
     .quiz__input input {
         width: 350px;
         font-size: 20px;
+        margin-left: 320px;
     }
     .answer__btn {
         width: 80px;
-        left: 40%
+        right: 24%;
+        bottom: 90px;
     }
     .skip__btn {
         width: 80px;
-        right: 40%
+        right: 15%;
+        bottom: 90px;
     }
     .abc {
         right:25%;
     }
     .quiz__score {
         left: 25%;
-        bottom: 40%;
+        bottom: 10%;
+
+    }
+    .quiz__question {
+        margin-top: 115px;
+    }
+    .hint .hint__btn {
+        margin-top: 20px;
+    }
+    .hint .hint__text {
+        height: 60px;
     }
 }
 @media (max-width: 700px){
@@ -852,18 +883,29 @@ body {
     }
     .answer__btn {
         width: 80px;
-        left: 40%
+        right: 23%;
+        bottom: 120px;
+        padding: 8px;
+        font-size: 15px; 
+
     }
     .skip__btn {
         width: 80px;
-        right: 40%
+        right: 23%;
+        bottom: 77px;
+        padding: 8px;
+        font-size: 15px;
     }
     .abc {
         right:30%;
     }
     .quiz__score {
-        left: 25%;
-        bottom: 40%;
+        left: 32%;
+        bottom: 5%;
+    }
+    .hint .hint__text {
+        height: 49px;
+        width: 416px;
     }
 }
 @media (max-width: 600px){
