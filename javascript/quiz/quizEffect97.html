@@ -93,11 +93,14 @@
                 nextBtn.classList.remove("none");
                 if (quizInfo[currentIndex].infoanswer == as.value) {
                     quizWrap.classList.add("good");
-
+                    quizWrap.classList.add("bac__blue");
+                    as.classList.add("c__blue");
                     Score++;
                     sc.innerText = `${Score} 점`;
                 } else {
                     quizWrap.classList.add("bad");
+                    quizWrap.classList.add("bac__red");
+                    as.classList.add("c__red");
                 }
             });
             nextBtn.addEventListener("click", () => {
@@ -105,8 +108,10 @@
                 Answer.classList.add("none");
                 Btn.classList.remove("none");
                 nextBtn.classList.add("none");
-                quizWrap.classList.remove("good");
-                quizWrap.classList.remove("bad");
+                quizWrap.classList.remove("bac__blue");
+                quizWrap.classList.remove("bac__red");
+                as.classList.remove("c__red");
+                as.classList.remove("c__blue");
                 updataQuiz();
             });
         }
