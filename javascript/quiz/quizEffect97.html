@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>정보처리 기능사 주관식 문제</title>
+    <link rel="stylesheet" href="assets/css/quiz97.css">
+</head>
+
+<body>
+    <div id="main">
+        <div class="quiz__wrap">
+        </div>
+        <!-- //quiz__wrap -->
+        
+    </div>
+    <!-- //main -->
+
+    <script>
+        //선택자
+        const quizWrap = document.querySelector(".quiz__wrap");
+
+        //문제 정보
+        let quizInfo = [];
+        let Score = 0;
+
+        //문제 가져오기
+        const fetchQuiz = (index) => {
+            fetch("https://raw.githubusercontent.com/webstoryboy/webstoryboy/main/w_json/gineungsaShort.json")
+                .then(res => res.json())
+                .then(items => {
+                    quizInfo = items.map((item, index) => {
+                        const formattedQuiz = {
+                            info: item.time,
+                            infoquestion: item.question,
+                            infoanswer: item.correct_answer,
+                            infodesc: item.question_desc,
+                        }
+                        return formattedQuiz;                        
+                    });
+                    updataQuiz();
+                })
+        }
+
+
+        //문제 출력
+        let currentIndex = 0;
+        const updataQuiz = () => {
+           let quizWrapTag = `
+                        <h2>정보처리 주관식</h2>
+
+                        <div class="quiz__header">
+                            <span class="quiz__info">${quizInfo[currentIndex].info}</span>
+                        </div>
+                    <!-- //quiz__header -->
+
+                    <div class="quiz__main">
+                        <div class="quiz__question">
+                            <em>${currentIndex + 1}</em>. <span>${quizInfo[currentIndex].infoquestion}</span></span>
+                        </div>
+                        <div class="quiz__desc">${quizInfo[currentIndex].infodesc}</div>
+                        <div class="quiz__answer none">${quizInfo[currentIndex].infoanswer}</div>
+                        <input type="text" class="answer" placeholder="정답을 입력해주세요!">
+                        <button class="answer__btn">정답제출</button>
+                        <button class="next__btn none">다음 문제</button>
+                    </div>
+                    <!-- //quiz__main -->
+                `;
+                quizWrap.innerHTML = quizWrapTag;
+
+            const Btn = quizWrap.querySelector(".answer__btn");
+            const Answer = quizWrap.querySelector(".quiz__answer");
+            const nextBtn = quizWrap.querySelector(".next__btn");
+            const as = quizWrap.querySelector(".answer");
+            Btn.addEventListener("click", () => {
+                Answer.classList.remove("none");
+                Btn.classList.add("none");
+                nextBtn.classList.remove("none");
+                if(quizInfo[currentIndex].infoanswer == as.value){
+                    quizWrap.classList.add("good");
+                }else{
+                    quizWrap.classList.add("bad");
+                }
+            });
+            nextBtn.addEventListener("click", () => {
+                currentIndex++;
+                Answer.classList.add("none");
+                Btn.classList.remove("none");
+                nextBtn.classList.add("none");
+                updataQuiz();
+            });            
+        }
+
+        //정답 확인
+
+        // 페이지가 로드된 후 실행
+        document.addEventListener("DOMContentLoaded", () => {
+            fetchQuiz(currentIndex);
+        });
+
+
+    </script>
+</body>
+
+</html>

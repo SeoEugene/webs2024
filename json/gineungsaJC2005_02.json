@@ -19,7 +19,7 @@
             "11"
         ],
         "correct_answer": "0",
-        "desc": "반가산기(Half-Adder)에서 두 개의 입력 비트가 모두 1일 때 합(Sum)은 0입니다."
+        "infoDesc": "반가산기(Half-Adder)에서 두 개의 입력 비트가 모두 1일 때 합(Sum)은 0입니다."
     },
     {
         "subject": "정보처리 기능사",
