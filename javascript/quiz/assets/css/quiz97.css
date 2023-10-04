@@ -5,11 +5,11 @@
 .none {
     display: none;
 }
-.quiz__wrap>.quiz.good {
+.quiz__wrap.good {
     position: relative;
 }
 
-.quiz__wrap>.quiz.good::before {
+.quiz__wrap.good::before {
     content: '';
     width: 100px;
     height: 100px;
@@ -21,11 +21,11 @@
     z-index: 100;
 }
 
-.quiz__wrap>.quiz.bad {
+.quiz__wrap.bad {
     position: relative;
 }
 
-.quiz__wrap>.quiz.bad::before {
+.quiz__wrap.bad::before {
     content: '';
     width: 150px;
     height: 10px;
@@ -38,7 +38,7 @@
     z-index: 100;
 }
 
-.quiz__wrap>.quiz.bad::after {
+.quiz__wrap.bad::after {
     content: '';
     width: 150px;
     height: 10px;
@@ -53,30 +53,85 @@
 #main {
     width: 100vw;
     height: 100vh;
-    border: 1px solid red;
     overflow: hidden;
+    background-image: url("../img/background-min.jpg");
+
+}
+.score {
+    background-color: pink;
+    font-size: 20px;
+    color: #fff;
+    font-weight: 800;
+    border-radius: 30px 30px 0 0;
+    height: 28px
 }
 .quiz__wrap {
     margin: 0 auto;
-    margin-top: 10%;
-    width: 800px;
-    height: 500px;
-    border: 1px solid pink;
-    background-image: url();
+    margin-top: 5%;
+    width: 80vw;
+    height: 450px;
+    background-color: #FFFAFA;
+    border: 3px solid pink;
+    border-radius: 30px;
+    text-align: center;
+    
 }
 .quiz__wrap > h2 {
-    text-align: center;
-    margin-top: 10px;
+    margin: 20px 0;
 }
 .quiz__header {
-    border: 1px solid orange;
     margin-top: 10px;
 }
-.quiz__header .quiz__info {}
-.quiz__main {}
+.quiz__header .quiz__info {
+    font-size: 18px;
+    padding: 5px;
+    background-color: pink;
+    border-radius: 10px;
+    color:#fff;
+    font-weight: 800;
+}
+.quiz__main {
+}
 .quiz__main .quiz__question {}
-.quiz__main .quiz__question > em{}
-.quiz__main .quiz__question > span{}
-.quiz__main .quiz__desc {}
-.quiz__main .quiz__answer {}
+.quiz__main .quiz__question > em{
+    font-weight: 800;
+    font-size: 18px;
+}
+.quiz__main .quiz__question > span{
+    display: inline-block;
+    margin: 20px 0;
+    font-size: 15px;
+}
+.quiz__main .quiz__desc {
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+.quiz__main .quiz__answer {
+    background-color: pink;
+    margin: 20px;
+    font-size: 20px;
+    height: 30px;
+    border-radius: 30px;
+    font-weight: 800;
+    color: #fff;
+}
+.answer {
+    border: 2px solid pink;
+    font-size: 22px;
+    height: 30px;
+    font-weight: 600;
+    text-align: center;
+    border-radius: 5px;
+}
+.answer__btn, .next__btn {
+    font-size: 22px;
+    height: 30px;
+    background-color: pink;
+    border: none;
+    border-radius: 5px;
+    width: 120px;
+    height: 35px;
+    font-weight: 800;
+    color: #fff;
+}
 

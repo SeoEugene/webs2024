@@ -10,16 +10,18 @@
 
 <body>
     <div id="main">
+        
         <div class="quiz__wrap">
         </div>
         <!-- //quiz__wrap -->
-        
+
     </div>
     <!-- //main -->
 
     <script>
         //선택자
         const quizWrap = document.querySelector(".quiz__wrap");
+        const sc = document.querySelector(".score");
 
         //문제 정보
         let quizInfo = [];
@@ -37,7 +39,7 @@
                             infoanswer: item.correct_answer,
                             infodesc: item.question_desc,
                         }
-                        return formattedQuiz;                        
+                        return formattedQuiz;
                     });
                     updataQuiz();
                 })
@@ -47,7 +49,8 @@
         //문제 출력
         let currentIndex = 0;
         const updataQuiz = () => {
-           let quizWrapTag = `
+            let quizWrapTag = `
+                        <div class="score">${Score} 점</div>
                         <h2>정보처리 주관식</h2>
 
                         <div class="quiz__header">
@@ -59,7 +62,7 @@
                         <div class="quiz__question">
                             <em>${currentIndex + 1}</em>. <span>${quizInfo[currentIndex].infoquestion}</span></span>
                         </div>
-                        <div class="quiz__desc">${quizInfo[currentIndex].infodesc}</div>
+                        <div class="quiz__desc none">${quizInfo[currentIndex].infodesc}</div>
                         <div class="quiz__answer none">${quizInfo[currentIndex].infoanswer}</div>
                         <input type="text" class="answer" placeholder="정답을 입력해주세요!">
                         <button class="answer__btn">정답제출</button>
@@ -67,19 +70,33 @@
                     </div>
                     <!-- //quiz__main -->
                 `;
-                quizWrap.innerHTML = quizWrapTag;
+
+            quizWrap.innerHTML = quizWrapTag;
+            const quizDesc = quizWrap.querySelector(".quiz__desc");
+            if (typeof quizInfo[currentIndex].infodesc !== 'undefined') {
+                quizDesc.classList.remove("none");
+                console.log(quizInfo[currentIndex].infodesc);
+
+            } else {
+                console.log(quizInfo[currentIndex].infodesc);
+            }
+
 
             const Btn = quizWrap.querySelector(".answer__btn");
             const Answer = quizWrap.querySelector(".quiz__answer");
             const nextBtn = quizWrap.querySelector(".next__btn");
             const as = quizWrap.querySelector(".answer");
+            const sc = quizWrap.querySelector(".score");
             Btn.addEventListener("click", () => {
                 Answer.classList.remove("none");
                 Btn.classList.add("none");
                 nextBtn.classList.remove("none");
-                if(quizInfo[currentIndex].infoanswer == as.value){
+                if (quizInfo[currentIndex].infoanswer == as.value) {
                     quizWrap.classList.add("good");
-                }else{
+
+                    Score++;
+                    sc.innerText = `${Score} 점`;
+                } else {
                     quizWrap.classList.add("bad");
                 }
             });
@@ -88,8 +105,10 @@
                 Answer.classList.add("none");
                 Btn.classList.remove("none");
                 nextBtn.classList.add("none");
+                quizWrap.classList.remove("good");
+                quizWrap.classList.remove("bad");
                 updataQuiz();
-            });            
+            });
         }
 
         //정답 확인
