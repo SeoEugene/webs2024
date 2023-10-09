@@ -1,54 +1,36 @@
+<?php
+    include "../connect/connect.php";
+    include "../connect/session.php";
+
+    echo "<pre>";
+    var_dump($_SESSION);
+    echo "</pre>";
+?>
 <!DOCTYPE html>
 <html lang="ko">
-
+ 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>회원가입 페이지</title>
 
     <!-- CSS -->
-    <link rel="stylesheet" href="../assets/css/style.css">
+    <?php include "../include/head.php" ?>
 </head>
 
 <body class="gray">
-    <div id="skip">
-        <a href="#header">헤더 영역 바로가기</a>
-        <a href="#main">콘텐츠 영역 바로가기</a>
-        <a href="#footer">푸터 영역 바로가기</a>
-    </div>
-    <header id="header" role="banner">
-        <div class="header__inner container">
-            <div class="left">
-                <a href="/">
-                    <span class="blind">메인으로</span>
-                </a>
-            </div>
-            <div class="logo">
-                <a href="main.html">Youjini Blog</a>
-            </div>
-            <div class="right">
-                <ul>
-                    <li><a href="join.html">회원가입</a></li>
-                </ul>
-            </div>
-        </div>
-        <nav class="nav__inner">
-            <ul>
-                <li><a href="join.html">회원가입</a></li>
-                <li><a href="join.html">로그인</a></li>
-                <li><a href="join.html">게시판</a></li>
-                <li><a href="join.html">블로그</a></li>
-            </ul>
-        </nav>
-    </header>
+    <?php include "../include/skip.php" ?>
+    <!-- //skip -->
+
+    <?php include "../include/header.php" ?>
     <!-- //header -->
 
     <main id="main" role="main">
         <div class="intro__inner bmStyle container">
             <div class="intro__img">
-                <img srcset="../html/assets/img/img01.jpg 1x,
-                            ../html/assets/img/img01@2.jpg 2x,
-                            ../html/assets/img/img01@3.jpg 3x" alt="소개이미지">
+                <img srcset="../assets/img/img01.jpg 1x,
+                            ../assets/img/img01@2.jpg 2x,
+                            ../assets/img/img01@3.jpg 3x" alt="소개이미지">
             </div>
 
             <div class="intro__text">
@@ -60,12 +42,7 @@
     </main>
     <!-- //main -->
 
-    <footer id="footer" role="contentinfo">
-        <div class="footer__inner container btStyle">
-            <div> Copyright 2023 Youjini blog</div>
-            <div>blog by webs</div>
-        </div>
-    </footer>
+    <?php include "../include/footer.php" ?>
     <!-- //footer -->
 </body>
 

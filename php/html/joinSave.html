@@ -1,10 +1,8 @@
 <!DOCTYPE html>
-<html lang="ko">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>회원가입 페이지</title>
+    <title>회원가입 완료</title>
 
     <!-- CSS -->
     <link rel="stylesheet" href="../assets/css/style.css">
@@ -16,8 +14,6 @@
         <a href="#main">콘텐츠 영역 바로가기</a>
         <a href="#footer">푸터 영역 바로가기</a>
     </div>
-    <!-- //skip -->
-
     <header id="header" role="banner">
         <div class="header__inner container">
             <div class="left">
@@ -48,15 +44,49 @@
     <main id="main" role="main">
         <div class="intro__inner container">
             <div class="intro__img">
-                <img srcset="../assets/img/img01.jpg 1x,
-                            ../assets/img/img01@2.jpg 2x,
-                            ../assets/img/img01@3.jpg 3x" alt="소개이미지">
-            </div>
-
+                <div class="intro__img">
+                    <img srcset="../assets/img/img01.jpg 1x,
+                                ../assets/img/img01@2.jpg 2x,
+                                ../assets/img/img01@3.jpg 3x" alt="소개이미지">
+                </div>
             <div class="intro__text">
-                어떤 일이라도 노력하고 즐기면 그 결과는 빛을 바란다고 생각합니다.
-                신입의 열정과 도전정신을 깊숙히 새기며 배움에 있어 겸손함을 유지하며
-                세부적인 곳까지 파고드는 개발자가 되겠습니다.
+            <?php
+                include "../connect/connect.php";
+
+                $youEmail = $_POST['youEmail'];
+                $youName = $_POST['youName'];
+                $youPass = $_POST['youPass'];
+                $youPassC = $_POST['youPassC'];
+                $youPhone = $_POST['youPhone'];
+                $regTime = time();
+
+                // echo $youEmail, $youName, $youPass, $youPassC, $youPhone, $regTime;
+
+                $sql = "INSERT INTO members(youEmail, youName, youPass, youPhone, regTime)VALUES('$youEmail', '$youName', '$youPass', '$youPhone', '$regTime')";
+                $result = $connect -> query($sql);
+
+                // 메세지 출력
+                function msg($alert){
+                    echo "<p>$alert</p>";
+                };
+
+                if($result){
+                    msg("회원가입이 되었습니다!. 로그인해주세요!");
+                }else{
+                    msg("회원가입이 잘못되었습니다!. 다시 한번 확인해주세요!");
+                }
+
+                if($result){
+                    echo "회원가입이 완료되었습니다.";
+                }else{
+                    echo "회원가입이 잘못되었습니다.";
+                }
+
+            ?>
+            </div>
+            <div class="intro__btn">
+                <a href="main.html">메인으로</a>
+                <a href="login.html">로그인</a>
             </div>
         </div>
     </main>
