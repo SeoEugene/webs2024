@@ -705,6 +705,8 @@
     info.result();
 }</code></pre>
                     <p class="desc">
+                        전의 예제에서는 따로 데이터를 저장하고 따로 함수를 선언해 저장한 데이터를 가져오는 함수를 만들어 함수를 실행하는 형태였으며,<br>
+                        이번 예제에서는 데이터 안에 함수를 선언하고 만들며 밖에서 함수를 실행하는 형태입니다. 
                     </p>
                     <p class="desc">
                         2줄 : 상수 객체 info를 선언합니다.<br>
@@ -756,14 +758,21 @@
                         실행 중인 코드의 문맥에 따른 this의 뜻<br>
                         1. 전역 컨텍스트(전역 스코프)에서는 this가 브러우저 환경에서는 window객체를 가리킵니다.<br>
                         2. 함수 내부에서는 두가지 의미가 있는데 함수로 호출 할때 this는 함수가 속한 객체를 가리키며, 그렇지 않으면 전역 객체를 가리킵니다. <br>
-                        따라서 예제에서 this.num은 Func함수가 가지고 있는 생성자 객체 num을 가리킵니다.
+                        따라서 예제에서 this.num은 Func함수가 가지고 있는 생성자 객체 num을 가리킵니다.<br>
+                        <br>
+                        인스턴스란<br>
+                        원래 인스턴스란 클래스를 기반으로 생성된 객체입니다.<br>
+                        여기서 사용된 인스턴스는 함수 Func을 바탕으로 매개변수를 받는 객체를 생성하였습니다.
                     </p>
                     <p class="desc">
                         2줄 : 매개변수 num과 str을 받는 함수 Func을 선언합니다.<br>
                         3줄 : Func함수의 객체 num에 매개변수로 받은 num값을 넣어줍니다.<br>
                         4줄 : Func함수의 객체 str에 매개변수로 받은 str값을 넣어줍니다.<br>
                         5줄 : Func함수의 객체 result에 함수를 넣어주는데 이 함수는 console.log()로 매개변수를 통해 받은 this.num값과 this.str값을 출력합니다.<br>
-                        8줄 : 
+                        8줄 : 매개변수 19와 "함수가 실행되었습니다."를 전달하는 함수 Func를 실행하는 상수 info1를 만듭니다.<br>
+                        9줄 : 매개변수 20와 "함수가 실행되었습니다."를 전달하는 함수 Func를 실행하는 상수 info2를 만듭니다.<br>
+                        12줄 : 상수 info1의 객체 result()함수를 실행합니다.<br>
+                        13줄 : 상수 info2의 객체 result()함수를 실행합니다.<br>
                     </p>
                     <div class="result">
                         <details>
@@ -794,7 +803,7 @@
                 <div id="sample18" class="sample">
                     <h3>18. 함수 유형 : 프로토타입 함수</h3>
                     <p>
-                       
+                        프로토타입이란 객체를 만들 때 해당 객체의 기능을 정의하는 데 사용됩니다.
                     </p>
 <pre class="line-numbers"><code class="language-js">{
     function Func(num, str){
@@ -812,6 +821,19 @@
     info2.result();
 }</code></pre>
                     <p class="desc">
+                        javascript에서 프로토타입 메서드를 추가하는 방법 : <br>
+                        <strong>함수이름.prototype.메서드이름 = function(){메서드내용};s</strong><br> 
+                    </p>
+                    <p class="desc">
+                        2줄 : 매개변수 num과 str을 받는 함수 Func를 선언합니다.<br>
+                        3줄 : num키로 매개변수로 받은 num 데이터를 저장합니다.<br>
+                        4줄 : str키로 매개변수로 받은 str 데이터를 저장합니다.<br>
+                        6줄 : Func함수의 프로토타입으로 result키로 함수를 넣습니다.<br>
+                        7줄 : console.log()를 이용해 Func함수의 num키과 str키의 값을 출력합니다.<br>
+                        10줄 : 21과 "함수가 실행되었습니다."를 매개변수로 받는 Func함수를 상수 info1로 저장합니다.<br>
+                        11줄 : 22과 "함수가 실행되었습니다."를 매개변수로 받는 Func함수를 상수 info2로 저장합니다.<br>
+                        13줄 : info1의 객체 result()함수를 실행합니다.<br>
+                        14줄 : info2의 객체 result()함수를 실행합니다.
                     </p>
                     <div class="result">
                         <details>
@@ -841,22 +863,21 @@
                 <!-- //sample18 -->
 
                 <div id="sample19" class="sample">
-                    <h3>19. 함수 유형 : 객체 리터럴 함수</h3>
+                    <h3>19. 함수 유형 : 프로토타입 객체 리터럴 함수</h3>
                     <p>
-                       
+                       프로토타입 메서드를 객체방식으로 여러개 생성할 수 있습니다.
                     </p>
 <pre class="line-numbers"><code class="language-js">{
     function Func(num, str){
         this.num = num;
         this.str = str;
-
     }
     Func.prototype = {
         result1 : function(){
             console.log(`${this.num}. ${this.str}`);
         },
         result2 : function(){
-            console.log(`${this.num}. ${this.str}`);
+            console.log(`${this.num}. ${this.str}`);  
         },
     }
 
@@ -867,6 +888,25 @@
     info2.result2();
 }</code></pre>
                     <p class="desc">
+                        프로토타입 메서드를 객체로 받는 방법 : <br>
+                        <strong>함수이름.prototype = {</strong><br>
+                        <strong>메서드이름1 : function(){메서드내용}, </strong><br>
+                        <strong>메서드이름2 : function(){메서드내용},  </strong><br>
+                        <strong>} </strong><br>
+                    </p>
+                    <p class="desc">
+                        2줄 : 매개변수 num과 str을 받는 함수 Func를 선언합니다.<br>
+                        3줄 : num키로 매개변수로 받은 num 데이터를 저장합니다.<br>
+                        4줄 : str키로 매개변수로 받은 str 데이터를 저장합니다.<br>
+                        6줄 : Func함수의 프로토 메서드를 지정합니다.<br>
+                        7줄 : result1객체로 함수를 선언합니다.<br>
+                        8줄 : console.log()를 이용해 num키과 str키의 값을 출력합니다.<br>
+                        10줄 : result2객체로 함수를 선언합니다.<br>
+                        11줄 : console.log()를 이용해 num키과 str키의 값을 출력합니다.<br>
+                        15줄 : 23과 "함수가 실행되었습니다."를 매개변수로 받는 Func함수를 상수 info1로 저장합니다.<br>
+                        16줄 : 24과 "함수가 실행되었습니다."를 매개변수로 받는 Func함수를 상수 info2로 저장합니다.<br>
+                        19줄 : info1의 객체 result1()함수를 실행합니다.<br>
+                        19줄 : info2의 객체 result2()함수를 실행합니다.
                     </p>
                     <div class="result">
                         <details>
@@ -900,7 +940,7 @@
                     </div>
                 </div>
                 <!-- //sample19 -->
-
+<!-- 
                 <div id="sample20" class="sample">
                     <h3></h3>
                     <p>
@@ -923,7 +963,7 @@
                         </details>
                     </div>
                 </div>
-                <!-- //sample20 -->
+                //sample20 -->
 
             </div>
             <!-- //main_sample -->
