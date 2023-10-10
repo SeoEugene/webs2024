@@ -66,7 +66,17 @@
                     <li><a href="#sample17">17. 함수 유형 : 객체 생성자 함수</a></li>         
                     <li><a href="#sample18">18. 함수 유형 : 프로토타입 함수</a></li>         
                     <li><a href="#sample19">19. 함수 유형 : 객체 리터럴 함수</a></li>         
-                    <li><a href="#sample20">20. 클래스</a></li>         
+                    <li><a href="#sample20">20. 함수 : 즉시실행함수</a></li>         
+                    <li><a href="#sample21">21. 함수 : 파라미터함수</a></li>         
+                    <li><a href="#sample22">22. 함수 : 재귀 함수</a></li>         
+                    <li><a href="#sample23">23. 함수 : 콜백 함수</a></li>         
+                    <li><a href="#sample24">24. 함수 : 비동기 함수 : 콜백 함수</a></li>         
+                    <li><a href="#sample25">25. 함수 : 비동기 함수 : 프로미스</a></li>         
+                    <li><a href="#sample26">26. 함수 : 비동기 함수 : asyne/await</a></li>         
+                    <li><a href="#sample27">27. 함수 : 중첩 함수</a></li>         
+                    <li><a href="#sample28">28. 함수 : 클로저</a></li>         
+                    <li><a href="#sample29">29. 클래스 : 기본</a></li>         
+                    <li><a href="#sample30">30. 클래스 : 상속</a></li>         
                 </ul>
             </div>
             <!-- //main__menu -->
@@ -1172,7 +1182,249 @@
             info1.result1();
             info2.result2();
         }
-        //20. 클래스
+        //20. 함수 : 즉시실행함수
+        {
+            (function (){
+                console.log("25. 함수가 실행되었습니다.");
+            })();
+
+            (() => {
+                console.log("26. 함수가 실행되었습니다.");
+            })();
+        }
+
+        //21. 함수 : 파라미터 함수
+        {
+            function func(str = "27. 함수가 실행되었습니다."){
+                console.log(str);
+            }
+            func();
+
+            const func1 = (str = "27. 함수가 실행되었습니다.") => {
+                console.log(str);
+            }
+            func1();
+        }
+
+        //22. 함수 : 재귀함수 : 자기 자신을 호출하는 함수
+        {
+            function func(num){
+                for(let i=1; i<=num; i++){
+                    console.log("29. 함수가 실행되었습니다."+ i);
+                }   
+            }
+            func(10)            
+
+            function func1(num){
+                if(num <= 0) return;
+
+                console.log("30. 함수가 실행되었습니다.");
+                func1(num-1);
+            }
+            func1(10);
+        }
+
+        //23. 콜백 함수 : 다른 함수로 실행되는 함수
+        {
+            // 01 이벤트 콜백 함수
+            // function func(){
+            //     console.log("31. 함수가 실행되었습니다.")
+            // }
+            // btn.addEventListerner("click", func);
+
+            // 02 함수를 다른 함수의 인자로 전달
+            // function func1(){
+            //     console.log("32. 함수가 실행되었습니다.");
+            // }
+
+            // function func2(callback){
+            //     callback();
+            //     // func1();
+            // }
+            // func2(func1);
+
+            // 03 반복문으로 콜백함수 만들기
+            function func3(num){
+                console.log(num + ". 함수가 실행되었습니다.");
+            }
+            function func4(callback){
+                for(let i=33; i<=38; i++){
+                    callback(i);
+                }
+            }
+            func4(func3);
+        }
+
+        //24. 함수 : 비동기 함수 : 콜백 함수
+        {
+            // 01 동기적인 함수 호출
+            function func1(){
+                console.log("39. 함수가 실행되었습니다.");
+            }
+            function func2(){
+                console.log("40. 함수가 실행되었습니다.");
+            }
+            func1();
+            func2();
+
+            // 02 비동기적인 함수 호출
+            function func3(){
+                setTimeout(() => {
+                    console.log("41. 함수가 실행되었습니다.");
+                }, 1000)
+            }
+            function func4(){
+                console.log("42. 함수가 실행되었습니다.");
+            }
+            func3();
+            func4();
+
+            // 03 비동기적인 콜백 함수 호출
+            function func5(callback){
+                setTimeout(() => {
+                    console.log("43. 함수가 실행되었습니다.");
+                    callback();
+                }, 1000)
+            }
+            function func6(){
+                console.log("44. 함수가 실행되었습니다.");
+            }
+            func5(function(){
+                func6();
+            });
+
+            // 콜백 지옥
+            {
+                function funcA(callback){
+                    setTimeout(() => {
+                        console.log("funcA가 실행되었습니다.");
+                        callback();
+                    }, 1000);
+                }
+                function funcB(callback){
+                    setTimeout(() => {
+                        console.log("funcB가 실행되었습니다.");
+                        callback();
+                    }, 1000)
+                }
+                function funcC(callback){
+                    setTimeout(() => {
+                        console.log("funcC가 실행되었습니다.");
+                        callback();
+                    }, 1000)
+                }
+                function funcD(){
+                    setTimeout(() => {
+                        console.log("funcD가 실행되었습니다.");
+                    }, 1000)
+                }
+
+                funcA(function(){
+                    funcB(function(){
+                        funcC(function(){
+                            funcD();
+                        });
+                    });
+                });
+            }
+        }
+            // 25. 함수 : 비동기 함수 : 프로미스
+            {
+                let data = true;
+
+                const func = new Promise((resolve, reject) => {
+                if(data){
+                    resolve("45. 함수가 실행되었습니다.");
+                }else{
+                    reject("45. 함수가 실행되지 않았습니다.");
+                }
+                });
+
+                func
+                .then(
+                    result => console.log(result)
+                )
+                .catch (
+                    error => console.log(error)
+                )
+
+                //콜백 지옥 --> 프로미스
+                function funcA(){
+                    return new Promise((resolve) => {
+                        setTimeout(() => {
+                            console.log("funcA가 실행되었습니다.");
+                            resolve();
+                        }, 1000);
+                    })
+                }
+                function funcB(){
+                    return new Promise((resolve) => {
+                        setTimeout(() => {
+                            console.log("funcB가 실행되었습니다.");
+                            resolve();
+                        }, 1000);
+                    })
+                }
+                function funcC(){
+                    return new Promise((resolve) => {
+                        setTimeout(() => {
+                            console.log("funcC가 실행되었습니다.");
+                            resolve();
+                        }, 1000);
+                    })
+                }
+                function funcD(){
+                    return new Promise((resolve) => {
+                        setTimeout(() => {
+                            console.log("funcD가 실행되었습니다.");
+                            resolve();
+                        }, 1000);
+                    })
+                }
+                funcA()
+                    .then(funcB)
+                    .then(funcC)
+                    .then(funcD)
+                    .catch((error) => {
+                        console.log(error);
+                    });
+            }
+
+            // 26. 함수 : 비동기 함수 : asyne/await
+            {
+                // 01
+                function func(){
+                    console.log("46. 함수가 실행되었습니다.");
+                }
+                func();
+
+                // 02
+                async function func2(){
+                    console.log("47. 함수가 실행되었습니다.");
+                }
+                func2();
+
+                // 03
+                async function func3(){
+                    const result = await fetch('https://webstoryboy.github.io/webs2024/json/gineungsaJC2011_05.json');
+                    const data = await result.json();
+                    console.log(data)
+                }
+                func3();
+
+                // 04
+                async function func4(){
+                    try {
+                        const result = await fetch('https://webstoryboy.github.io/webs2024/json/gineungsaJC2011_05.json');
+                        const data = await result.json();
+                        console.log(data)
+                    }catch (error){
+                        console.log(error);
+                    }
+                }
+                func3();
+            }
+        
     </script>
 
 
