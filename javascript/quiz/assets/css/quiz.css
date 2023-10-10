@@ -1288,6 +1288,16 @@ footer a {
     border-radius: 40px;
     text-align: center;
     cursor: pointer;
+    margin-bottom: 10px;
+}
+
+.cbt__giveup {
+    background-color: #412E91;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 40px;
+    text-align: center;
+    cursor: pointer;
 }
 
 .cbt__desc {

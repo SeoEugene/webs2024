@@ -337,7 +337,7 @@
 
         // 포기하기
         const giveUp = () => {
-            alert("시험 포기버튼을 누르셨습니다. \n 지금 까지 푼 문제도 모두 틀린답안으로 처리되며, 정답과 해설을 확인하실 수 있습니다. \n 수고하셨습니다.");
+            alert("시험 포기버튼을 누르셨습니다. 지금 까지 푼 문제도 모두 틀린답안으로 처리되며, 정답과 해설을 확인하실 수 있습니다. 수고하셨습니다.");
             quizInfo.forEach((question, number) => {
                 const cbtQuestion = document.querySelector(`.cbt:nth-child(${number + 1})`);
                 const cbtDesc  = cbtQuestion.querySelector(".cbt__desc");
