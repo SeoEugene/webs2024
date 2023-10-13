@@ -1120,7 +1120,7 @@
     console.log(z1);
 }</code></pre>
                     <p class="desc">
-                        2줄 : 상수 변수 obj를 선언<br>
+                        2줄 : 상수 obj를 선언<br>
                         3줄 : obj에 객체 키a, 값 100을 넣음<br>
                         4줄 : obj에 객체 키b, 값 200을 넣음<br>
                         5줄 : obj에 객체 키c, 값 javascript을 넣음<br>
@@ -1134,7 +1134,19 @@
                         17줄 : console.log를 이용해 y키의 값 출력<br>
                         18줄 : console.log를 이용해 z키의 값 출력<br>
                         <br>
-                        20줄 : 
+                        20줄 : obj의 객체 값을 {e,f,g}로 분해할당하며 추가로 h키의 값으로 jQuery를 넣음<br>
+                        22줄 : console.log를 이용해 h키의 값 출력<br>
+                        <br>
+                        24줄 : 상수 obj3을 선언<br>
+                        25줄 : x1키의 값으로 100을 넣음<br>
+                        26줄 : y1키의 값으로 a1키 값 100, b1키 값 200을 넣음<br>
+                        27줄 : z1키의 값으로 javascript을 넣음<br>
+                        <br>
+                        30줄 : obj3의 객체 값을 {x1, y1:{a1, b1},z1}으로 분해할당<br>
+                        32줄 : console.log를 이용해 x1키의 값 출력<br>
+                        33줄 : console.log를 이용해 a1키의 값 출력<br>
+                        34줄 : console.log를 이용해 b1키의 값 출력<br>
+                        35줄 : console.log를 이용해 z1키의 값 출력<br>
                     </p>
                     <div class="result">
                         <details>
@@ -1190,21 +1202,21 @@
                         JSON파일 데이터를 XMLHttpRequest으로 불러옵니다. 
                     </p>
 <pre class="line-numbers"><code class="language-js">{
-    var xhr = new XMLHttpRequest();
-    xhr.open("GET", "https://webstoryboy.github.io/webs2024/json/gineungsaJC2011_05.json", true);
-    
-    xhr.onreadystatechange = function () {
-            if (xhr.readyState === 4 && xhr.status === 200) {
-                    var responseData = xhr.responseText;
-                    var jsonData = JSON.parse(responseData);
+var xhr = new XMLHttpRequest();
+xhr.open("GET", "https://webstoryboy.github.io/webs2024/json/gineungsaJC2011_05.json", true);
 
-                    console.log(jsonData);
-            } else if (xhr.readyState === 4) {
-                    console.error("데이터 불러오기 오류: " + xhr.status);
-            }
-    };
-    
-    xhr.send();
+xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4 && xhr.status === 200) {
+                var responseData = xhr.responseText;
+                var jsonData = JSON.parse(responseData);
+                console.log(jsonData);
+
+        } else if (xhr.readyState === 4) {
+                console.error("데이터 불러오기 오류: " + xhr.status);
+        }
+};
+
+xhr.send();
 }</code></pre>
                     <p class="desc">
                         <Strong>XMLHttpRequest : </Strong>
@@ -1214,14 +1226,43 @@
                             XMLHttpRequest 객체 생성<br>
                             <strong>xhr = new XMLHttpRequest();</strong>
                             <br>
-                            window.open() : 새 창 또는 팝업 창을 열기 위해 사용되는 메서드입니다.<br>
-                            <strong>window.open(URL, 이름, 속성);</strong><br>
-                            true를 사용하면 새로 열린 창 또는 팝업 창이 생성되며 새 창이 원본 창과 데이터 및 스크립트 등을 공유할 수 있게 됩니다.<br>
-                            
+                            xhr.open() : AJAX 요청을 초기화하고 서버로 보낼 요청을 설정하는 역할을 합니다.<br>
+                            <strong>xhr.open(method, url, async);</strong><br>
+                            - method : 요청을 보낼 HTTP 메서드를 나타내는 문자열로 GET, POST방식을 결정합니다.<br>
+                            - url : 요청을 보낼 URL주소를 나타냅니다.<br>
+                            - async : 비동기 요청 여부를 나타내며, true는 비동기 요청 사용, false은 동기 요청 사용<br>
+                            <br>
+                            xhr.send() : 서버로 요청하기 메서드<br>
+                            <strong>xhr.send();</strong><br>
+                            <br>
+                            onreadystatechange 이벤트 핸들러는 JavaScript에서 XMLHttpRequest 객체나 Fetch API 등을 사용하여 서버와 통신할 때, 비동기 요청의 상태 변화를 감지하고 처리하기 위해 사용됩니다.<br>
+                            이벤트 핸들러는 요청의 상태가 변경될 때마다 호출되며, 이를 통해 요청이 성공적으로 완료되었는지, 실패했는지 등의 정보를 확인하고 응답 데이터를 처리할 수 있습니다
+                            <strong> xhr.onreadystatechange = function()</strong><br>
+                            <br>
+                            XMLHttpRequest를 사용해 JSON파일 불러오는 방법<br>
+                            var xhr = new XMLHttpRequest();<br>
+                            xhr.open("GET", "파일경로.json", true);<br>
+                            xhr.onreadystatechange = function () {<br>
+                                if (xhr.readyState === 4 && xhr.status === 200) {<br>
+                                    var jsonData = JSON.parse(xhr.responseText);<br>
+                                    console.log(jsonData);<br>
+                                }<br>
+                            };<br>
+                            xhr.send();
                     </p>    
                     <p class="desc">
                         2줄 : XMLHttpRequest()로 웹요청하는 객체를 변수에 저장합니다.<br>
                         3줄 : xhr변수에 open함수를 사용해 해당 URL과 데이터 및 스크립트를 공유 합니다.<br>
+                        5줄 : xhr변수에 onreadystatechange이벤트를 설정하여 readyState값이 변경될 때 호출하도록 합니다.<br>
+                        6줄 : if문을 이용해 readyState와 status 상태를 확인 합니다.<br>
+                            readyState값이 4이면서 status값이 200이라면<br>   
+                        *readyState값이 4이면 요청이 완료된 상태를 뜻하며, status값이 200은 상태코드 200으로 OK를 가리킵니다.<br>
+                        7줄 : 변수 responseData에 xhr.responseText를 사용해 해당데이터(JSON파일)를 가져옵니다.<br>
+                        8줄 : 변수 jsonData에 JSON.parse를 사용해 responseData변수에 저장한 데이터(JSON파일)를 객체로 가져옵니다.<br> 
+                        9줄 : console.log를 이용해 jsonData의 데이터를 출력합니다.<br>
+                        11줄 : 그게 아니라 readyState 값이 4라면, (요청은 완료되었지만 데이터를 불러오지 못함)<br>
+                        12줄 : console.error라는 오류메시지를 출력하며 status값을 출력해 오류가 된 문제를 알려줍니다.<br>
+                        16줄 : send메서드를 이용해 서버로 요청을 보냅니다.
                     </p>
                     <div class="result">
                         <details>
@@ -1252,10 +1293,37 @@
         });
 }</code></pre>
                     <p class="desc">
-                        2줄: 
+                        fetch : JavaScript에서 네트워크 요청을 보내는 기능을 제공하는 API입니다.<br>
+                         주로 웹 애플리케이션에서 데이터를 가져오거나 서버에 데이터를 보내는 데 사용됩니다.<br>
+                         <br>
+                         특징 : <br>
+                         1. 비동기 동작<br>
+                         2. Promise 기반<br>
+                         3. JSON파싱<br>
+                         4. HTTP 상태 코드 처리<br>
+                         5. 오류 처리(.catch())<br>
+                         <br>
+                         .json() : JSON형식의 문자열을 javascript객체로 변환합니다.<br>
+                         <br>
+                        Fetch API를 사용하여 JSON파일 불러오는 방법<br>
+                        fetch("파일경로.json")<br>
+                            .then(response => response.json())<br>
+                            .then(data => {<br>
+                                console.log(data);<br>
+                            })<br>
+                            .catch(error => {<br>
+                                console.error("데이터를 불러오는 중 오류 발생: " + error);<br>
+                            });<br>
                     </p>
                     <p class="desc">
-                        2줄: 
+                        2줄: fetch API를 이용해 해당 url의 json파일을 가져옵니다.<br>
+                        3줄 : .then메서드를 이용해 json파일 값을 response 매개변수로 가져옵니다.<br>
+                        *then은 작업을 완료한 후 실행됩니다.*<br>
+                        4줄 : return문을 사용해 response매개변수로 가져온 데이터를 javascript 데이터로 변경합니다.<br>
+                        6줄 : .then메서드를 이용해 위에서 javascript 데이터로 변경된 데이터를 매개변수로 가져옵니다.<br>
+                        7줄 : console.log()를 이용해 가져온 데이터를 출력합니다.<br>
+                        9줄 : .catch문을 이용해 오류처리를 하며 에러가 날 때,<br>
+                        10줄 : console.log()를 이용해 에러를 출력합니다.
                     </p>
                     <div class="result">
                         <details>
