@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>산업대학교</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        li {
+            list-style: none;
+        }
+
+        #wrap {
+            width: 1200px;
+            background-color: #dedede;
+        }
+        #header {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            position: relative;
+        }
+        .logo {
+            width: 20%;
+            height: 100px;
+        }
+        .logo a {
+            color: #333;
+        }
+        .nav {
+            width: 80%;
+            height: 100px; 
+        }
+        .nav li {
+            display: inline;
+        }
+        #main {
+            width: 100%;
+        }
+        .slider {
+            width: 100%;
+            height: 400px;
+            background-image: url(images/Rectangle\ 62.jpg);
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+        }
+        .contents {
+            width: 100%;
+            display: flex;
+        }
+        .content1 {
+            width: 33.3333%;
+            height: 300px;
+        }
+        .content2 {
+            width: 33.3333%;
+            height: 300px;
+        }
+        .content3 {
+            width: 33.3333%;
+            height: 300px;
+        }
+        #footer {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <header id="header">
+            <h2 class="logo"><a href="#">산업대학교</a></h2>
+            <div class="nav">
+                <ul>
+                    <li>대학소개</li>
+                    <li>입학안내</li>
+                    <li>정보서비스</li>
+                    <li>커뮤니티</li>
+                </ul>
+            </div>
+        </header>
+        <!-- //header -->
+
+        <main id="main">
+            <div class="slider"></div>
+            <div class="contents">
+                <div class="content1 c1">
+                    <h5>산업대학교 새로운 소식</h5>
+                </div>
+                <!-- //content1 -->
+
+                <div class="content2 c2">
+                    <h5>우리학교 풍경</h5>
+                </div>
+                <!-- //content2 -->
+
+                <div class="content3 c3">
+                    <h5>산업대학교 2023 체육대전</h5>
+                </div>
+                <!-- //content3 -->
+
+            </div>
+        </main>
+        <footer id="footer">
+            <div class="footer1"></div>
+            <div class="footer2"></div>
+        </footer>
+        <!-- //footer -->
+    </div>
+    <!-- //wrap -->
+</body>
+</html>
