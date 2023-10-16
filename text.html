@@ -1,199 +1,166 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>test</title>
+    <style>
+        .mouse__cursor {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 20px;
+            height: 20px;
+            background-color: #fff;
+            border-radius: 50%;
+            z-index: 1000;
+            user-select: none;
+            pointer-events: none;
+        }
+        .img {
+            position: relative;
+        }
+        .none {
+            display: none;
+        }
+        .modal {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            width: 80%;
+            height: 80%;
+            background-color: rgba(255, 255, 255, 0.6);
+            border-radius: 50px;
+        }
+        .modal__wrap {
+            display: flex;
+            width: 100%;
+            height: 100%;
+            border: 3px solid green;
+            box-sizing: border-box;
+            position: relative;
+        }
+        .modal__wrap > img {
+            width: 30%;
+            height: 50%;
+            border: 1px solid pink;
+            box-sizing: border-box;
+        }
+        .modal__close {
+            position: absolute;
+            right: 50px;
+            top: 20px;
+            font-size: 20px;
+            background-color: rgba(255, 255, 255, 0.9);
+            width: 30px;
+            height: 30px;
+            border-radius: 10px;
+            text-align: center;
+            justify-content: center;
+            line-height: 1.5;
+            cursor: pointer;
+        }
+    </style>
 </head>
+
 <body>
+    <div id="wrap">
+        <div class="mouse__cursor none"></div>
+        <img class="img" src="TDsite/assets/img/slide01-min.jpg" alt="">
+        <div class="modal">
+            <h2>제품 사양</h2>
+            <div class="modal__close none">X</div>
+            <div class="modal__wrap">
+                <img src="" alt="">
+                <div class="spec">
+                    
+                   
+                    <ul>
+                        <li>
+                            <img src="" alt="">
+                            <h5>Process</h5>
+                        </li>
+                        <li>
+                            <img src="" alt="">
+                            <h5>Display</h5>
+                        </li>
+                        <li>
+                            <img src="" alt="">
+                            <h5>Camera</h5>
+                        </li>
+                        <li>
+                            <img src="" alt="">
+                            <h5>Battery</h5>
+                        </li>
+                    </ul>
+                    <ul>
+                        <li>
+                            <img src="" alt="">
+                            <h5>Display</h5>
+                        </li>
+                        <li>
+                            <img src="" alt="">
+                            <h5>Video</h5>
+                        </li>
+                        <li>
+                            <img src="" alt="">
+                            <h5>Frame</h5>
+                        </li>
+                        <li>
+                            <img src="" alt="">
+                            <h5>Capacity</h5>
+                        </li>
+                    </ul>
+                    <ul>
+                        <li>
+                            <h5>Color</h5>
+                            <img src="" alt="">
+    
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script>
-    // 08.
-    {
-        const arr1 = [100, 200, 300];
-        const arr2 = [400, 500, 600];
+        // 마우스
+        const mouseCursor = document.querySelector(".mouse__cursor");
 
-        console.log(arr1);
-        console.log(...arr1);
-        console.log(arr1 + arr2);
-        console.log(...arr1, arr2);
-        console.log(...arr1, 400);
-        console.log(...arr1.slice(0,2));
-    }   
-    // 09.
-    {
-        function addNum(a,b,c){
-            return a+b+c;
-        }
-        const num = [100, 250, 350];
-        const sum = addNum(...num);
+        document.querySelector(".img").addEventListener("mousemove", e => {
+            mouseCursor.classList.remove("none");
+            gsap.to(".mouse__cursor", {
+                duration: .2,
+                left: e.pageX,
+                top: e.pageY
+            });
 
-        console.log(sum);
-    }
-    // 10.
-    {
-        const [a,b,c]=[100,200,300];
+            // 마우스 좌표 값
+            let mousePageX = e.pageX;
+            let mousePageY = e.pageY;
 
-        console.log(a);
-        console.log(b);
-        console.log(c);
-    }
-    // 11.
-    {
-        const arr = [100,200,300];
-        const[x,y,z] = arr;
+            let centerPageX = window.innerWidth / 2 - mousePageX;
+            let centerPageY = window.innerHeight / 2 - mousePageY;
 
-        console.log(x);
-        console.log(y);
-        console.log(z);
-    }
-    // 12.
-    {
-        const num=[100,200,300,400,500,600];
-        const [num1, num2, ...rest] = num;
+            document.querySelector(".img").addEventListener("click", e => { 
+                document.querySelector(".modal").classList.remove("none");
+            });
 
-        console.log(num1);
-        console.log(num2);
-        console.log(...rest);
-        console.log(rest);
-    }
-    // 13.
-    {
-        const obj={
-            a:100,
-            b:200,
-            c:"javacript"
-        }
-        console.log(obj.a);
-        console.log(obj.b);
-        console.log(obj.c);
-        
-    }
-    // 14.
-    {
-        const obj={
-            a:100,
-            b:200,
-            c:"javacript"
-        }
-        console.log(Object.keys(obj));
-        console.log(Object.values(obj));
-        document.write(Object.entries(obj),"<Br>");
-    }
-    // 15.
-    {
-        const obj1={
-            a:100,
-            b:200,
-            c:"javascript"
-        };
-        const obj2={
-            d:300,
-            e:400,
-            f:"jquery"
-        };
-        const obj3 = Object.assign(obj1, obj2);
-        console.log(obj3);
-        document.write(obj3);
-    }
-    // 16.
-    {
-        const obj={
-            a:100,
-            b:200,
-            c:"javacript"
-        }
+            document.querySelector(".modal__close").addEventListener("click", () => {
+                document.querySelector(".modal").classList.add("none");
 
-        console.log(obj.hasOwnProperty("a"));
-        console.log(obj.hasOwnProperty("b"));
-        console.log(obj.hasOwnProperty("c"));
-        console.log(obj.hasOwnProperty("d"));
-    }
-    // 17.
-    {
-        const obj={
-            a:100,
-            b:200,
-            c:"javascript"
-        }
+            });
+                
+        });
+        document.querySelector(".img").addEventListener("mouseleave", e => {
+            mouseCursor.classList.add("none");
 
-        console.log("a" in obj);
-        console.log("b" in obj);
-        console.log("c" in obj);
-        console.log("d" in obj);
-    }
-    // 18.
-    {
-        const obj={
-            a:100,
-            b:200,
-            c:"javascript"
-        }
-        for(let el in obj){
-            console.log(el + ":"+obj[el]);
-        }
-    }
-    // 19.
-    {
-        const obj1={
-            a:100,
-            b:200,
-            c:"javascript",
-        }
-        const obj2={
-            d:300,
-            e:400,
-            f:"jquery",
-        }
-        const obj3={...obj1, ...obj2};
-        const obj4={...obj1, d:"jquery"};
-        const obj5={...obj1, b:300};
+        });
 
-        console.log(obj3);
-        console.log(obj4);
-        console.log(obj5);
-    }
-    // 20.
-    {
-        const obj1={
-            a:100,
-            b:200,
-            c:"javascript",
-        }
-        const{a,b,c}=obj1;
-
-        console.log(a);
-        console.log(b);
-        console.log(c);
-
-        const{a:x, b:y, c:z}=obj1;
-
-        console.log(x);
-        console.log(y);
-        console.log(z);
-
-        const obj2={
-            d:100,
-            e:200,
-            f:"javascript",
-        }
-
-        const {d,e,f,g = "jquery"} = obj2;
-
-        console.log(g);
-
-        const obj3={
-            x1:100,
-            y1:{a1:100, b1:200},
-            z1:"javascript",
-        }
-        const {x1, y1:{a1,b1},z1}=obj3;
-
-        console.log(x1);
-        console.log(a1);
-        console.log(b1);
-        console.log(z1);
-
-    }
     </script>
-</body> 
+</body>
+
 </html>

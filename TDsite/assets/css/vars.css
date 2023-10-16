@@ -1,0 +1,27 @@
+:root {
+    --main-nanum: "NanumSquareNeo";
+
+    --primary-color: #EEEEEE;
+
+    --black: #000;
+    --white: #fff;
+    --red: #f00;
+
+    --black100: #383838;
+    --black200: #59595A;
+    --black300: #727272;
+    --black400: #9d9d9d;
+    --black900: #F5F5F5;
+
+    --blue100: #0071E3;
+
+    font-size: 16px;
+    line-height: 1.5;
+    font-weight: 400;
+}
+
+@media (max-width: 800px){
+    :root {
+        font-size: 14px;
+    }
+}

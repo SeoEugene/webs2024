@@ -63,13 +63,12 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* 폰트 스타일 */
-em, address {
+em, address, i {
     font-style: normal;
 }
 
 /* 이미지 초기화 */
 img {
-    width: 100%;
     vertical-align: top;
 }
 

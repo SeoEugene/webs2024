@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trend Device</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <style>
+        #slider {
+            width: 100%;
+            height: 860px;
+            overflow: hidden;
+        }
+        .sliderWrap {
+            width: 100%;
+            height: 100%;
+            display: flex;
+        }
+        .sliderWrap .slider {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+        .sliderWrap .slider img {
+            vertical-align: top;
+        }
+        /* 이미지 글자 */
+        .sliderWrap .slider span {
+            position: absolute;
+            left: 50%;
+            top: 25%;
+            transform: translate(-50%, -50%);
+            color: var(--black900);
+            text-align: center;
+            font-size: 1.75rem;
+            line-height: 1.75;
+        }
+        .sliderWrap .slider span strong {
+            font-size: 3.5rem;
+            color: #fff;
+        }
+        .sliderWrap .slider span i {
+            font-size: 1.25rem;
+            color: var(--black200);
+        }
+        .sliderWrap .slider span a {
+            font-size: 1.25rem;
+            color: var(--blue100);
+            cursor: pointer;
+        }
+        .sliderWrap .slider span a:hover {
+            text-decoration: underline;
+        }
+
+        /* main */
+        #main {
+            width: 100%;
+            background-color: #fff;
+        }
+        #main .main__img1 img,
+        #main .main__img2 img {
+            width: 100%;
+        }
+        #main .intro__inner {
+            width: 100%;
+            height: 720px;
+            background-color: #fff;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        #main .intro__inner h2 {
+            font-size: 3rem;
+            font-weight: 800;
+            padding-top: 100px;
+            margin-bottom: 40px;
+        }
+        #main .intro__inner p {
+            line-height: 1.2;
+            font-size: 1.5rem;
+            margin-bottom: 110px;
+            color: var(--black200);
+        }
+        #main .intro__inner .intro__images {
+            display: flex;
+        }
+        #main .intro__inner .intro__img {
+            width: 426px;
+        }
+        #main .intro__img span {
+            display: block;
+            font-size: 2rem;
+            font-weight: 600;
+            margin: 15px 0 60px;
+        }
+        #main .intro__footer {
+            width: 100%;
+            margin-bottom: 65px;
+        }
+        #main .intro__footer span {
+            display: block;
+            margin-bottom: 10px;
+            color: var(--black200);
+        }
+        #main .intro__footer .intro__btn a {
+            width: 85px;
+            height: 30px;
+            color: #fff;
+            font-weight: 600;
+            display: inline-block;
+            background-color: var(--blue100);
+            border-radius: 15px;
+            text-align: center;
+            line-height: 30px;
+        }
+
+        /* footer */
+        #footer {
+            width: 100%;
+            height: 300px;
+            background-color: var(--black900);
+        }
+        #footer > .container {
+            text-align: left;
+        }
+        .footer__top h2 {
+            font-size: 2.5rem;
+            color: var(--black200);
+            font-weight: 500;
+            padding: 50px 0 15px;
+        }
+        .footer__top .ft__list2 {
+            padding-bottom: 50px;
+        }
+        .footer__top ul li {
+            display: inline-block;
+            padding: 0 15px;
+            color: var(--black200);
+        }
+        .footer__top ul li:first-child{
+            padding-left: 0;
+        }
+        .footer__bottom {
+            display: flex;
+            justify-content: space-between;
+        }
+        .footer__bottom p {
+            padding-bottom: 5px;
+            color: var(--black200);
+        }
+        .footer__bottom .fb__left ul li {
+            display: inline-block;
+            margin-right: 30px;
+            color: var(--black200);
+        }
+        .footer__bottom .fb__right span {
+            width: 50px;
+            height: 50px;
+        }
+
+
+        /* 마우스 */
+        .mouse__cursor {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            border: 5ps solid #ff0000;
+            background-color: rgba(255, 0, 0, 0.5);
+            background-image: url(img/images03.jpg);
+            background-size: cover;
+            background-attachment: fixed;
+            background-position: center;
+        }
+        .none {
+            display: none;
+        }
+      
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <header id="header">
+            <div class="container">
+                <h1>Trend Device</h1>
+                <div class="header__menu">
+                    <div class="header__ham">
+                        <div class="ham">
+                            <a href="#">
+                                <span></span>
+                            </a>
+                        </div>
+                    </div>
+                    <!-- //header__ham -->
+
+                    <div class="header__etc">
+                        <div class="header__search">
+                            <img src="../assets/img/glass.png" alt="검색">
+                        </div>
+                        <div class="header__user">
+                            <img src="../assets/img/user.png" alt="회원">
+                        </div>
+                    </div>
+                    <!-- //header__etc -->
+                </div>
+            </div>
+        </header>
+        <!-- //header -->
+        
+        <nav id="nav">
+            <div class="container">
+                <ul>
+                    <li>
+                        <a href="#">스마트폰</a>
+                        <ul class="submenu">
+                            <li><a href="#">삼성</a></li>
+                            <li><a href="#">애플</a></li>
+                            <li><a href="#">제품비교하기</a></li>
+                            <li><a href="#">제품리뷰</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">커뮤니티</a>
+                        <ul class="submenu">
+                            <li><a href="#">공지사항</a></li>
+                            <li><a href="#">자유게시판</a></li>
+                            <li><a href="#">고객센터</a></li>
+                            <li><a href="#">문의하기</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">고객센터</a>
+                        <ul class="submenu">
+                            <li><a href="#">문의하기</a></li>
+                            <li><a href="#">자유게시판</a></li>
+                            <li><a href="#">고객센터</a></li>
+                            <li><a href="#">문의하기</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <!-- //nav -->
+
+        <article id="slider">
+            <div class="sliderWrap">
+                <div class="mouse__cursor none"></div>
+                <div class="slider s1">
+                    <figure>
+                        <img src="../assets/img/slide01-min.jpg" alt="">
+                    </figure>
+                    <span>
+                        <strong>iPhone 15 Pro</strong><br>
+                        티타늄. 초강력. 초경량. 초프로.<br>
+                        <i>10월 13일 출시</i><br>
+                        <a>더 알아보기 ></a>
+                    </span>
+                </div>
+                <div class="slider s2">
+                    <figure>
+                        <img src="../assets/img/slide02-min.jpg" alt="">
+                    </figure>
+                    <span>
+                        <strong>갤럭시 Z 플립5</strong><br>
+                        <i>8월 11일 출시</i><br>
+                        <a>더 알아보기 ></a>
+                    </span>
+                </div>
+                <div class="slider s3">
+                    <figure>
+                        <img src="../assets/img/slider02-min.jpg" alt="">
+                    </figure>             
+                    <span>이미지3</span>
+                </div>
+            </div>
+        </article>
+        <!-- //slider -->
+
+        <main id="main">
+            <div class="main__img1">
+                <img src="../assets/img/slide01-min.jpg" alt="">
+            </div>
+            <div class="main__img2">
+                <img src="../assets/img/slide02-min.jpg" alt="">
+            </div>
+
+            <div class="intro__inner container">
+                <div class="intro__header">
+                    <h2>Trend Device를 소개합니다.</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur.<br>Sit tristique metus euismod mauris ut egestas.</p>
+                </div>
+                <!-- //intro__header -->
+
+                <div class="intro__images">
+                    <div class="intro__img">
+                        <img src="../assets/img/Intro__img1.jpg" alt="스마트폰 비교하기">
+                        <span>스마트폰 비교하기</span>
+                    </div>
+                    <div class="intro__img">
+                        <img src="../assets/img/Intro__img1.jpg" alt="회원가입">
+                        <span>회원가입</span>
+                    </div>
+                    <div class="intro__img">
+                        <img src="../assets/img/Intro__img1.jpg" alt="커뮤니티">
+                        <span>커뮤니티</span>
+                    </div>
+                </div>
+                <!-- //intro__img -->
+                
+                <div class="intro__footer">
+                    <span>이미 회원이신가요?</span>
+                    <div class="intro__btn">
+                        <a href="#">로그인</a>
+                    </div>
+                </div>
+                <!-- //intro__footer -->
+            </div>
+        </main>
+        <!-- //main -->
+
+        <footer id="footer">
+            <div class="container">
+                <div class="footer__top">
+                    <h2>Trend Device</h2>
+                    <ul class="ft__list1">
+                        <li>트렌드 디바이스</li>
+                        <li>사업자등록번호:123-123-12345</li>
+                        <li>통신판매업 신고:2000-경기안산-0111</li>
+                    </ul>
+                    <ul class="ft__list2">
+                        <li>사업장 주소:경기도 안산시 단원구 고잔2길 45 코스모프라자 6층</li>
+                        <li>대표번호:00-1234-1234</li>
+                        <li>문의전화:00-1234-5678</li>
+                    </ul>
+                </div>
+                <div class="footer__bottom">
+                    <div class="fb__left">
+                        <p>
+                            본 사이트의 컨텐츠는 저작권법의 보호를 받는 바 무단 전재, 복사, 배포 등을 금합니다.
+                        </p>
+                        <ul>
+                            <li>Copyright © 2023 TrendDevice. All Rights Reserved.</li>
+                            <li>사이트맵</li>
+                            <li>개인정보처리방침</li>
+                            <li>고객센터</li>
+                            <li>회원탈퇴</li>
+                        </ul>
+                    </div>
+                    <div class="fb__right">
+                        <span>
+                            <img src="../assets/img/instargram__icon.png" alt="인스타그램">
+                        </span>
+                        <span>
+                            <img src="../assets/img/facebook__icon.png" alt="인스타그램">
+                        </span>
+                        <span>
+                            <img src="../assets/img/github__icon.png" alt="인스타그램">
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- //footer -->
+    </div>
+    <!-- //wrap -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <!-- script -->
+    <script>
+        // 메뉴
+        let header = document.querySelector("#header");
+        let nav = document.querySelector("#nav");
+        let hamMenu = document.querySelector("#header .header__ham");
+        let hamShape = document.querySelector("#header .header__ham div");
+
+        function showNav(){
+            nav.style.height = "360px";
+            hamShape.classList.add("hamX");
+            hamShape.classList.remove("ham");
+        };
+        function hideNav(){
+            nav.style.height = "0";
+            hamShape.classList.add("ham");
+            hamShape.classList.remove("hamX");
+        };
+
+        hamMenu.addEventListener("mouseover", showNav);
+        hamMenu.addEventListener("mouseout", hideNav);
+
+        nav.addEventListener("mouseover", showNav);
+        nav.addEventListener("mouseout", hideNav);
+
+        // 슬라이드
+        window.onload = () => {
+            let currentIndex = 0;   //현재 이미지
+            const sliderWrap = document.querySelector(".sliderWrap");   //전체 이미지
+            const slider = document.querySelectorAll(".slider");    //각각이미지
+            const sliderClone = sliderWrap.firstElementChild.cloneNode(true);
+            sliderWrap.appendChild(sliderClone);
+
+            setInterval(() => {
+                currentIndex++;
+                sliderWrap.style.transition = "all 0.6s";   //애니메이션 추가
+                sliderWrap.style.marginLeft = -currentIndex * 100 + "%";  //왼쪽으로 100%씩 이동
+
+                if(currentIndex == slider.length){
+                    setTimeout(() => {
+                        sliderWrap.style.transition = "0s";
+                        sliderWrap.style.marginLeft = "0";
+                        currentIndex = 0;
+                    }, 1000);
+                }
+            }, 5000);
+        };
+
+
+
+        // 마우스
+        const mouseCursor = document.querySelector(".mouse__cursor");
+        const rect = mouseCursor.getBoundingClientRect();
+        const sliderWrapID = document.querySelector("#sliderWrap");
+        
+        sliderWrapID.addEventListener("mouseover", e => {
+            mouseCursor.classList.remove("none");
+        });
+        sliderWrapID.addEventListener("mouseout", e => {
+            mouseCursor.classList.add("none");
+        });
+        
+        
+        window.addEventListener("mousemover", e => {
+            gsap.to(".mouse__cursor", {
+                duration: 0.5,
+                // left: e.pageX - mouseCursor.clientWidth/2,
+                // top: e.pageY - mouseCursor.clientHeight/2,
+                left: e.pageX - rect.width/2,
+                top: e.pageY - rect.height/2
+            });
+
+            
+        });
+
+
+    </script>
+</body>
+</html>
