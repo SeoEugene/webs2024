@@ -4,9 +4,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>서치 에펙트01</title>
+    <title>서치 에펙트03</title>
     <link rel="stylesheet" href="assets/css/search.css">
     <link href="https://webfontworld.github.io/crown/CrownMychew.css" rel="stylesheet">
+    <style>
+        .search__select span.active {
+            background-color: #ffcccc;
+        }
+    </style>
 </head>
 
 <body>
@@ -15,8 +20,8 @@
         <nav>
             <ul>
                 <li><a href="searchEffect01.html">1</a></li>
-                <li class="active"><a href="searchEffect02.html">2</a></li>
-                <li><a href="searchEffect03.html">3</a></li>
+                <li><a href="searchEffect02.html">2</a></li>
+                <li class="active"><a href="searchEffect03.html">3</a></li>
                 <li><a href="searchEffect04.html">4</a></li>
                 <li><a href="searchEffect05.html">5</a></li>
                 <li><a href="searchEffect06.html">6</a></li>
@@ -33,6 +38,7 @@
                 <h1>CSS 속성 첫글자 검색하기</h1>
             </div>
             <div class="search__select">
+                <span class="active">All</span>
                 <span>a</span>
                 <span>b</span>
                 <span>c</span>
@@ -61,7 +67,7 @@
                         <li><strong>animation-name</strong> : 애니메이션 keyframe 이름을 설정합니다.</li>
                         <li><strong>animation-play-state</strong> : 애니메이션 진행상태를 설정합니다.</li>
                         <li><strong>animation-timing-function</strong> : 애니메이션 움직임의 속도를 설정합니다.</li>
-                        
+
                         <li><strong>backdrop-filter</strong> : 배경에 그래픽 효과를 설정합니다.</li>
                         <li><strong>backface-visibility</strong> : 요소의 뒷면을 설정합니다.</li>
                         <li><strong>background-attachment</strong> : 배경 이미지의 고정 여부를 설정합니다.</li>
@@ -70,87 +76,58 @@
                         <li><strong>background-color</strong> : 백그라운드 색을 설정합니다.</li>
                         <li><strong>background-image</strong> : 백그라운드 이미지 및 배경 속성을 설정합니다.</li>
                         <li><strong>background-origin</strong> : 백그라운드 이미지의 위치 기준점을 설정하기 위한 속성입니다.</li>
-                        <li><strong>background-position</strong> :
-                            백그라운드 이미지의 위치 영역을 설정합니다.</li>
-                        <li><strong>background-repeat</strong> : 백그라운드
-                            이미지 반복 여부를 설정합니다.</li>
-                        <li><strong>background-size</strong> : 백그라운드 이미지
-                            사이즈를 설정합니다.</li>
-                        <li><strong>background</strong> : 백그라운드 속성을 일괄적으로
-                            설정합니다.</li>
+                        <li><strong>background-position</strong> : 백그라운드 이미지의 위치 영역을 설정합니다.</li>
+                        <li><strong>background-repeat</strong> : 백그라운드 이미지 반복 여부를 설정합니다.</li>
+                        <li><strong>background-size</strong> : 백그라운드 이미지 사이즈를 설정합니다.</li>
+                        <li><strong>background</strong> : 백그라운드 속성을 일괄적으로 설정합니다.</li>
                         <li><strong>border</strong> : 테두리 속성을 일괄적으로 설정합니다.</li>
-                        <li><strong>border-bottom</strong> : 테두리 아래쪽 속성을 일괄적으로
-                            설정합니다.</li>
-                        <li><strong>border-bottom-color</strong> : 테두리
-                            아래쪽 색 속성을 설정합니다.</li>
-                        <li>
-                            <strong>border-bottom-left-radius</strong> : 아래부분 왼쪽 모서리 굴곡을 설정합니다.
-                        </li>
-                        <li>
-                            <strong>border-bottom-right-radius</strong> : 아래부분 오른쪽 모서리 굴곡을 설정합니다.
-                        </li>
-                        <li><strong>border-bottom-style</strong> : 테두리
-                            아래쪽 스타일 속성을 설정합니다.</li>
-                        <li><strong>border-bottom-width</strong> : 테두리
-                            아래쪽 두께 속성을 설정합니다.</li>
-                        <li><strong>border-collapse</strong> : 테이블의 테두리 분리
-                            여부를 설정합니다.</li>
-                        <li><strong>border-color</strong> : 테두리 색 속성을 설정합니다.
-                        </li>
-                        <li><strong>border-image</strong> : 테두리 이미지 속성을 설정합니다.
-                        </li>
-                        <li><strong>border-image-outset</strong> : 테두리
-                            이미지 간격 속성을 설정합니다.</li>
-                        <li><strong>border-image-repeat</strong> : 테두리
-                            이미지 반복 속성을 설정합니다.</li>
-                        <li><strong>border-image-slice</strong> : 테두리 이미지
-                            크기 속성을 설정합니다.</li>
-                        <li><strong>border-image-source</strong> : 테두리
-                            이미지 경로 속성을 설정합니다.</li>
-                        <li><strong>border-image-width</strong> : 테두리 이미지
-                            두께 속성을 설정합니다.</li>
-                        <li><strong>border-left</strong> : 테두리 왼쪽 속성을 일괄적으로
-                            설정합니다.</li>
-                        <li><strong>border-left-color</strong> : 테두리 왼쪽 색
-                            속성을 설정합니다.</li>
-                        <li><strong>border-left-style</strong> : 테두리 왼쪽
-                            스타일 속성을 설정합니다.</li>
-                        <li><strong>border-left-width</strong> : 테두리 왼쪽 두께
-                            속성을 설정합니다.</li>
-                        <li><strong>border-radius</strong> : 모서리 굴곡을 설정합니다.
-                        </li>
-                        <li><strong>border-right</strong> : 테두리 오른쪽 속성을 일괄적으로
-                            설정합니다.</li>
-                        <li><strong>border-right-color</strong> : 테두리 오른쪽
-                            색 속성을 설정합니다.</li>
-                        <li><strong>border-right-style</strong> : 테두리 오른쪽
-                            스타일 속성을 설정합니다.</li>
-                        <li><strong>border-right-width</strong> : 테두리 오른쪽
-                            두께 속성을 설정합니다.</li>
-                        <li><strong>border-spacing</strong> : 테이블의 테두리 간격을
-                            설정합니다.</li>
-                        <li><strong>border-style</strong> : 테두리 스타일 속성을 설정합니다.
-                        </li>
-                        <li><strong>border-top</strong> : 테두리 위쪽 속성을 일괄적으로 설정합니다.
-                        </li>
-                        <li><strong>border-top-color</strong> : 테두리 위쪽 색
-                            속성을 설정합니다.</li>
-                        <li><strong>border-top-left-radius</strong> :
-                            윗부분 왼쪽 모서리 굴곡을 설정합니다.</li>
-                        <li><strong>border-top-right-radius</strong>
-                            : 윗부분 오른쪽 모서리 굴곡을 설정합니다.</li>
-                        <li><strong>border-top-style</strong> : 테두리 위쪽 스타일
-                            속성을 설정합니다.</li>
-                        <li><strong>border-top-width</strong> : 테두리 위쪽 두께
-                            속성을 설정합니다.</li>
-                        <li><strong>border-width</strong> : 테두리 두께 속성을 설정합니다.
-                        </li>
+                        <li><strong>border-bottom</strong> : 테두리 아래쪽 속성을 일괄적으로 설정합니다.</li>
+                        <li><strong>border-bottom-color</strong> : 테두리 아래쪽 색 속성을 설정합니다.</li>
+                        <li> <strong>border-bottom-left-radius</strong> : 아래부분 왼쪽 모서리 굴곡을 설정합니다.</li>
+                        <li><strong>border-bottom-right-radius</strong> : 아래부분 오른쪽 모서리 굴곡을 설정합니다.</li>
+                        <li><strong>border-bottom-style</strong> : 테두리 아래쪽 스타일 속성을 설정합니다.</li>
+                        <li><strong>border-bottom-width</strong> : 테두리 아래쪽 두께 속성을 설정합니다.</li>
+                        <li><strong>border-collapse</strong> : 테이블의 테두리 분리 여부를 설정합니다.</li>
+                        <li><strong>border-color</strong> : 테두리 색 속성을 설정합니다.</li>
+                        <li><strong>border-image</strong> : 테두리 이미지 속성을 설정합니다. </li>
+                        <li><strong>border-image-outset</strong> : 테두리 이미지 간격 속성을 설정합니다.</li>
+                        <li><strong>border-image-repeat</strong> : 테두리 이미지 반복 속성을 설정합니다.</li>
+                        <li><strong>border-image-slice</strong> : 테두리 이미지 크기 속성을 설정합니다.</li>
+                        <li><strong>border-image-source</strong> : 테두리 이미지 경로 속성을 설정합니다.</li>
+                        <li><strong>border-image-width</strong> : 테두리 이미지 두께 속성을 설정합니다.</li>
+                        <li><strong>border-left</strong> : 테두리 왼쪽 속성을 일괄적으로 설정합니다.</li>
+                        <li><strong>border-left-color</strong> : 테두리 왼쪽 색 속성을 설정합니다.</li>
+                        <li><strong>border-left-style</strong> : 테두리 왼쪽 스타일 속성을 설정합니다.</li>
+                        <li><strong>border-left-width</strong> : 테두리 왼쪽 두께 속성을 설정합니다.</li>
+                        <li><strong>border-radius</strong> : 모서리 굴곡을 설정합니다.</li>
+                        <li><strong>border-right</strong> : 테두리 오른쪽 속성을 일괄적으로 설정합니다.</li>
+                        <li><strong>border-right-color</strong> : 테두리 오른쪽 색 속성을 설정합니다.</li>
+                        <li><strong>border-right-style</strong> : 테두리 오른쪽 스타일 속성을 설정합니다.</li>
+                        <li><strong>border-right-width</strong> : 테두리 오른쪽 두께 속성을 설정합니다.</li>
+                        <li><strong>border-spacing</strong> : 테이블의 테두리 간격을 설정합니다.</li>
+                        <li><strong>border-style</strong> : 테두리 스타일 속성을 설정합니다.</li>
+                        <li><strong>border-top</strong> : 테두리 위쪽 속성을 일괄적으로 설정합니다.</li>
+                        <li><strong>border-top-color</strong> : 테두리 위쪽 색 속성을 설정합니다.</li>
+                        <li><strong>border-top-left-radius</strong> : 윗부분 왼쪽 모서리 굴곡을 설정합니다.</li>
+                        <li><strong>border-top-right-radius</strong> : 윗부분 오른쪽 모서리 굴곡을 설정합니다.</li>
+                        <li><strong>border-top-style</strong> : 테두리 위쪽 스타일 속성을 설정합니다.</li>
+                        <li><strong>border-top-width</strong> : 테두리 위쪽 두께 속성을 설정합니다.</li>
+                        <li><strong>border-width</strong> : 테두리 두께 속성을 설정합니다.</li>
                         <li><strong>bottom</strong> : 위치 요소의 아래쪽 속성을 설정합니다.</li>
-                        <li><strong>box-decoration-break</strong> : 컬럼 및
-                            줄바꿈시 테두리와 패딩의 방식을 설정합니다.</li>
+                        <li><strong>box-decoration-break</strong> : 컬럼 및 줄바꿈시 테두리와 패딩의 방식을 설정합니다.</li>
                         <li><strong>box-shadow</strong> : 박스 요소의 그림자를 설정합니다.</li>
-                        <li><strong>box-sizing</strong> : 요소 크기에 패딩 포함 여부를 설정합니다.
-                        </li>
+                        <li><strong>box-sizing</strong> : 요소 크기에 패딩 포함 여부를 설정합니다.</li>
+
+                        <li><strong>caption-side</strong> : caption의 위치를 설정합니다.</li>
+                        <li><strong>caret-color</strong> : input의 커서 색을 정의합니다.</li>
+                        <li><strong>clear</strong> : float 요소의 성질을 차단합니다.</li>
+                        <li><strong>clip</strong> : 보이는 영역을 설정합니다.</li>
+                        <li><strong>color</strong> : 글씨 색을 설정합니다.</li>
+                        <li><strong>column-count</strong> : 컬럼의 수를 정의합니다.</li>
+                        <li><strong>column-fill</strong> : 열의 지정방법을 정의합니다.</li>
+                        <li><strong>column-gap</strong> : 컬럼의 간격을 정의합니다.</li>
+                        <li><strong>column-rule</strong> : 컬럼 라인의 가로값, 스타일, 컬러를 정의합니다.</li>
+                        <li><strong>column-rule-color</strong> : 컬럼의 라인 색을 정의합니다.</li>
                     </ul>
                 </div>
 
@@ -164,44 +141,218 @@
 
     <script>
         const searchSelect = document.querySelector(".search__select");
-        const SelectA = searchSelect.querySelector("span:nth-child(1)");
-        const SelectB = searchSelect.querySelector("span:nth-child(2)");
-        const SelectC = searchSelect.querySelector("span:nth-child(3)");
-        const SelectD = searchSelect.querySelector("span:nth-child(4)");
-        const SelectE = searchSelect.querySelector("span:nth-child(5)");
-        const SelectF = searchSelect.querySelector("span:nth-child(6)");
-        const SelectG = searchSelect.querySelector("span:nth-child(7)");
+        const SelectAll = searchSelect.querySelector("span:nth-child(1)");
+        const SelectA = searchSelect.querySelector("span:nth-child(2)");
+        const SelectB = searchSelect.querySelector("span:nth-child(3)");
+        const SelectC = searchSelect.querySelector("span:nth-child(4)");
+        const SelectD = searchSelect.querySelector("span:nth-child(5)");
+        const SelectE = searchSelect.querySelector("span:nth-child(6)");
+        const SelectF = searchSelect.querySelector("span:nth-child(7)");
+        const SelectG = searchSelect.querySelector("span:nth-child(8)");
         const searchList = document.querySelectorAll(".css > ul > li");
+        const Num = document.querySelector(".num");
+
+        SelectAll.addEventListener("click", () => {
+            let num = 0;
+            SelectAll.classList.add("active");
+            SelectA.classList.remove("active");
+            SelectB.classList.remove("active");
+            SelectC.classList.remove("active");
+            SelectD.classList.remove("active");
+            SelectE.classList.remove("active");
+            SelectF.classList.remove("active");
+            SelectG.classList.remove("active");
+            searchList.forEach(list => {
+                list.classList.remove("hide");
+                num = num +1
+            });
+            Num.innerText = num;
+        });
 
         SelectA.addEventListener("click", () => {
             const searchA = "a";
-
+            let num = 0;
+            SelectAll.classList.remove("active");
+            SelectA.classList.add("active");
+            SelectB.classList.remove("active");
+            SelectC.classList.remove("active");
+            SelectD.classList.remove("active");
+            SelectE.classList.remove("active");
+            SelectF.classList.remove("active");
+            SelectG.classList.remove("active");
             searchList.forEach(list => {
-                let num = 0;
-                const cssName = list.querySelector(".css ul li strong").innerText[0];
-                if(searchA !== cssName){
+
+                const cssNameElement = list.querySelector(".css ul li strong");
+                const cssName = cssNameElement.textContent;
+                const firstName = cssName.charAt(0);
+                if (searchA !== firstName) {
                     list.classList.add("hide");
-                    num= num+1;
-                }else{
+                } else {
                     list.classList.remove("hide");
+                    num = num + 1;
                 }
             });
-
+            Num.innerText = num;
         });
 
         SelectB.addEventListener("click", () => {
             const searchB = "b";
-
+            let num = 0;
+            SelectAll.classList.remove("active");
+            SelectA.classList.remove("active");
+            SelectB.classList.add("active");
+            SelectC.classList.remove("active");
+            SelectD.classList.remove("active");
+            SelectE.classList.remove("active");
+            SelectF.classList.remove("active");
+            SelectG.classList.remove("active");
             searchList.forEach(list => {
-                const cssName = list.querySelector(".css ul li strong").innerText[0];
-                if(searchB !== cssName){
+                const cssNameElement = list.querySelector(".css ul li strong");
+                const cssName = cssNameElement.textContent;
+                const firstName = cssName.charAt(0);
+                if (searchB !== firstName) {
                     list.classList.add("hide");
-                }else{
+                } else {
                     list.classList.remove("hide");
+                    num = num + 1;
                 }
             });
+            Num.innerText = num;
+        });
+
+        SelectC.addEventListener("click", () => {
+            const searchC = "c";
+            let num = 0;
+            SelectAll.classList.remove("active");
+            SelectA.classList.remove("active");
+            SelectB.classList.remove("active");
+            SelectC.classList.add("active");
+            SelectD.classList.remove("active");
+            SelectE.classList.remove("active");
+            SelectF.classList.remove("active");
+            SelectG.classList.remove("active");
+            searchList.forEach(list => {
+                const cssNameElement = list.querySelector(".css ul li strong");
+                const cssName = cssNameElement.textContent;
+                const firstName = cssName.charAt(0);
+                if (searchC !== firstName) {
+                    list.classList.add("hide");
+                } else {
+                    list.classList.remove("hide");
+                    num = num + 1;
+                }
+            });
+            Num.innerText = num;
+        });
+
+        SelectD.addEventListener("click", () => {
+            const searchD = "d";
+            let num = 0;
+            SelectAll.classList.remove("active");
+            SelectA.classList.remove("active");
+            SelectB.classList.remove("active");
+            SelectC.classList.remove("active");
+            SelectD.classList.add("active");
+            SelectE.classList.remove("active");
+            SelectF.classList.remove("active");
+            SelectG.classList.remove("active");
+            searchList.forEach(list => {
+                const cssNameElement = list.querySelector(".css ul li strong");
+                const cssName = cssNameElement.textContent;
+                const firstName = cssName.charAt(0);
+                if (searchD !== firstName) {
+                    list.classList.add("hide");
+                } else {
+                    list.classList.remove("hide");
+                    num = num + 1;
+                }
+            });
+            Num.innerText = num;
+        });
+
+        SelectE.addEventListener("click", () => {
+            const searchE = "e";
+            let num = 0;
+            SelectAll.classList.remove("active");
+            SelectA.classList.remove("active");
+            SelectB.classList.remove("active");
+            SelectC.classList.remove("active");
+            SelectD.classList.remove("active");
+            SelectE.classList.add("active");
+            SelectF.classList.remove("active");
+            SelectG.classList.remove("active");
+            searchList.forEach(list => {
+                const cssNameElement = list.querySelector(".css ul li strong");
+                const cssName = cssNameElement.textContent;
+                const firstName = cssName.charAt(0);
+                if (searchE !== firstName) {
+                    list.classList.add("hide");
+                } else {
+                    list.classList.remove("hide");
+                    num = num + 1;
+                }
+            });
+            Num.innerText = num;
+        });
+
+        SelectF.addEventListener("click", () => {
+            const searchF = "f";
+            let num = 0;
+            SelectAll.classList.remove("active");
+            SelectA.classList.remove("active");
+            SelectB.classList.remove("active");
+            SelectC.classList.remove("active");
+            SelectD.classList.remove("active");
+            SelectE.classList.remove("active");
+            SelectF.classList.add("active");
+            SelectG.classList.remove("active");
+            searchList.forEach(list => {
+                const cssNameElement = list.querySelector(".css ul li strong");
+                const cssName = cssNameElement.textContent;
+                const firstName = cssName.charAt(0);
+                if (searchF !== firstName) {
+                    list.classList.add("hide");
+                } else {
+                    list.classList.remove("hide");
+                    num = num + 1;
+                }
+            });
+            Num.innerText = num;
         });
         
+        SelectG.addEventListener("click", () => {
+            const searchG = "g";
+            let num = 0;
+            SelectAll.classList.remove("active");
+            SelectA.classList.remove("active");
+            SelectB.classList.remove("active");
+            SelectC.classList.remove("active");
+            SelectD.classList.remove("active");
+            SelectE.classList.remove("active");
+            SelectF.classList.remove("active");
+            SelectG.classList.add("active");
+            searchList.forEach(list => {
+                const cssNameElement = list.querySelector(".css ul li strong");
+                const cssName = cssNameElement.textContent;
+                const firstName = cssName.charAt(0);
+                if (searchG !== firstName) {
+                    list.classList.add("hide");
+                } else {
+                    list.classList.remove("hide");
+                    num = num + 1;
+                }
+            });
+            Num.innerText = num;
+        });
+
+        window.onload = () => {
+            let num = 0;
+            searchList.forEach(() => {
+                num = num + 1;
+            });
+            Num.innerText = num;
+        }
+
 
     </script>
 </body>
