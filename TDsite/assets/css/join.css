@@ -1,0 +1,120 @@
+.join__inner {
+    border-bottom: 1px solid var(--black);
+}
+.join__header {
+    border-bottom: 1px solid var(--black);
+}
+.join__header .container2 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.join__header h2 {
+    font-size: 2rem;
+    font-weight: 600;
+}
+.join__header p {
+    font-weight: bold;
+    cursor: pointer;
+}
+.join__contents {
+    margin-top: 50px;
+}
+.join__contents h2 {
+    font-size: 2.5rem;
+    font-weight: 800;
+}
+.join__contents p {
+    margin-top: 15px;
+    line-height: 1.5;
+    color: var(--black200);
+}
+.join__contents p > a {
+    color: var(--blue100);
+}
+.join__form {
+    padding: 15px 20%;
+}
+.join__form div {
+    margin-bottom: 2.8rem;
+}
+.join__form div label {
+    display: block;
+    font-size: 1.2rem;
+    margin-bottom: 6px;
+    text-align: left;
+}
+.join__inner .join__contents .join__form .input__style {
+    width: 100%;
+    border-radius: 10px;
+    padding: 1rem 1.4rem;
+    border: 1px solid var(--black500);
+    font-size: 1.2rem;
+    position: relative;
+    background-color: var(--white);
+}
+
+
+/* joinResult */
+.join__result {
+    margin-bottom: 350px;
+}
+.joinResult__title {
+    margin: 100px 3rem 0;
+    border-bottom: 1px solid var(--black600);
+}
+.joinResult__title h2 {
+    font-size: 1.25rem;
+    text-align: left;
+    color: var(--black200);
+    padding: 1rem 3rem;
+}
+.join__resultBox {
+    width: 100%;
+    height: 260px;
+    margin: 85px auto 0;
+    background-color: var(--black900);
+    border-radius: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+.join__resultBox img {
+    width: 80px;
+    position: absolute;
+    left: 25%;
+    top: 47%;
+    transform: translate(-50%, -50%);
+}
+.join__resultBox p {
+    font-size: 1.25rem;
+    font-weight: 700;
+}
+.join__result button {
+    width: 180px;
+    height: 50px;
+    margin: 1.25rem 1rem;
+}
+
+
+/* 공통요소 */
+
+/* required */
+.required::after {
+    content: ' *';
+    color: var(--red);
+    position: absolute;
+}
+
+/* btn__style */
+.btn__style {
+    display: block;
+    background-color: var(--blue100);
+    color: var(--white);
+    font-size: 1rem;
+    border-radius: 7px;
+    padding: 0.6rem 1.3rem;
+    margin: 35px auto;
+    cursor: pointer;
+}

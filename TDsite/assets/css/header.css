@@ -104,6 +104,12 @@
     top: 0;
     transform: rotate(90deg);
 }
+#header .board__name {
+    margin-top: 20px;
+    font-size: 12px;
+    color: var(--black200);
+    text-align-last: left;
+}
 
 /* nav */
 #nav {
@@ -147,4 +153,14 @@
 }
 #nav .container > ul > li > ul > li > a {
     font-weight: bold;
+}
+
+
+
+
+
+@media(max-width: 1380px){
+    #header .container {
+        width: 95%;
+    }
 }
