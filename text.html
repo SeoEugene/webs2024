@@ -12,18 +12,21 @@
             top: 0;
             width: 20px;
             height: 20px;
-            background-color: #fff;
+            background-color: #ff0000;
             border-radius: 50%;
             z-index: 1000;
             user-select: none;
             pointer-events: none;
         }
+
         .img {
             position: relative;
         }
+
         .none {
             display: none;
         }
+
         .modal {
             position: absolute;
             left: 50%;
@@ -34,6 +37,7 @@
             background-color: rgba(255, 255, 255, 0.6);
             border-radius: 50px;
         }
+
         .modal__wrap {
             display: flex;
             width: 100%;
@@ -42,12 +46,14 @@
             box-sizing: border-box;
             position: relative;
         }
-        .modal__wrap > img {
+
+        .modal__wrap>img {
             width: 30%;
             height: 50%;
             border: 1px solid pink;
             box-sizing: border-box;
         }
+
         .modal__close {
             position: absolute;
             right: 50px;
@@ -62,6 +68,84 @@
             line-height: 1.5;
             cursor: pointer;
         }
+
+        /* 이미지 고정 */
+        .parallax__cont {
+            overflow: hidden;
+        }
+
+        #section1,
+        #section2 {
+            width: 100%;
+            height: 100vh;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .item__name {
+            position: absolute;
+            left: 40px;
+            top: 30%;
+            font-size: 5vw;
+            line-height: 1;
+            z-index: 100;
+            text-transform: uppercase;
+            display: inline-block;
+            font-weight: 800;
+        }
+
+        .item__desc1 {
+            position: absolute;
+            left: 40px;
+            top: 40%;
+            font-size: 3vw;
+            line-height: 1;
+            z-index: 99;
+            text-transform: uppercase;
+            display: inline-block;
+        }
+
+        .item__desc2 {
+            position: absolute;
+            left: 40px;
+            top: 45%;
+            font-size: 3vw;
+            line-height: 1;
+            z-index: 99;
+            text-transform: uppercase;
+            display: inline-block;
+        }
+
+        .item__desc3 {
+            position: absolute;
+            left: 40px;
+            top: 50%;
+            font-size: 3vw;
+            line-height: 1;
+            z-index: 99;
+            text-transform: uppercase;
+            display: inline-block;
+        }
+
+        .item__img {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100vh;
+            background-size: cover;
+            background-position: center;
+        }
+
+        #section1 .item__img {
+            background-image: url(TDsite/assets/img/slider02-min.jpg);
+        }
+
+        #section2 .item__img {
+            background-image: url(TDsite/assets/img/slider03-min.jpg);
+        }
     </style>
 </head>
 
@@ -69,14 +153,12 @@
     <div id="wrap">
         <div class="mouse__cursor none"></div>
         <img class="img" src="TDsite/assets/img/slide01-min.jpg" alt="">
-        <div class="modal">
+        <div class="modal none">
             <h2>제품 사양</h2>
-            <div class="modal__close none">X</div>
+            <div class="modal__close">X</div>
             <div class="modal__wrap">
                 <img src="" alt="">
                 <div class="spec">
-                    
-                   
                     <ul>
                         <li>
                             <img src="" alt="">
@@ -117,15 +199,39 @@
                         <li>
                             <h5>Color</h5>
                             <img src="" alt="">
-    
+
                         </li>
                     </ul>
                 </div>
             </div>
 
         </div>
+
+        <!-- 이미지 고정 -->
+        <div class="parallax__cont">
+            <section id="section1" class="parallax__item">
+                <span class="item__name t1">갤럭시 플립5</span>
+                <span class="item__desc1 t2">갤럭시 Z 플립 사상</span>
+                <span class="item__desc2 t3">갤최대 크기의 커버 스크린,</span>
+                <span class="item__desc3 t4">플렉스 윈도우</span>
+                <span class="item__img"></span>
+            </section>
+            <!-- //section1 -->
+
+            <section id="section2" class="parallax__item">
+                <span class="item__name t1">아이폰15</span>
+                <span class="item__desc1 t2">갤럭시 Z 플립 사상</span>
+                <span class="item__desc2 t3">갤최대 크기의 커버 스크린,</span>
+                <span class="item__desc3 t4">플렉스 윈도우</span>
+                <span class="item__img"></span>
+            </section>
+            <!-- //section2 -->
+        </div>
+
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
     <script>
         // 마우스
         const mouseCursor = document.querySelector(".mouse__cursor");
@@ -145,7 +251,7 @@
             let centerPageX = window.innerWidth / 2 - mousePageX;
             let centerPageY = window.innerHeight / 2 - mousePageY;
 
-            document.querySelector(".img").addEventListener("click", e => { 
+            document.querySelector(".img").addEventListener("click", e => {
                 document.querySelector(".modal").classList.remove("none");
             });
 
@@ -153,12 +259,57 @@
                 document.querySelector(".modal").classList.add("none");
 
             });
-                
+
         });
         document.querySelector(".img").addEventListener("mouseleave", e => {
             mouseCursor.classList.add("none");
 
         });
+
+        // 이미지 고정
+        // const panels = document.querySelectorAll(".parallax__item");
+
+        // panels.forEach((panel, i) => {
+        //     ScrollTrigger.create({
+        //         trigger: panel,
+        //         start: "top top",
+        //         pin: true,
+        //         pinSpacing: false,
+        //     })
+        // });
+
+        // 텍스트 애니메이션
+        const ani = gsap.timeline();
+        ani.from("#section1 .t1", { xPercent: 300 }, "text")
+            .from("#section1 .t2", { xPercent: 300 }, "text")
+            .from("#section1 .t3", { xPercent: 300 }, "text")
+            .from("#section1 .t4", { xPercent: 300 }, "text")
+
+        ScrollTrigger.create({
+            animation: ani,
+            trigger: "#section1",
+            start: "top top",
+            end: "+=3000",
+            scrub: true,
+            pin: true
+        });
+
+        const ani2 = gsap.timeline()
+        ani2.from("#section2 .t1", {x: innerWidth * 1 })
+            .from("#section2 .t2", {x: innerWidth * -1 })
+            .from("#section2 .t3", {x: innerWidth * 1})
+            .from("#section2 .t4", {x: innerWidth * -1 });
+
+        ScrollTrigger.create({
+            animation: ani2,
+            trigger: "#section2",
+            start: "top top",
+            end: "+=6000",
+            scrub: true,
+            anticipatePin: 1,
+            pin: true
+        });
+
 
     </script>
 </body>
