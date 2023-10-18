@@ -8,15 +8,14 @@
     <link rel="stylesheet" href="assets/css/search.css">
     <link href="https://webfontworld.github.io/crown/CrownMychew.css" rel="stylesheet">
     <style>
-        .search__select span.active {
-            background-color: #ffcccc;
-        }
+
+
     </style>
 </head>
 
 <body>
     <header id="header">
-        <h1><a href="../index.html">검색</a></h1>
+        <h1><a href="index.html">검색</a></h1>
         <nav>
             <ul>
                 <li><a href="searchEffect01.html">1</a></li>
@@ -45,7 +44,7 @@
             </div>
 
             <div class="search__box__result">
-                animation-delay는 애니메이션 지연 시간을 설정합니다.
+                설명이 나옵니다.
             </div>
 
             <div class="search__list">
@@ -87,7 +86,7 @@
             { name: "border", desc: "테두리 속성을 일괄적으로 설정합니다." },
             { name: "border-bottom", desc: "테두리 아래쪽 속성을 일괄적으로 설정합니다." },
             { name: "border-bottom-color", desc: "테두리 아래쪽 색 속성을 설정합니다." },
-            { name: ">border-bottom-left-radius", desc: "아래부분 왼쪽 모서리 굴곡을 설정합니다." },
+            { name: "border-bottom-left-radius", desc: "아래부분 왼쪽 모서리 굴곡을 설정합니다." },
             { name: "border-bottom-right-radius", desc: "아래부분 오른쪽 모서리 굴곡을 설정합니다." },
             { name: "border-bottom-style", desc: "테두리 아래쪽 스타일 속성을 설정합니다." },
             { name: "border-bottom-width", desc: "테두리 아래쪽 두께 속성을 설정합니다." },
@@ -146,18 +145,31 @@
             searchList.innerHTML += `<span>${element.name}</span>`;
         });
 
+        // 클릭하기
+        const clickProperty = searchList.querySelectorAll("span");
+        clickProperty.forEach((span) => {
+            span.addEventListener("click", () => {
+
+                const activeSpan = searchList.querySelector(".active");
+                if(activeSpan){
+                    activeSpan.classList.remove("active");
+                }
+                
+                span.classList.add("active");
+
+                const spanInnerText =cssProperty.find((data) => data.name === span.innerText);
+                searcBoxResult.textContent = `${spanInnerText.name} 은 ${spanInnerText.desc}`;
+                           
+
+            });
+        })
+
+
         // 입력하기
         searchBox.addEventListener("keyup", () => {
             const searchWord = searchBox.value;
             findProperty(searchWord);
         });
-
-        // 클릭하기
-        const clickProperty = searchList.querySelectorAll("span");
-        cssProperty.map((element, index) => {
-            console.log(element.name);
-        })
-
 
         // 속성 찾기
         function findProperty(searchData) {
@@ -167,7 +179,7 @@
                 searcBoxResult.textContent = "해당 속성은 존재하지 않습니다. 다시 한번 검색해주세요!";
                 return
             } else[
-                searcBoxResult.textContent = targetData.desc
+                searcBoxResult.textContent = `${targetData.name}은 ${targetData.desc}`
             ]
         }
 
