@@ -41,7 +41,7 @@
   
         <main id="main">
             <div class="main__menu">
-                <li><a href="#sample01">01. <strong>string.prototype.at()</strong>                    메서드는 지정한 숫자(index)를 받아, 문자열에서 해당 되는 인덱스의 요소를 반환합니다.</a></li>
+                    <li><a href="#sample01">01. <strong>string.prototype.at()</strong>                    메서드는 지정한 숫자(index)를 받아, 문자열에서 해당 되는 인덱스의 요소를 반환합니다.</a></li>
                     <li><a href="#sample02">02. <strong>string.prototype.charAt()</strong>            메서드는 지정한 숫자(index)를 받아, 문자열에서 해당 되는 인덱스의 단일문자를 반환합니다.</a></li>
                     <li><a href="#sample03">03. <strong>string.prototype.charCodeAt()</strong>        메서드는 지정한 숫자(index)를 받아, 문자열에서 해당 되는 인덱스의 유니코드 정수 값을 반환합니다.</a></li>
                     <li><a href="#sample04">04. <strong>string.prototype.codePointAt()</strong>       메서드는 지정한 숫자(index)를 받아, 문자열에서 해당 되는 인덱스의 유니코드 포인트 정수 값을 반환합니다.</a></li>
@@ -78,6 +78,148 @@
             <!-- //main__menu -->
 
             <div class="main__sample">
+                <div id="sample1" class="sample">
+                    <h3>01. <strong>string.prototype.at()</strong></h3>
+                    <p>
+                        <strong>string.prototype.at()</strong>메서드는 지정한 숫자(index)를 받아, 문자열에서 해당 되는 인덱스의 요소를 반환합니다.
+                    </p>
+<pre class="line-numbers"><code class="language-js">{
+
+}</code></pre>
+                    <p class="desc">
+                       
+                    </p>
+                    <p class="desc">
+
+                    </p>
+                    <div class="result">
+                        <details>
+                            <summary>결과 확인하기</summary>
+                            <div>
+                                <script>
+                                    {
+
+                                    }
+                                </script>
+                            </div>
+                        </details>
+                    </div>
+                </div>
+                <!-- //sample1 -->
+
+                <div id="sample2" class="sample">
+                    <h3>02. <strong>string.prototype.charAt()</strong></h3>
+                    <p>
+                        <strong>string.prototype.charAt()</strong> 메서드는 지정한 숫자(index)를 받아, 문자열에서 해당 되는 인덱스의 단일문자를 반환합니다.
+                    </p>
+<pre class="line-numbers"><code class="language-js">{
+const text = "Hello, World!";
+const character = text.charAt(7); // 'W'를 반환
+}</code></pre>
+                    <p class="desc">
+                       charAt() 기본 구분<br>
+                       <strong>string.charAt(index)</strong>
+                    </p>
+                    <p class="desc">
+                        2줄 : Hello, World! 문자열을 상수 text에 저장합니다.<br>
+                        3줄 : charAt()을 이용해 text의 7번 인덱스의 문자를 상수 character에 저장합니다.<br> 
+                    </p>
+                    <div class="result">
+                        <details>
+                            <summary>결과 확인하기</summary>
+                            <div>
+                                <script>
+                                    {
+                                        const text = "Hello, World!";
+                                        const character = text.charAt(7); // 'W'를 반환
+                                        document.write(character);
+                                    }
+                                </script>
+                            </div>
+                        </details>
+                    </div>
+                </div>
+                <!-- //sample2 -->
+
+                <div id="sample5" class="sample">
+                    <h3>05. <strong>string.prototype.concat()</strong></h3>
+                    <p>
+                        <strong>string.prototype.concat()</strong> 메서드는 매개변수로 전달된 문자열을 받어, 결합된 새로운 문자열을 반환합니다.
+                    </p>
+<pre class="line-numbers"><code class="language-js">{
+// 문자열
+const str1 = "Hello, ";
+const str2 = "World!";
+const combinedStr = str1.concat(str2);
+console.log(combinedStr); // "Hello, World!"
+
+// 배열
+const arr1 = [1, 2, 3];
+const arr2 = [4, 5, 6];
+const combinedArr = arr1.concat(arr2);
+console.log(combinedArr); // [1, 2, 3, 4, 5, 6]
+}</code></pre>
+                    <p class="desc">
+                        concat() 기본 구분<br>
+                        <strong>기존문자열.concat(붙일 문자열이 든 변수)</strong>
+                    </p>
+                    <p class="desc">
+                        3줄 : 
+                    </p>
+                    <div class="result">
+                        <details>
+                            <summary>결과 확인하기</summary>
+                            <div>
+                                <script>
+                                    {
+                                        // 문자열
+                                        const str1 = "Hello, ";
+                                        const str2 = "World!";
+                                        const combinedStr = str1.concat(str2);
+                                        document.write(combinedStr + "<br>"); // "Hello, World!"
+
+                                        // 배열
+                                        const arr1 = [1, 2, 3];
+                                        const arr2 = [4, 5, 6];
+                                        const combinedArr = arr1.concat(arr2);
+                                        document.write(combinedArr + "<br>"); // [1, 2, 3, 4, 5, 6]
+                                    }
+                                </script>
+                            </div>
+                        </details>
+                    </div>
+                </div>
+                <!-- //sample5 -->
+
+                <div id="sample5" class="sample">
+                    <h3>01. <strong>string.prototype.at()</strong></h3>
+                    <p>
+                        <strong>string.prototype.at()</strong>메서드는 지정한 숫자(index)를 받아, 문자열에서 해당 되는 인덱스의 요소를 반환합니다.
+                    </p>
+<pre class="line-numbers"><code class="language-js">{
+
+}</code></pre>
+                    <p class="desc">
+                       
+                    </p>
+                    <p class="desc">
+
+                    </p>
+                    <div class="result">
+                        <details>
+                            <summary>결과 확인하기</summary>
+                            <div>
+                                <script>
+                                    {
+
+                                    }
+                                </script>
+                            </div>
+                        </details>
+                    </div>
+                </div>
+                <!-- //sample5 -->
+
 
                 <div id="sample27" class="sample">
                     <h3>27. <strong>string.prototype.toLowerCase()</strong></h3>
