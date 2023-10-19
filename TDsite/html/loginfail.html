@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,8 +14,34 @@
             background-color: #fff;
             border-top: 1px solid var(--black);
         }
+
+        .find__resultBox {
+        }
+
+        @media (max-width: 1300px) {
+            .find__resultBox img {
+                display: none;
+
+            }
+        }
+
+        .button__box {
+            display: flex;
+            /* align-items: center; */
+            justify-content: center;
+        }
+
+        .span__box {
+            color: #2079D3;
+            font-size: 14px;
+        }
+
+        .span__box div {
+            margin-top: 5px;
+        }
     </style>
 </head>
+
 <body>
     <div id="wrap">
         <header id="header">
@@ -40,14 +67,11 @@
                     </div>
                     <!-- //header__etc -->
                 </div>
-                <!-- <div class="board__name">
-                    자유게시판
-                </div> -->
             </div>
-            
+
         </header>
         <!-- //header -->
-        
+
         <nav id="nav">
             <div class="container">
                 <ul>
@@ -84,36 +108,32 @@
         <!-- //nav -->
 
         <main id="main">
-            <div class="login__inner container2">
-                <div class="login__title">
-                    <h2>Trend Device 커뮤니티에 로그인하기</h2>
+            <div class="find__result container3">
+                <div class="findResult__title">
+                    <h2>로그인 실패</h2>
                 </div>
-                <div class="login__form">
-                    <form action="#" name="#" method="post">
-                        <fieldset>
-                            <legend class="blind">로그인 영역</legend>
-                            <div>
-                                <label for="youEmail" class="required blind">이메일</label>
-                                <input type="email" id="youEmail" name="youEmail" placeholder="이메일" class="input__style2" required>
-                            </div>
-                            <div>
-                                <label for="youPass" class="required blind">비밀번호</label>
-                                <input type="password" id="youPass" name="youPass" placeholder="비밀번호" class="input__style3" autocomplete="off" required>
-                            </div>
-                            <button type="submit" class="btn__style3">로그인</button>
-                        </fieldset>
-                    </form>
+                <!-- //findResult__title -->
+
+                <div class="find__resultBox">
+                    <img src="../assets/img/failicon.png" alt="로그인 실패">
+                    <p>이메일 혹은 암호가 맞지 않습니다.<br> 다시 시도해주세요.</p>
                 </div>
-                <!-- <div class="login__check">
-                    <input type="checkbox"> 아이디 저장
-                </div> -->
-                <div class="login__support">
-                    <ul>
-                        <li><a href="loginPW_find.html">암호를 잊었습니까?</a></li>
-                        <li>아직 계정이 없나요? <a href="join.html">회원가입</a></li>
-                    </ul>
+                <!-- //find__resultBox -->
+
+                <div class="button__box">
+                    <button class="btn__style4"><a href="join.html">회원가입</a></button>
+                    <button class="btn__style4"><a href="login.html">로그인</a></button>
+                    <button class="btn__style4 login__btn"><a href="main.html">메인</a></button>
                 </div>
+                <!-- //button__box -->
+
+                <div class="span__box">
+                    <div class="passwordfind"><a href="#">암호를 잊으셨습니까?</a></div>
+                    <div class="joinclub"><a href="join.html">커뮤니티에 가입하세요!</a></div>
+                </div>
+
             </div>
+            <!-- //find__result -->
         </main>
         <!-- //main -->
 
@@ -166,4 +186,5 @@
     <!-- script -->
     <script src="../assets/script/script.js"></script>
 </body>
+
 </html>

@@ -5,13 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Trend Device</title>
     <link rel="stylesheet" href="../assets/css/style.css">
+​
     <style>
-        /* main */
-        #main {
-            width: 100%;
-            height: 120vh;
-            background-color: #fff;
-            border-top: 1px solid var(--black);
+        #header {
+            margin-bottom: 60px;
+            border: 1px solid var(--black400);
         }
     </style>
 </head>
@@ -19,7 +17,7 @@
     <div id="wrap">
         <header id="header">
             <div class="container">
-                <h1><a href="main.html">Trend Device</a></h1>
+                <h1>Trend Device</h1>
                 <div class="header__menu">
                     <div class="header__ham">
                         <div class="ham">
@@ -29,7 +27,7 @@
                         </div>
                     </div>
                     <!-- //header__ham -->
-
+​
                     <div class="header__etc">
                         <div class="header__search">
                             <img src="../assets/img/glass.png" alt="검색">
@@ -40,9 +38,9 @@
                     </div>
                     <!-- //header__etc -->
                 </div>
-                <!-- <div class="board__name">
-                    자유게시판
-                </div> -->
+                <div class="board__name">
+                    제품 비교하기
+                </div>
             </div>
             
         </header>
@@ -82,41 +80,94 @@
             </div>
         </nav>
         <!-- //nav -->
-
+​
         <main id="main">
-            <div class="login__inner container2">
-                <div class="login__title">
-                    <h2>Trend Device 커뮤니티에 로그인하기</h2>
+            <div class="compare__inner container">
+                <div class="compare__top">
+                    <h2>제품 비교하기</h2>
+                    <p>스마트폰 성능, 디자인 비교해보세요!</p>
                 </div>
-                <div class="login__form">
-                    <form action="#" name="#" method="post">
-                        <fieldset>
-                            <legend class="blind">로그인 영역</legend>
-                            <div>
-                                <label for="youEmail" class="required blind">이메일</label>
-                                <input type="email" id="youEmail" name="youEmail" placeholder="이메일" class="input__style2" required>
-                            </div>
-                            <div>
-                                <label for="youPass" class="required blind">비밀번호</label>
-                                <input type="password" id="youPass" name="youPass" placeholder="비밀번호" class="input__style3" autocomplete="off" required>
-                            </div>
-                            <button type="submit" class="btn__style3">로그인</button>
-                        </fieldset>
-                    </form>
-                </div>
-                <!-- <div class="login__check">
-                    <input type="checkbox"> 아이디 저장
-                </div> -->
-                <div class="login__support">
-                    <ul>
-                        <li><a href="loginPW_find.html">암호를 잊었습니까?</a></li>
-                        <li>아직 계정이 없나요? <a href="join.html">회원가입</a></li>
-                    </ul>
+                <div class="compare__bottom">
+                    <div class="compare__left">
+                        <div class="compare__left__top">
+                            <select name="phone_select1" id="phone_select1">
+                                <option value="phoneName">iPhone 15 Pro Max</option>
+                                <option value="phoneName">iPhone 15 Pro</option>
+                                <option value="phoneName">iPhone 15 Plus</option>
+                                <option value="phoneName">iPhone 15</option>
+                                
+                                <option value="phoneName">갤럭시Z 폴드5</option>
+                                <option value="phoneName">갤럭시Z 플립5</option>
+                                <option value="phoneName">갤럭시S23 울트라</option>
+                                <option value="phoneName">갤럭시S23+</option>
+                                <option value="phoneName">갤럭시S23</option>
+                            </select>
+                            <img src="#" alt="핸드폰 이미지">
+                            <p class="price">$<em>1,900,000원</em>부터</p>
+                            <a class="btn__style3">바로가기</a>
+                        </div>
+                        <div class="compare__left__bottom">
+                            <ul class="phoneOption">
+                                <li>
+                                    <img src="#" alt="성능 이미지">
+                                    <div class="text">
+                                        <p>20.3mph</p>
+                                        <span>MAX SPEED</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <img src="#" alt="성능 이미지">
+                                    <div class="text">
+                                        <p>20.3mph</p>
+                                        <span>MAX SPEED</span>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="compare__right">
+                        <div class="compare__right__top">
+                            <select name="phone_select2" id="phone_select1">
+                                <option value="phoneName">iPhone 15 Pro Max</option>
+                                <option value="phoneName">iPhone 15 Pro</option>
+                                <option value="phoneName">iPhone 15 Plus</option>
+                                <option value="phoneName">iPhone 15</option>
+                                
+                                <option value="phoneName">갤럭시Z 폴드5</option>
+                                <option value="phoneName">갤럭시Z 플립5</option>
+                                <option value="phoneName">갤럭시S23 울트라</option>
+                                <option value="phoneName">갤럭시S23+</option>
+                                <option value="phoneName">갤럭시S23</option>
+                            </select>
+                            <img src="#" alt="핸드폰 이미지">
+                            <p class="price">$<em>1,900,000원</em>부터</p>
+                            <a class="btn__style3">바로가기</a>
+                        </div>
+                        <div class="compare__right__bottom">
+                            <ul class="phoneOption">
+                                <li>
+                                    <img src="#" alt="성능 이미지">
+                                    <div class="text">
+                                        <p>20.3mph</p>
+                                        <span>MAX SPEED</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <img src="#" alt="성능 이미지">
+                                    <div class="text">
+                                        <p>20.3mph</p>
+                                        <span>MAX SPEED</span>
+                                    </div>
+                                </li>
+                                
+                            </ul>
+                        </div>
+                    </div>
                 </div>
             </div>
         </main>
         <!-- //main -->
-
+​
         <footer id="footer">
             <div class="container">
                 <div class="footer__top">
@@ -162,7 +213,7 @@
         <!-- //footer -->
     </div>
     <!-- //wrap -->
-
+​
     <!-- script -->
     <script src="../assets/script/script.js"></script>
 </body>

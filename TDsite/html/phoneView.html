@@ -5,13 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Trend Device</title>
     <link rel="stylesheet" href="../assets/css/style.css">
+​
     <style>
-        /* main */
-        #main {
-            width: 100%;
-            height: 120vh;
-            background-color: #fff;
-            border-top: 1px solid var(--black);
+        #header {
+            margin-bottom: 60px;
+            border: 1px solid var(--black400);
         }
     </style>
 </head>
@@ -19,7 +17,7 @@
     <div id="wrap">
         <header id="header">
             <div class="container">
-                <h1><a href="main.html">Trend Device</a></h1>
+                <h1>Trend Device</h1>
                 <div class="header__menu">
                     <div class="header__ham">
                         <div class="ham">
@@ -29,7 +27,7 @@
                         </div>
                     </div>
                     <!-- //header__ham -->
-
+​
                     <div class="header__etc">
                         <div class="header__search">
                             <img src="../assets/img/glass.png" alt="검색">
@@ -40,9 +38,9 @@
                     </div>
                     <!-- //header__etc -->
                 </div>
-                <!-- <div class="board__name">
-                    자유게시판
-                </div> -->
+                <div class="board__name">
+                    Apple
+                </div>
             </div>
             
         </header>
@@ -82,41 +80,63 @@
             </div>
         </nav>
         <!-- //nav -->
-
+​
         <main id="main">
-            <div class="login__inner container2">
-                <div class="login__title">
-                    <h2>Trend Device 커뮤니티에 로그인하기</h2>
+            <div class="phoneView__inner">
+                <div class="phoneView__top">
+                    <div class="phoneView__top__left">
+                        <img src="../assets/img/iPhone15_Pro.jpg" alt="핸드폰 이미지">
+                    </div>
+                    <div class="phoneView__top__right">
+                        <div class="phoneView__top__table">
+                            <ul>
+                                <li class="event">NEW</li>
+                                <li class="title">iPhone15 Pro</li>
+                                <li class="desc">
+                                    로렘 입숨(lorem ipsum; 줄여서 립숨, lipsum)은 출판이나 그래픽 디자인 분야에서 폰트, 타이포그래피, 레이아웃 같은 그래픽 요소나 시각적 연출을 보여줄 때 사용하는 표준 채우기 텍스트로, 최종 결과물에 들어가는 실제적인 문장 내용이 채워지기 전에 시각 디자인 프로젝트 모형의 채움 글로도 이용된다. 이런 용도로 사용할 때 로렘 입숨을 그리킹(greeking)이라고도 부르며, 때로 로렘 입숨은 공간만 차지하는 무언가를 지칭하는 용어로도 사용된다.
+                                </li>
+                                <li class="price">
+                                    <p><em>1,000,000</em>원</p>
+                                </li>
+                            </ul>
+                        </div>
+                        <a href="#" class="btn__style3">바로가기</a>
+                    </div>
                 </div>
-                <div class="login__form">
-                    <form action="#" name="#" method="post">
-                        <fieldset>
-                            <legend class="blind">로그인 영역</legend>
-                            <div>
-                                <label for="youEmail" class="required blind">이메일</label>
-                                <input type="email" id="youEmail" name="youEmail" placeholder="이메일" class="input__style2" required>
-                            </div>
-                            <div>
-                                <label for="youPass" class="required blind">비밀번호</label>
-                                <input type="password" id="youPass" name="youPass" placeholder="비밀번호" class="input__style3" autocomplete="off" required>
-                            </div>
-                            <button type="submit" class="btn__style3">로그인</button>
-                        </fieldset>
-                    </form>
+                <div class="phone__all">
+                    <p>제품<em>(10)</em></p>
                 </div>
-                <!-- <div class="login__check">
-                    <input type="checkbox"> 아이디 저장
-                </div> -->
-                <div class="login__support">
-                    <ul>
-                        <li><a href="loginPW_find.html">암호를 잊었습니까?</a></li>
-                        <li>아직 계정이 없나요? <a href="join.html">회원가입</a></li>
-                    </ul>
+                <div class="phoneView__table">
+                    <div class="compare__right__bottom">
+                        <ul class="phoneOption">
+                            <li class="one">
+                                <img src="#" alt="성능 이미지">
+                                <div class="text">
+                                    <p>20.3mph</p>
+                                    <span>MAX SPEED</span>
+                                </div>
+                            </li>
+                            <li class="one">
+                                <img src="#" alt="성능 이미지">
+                                <div class="text">
+                                    <p>20.3mph</p>
+                                    <span>MAX SPEED</span>
+                                </div>
+                            </li>
+                            <li class="two">
+                                <img src="#" alt="성능 이미지">
+                                <div class="text">
+                                    <p>20.3mph</p>
+                                    <span>MAX SPEED</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </main>
         <!-- //main -->
-
+​
         <footer id="footer">
             <div class="container">
                 <div class="footer__top">
@@ -162,7 +182,7 @@
         <!-- //footer -->
     </div>
     <!-- //wrap -->
-
+​
     <!-- script -->
     <script src="../assets/script/script.js"></script>
 </body>

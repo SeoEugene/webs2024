@@ -9,17 +9,17 @@
         /* main */
         #main {
             width: 100%;
-            height: 120vh;
+            height: 90vh;
             background-color: #fff;
-            border-top: 1px solid var(--black);
         }
+    
     </style>
 </head>
 <body>
     <div id="wrap">
         <header id="header">
             <div class="container">
-                <h1><a href="main.html">Trend Device</a></h1>
+                <h1>Trend Device</h1>
                 <div class="header__menu">
                     <div class="header__ham">
                         <div class="ham">
@@ -40,9 +40,9 @@
                     </div>
                     <!-- //header__etc -->
                 </div>
-                <!-- <div class="board__name">
-                    자유게시판
-                </div> -->
+                <div class="board__name">
+                    회원가입
+                </div>
             </div>
             
         </header>
@@ -84,34 +84,57 @@
         <!-- //nav -->
 
         <main id="main">
-            <div class="login__inner container2">
-                <div class="login__title">
-                    <h2>Trend Device 커뮤니티에 로그인하기</h2>
-                </div>
-                <div class="login__form">
-                    <form action="#" name="#" method="post">
-                        <fieldset>
-                            <legend class="blind">로그인 영역</legend>
+            <div class="mypage__inner container2">
+                <div class="mypage__contents">
+                    <div class="mypage__menu">
+                        <div class="mypageMenu__header">
+                            <img src="../assets/img/icon__profile.png" alt="회원 프로필">
+                            <h2>김이름</h2>
+                            <p>kimkimkim@gmail.com</p>
+                        </div>
+                        <div class="mypageMenu__footer">
+                            <ul>
+                                <li>로그인 및 보안</li>
+                                <li class="active">개인정보</li>
+                                <li>개인정보 관리</li>
+                                <li>후원하기</li>
+                                <li>회원탈퇴</li>
+                            </ul>
+                        </div> 
+                    </div>
+                    <div class="mypage__info">
+                        <div class="mapageInfo__header">
+                            <h2>개인 정보</h2>
+                            <p>전화번호 및 이메일 등의 정보를 관리하십시오.</p>
+                        </div>
+                        <div class="mypageInfo__footer">
                             <div>
-                                <label for="youEmail" class="required blind">이메일</label>
-                                <input type="email" id="youEmail" name="youEmail" placeholder="이메일" class="input__style2" required>
+                                <h2>이름</h2>
+                                <p>김김김</p>
+                                <img src="../assets/img/icon__phone.png" alt="">
                             </div>
                             <div>
-                                <label for="youPass" class="required blind">비밀번호</label>
-                                <input type="password" id="youPass" name="youPass" placeholder="비밀번호" class="input__style3" autocomplete="off" required>
+                                <h2>이메일</h2>
+                                <p>kimkimim@gmail.com</p>
+                                <img src="../assets/img/icon__phone.png" alt="">
                             </div>
-                            <button type="submit" class="btn__style3">로그인</button>
-                        </fieldset>
-                    </form>
-                </div>
-                <!-- <div class="login__check">
-                    <input type="checkbox"> 아이디 저장
-                </div> -->
-                <div class="login__support">
-                    <ul>
-                        <li><a href="loginPW_find.html">암호를 잊었습니까?</a></li>
-                        <li>아직 계정이 없나요? <a href="join.html">회원가입</a></li>
-                    </ul>
+                            <div>
+                                <h2>전화번호</h2>
+                                <p>010-0000-0000</p>
+                                <img src="../assets/img/icon__phone.png" alt="">
+                            </div>
+                            <div>
+                                <h2>생년월일</h2>
+                                <p>1999.01.01</p>
+                                <img src="../assets/img/icon__phone.png" alt="">
+                            </div>
+                            <div>
+                                <h2>정보</h2>
+                                <p>내정보</p>
+                                <img src="../assets/img/icon__phone.png" alt="">
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </main>

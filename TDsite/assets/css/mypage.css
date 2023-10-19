@@ -1,0 +1,132 @@
+.mypage__inner {
+    margin-top: 110px;
+}
+.mypage__contents {
+    display: flex;
+
+}
+.mypage__menu {
+    width: 33%;
+    text-align: left;
+}
+.mypageMenu__header img {
+    margin-bottom: 10px;
+}
+.mypageMenu__header h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--black200);
+    margin-bottom: 10px;
+}
+.mypageMenu__header p {
+    font-size: 1.15rem;
+    font-weight: 800;
+    color: var(--black400);
+    margin-bottom: 30px;
+}
+.mypageMenu__footer ul {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--black400);
+}
+.mypageMenu__footer ul li {
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+.mypageMenu__footer ul li.active {
+    color: var(--blue100);
+    font-weight: 800;
+}
+
+
+/* mypage__info */
+.mypage__info {
+    width: 67%;
+    text-align: left;
+}
+.mapageInfo__header h2 {
+    font-size: 1.7rem;
+    font-weight: 700;
+    margin-bottom: 30px;
+}
+.mapageInfo__header p {
+    margin-bottom: 30px;
+    font-weight: 700;
+    color: var(--black400);
+}
+.mypageInfo__footer {
+    display: flex;
+    flex-wrap: wrap;
+}
+.mypageInfo__footer div {
+    width: 300px;
+    height: 120px;
+    background-image: linear-gradient(to right, var(--white), var(--black900));
+    border-radius: 10px;
+    border: 1px solid var(--black600);
+    box-shadow: 2px 2px 2px var(--black400);
+    margin: 0 1.5rem 1.5rem 0;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+.mypageInfo__footer div h2 {
+    font-weight: 800;
+    padding: 15px 0 0 15px;
+}
+.mypageInfo__footer div p {
+    padding: 5px 0 0 15px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--black400);
+}
+.mypageInfo__footer div img {
+    position: absolute;
+    right: 5px;
+    top: 26px;
+    transform: translate(-50%, -50%);
+}
+
+
+@media (max-width: 1280px){
+    .mypage__inner {
+        width: 80%;
+        margin-bottom: 1000px;
+    }
+    .mypage__contents {
+        justify-content: space-between;
+    }
+    .mypage__menu {
+        width: 40%;
+    }
+    .mypage__info {
+        width: 60%;
+    }
+    .mapageInfo__header {
+        text-align: center;
+    }
+    .mypageInfo__footer {
+        justify-content: center;
+    }
+
+}
+@media (max-width: 870px){
+    .mypage__inner {
+        width: 95%;
+    }
+    .mypage__info {
+        display: flex;
+        flex-direction: column;
+    }
+    .mypageInfo__footer div {
+        width: 50%;
+    }
+}
+@media (max-width: 680px){
+    .mypageInfo__footer div img {
+        display: none;
+    }
+    .mypage__contents {
+        justify-content: space-between;
+    }
+}
