@@ -146,6 +146,7 @@ a {
     /* top: 0; */
     right: 100px;
     /* transform: translateX(20%); */
+    margin: 10px;
 }
 .search__list {
     width: 80%;

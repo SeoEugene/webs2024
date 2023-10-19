@@ -8,7 +8,20 @@
     <link rel="stylesheet" href="assets/css/search.css">
     <link href="https://webfontworld.github.io/crown/CrownMychew.css" rel="stylesheet">
     <style>
-
+        .search__box {
+            position: relative;
+        }
+        #searchButton {
+            width: 50px;
+            height: 30px;
+            position: absolute;
+            top: 30%;
+            right: 30%;
+            transform: translate(-30%, -30%);
+        }
+        .search__list span .active {
+            background-color: #ffcccc;
+        }
 
     </style>
 </head>
@@ -41,6 +54,7 @@
                 <label for="searchBox">검색하기</label>
                 <input type="text" id="searchBox" name="searchBox" placeholder="찾고자하는 효과를 검색하세요!">
                 <p class="search__box__desc">CSS 효과를 검색하면 설명이 나옵니다.</p>
+                <button id="searchButton" type="button">검색</button>
             </div>
 
             <div class="search__box__result">
@@ -70,7 +84,7 @@
             { name: "animation-iteration-count", desc: "애니메이션 반복 횟수 설정합니다." },
             { name: "animation-name", desc: "애니메이션 keyframe 이름을 설정합니다." },
             { name: "animation-play-state", desc: "애니메이션 진행상태를 설정합니다." },
-            { name: "animation-timing-function", desc: "애니메이션 움직임의 속{nam" },
+            { name: "animation-timing-function", desc: "애니메이션 움직임의 속도를 설정합니다." },
             { name: "backdrop-filter", desc: "배경에 그래픽 효과를 설정합니다." },
             { name: "backface-visibility", desc: "요소의 뒷면을 설정합니다." },
             { name: "background-attachment", desc: "배경 이미지의 고정 여부를 설정합니다." },
@@ -119,7 +133,7 @@
             { name: "bottom", desc: "위치 요소의 아래쪽 속성을 설정합니다." },
             { name: "box-decoration-break", desc: "컬럼 및 줄바꿈시 테두리와 패딩의 방식을 설정합니다." },
             { name: "box-shadow", desc: "박스 요소의 그림자를 설정합니다." },
-            { name: "box-sizing", desc: "요소 크기에 패딩 포함 여{nam" },
+            { name: "box-sizing", desc: "요소 크기에 패딩 포함 여부를 설정합니다." },
             { name: "caption-side", desc: "caption의 위치를 설정합니다." },
             { name: "caret-color", desc: "input의 커서 색을 정의합니다." },
             { name: "clear", desc: "float 요소의 성질을 차단합니다." },
@@ -130,58 +144,106 @@
             { name: "column-gap", desc: "컬럼의 간격을 정의합니다." },
             { name: "column-rule", desc: "컬럼 라인의 가로값, 스타일, 컬러를 정의합니다." },
             { name: "column-rule-color", desc: "컬럼의 라인 색을 정의합니다." },
-
-
         ]
 
+        
         const searchList = document.querySelector(".search__list");
         const searchSelect = document.querySelectorAll(".search__select span");
         const searchInfo = document.querySelector(".search__info");
         const searchBox = document.querySelector(".search__box input");
         const searcBoxResult = document.querySelector(".search__box__result");
+        const searchButton = document.querySelector("#searchButton"); 
 
         // 출력하기
         cssProperty.map((element, index) => {
             searchList.innerHTML += `<span>${element.name}</span>`;
         });
 
-        // 클릭하기
-        const clickProperty = searchList.querySelectorAll("span");
-        clickProperty.forEach((span) => {
-            span.addEventListener("click", () => {
+        // 검색하기
+        function findProperty(searchKeyword){
+            const targetData = cssProperty.find((data) => data.name === searchKeyword);
+            const listItem = searchList.querySelectorAll("span");
 
-                const activeSpan = searchList.querySelector(".active");
-                if(activeSpan){
-                    activeSpan.classList.remove("active");
-                }
+            // active 제거
+            listItem.forEach(item => item.classList.remove("active"));
+
+            if(targetData == null){
+                searcBoxResult.innerText = "해당 속성이 존재하지 않습니다.";
+                return;
+            }else{
+                searcBoxResult.textContent = `${targetData.name}은 ${targetData.desc}`;
                 
-                span.classList.add("active");
+                // active 추가
+                listItem.forEach((item) => {
+                    if(item.textContent === searchKeyword){
+                        listItem.classList.add("active");
+                    }
+                });
 
-                const spanInnerText =cssProperty.find((data) => data.name === span.innerText);
-                searcBoxResult.textContent = `${spanInnerText.name} 은 ${spanInnerText.desc}`;
-                           
+            }
+        }
 
-            });
+        // 속성 클릭하기
+        document.querySelectorAll(".search__list span").forEach(span => {
+            span.addEventListener("click", () => {
+                const keyword = span.innerText;
+                findProperty(keyword);
+            })
         })
 
+        // 검색 버튼 클릭하기
+        searchButton.addEventListener("click", () => {
+            const keyword = searchBox.value;
+            findProperty(keyword);
+            console.log(keyword);
 
-        // 입력하기
-        searchBox.addEventListener("keyup", () => {
-            const searchWord = searchBox.value;
-            findProperty(searchWord);
         });
 
-        // 속성 찾기
-        function findProperty(searchData) {
-            const targetData = cssProperty.find((data) => data.name === searchData);
 
-            if (targetData == null) {
-                searcBoxResult.textContent = "해당 속성은 존재하지 않습니다. 다시 한번 검색해주세요!";
-                return
-            } else[
-                searcBoxResult.textContent = `${targetData.name}은 ${targetData.desc}`
-            ]
-        }
+
+
+        // // 출력하기
+        // cssProperty.map((element, index) => {
+        //     searchList.innerHTML += `<span>${element.name}</span>`;
+        // });
+
+        // // 클릭하기
+        // const clickProperty = searchList.querySelectorAll("span");
+        // clickProperty.forEach((span) => {
+        //     span.addEventListener("click", () => {
+
+        //         const activeSpan = searchList.querySelector(".active");
+        //         if(activeSpan){
+        //             activeSpan.classList.remove("active");
+        //         }
+                
+        //         span.classList.add("active");
+
+        //         const spanInnerText =cssProperty.find((data) => data.name === span.innerText);
+        //         searcBoxResult.textContent = `${spanInnerText.name} 은 ${spanInnerText.desc}`;
+                           
+
+        //     });
+        // })
+
+
+        // // 입력하기
+        // searchBox.addEventListener("keyup", () => {
+        //     const searchWord = searchBox.value;
+        //     findProperty(searchWord);
+        // });
+
+        // // 속성 찾기
+        // function findProperty(searchData) {
+        //     const targetData = cssProperty.find((data) => data.name === searchData);
+
+        //     if (targetData == null) {
+        //         searcBoxResult.textContent = "해당 속성은 존재하지 않습니다. 다시 한번 검색해주세요!";
+        //         return
+        //     } else[
+        //         searcBoxResult.textContent = `${targetData.name}은 ${targetData.desc}`
+        //     ]
+        // }
 
 
     </script>
