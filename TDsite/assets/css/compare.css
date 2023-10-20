@@ -3,6 +3,10 @@
     margin: 30px 0 70px;
 }
 
+.compare__inner {
+    margin-top: 60px;
+}
+
 /* compare__top */
 .compare__top {
     width: 100%;
@@ -30,12 +34,15 @@
     padding: 5px;
 }
 .compare__bottom img {
-    width: 100%;
+    width: 70%;
+    vertical-align: top;
     display: inline-block;
 }
 .compare__left__top img,
 .compare__right__top img {
     margin: 70px 0 70px;
+    width: 50%;
+    height: 50%;
 }
 
 .compare__left__bottom,
@@ -59,6 +66,9 @@
     border-radius: 10px;
     position: relative;
     text-align: left;
+}
+.phoneOption img {
+    width: 30px;
 }
 .phoneOption li .text {
     position: absolute;

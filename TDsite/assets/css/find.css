@@ -1,7 +1,7 @@
 /* findResult */
 
 .find__result {
-    margin-bottom: 350px;
+    margin-bottom: 60px;
 }
 .findResult__title {
     margin: 100px 3rem 0;
@@ -35,7 +35,7 @@
     font-size: 1.25rem;
     font-weight: 700;
 }
-.find__result button {
+.find__result a {
     width: 180px;
     height: 50px;
     margin: 1.25rem 1rem;

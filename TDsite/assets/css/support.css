@@ -1,6 +1,7 @@
 .support__inner {
     display: flex;
     justify-content: space-between;
+    margin-top: 60px;
 }
 .support__left {
     width: 50%;

@@ -1,7 +1,7 @@
 .phone__inner {
     width: 97%;
     height: inherit;
-    margin: 0 auto;
+    margin: 60px auto 0;
 }
 
 .phone__top {
@@ -96,21 +96,6 @@
     overflow: hidden;
     width: 100%;
 }
-@media(max-width: 1400px){
-    .phone__table .item__event .event__text {
-        margin-top: 1rem;
-    }
-}
-@media(max-width: 1400px){
-    .phone__table .item__event .event__text h3{
-        font-size: 2rem;
-    }
-    .phone__table .item__event .event__text p,
-    .phone__table .item__event .event__text span,
-    .phone__table .item__event .event__text a {
-        font-size: 0.8rem;
-    }
-}
 .phone__table .event {
     font-size: 0.8rem;
     color: var(--blue100);
@@ -187,6 +172,163 @@
 .phone__table .text .price {
     margin-top: 20px;
 } */
+@media(max-width: 1400px){
+    .phone__table .item__event .event__text {
+        margin-top: 1rem;
+    }
+}
+@media(max-width: 1400px){
+    .phone__table .item__event .event__text h3{
+        font-size: 2rem;
+    }
+    .phone__table .item__event .event__text p,
+    .phone__table .item__event .event__text span,
+    .phone__table .item__event .event__text a {
+        font-size: 0.8rem;
+    }
+}
+@media(max-width: 600px){
+    .phone__table .item {
+        width: 50%;
+    }
+    .phone__table .item__event{
+        width: 100%;
+    }
+    .phone__table .item__event .event__text {
+        height: 100%;
+        background-color: rgba(0,0,0,.7);
+    }
+}
 
+/* phoneView */
+.phoneView__inner {
+    margin-top: 60px;
+    margin-bottom: 60px;
+}
+.phoneView__top {
+    width: 100%;
+    height: 720px;
+    display: flex;
+    /* background-color: #fb8383; */
+    padding: 20px;
+    box-sizing: border-box;
+}
+.phoneView__top__left {
+    width: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.phoneView__top__left img {
+    height: 100%;
+    vertical-align: top;
+    transform: scale(40%);
+}
 
+.phoneView__top__right {
+    width: 30%;
+}
+.phoneView__top__table {
+    margin-bottom: 2rem;
+}
+.phoneView__top__table ul {
+    display: flex;
+    flex-direction: column;
+    border-bottom: 1px solid var(--black400);
+}
+.phoneView__top__table ul .event {
+    font-size: 0.8rem;
+    font-weight: 900;
+    text-align: left;
+    color: var(--blue100);
+    margin-bottom: 3rem;
+}
+.phoneView__top__table ul .title {
+    font-size: 2rem;
+    font-weight: 900;
+    text-align: left;
+    margin-bottom: 1rem;
+}
+.phoneView__top__table ul .desc {
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--black200);
+    text-align: left;
+    line-height: 1.3rem;
+    margin-bottom: 3rem;
+}
+.phoneView__top__table ul .price {
+    font-size: 1rem;
+    font-weight: 900;
+    text-align: left;
+    margin-bottom: 0.8rem;
+}
+.phoneView__top__right .btn__style3 {
+    width: 100%;          
+}
 
+.phoneView__bottom > h3 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+.phoneView__table .phoneView__table__Option {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.phoneView__table .phoneView__table__Option li {
+    height: 150px;
+    text-align-last: left;
+    padding: 10px;
+    border: 1px solid var(--black400);
+    border-radius: 5px;
+    position: relative;
+    margin-bottom: 0.5rem;
+}
+.phoneView__table .phoneView__table__Option li img {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 30px;
+    height: 30px;
+}
+.phoneView__table .phoneView__table__Option li .text {
+    position: absolute;
+    left: 10px;
+    bottom: 10px;
+}
+.phoneView__table .phoneView__table__Option li .text p {
+    font-size: 1.5rem;
+    font-weight: 900;
+}
+.phoneView__table .phoneView__table__Option li .text span {
+    font-weight: 700;
+    color: var(--black400);
+}
+.phoneView__table .phoneView__table__Option .one {
+    width: 19%;
+}
+.phoneView__table .phoneView__table__Option .two {
+    width: 38%;
+}
+@media(max-width: 800px){
+    .phoneView__top {
+        flex-direction: column;
+        height: inherit;
+    }
+    .phoneView__top__left {
+        width: 100%;
+    }
+    .phoneView__top__right {
+        width: 100%;
+    }
+}
+@media(max-width: 600px){
+    .phoneView__table .phoneView__table__Option .one {
+        width: 49%;
+    }
+    .phoneView__table .phoneView__table__Option .two {
+        width: 100%;
+    }
+}
