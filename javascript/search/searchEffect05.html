@@ -216,6 +216,7 @@
         // 출력하기
         function listUpdate(list) {
             let listItem = "";
+            let num = 0;
 
             for (const data of list) {
                 switch (data.star) {
@@ -238,43 +239,13 @@
                         data.start = "☆☆☆☆☆☆";
                 }
                 listItem += `<li><strong>${data.name}<strong> : ${data.desc} <i>${data.star}</i></li>`;
-
+                num++;
 
             }
             searchList.innerHTML = listItem;
+            Num.innerText = num;
         }
         listUpdate(cssProperty);
-
-
-
-        // function listUpdate() {
-        //     let num = 0;
-        //     cssProperty.forEach((element) => {
-        //         switch (element.star) {
-        //             case 1:
-        //                 element.star = "★☆☆☆☆";
-        //                 break;
-        //             case 2:
-        //                 element.star = "★★☆☆☆";
-        //                 break;
-        //             case 3:
-        //                 element.star = "★★★☆☆";
-        //                 break;
-        //             case 4:
-        //                 element.star = "★★★★☆";
-        //                 break;
-        //             case 5:
-        //                 element.star = "★★★★★";
-        //                 break;
-        //             default:
-        //                 element.start = "☆☆☆☆☆☆";
-        //         }
-        //         searchList.innerHTML += `<li> ${element.name} : ${element.desc} <i>${element.star}</i></li>`;
-        //         num = num+1;
-        //     })
-        //     Num.innerText = num;
-        // }
-        // listUpdate();
 
 
     </script>
