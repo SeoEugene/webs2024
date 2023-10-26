@@ -61,6 +61,23 @@ a {
     border-radius: 15px;
     position: relative;
 }
+.search__star li {
+    display: inline-block;  
+    border: 3px solid #ccffff;
+    padding: 10px 20px;
+    border-radius: 50%;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 30px; 
+    border-radius: 30px;
+}
+.search__star li:hover {
+    background-color: #ccffff;
+    cursor: pointer;
+}
+.search__star li::after {
+    content: attr(data-desc);
+}
 .search__title {
     padding-top: 30px;
 }

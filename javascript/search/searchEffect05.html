@@ -99,11 +99,11 @@
             </div>
             <div class="search__star">
                 <ul>
-                    <li>★☆☆☆☆<span>사용 안함</span></li>
-                    <li>★★☆☆☆<span>가끔 사용</span></li>
-                    <li>★★★☆☆<span>보통 사용</span></li>
-                    <li>★★★★☆<span>자주 사용</span></li>
-                    <li>★★★★★<span>필수 사용</span></li>
+                    <li data-start="1" data-desc=" 사용 안함">★☆☆☆☆</li>
+                    <li data-start="2" data-desc=" 가끔 사용">★★☆☆☆</li>
+                    <li data-start="3" data-desc=" 보통 사용">★★★☆☆</li>
+                    <li data-start="4" data-desc=" 자주 사용">★★★★☆</li>
+                    <li data-start="5" data-desc=" 필수 사용">★★★★★</li>
                 </ul>
             </div>
             <div class="search__info">
@@ -205,7 +205,7 @@
         ]
 
 
-        const searchList = document.querySelector(".search__list ul");
+        // const searchList = document.querySelector(".search__list ul");
         const searchSelect = document.querySelectorAll(".search__select span");
         const searchInfo = document.querySelector(".search__info");
         const searchBox = document.querySelector(".search__box input");
@@ -213,40 +213,65 @@
         const searchButton = document.querySelector("#searchButton");
         const Num = document.querySelector(".num");
 
+        const searchList = document.querySelector(".search__list ul");
+        const searchStarItems = document.querySelectorAll(".search__star li");
+        const searchCount = document.querySelector(".search__info .num");
+
         // 출력하기
-        function listUpdate(list) {
+        // function listUpdate(list) {
+        //     let listItem = "";
+        //     let num = 0;
+
+        //     for (const data of list) {
+        //         switch (data.star) {
+        //             case 1:
+        //                 data.star = "★☆☆☆☆";
+        //                 break;
+        //             case 2:
+        //                 data.star = "★★☆☆☆";
+        //                 break;
+        //             case 3:
+        //                 data.star = "★★★☆☆";
+        //                 break;
+        //             case 4:
+        //                 data.star = "★★★★☆";
+        //                 break;
+        //             case 5:
+        //                 data.star = "★★★★★";
+        //                 break;
+        //             default:
+        //                 data.start = "☆☆☆☆☆☆";
+        //         }
+        //         listItem += `<li><strong>${data.name}<strong> : ${data.desc} <i>${data.star}</i></li>`;
+        //         num++;
+
+        //     }
+        //     searchList.innerHTML = listItem;
+        //     Num.innerText = num;
+        // }
+        // listUpdate(cssProperty);
+
+        //출력하기
+        function listUdate(list){
             let listItem = "";
-            let num = 0;
 
-            for (const data of list) {
-                switch (data.star) {
-                    case 1:
-                        data.star = "★☆☆☆☆";
-                        break;
-                    case 2:
-                        data.star = "★★☆☆☆";
-                        break;
-                    case 3:
-                        data.star = "★★★☆☆";
-                        break;
-                    case 4:
-                        data.star = "★★★★☆";
-                        break;
-                    case 5:
-                        data.star = "★★★★★";
-                        break;
-                    default:
-                        data.start = "☆☆☆☆☆☆";
-                }
-                listItem += `<li><strong>${data.name}<strong> : ${data.desc} <i>${data.star}</i></li>`;
-                num++;
-
+            for(const data of list ){
+                let listStar = searchStarItems[data.star-1].innerText;
+                listItem += `<li><strong>${data.name}</strong> : ${data.desc} <em>${listStar}</em></li>`
             }
             searchList.innerHTML = listItem;
-            Num.innerText = num;
+            searchCount.textContent = list.length;
         }
-        listUpdate(cssProperty);
-
+        listUpdate(cssProperty)
+        
+        //클릭하기
+        searchStarItems.forEach(star => {
+            star.addEventListener("click", () => {
+                const target = star.data.star;
+                const filterList = cssProperty.filter(data => data.star == target);
+                listUpdate(filterList);
+            })
+        })
 
     </script>
 </body>
