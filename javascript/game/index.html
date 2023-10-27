@@ -16,39 +16,50 @@
 
         <main>
             <div class="icon__menu">
-                <a href="#" class="iconMusic">
-                    <img src="assets/img/musicicon.png" alt="icon-music">
-                </a>
+                <div class="iconMusic"><a href="#"></a></div>
+                <div class="icon1"><a href="#"></a></div>
+                <div class="icon2"><a href="#"></a></div>
+                <div class="icon3"><a href="#"></a></div>
             </div>
+            <!-- //icon__menu -->
 
             <div id="musicWrap">
                 <div class="music__inner">
                     <div class="music__header">
                         <h2>Cookie Player</h2>
                     </div>
+                    <!-- //music__header -->
                     <div class="music__contents">
                         <div class="music__view">
                             <div class=" musicTitle"></div>
                             <div class="view"></div>
                         </div>
-                        <div class="music__control">
-                            <ul>
-                                <li class="prevmusic"></li>
-                                <li class="play__stop"></li>
-                                <li class="nextmusic"></li>
-                                <li class="sound"></li>
-                            </ul>
-                        </div>
-                        <div class="music__list">
-                            <ul>
-                                <li>1.</li>
-                                <li>2.</li>
-                                <li></li>
-                                <li></li>
-                                <li></li>
-                            </ul>
+                        <!-- //music__contents -->
+                        <div class="slidemenu">
+                            <div class="music__control">
+                                <ul>
+                                    <li class="prevmusic"></li>
+                                    <li class="play__stop"></li>
+                                    <li class="nextmusic"></li>
+                                    <li class="sound"></li>
+                                </ul>
+                            </div>
+                            <!-- //music__control -->
+
+                            <div class="music__list">
+                                <ul>
+                                    <li class="active"><a href="#">1. music</a></li>
+                                    <li><a href="#">2. music</a></li>
+                                    <li><a href="#">3. music</a></li>
+                                    <li><a href="#">4. music</a></li>
+                                    <li><a href="#">5. music</a></li>
+                                </ul>
+                            </div>
+                            <!-- //music__list -->
+                            <div class="music__list__close"></div>
                         </div>
                     </div>
+                    <!-- //music__contents -->
                 </div>
             </div>
         </main>
@@ -58,5 +69,13 @@
         <!-- //footer -->
     </div>
     <!-- //wrap -->
+
+    <script>
+        const iconMusic = document.querySelector(".iconMusic");
+
+        iconMusic.addEventListener("click", () => {
+            
+        })
+    </script>
 </body>
 </html>

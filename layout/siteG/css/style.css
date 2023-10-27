@@ -1,0 +1,314 @@
+* {
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+li {
+    list-style: none;
+}
+a {
+    color: #333;
+    text-decoration: none;
+}
+img {
+    width: 100%;
+}
+body {
+    background-color: #fff;
+}
+#wrap {
+    width: 1200px;
+    margin: 0 auto;
+    position: relative;
+}
+
+/* #header */
+#header {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    box-sizing: border-box;
+}
+.logo {
+    width: 20%;
+    height: 100px;
+}
+.logo a {
+    display: inline-block;
+    padding: 30px 40px;
+    font-size: 21px;
+}
+.nav {
+    width: 80%;
+    height: 100px;
+    display: flex;
+    justify-content: end;
+    z-index: 1000;
+}
+.nav > ul {
+    display: flex;
+    justify-content: right;
+    align-items: end;
+
+}
+.nav > ul > li {
+    width: 180px;    
+    display: block;
+    position: relative;
+
+}
+.nav > ul > li > a {
+    display: block;
+    text-align: center;
+    padding: 10px 30px;
+}
+.nav > ul > li a:hover {
+    background-color: #ccff;
+}
+.nav > ul > li > ul {
+    display: none;
+    position: absolute;
+    top: 41px;
+    left: 0;
+    background-color: #fff;
+}
+.nav > ul > li > ul > li {
+    width: 180px;
+    display: block;
+    text-align: center;
+    
+    border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+}
+.nav > ul > li > ul > li a {
+    padding: 10px 0;
+    display: block;
+    text-align: center;
+}
+.nav > ul > li > ul > li a:hover {
+    background-color: #ccff;
+}
+
+/* #main */
+#main { 
+    width: 100%;
+    height: 500px;
+}
+#slider {
+    width: 100%;
+    height: 300px;
+    background-color: #ffcccc;
+    overflow: hidden;
+}
+.sliderWrap {
+
+}
+.slider {
+    width: 100%;
+    height: 300px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: relative;
+}
+.s1 {
+    background-image: url(../../siteE/images/Rectangle\ 112.jpg);
+}
+.s2 {
+    background-image: url(../../siteE/images/Rectangle\ 113.jpg);
+}
+.s3 {
+    background-image: url(../../siteE/images/Rectangle\ 114.jpg);
+}
+.slider .text {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100px;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+.slider .text h2 {
+    display: block;
+    text-align: right;
+    font-size: 26px;
+    margin-right: 30px;
+    margin-top: 5px;
+
+    color: #fff;
+}
+.slider .text p {
+    color: #fff;
+    text-align: right;
+    margin-right: 30px;
+    margin-top: 5px;
+}
+
+/* #contents */
+#contents {
+    width: 100%;
+    display: flex;
+    background-color: #eee;
+}
+.contents1 {
+    width: 33.3333%;
+    height: 200px;
+    background-color: #fff;
+    box-sizing: border-box;
+}
+.notice h3 {
+    font-size: 20px;
+    margin-bottom: 5px;
+    margin-top: 5px;
+    margin-left: 5px;
+}
+.notice li {
+    display: flex;
+    border-bottom: 1px solid #eee;
+    position: relative;
+    padding-left: 20px;
+    padding: 8px;
+    overflow: hidden;
+}
+.notice li::after {
+    content: '';
+    width: 4px;
+    height: 4px;
+    background-color: #333;
+    position: absolute;
+    left: 0px;
+    top: 17px;
+    border-radius: 50%;
+}
+.notice li a {
+    width: 60%;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+.notice li a:hover {
+    text-decoration: underline;
+}
+.notice li span {
+    width: 40%;
+    text-align: right;
+}
+.popupview {
+    width: 500px;
+    height: 500px;
+    background-color: #fff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 8px solid #ccc;
+    display: none;
+}
+.popupview .header {
+    width: 100%;
+    height: 50px;
+    border-bottom: 1px solid #333;
+    display: flex;
+    justify-content: space-between;
+}
+.popupview .header h3 {
+    font-size: 22px;
+    display: inline-block;
+    line-height: 3;
+    margin-left: 10px;
+}
+.popupview .header .close {
+    padding: 10px;
+    cursor: pointer;
+    font-size: 20px;
+}
+.popupview .text {
+    padding: 20px;
+    text-decoration: underline;
+}
+.contents2 {
+    width: 33.3333%;
+    height: 200px;
+    box-sizing: border-box;
+}
+.contents2 h3 {
+    padding-top: 20px;
+    padding-left: 10px;
+}
+.gallery {
+    padding-top: 20px;
+    padding-left: 10px;
+}
+.gallery ul {
+    display: flex;
+}
+.gallery li {
+    padding-right: 5px;
+}
+.gallery img {
+    width: 120px;
+    height: 120px;
+}
+
+.contents3 {
+    width: 33.3333%;
+    height: 200px;
+    box-sizing: border-box;
+}
+.banner {
+    width: 100%;
+    height: 100%;
+    display: block;
+    text-align: center;
+    background-image: url(../../siteE/images/Rectangle\ 6-1.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.banner h3 {
+    font-size: 26px;
+    padding-top: 50px;
+    color: #fff;
+}
+.banner div {   
+    width: 100px;
+    height: 30px;
+    margin-top: 15px;
+    margin-left: 140px;
+    padding: 5px;
+    background-color: rgba(255, 255, 255, 0.4);
+    border-radius: 30px;
+    font-weight: 900;
+    line-height: 2;
+    color: #fff;
+}
+.banner div:hover {
+    background-color: rgba(0, 0, 0, 1);
+    cursor: pointer;
+}
+/* #footer */
+#footer {
+    width: 100%;
+    background-color: #eee;
+    display: flex;
+}
+.footer1 {
+    width: 20%;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 21px;    
+}
+.footer2 {
+    display: flex;
+    width: 60%;
+    height: 100px;
+    align-items: center;
+}
+.footer3 {
+    display: flex;
+    width: 20%;
+    height: 100px;
+    align-items: center;
+    justify-content: center;
+}

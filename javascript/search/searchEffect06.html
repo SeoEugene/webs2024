@@ -104,6 +104,7 @@
                     <li class="btn3">내림차순 정렬하기</li>
                     <li class="btn4">알파벳순(a-z)</li>
                     <li class="btn5">알파벳순(z-a)</li>
+                    <li class="btn6">랜덤으로 정렬하기</li>
                 </ul>
             </div>
             <div class="search__info">
@@ -259,6 +260,14 @@
         });
 
         //랜덤 정렬하기(숙제)
+        document.querySelector(".btn6").addEventListener("click", () => {
+            for(let i = cssProperty.length -1; i > 0; i--){
+                const j = Math.floor(Math.random() * (i + 1));
+                [cssProperty[i], cssProperty[j]] = [cssProperty[j], cssProperty[i]];
+                // [30, 24] = [24, 30] 배열 24와 30의 수를 서로 변환하는건가?..
+            };
+            listUpdate();
+        });
     </script>
 </body>
 

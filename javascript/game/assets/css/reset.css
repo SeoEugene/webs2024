@@ -118,3 +118,7 @@ table {
     line-height: 0;
     text-indent: -9999px;
 }
+
+.none { 
+    display: none;
+}
