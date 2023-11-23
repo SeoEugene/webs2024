@@ -1,0 +1,403 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    color: #333;
+    text-decoration: none;
+}
+
+#wrap {
+    background-color: #fff;
+    display: flex;
+    width: 100vw;
+    position: relative;
+}
+
+#header {
+    width: 200px;
+    height: 850px;
+    background-color: #ffcccc;
+}
+
+.logo {
+    font-size: 24px;
+    color: #dd44cc;
+    display: inline-block;
+    padding: 40px 50px;
+}
+
+.nav {}
+
+.nav>ul {}
+
+.nav>ul>li {
+    position: relative;
+
+}
+
+.nav>ul>li>a {
+    display: block;
+    padding: 10px 20px;
+    text-align: center;
+    background-color: #ffbbcc;
+}
+
+.nav>ul>li>a:hover {
+    background-color: #ffaacc;
+}
+
+.nav>ul>li>ul {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 200px;
+    width: 200px;
+    background-color: #ffaacc;
+    z-index: 1000;
+}
+
+.nav>ul>li>ul>li {}
+
+.nav>ul>li>ul>li>a {
+    display: block;
+    padding: 10px 20px;
+    color: #fff;
+    text-align: center;
+    font-weight: 600;
+}
+
+.nav>ul>li>ul>li>a:hover {
+    background-color: #ffbbcc;
+}
+
+#main {
+    width: calc(100% - 200px);
+    display: flex;
+}
+
+#section {
+    width: 400px;
+    height: 850px;
+    background-color: #fff;
+}
+
+.banner {
+    width: 100%;
+    height: 20%;
+    display: inline-flex;
+    background-image: url(images/Rectangle\ 112.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+
+}
+
+.banner h3 {
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    color: #fff;
+    margin: 5px;
+}
+
+.banner div {
+    background-color: rgba(255, 244, 244, 0.6);
+    padding: 10px;
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    margin: 5px;
+}
+
+.banner div:hover {
+    background-color: rgba(255, 244, 244, 1);
+    cursor: pointer;
+}
+
+.notice {
+    width: 100%;
+    height: 30%;
+    box-sizing: border-box;
+}
+
+.notice__header {
+    background-color: #ffbbcc;
+    display: flex;
+    margin: 10px;
+    padding: 5px;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+.notice__header h3 {
+    font-size: 20px;
+    margin-left: 5px;
+}
+
+.notice__header p {
+    margin-right: 5px;
+    cursor: pointer;
+}
+
+.notice__body {
+    padding: 5px;
+    margin: 10px;
+
+}
+
+.notice__body ul li {
+    margin: 5px 0;
+    margin-left: 15px;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+}
+
+.notice__body ul li::before {
+    content: '';
+    width: 6px;
+    height: 6px;
+    background-color: #ffbbcc;
+    border-radius: 30px;
+    position: absolute;
+    top: 8px;
+    left: -13px;
+}
+
+.notice__body ul li a:hover {
+    text-decoration: underline;
+}
+
+
+.gallery {
+    width: 100%;
+    height: 30%;
+    background-color: #ffcccc;
+    box-sizing: border-box;
+    border: 1px solid #ffcccc;
+}
+
+.gallery__header {
+    background-color: #ffbbcc;
+    display: flex;
+    margin: 10px;
+    padding: 5px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.gallery__header h3 {
+    font-size: 20px;
+    margin-left: 5px;
+}
+
+.gallery__header p {
+    margin-right: 5px;
+    cursor: pointer;
+}
+
+.gallery__body {
+    padding: 5px;
+    margin: 10px;
+}
+
+.gallery__body ul {
+    display: flex;
+    justify-content: space-around;
+
+}
+
+.gallery__body ul li {
+    width: 30%;
+    height: 150px;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: space-around;
+
+}
+
+.gallery__body ul li:nth-child(1) {
+    background-image: url(images/Rectangle\ 113.jpg);
+}
+
+.gallery__body ul li:nth-child(2) {
+    background-image: url(images/Rectangle\ 114.jpg);
+}
+
+.gallery__body ul li:nth-child(3) {
+    background-image: url(images/Rectangle\ 115.jpg);
+}
+
+.gallery__body .text {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 600;
+}
+
+.gallery__body .text:hover {
+    background-color: rgba(0, 0, 0, 0);
+    cursor: pointer;
+}
+
+
+.etc {
+    width: 100%;
+    height: 20%;
+}
+
+.etc ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.etc ul li {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+    height: 150px;
+}
+
+.etc ul li:hover p {
+    color: #ffaacc;
+}
+
+.etc ul li img {
+    width: 50px;
+    height: 50px;
+    background-position: center;
+    background-size: cover;
+}
+
+
+#slider {
+    width: calc(100% - 400px);
+    background-color: #ffcccc;
+    overflow: hidden;
+
+}
+
+.sliderWrap {
+    display: flex;
+    width: 400%;
+    height: 850px;
+}
+
+.slider {
+    width: 100%;
+    height: 850px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+}
+
+.s1 {
+    background-image: url(images/Rectangle\ 6-1.jpg);
+}
+
+.s2 {
+    background-image: url(images/Rectangle\ 108.jpg);
+}
+
+.s3 {
+    background-image: url(images/Rectangle\ 109.jpg);
+}
+
+.slider .text {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    background-color: rgba(255, 210, 210, 0.7);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: inline-block;
+}
+
+.slider .text h3 {
+    width: 100%;
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #fff;
+}
+
+.slider .text p {
+    font-weight: 600;
+    width: 100px;
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+#footer {
+    width: 100%;
+    height: 100px;
+    background-color: #333;
+}
+
+.popup {
+    width: 500px;
+    height: 500px;
+    border: 5px solid #ffaacc;
+    background-color: #ffcccc;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    display: none;
+}
+
+.popup h3 {
+    width: 80%;
+    height: 50px;
+    text-align: center;
+    border-bottom: 2px solid #333;
+    margin-top: 20px;
+    box-sizing: border-box;
+}
+
+.popup p {
+    padding: 40px;
+    justify-content: top;
+    height: 360px;
+    box-sizing: border-box;
+}
+
+.popup .popupclose {
+    width: 50px;
+    border: 3px solid #ffaacc;
+    display: flex;
+    padding: 10px 20px;
+    background-color: rgb(255, 255, 255);
+    justify-content: center;
+    cursor: pointer;
+}

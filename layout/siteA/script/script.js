@@ -1,42 +1,26 @@
-$(function(){
-    // 슬라이드 : 페이드 효과
+$(function () {
+    // menu
+    $(".nav>ul>li").mouseover(function () {
+        $(this).find($(".submenu")).stop().slideDown(300);
+    });
+    $(".nav>ul>li").mouseout(function () {
+        $(this).find($(".submenu")).stop().slideUp(300);
+    });
+
+    // slider
     let currentIndex = 0;
-    $(".slider").hide().first().show();
 
-    setInterval(function(){
+    setInterval(function () {
         let nextIndex = (currentIndex + 1) % 3;
-
-        $(".slider").eq(currentIndex).fadeOut(1200);
         $(".slider").eq(nextIndex).fadeIn(1200);
-
-        currentIndex = nextIndex;
+        $(".slider").eq(currentIndex).fadeOut(1200);
+        currentIndex++;
     }, 3000);
 
-    // 메뉴 : 하나씩 나오기
-    $(".nav > ul > li").mouseover(function(){
-        $(this).find(".submenu").stop().slideDown(200);
-    });
-    $(".nav > ul > li").mouseout(function(){
-        $(this).find(".submenu").stop().slideUp(200);
-    });
+    // tab
+    $(".content1 > .menu > a:nth-child(1)").click(function () {
+        $(".content1 > .menu > a:nth-child(1)").removeClass(active);
+        $(".content1 > .menu > a:nth-child(2)").addClass(active);
 
-    // 탭메뉴
-    const tabBtn = $(".menu > a");
-    const tabCont = $(".cont > div");
-    tabCont.hide().eq(0).show();
-
-    tabBtn.on("click", function(){
-        const index = $(this).index();
-
-        $(this).addClass("active").siblings().removeClass("active");
-        tabCont.eq(index).show().siblings().hide();
     });
-
-    // 팝업
-    $(".popup-btn").click(function(){
-        $(".popup-view").show();
-    });
-    $(".popup-close").click(function(){
-        $(".popup-view").hide();
-    });
-})
+});
