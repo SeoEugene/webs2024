@@ -50,31 +50,38 @@
 ## 기능구현
 
 1. 회원가입
-2. 로그인 
+![사이트맵.png](Join.png)
+2. 로그인
+![사이트맵.png](Login.png)
 3. 마이페이지
+![사이트맵.png](Mypage.png)
 4. 제품
+![사이트맵.png](Phone.png)
     - 카테고리별 상품 보기
     - 상품 입력하기
     - 상품 수정하기
     - 상품 삭제하기
     - 휴대폰비교
 5. 게시판
+![사이트맵.png](Board.png)
     - 공지사항
     - 제품리뷰
     - 자유게시판
     - 토론게시판
 6. 고객센터
+![사이트맵.png](Connect.png)
 
 ## 사용 툴
-디자인: Figma
-협업도구: Notion, GitHubDeskTop
-개발: VS Code
-데이터베이스: Mysql, Excel
+디자인: Figma <br/>
+협업도구: Notion, GitHubDeskTop<br/>
+개발: VS Code<br/>
+데이터베이스: Mysql, Excel<br/>
+![사이트맵.png](Mysql.png)
 
 ## 사용 스택
-client: HTML/CSS/javascript
-server: PHP
-distribution: DotHome
+client: HTML/CSS/javascript<br/>
+server: PHP<br/>
+distribution: DotHome<br/>
 
 
 
