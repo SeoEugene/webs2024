@@ -211,50 +211,39 @@
         </section>
         <!-- //section1 -->
 
-        <main id="parallax__cont">
-            <section id="section2" class="parallax__item">
-                <span class="parallax__item__num">02</span>
+
+        <section id="section2" class="parallax__item">
+            <span class="parallax__item__num">02</span>
+            <figure class="parallax__item__imgWrap">
+                <div class="parallax__item__img"></div>
+            </figure>
+        </section>
+        <!-- //section2 -->
+
+        <div id="horizontal">
+            <section id="section3" class="parallax__item">
+                <span class="parallax__item__num">03</span>
                 <figure class="parallax__item__imgWrap">
                     <div class="parallax__item__img"></div>
                 </figure>
             </section>
-            <!-- //section2 -->
+            <!-- //section3 -->
 
-            <div id="horizontal">
-                <section id="section3" class="parallax__item">
-                    <span class="parallax__item__num">03</span>
-                    <figure class="parallax__item__imgWrap">
-                        <div class="parallax__item__img"></div>
-                    </figure>
-                </section>
-                <!-- //section3 -->
+            <section id="section4" class="parallax__item">
+                <span class="parallax__item__num">04</span>
+                <figure class="parallax__item__imgWrap">
+                    <div class="parallax__item__img"></div>
+                </figure>
+            </section>
+            <!-- //section4 -->
 
-                <section id="section4" class="parallax__item">
-                    <span class="parallax__item__num">04</span>
-                    <figure class="parallax__item__imgWrap">
-                        <div class="parallax__item__img"></div>
-                    </figure>
-                </section>
-                <!-- //section4 -->
-
-                <section id="section5" class="parallax__item">
-                    <span class="parallax__item__num">05</span>
-                    <figure class="parallax__item__imgWrap">
-                        <div class="parallax__item__img"></div>
-                    </figure>
-                </section>
-                <!-- //section5 -->
-
-                <section id="section6" class="parallax__item">
-                    <span class="parallax__item__num">06</span>
-                    <figure class="parallax__item__imgWrap">
-                        <div class="parallax__item__img"></div>
-                    </figure>
-                </section>
-                <!-- //section6 -->
-            </div>
-
-
+            <section id="section5" class="parallax__item">
+                <span class="parallax__item__num">05</span>
+                <figure class="parallax__item__imgWrap">
+                    <div class="parallax__item__img"></div>
+                </figure>
+            </section>
+            <!-- //section5 -->
 
             <section id="section6" class="parallax__item">
                 <span class="parallax__item__num">06</span>
@@ -263,54 +252,65 @@
                 </figure>
             </section>
             <!-- //section6 -->
+        </div>
 
-            <section id="section7" class="parallax__item">
-                <span class="parallax__item__num">07</span>
-                <figure class="parallax__item__imgWrap">
-                    <div class="parallax__item__img"></div>
-                </figure>
-            </section>
-            <!-- //section7 -->
 
-            <section id="section8" class="parallax__item">
-                <span class="parallax__item__num">08</span>
-                <figure class="parallax__item__imgWrap">
-                    <div class="parallax__item__img"></div>
-                </figure>
-            </section>
-            <!-- //section8 -->
 
-            <section id="section9" class="parallax__item">
-                <span class="parallax__item__num">09</span>
-                <figure class="parallax__item__imgWrap">
-                    <div class="parallax__item__img"></div>
-                </figure>
-            </section>
-            <!-- //section9 -->
-        </main>
+        <section id="section6" class="parallax__item">
+            <span class="parallax__item__num">06</span>
+            <figure class="parallax__item__imgWrap">
+                <div class="parallax__item__img"></div>
+            </figure>
+        </section>
+        <!-- //section6 -->
 
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.1/ScrollToPlugin.min.js"></script>
-        <script>
-            const horizontal = document.querySelector("#horizontal");
-            const sections = gsap.utils.toArray("#horizontal > section");
+        <section id="section7" class="parallax__item">
+            <span class="parallax__item__num">07</span>
+            <figure class="parallax__item__imgWrap">
+                <div class="parallax__item__img"></div>
+            </figure>
+        </section>
+        <!-- //section7 -->
 
-            gsap.to(sections, {
-                xPercent: -100 * (sections.length - 1),
-                ease: "none",
-                scrollTrigger: {
-                    trigger: horizontal,
-                    start: "top top",
-                    end: () => "+=" + (horizontal.offsetWidth - innerWidth),
-                    pin: true,
-                    scrub: 1,
-                    invalidateOnRefresh: true,
-                    anticipatePin: 1
+        <section id="section8" class="parallax__item">
+            <span class="parallax__item__num">08</span>
+            <figure class="parallax__item__imgWrap">
+                <div class="parallax__item__img"></div>
+            </figure>
+        </section>
+        <!-- //section8 -->
 
-                }
-            })
-        </script>
+        <section id="section9" class="parallax__item">
+            <span class="parallax__item__num">09</span>
+            <figure class="parallax__item__imgWrap">
+                <div class="parallax__item__img"></div>
+            </figure>
+        </section>
+        <!-- //section9 -->
+    </main>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.1/ScrollToPlugin.min.js"></script>
+    <script>
+        const horizontal = document.querySelector("#horizontal");
+        const sections = gsap.utils.toArray("#horizontal > section");
+
+        gsap.to(sections, {
+            xPercent: -100 * (sections.length - 1),
+            ease: "none",
+            scrollTrigger: {
+                trigger: horizontal,
+                start: "top top",
+                end: () => "+=" + (horizontal.offsetWidth - innerWidth),
+                pin: true,
+                scrub: 1,
+                invalidateOnRefresh: true,
+                anticipatePin: 1
+
+            }
+        })
+    </script>
 </body>
 
 </html>
