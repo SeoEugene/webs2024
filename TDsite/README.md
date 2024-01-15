@@ -1,8 +1,10 @@
 # Treand Device
 
-개발기간: 2023/10/11 ~ 2023/11/17(약 38일)
+개발기간: 2023/10/11 ~ 2023/11/17
 
 팀원 : 김우주, 서유진, 윤영식
+
+### 사이트바로가기: http://eugene3322.dothome.co.kr/TDsite/php/main/main.php
 
 ## Trend Device 서비스 기획
 
@@ -72,4 +74,8 @@
 ## 사용 스택
 client: HTML/CSS/javascript
 server: PHP
+distribution: DotHome
+
+
+
 
