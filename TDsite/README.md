@@ -73,7 +73,9 @@
 
 ## 사용 툴
 디자인: Figma <br/>
+디자인 보러가기 : https://www.figma.com/file/sXA40mtLa5Un72miDbWUKq/%EC%82%AC%EC%9D%B4%ED%8A%B8-%EB%A7%8C%EB%93%A4%EA%B8%B0?type=design&node-id=55%3A2291&mode=design&t=BD1gdx3NwiaWXj0J-1 <br/>
 협업도구: Notion, GitHubDeskTop<br/>
+노션 보러가기: https://www.notion.so/5-Trend-Device-1bf1e215ff1a4ca09ac48fa4a9dc0590?pvs=4<br />
 개발: VS Code<br/>
 데이터베이스: Mysql, Excel<br/>
 ![사이트맵.png](Mysql.png)
