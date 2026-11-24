@@ -1,10 +1,17 @@
-# Treand Device
+# Trend Device
 
 개발기간: 2023/10/11 ~ 2023/11/17
 
 팀원 : 김우주, 서유진, 윤영식
 
-### 사이트바로가기: http://eugene3322.dothome.co.kr/TDsite/php/main/main.php
+**[화면 미리보기 (정적 HTML)](https://seoeugene.github.io/webs2024/TDsite/html/main.html)** · **[포트폴리오](https://seoeugene.github.io)**
+
+> PHP·MySQL로 동작하던 배포 사이트(dothome 호스팅)는 호스팅이 끝나 지금은 열리지 않습니다. 화면은 위의 정적 HTML 버전으로 볼 수 있습니다.
+
+| 항목 | 내용 |
+|---|---|
+| 형태 | 팀 프로젝트 (3명, 공공 데이터를 활용한 Node.js 전문가 과정) |
+| 기술 | HTML, Sass, JavaScript, PHP, MySQL, dothome 호스팅 |
 
 ## Trend Device 서비스 기획
 
@@ -85,6 +92,5 @@ client: HTML/CSS/javascript<br/>
 server: PHP<br/>
 distribution: DotHome<br/>
 
-
-
-
+---
+2023년 교육 과정에서 만든 팀 프로젝트이며, 2026년에 README를 정리했습니다.

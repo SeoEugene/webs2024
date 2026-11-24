@@ -1,5 +1,7 @@
 # webs2024
-수업시간에 정리한 내용입니다.
+2023–2024년 교육 과정 수업 시간에 정리한 내용입니다. 팀 프로젝트 [Trend Device](TDsite)도 여기에 있습니다.
+
+현재 포트폴리오: https://seoeugene.github.io
 https://seoeugene.github.io/webs2024/
 
 ## 자바스크립트
